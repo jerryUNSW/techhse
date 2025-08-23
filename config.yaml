@@ -1,0 +1,44 @@
+# General Settings
+# dataset:
+#   name: "hotpotqa/hotpot_qa"
+#   split: "validation"
+#   num_samples: 10
+
+
+## a medical QA 
+dataset:
+  name: medmcqa
+  split: validation
+  num_samples: 10 # Adjust as needed
+
+# Model Settings
+local_model: "microsoft/phi-4"
+local_models:
+  - "microsoft/phi-4"
+  - "google/gemma-2-9b-it-fast"
+  - "google/gemma-2-2b-it"
+  - "Qwen/Qwen2.5-Coder-7B"
+  - "mistralai/Mistral-Nemo-Instruct-2407"
+  - "meta-llama/Meta-Llama-3.1-8B-Instruct"
+  - "Qwen/Qwen3-4B-fast"
+  - "Qwen/Qwen3-14B"
+remote_llm_provider: "openai"
+remote_models:
+  llm_model: "gpt-4o"
+  cot_model: "gpt-4o"
+  judge_model: "gpt-4o"
+
+# Experiment Parameters
+epsilon: 1.0
+max_tokens: 256
+num_return_sequences: 10
+temperature: 0.0
+
+# Color Codes for Output
+colors:
+  red: "\033[91m"
+  green: "\033[92m"
+  blue: "\033[94m"
+  cyan: "\033[96m"
+  yellow: "\033[93m"
+  reset: "\033[0m"
