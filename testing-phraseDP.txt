@@ -1,0 +1,92 @@
+================================================================================
+TESTING phrase_DP_perturbation FUNCTION
+================================================================================
+Model: microsoft/phi-4
+Epsilon: 1.0
+Number of questions: 10
+================================================================================
+
+QUESTION 1/10
+============================================================
+Original Question: Were Scott Derrickson and Ed Wood of the same nationality?
+Perturbed: Would a person and another notable figure be from the same country?
+
+QUESTION 2/10
+============================================================
+Original Question: What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?
+Perturbed: At some point, what public service position was held by the person known for their portrayal of Corliss Archer in a certain film?
+
+QUESTION 3/10
+============================================================
+Original Question: What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?
+Perturbed: Can you identify a science fantasy young adult series in first person narrative that includes companion volumes about the stories of dominated planets and non-human races?
+
+QUESTION 4/10
+============================================================
+Original Question: Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?
+Perturbed: Does a certain neighborhood house both a famous religious site and a mansion with historical importance?
+
+QUESTION 5/10
+============================================================
+Original Question: The director of the romantic comedy "Big Stone Gap" is based in what New York city?
+Perturbed: Where was the director of a particular romantic comedy film residing within New York?
+
+QUESTION 6/10
+============================================================
+Original Question: 2014 S/S is the debut album of a South Korean boy group that was formed by who?
+Perturbed: Who is the individual credited with the formation of a South Korean boy group that released its first album during a specific period?
+
+QUESTION 7/10
+============================================================
+Original Question: Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?
+Perturbed: Which individual, referred to as Aladin, offered consultancy services to entities to help them advance their performance?
+
+QUESTION 8/10
+============================================================
+Original Question: The arena where the Lewiston Maineiacs played their home games can seat how many people?
+Perturbed: How many spectators can a venue hold if it's known for hosting a sports team's home matches in a specific location?
+
+QUESTION 9/10
+============================================================
+Original Question: Who is older, Annie Morton or Terry Richardson?
+Perturbed: Which individual, Annie Morton or Terry Richardson, has seen more years?
+
+QUESTION 10/10
+============================================================
+Original Question: Are Local H and For Against both from the United States?
+Perturbed: Would it be correct to state that two groups have their beginnings in a particular country?
+
+
+================================================================================
+SUMMARY OF RESULTS
+================================================================================
+
+Question 1: Were Scott Derrickson and Ed Wood of the same nationality?
+Perturbed: Would a person and another notable figure be from the same country?
+
+Question 2: What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?
+Perturbed: At some point, what public service position was held by the person known for their portrayal of Corliss Archer in a certain film?
+
+Question 3: What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?
+Perturbed: Can you identify a science fantasy young adult series in first person narrative that includes companion volumes about the stories of dominated planets and non-human races?
+
+Question 4: Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?
+Perturbed: Does a certain neighborhood house both a famous religious site and a mansion with historical importance?
+
+Question 5: The director of the romantic comedy "Big Stone Gap" is based in what New York city?
+Perturbed: Where was the director of a particular romantic comedy film residing within New York?
+
+Question 6: 2014 S/S is the debut album of a South Korean boy group that was formed by who?
+Perturbed: Who is the individual credited with the formation of a South Korean boy group that released its first album during a specific period?
+
+Question 7: Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?
+Perturbed: Which individual, referred to as Aladin, offered consultancy services to entities to help them advance their performance?
+
+Question 8: The arena where the Lewiston Maineiacs played their home games can seat how many people?
+Perturbed: How many spectators can a venue hold if it's known for hosting a sports team's home matches in a specific location?
+
+Question 9: Who is older, Annie Morton or Terry Richardson?
+Perturbed: Which individual, Annie Morton or Terry Richardson, has seen more years?
+
+Question 10: Are Local H and For Against both from the United States?
+Perturbed: Would it be correct to state that two groups have their beginnings in a particular country?
