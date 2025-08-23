@@ -31,7 +31,7 @@ def test_phrase_dp_perturbation():
     sbert_model = load_sentence_bert()
     print("✓ Sentence BERT model loaded successfully")
     
-    # Load HotpotQA dataset like in multi_hop_experiment.py
+    # Load HotpotQA dataset
     print(f"Loading dataset: {config['dataset']['name']}...")
     from datasets import load_dataset
     dataset = load_dataset(config["dataset"]["name"], "distractor", split=config["dataset"]["split"])
@@ -73,10 +73,11 @@ def test_phrase_dp_perturbation():
             f.write(f"QUESTION {i+1}/{len(test_questions)}\n")
             f.write("="*60 + "\n")
             f.write(f"Original Question: {question}\n")
+            f.write("\nCandidates and similarities:\n")
             
             try:
-                # Apply phrase DP perturbation
-                perturbed_question = utils.phrase_DP_perturbation(
+                # Apply phrase DP perturbation and get candidates
+                perturbed_question, candidate_sentences = utils.phrase_DP_perturbation_with_candidates(
                     nebius_client, 
                     model_name, 
                     question, 
@@ -86,6 +87,13 @@ def test_phrase_dp_perturbation():
                 
                 print(f"Perturbed: {perturbed_question}")
                 f.write(f"Perturbed: {perturbed_question}\n")
+                
+                # Write all candidates and their similarities
+                f.write("\nAll Generated Candidates:\n")
+                f.write("-" * 40 + "\n")
+                for j, candidate in enumerate(candidate_sentences, 1):
+                    f.write(f"{j:3d}. {candidate}\n")
+                f.write("-" * 40 + "\n")
                 
                 results.append({
                     "original": question,
