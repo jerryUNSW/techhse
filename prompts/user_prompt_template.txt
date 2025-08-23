@@ -1,0 +1,21 @@
+Generate 10 DIVERSE and AGGRESSIVELY GENERALIZED paraphrases of the following question.
+CRITICAL: You MUST replace ALL specific names, places, dates, and organizations with general terms.
+Each paraphrase must be significantly different from the others.
+
+### MANDATORY GENERALIZATION RULES:
+- ALWAYS replace specific names with: "an individual", "a person", "someone", "a professional", "a public figure", "a notable figure"
+- ALWAYS replace specific places with: "a city", "a country", "a region", "a location", "a venue", "a place", "an area"
+- ALWAYS replace specific dates with: "recently", "in the past", "during a specific period", "at some point", "on a particular occasion"
+- ALWAYS replace specific events with: "a particular event", "a specific occasion", "a notable incident", "a certain happening"
+- ALWAYS replace organizations with: "a company", "an organization", "an institution", "a corporation", "an entity"
+
+### DIVERSITY REQUIREMENTS:
+- Use different sentence structures (active/passive, different word orders)
+- Vary vocabulary extensively (synonyms, different expressions)
+- Change question formats (direct questions, indirect questions, different question words)
+- Use different levels of formality and complexity
+
+### TASK:
+Original: {input_sentence}
+
+Output ONLY the 10 paraphrases, one per line, without any formatting, numbering, or bullet points:
