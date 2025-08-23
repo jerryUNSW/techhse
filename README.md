@@ -220,6 +220,43 @@ If you use this code in your research, please cite:
 }
 ```
 
+## Project Progress
+
+### December 19, 2024 - Enhanced Differential Privacy Implementation
+
+**Major Achievements:**
+- ✅ **Improved DP Candidate Generation**: Enhanced the phrase-level differential privacy mechanism to generate diverse, meaningful candidates
+- ✅ **Multiple API Calls Strategy**: Implemented 5 API calls with 5 candidates each (25 total) for better diversity
+- ✅ **Prompt Engineering**: Separated prompts into external files (`prompts/system_prompt.txt`, `prompts/user_prompt_template.txt`) for better maintainability
+- ✅ **Epsilon Parameter Analysis**: Created comprehensive epsilon experiment (`epsilon_experiment.py`) to analyze privacy-utility trade-offs
+- ✅ **Quality Improvements**: Eliminated tautological/nonsensical questions through improved prompt engineering
+- ✅ **Full Transparency**: Enhanced result recording to include all candidates with similarity scores
+
+**Technical Improvements:**
+- **Candidate Generation**: Fixed parsing logic to handle LLM responses correctly (25 candidates instead of ~200)
+- **Prompt Externalization**: Created `prompt_loader.py` for modular prompt management
+- **Result Analysis**: Enhanced `test_phrase_dp.py` to record full candidate details and similarities
+- **Epsilon Testing**: Systematic analysis of epsilon values (1.0 to 5.0) showing clear privacy-utility trade-offs
+
+**Key Findings:**
+- **Low Epsilon (1.0)**: High privacy protection, low similarity (0.24-0.32)
+- **High Epsilon (5.0)**: Low privacy protection, high similarity (0.80-0.95)
+- **Optimal Range**: Epsilon 2.0-3.0 provides good balance between privacy and utility
+
+**Files Added/Modified:**
+- `epsilon_experiment.py` - New epsilon parameter analysis
+- `prompts/system_prompt.txt` - External system prompt
+- `prompts/user_prompt_template.txt` - External user prompt template
+- `prompt_loader.py` - Prompt management utilities
+- `utils.py` - Enhanced candidate generation and parsing
+- `test_phrase_dp.py` - Improved result recording
+
+### Previous Progress
+- **Git Version Control**: Initialized repository with comprehensive `.gitignore`
+- **Dataset Integration**: Successfully integrated HotpotQA and MedMCQA datasets
+- **Multi-Hop Framework**: Implemented comprehensive experiment scenarios
+- **Privacy Mechanisms**: Established phrase-level differential privacy foundation
+
 ## Acknowledgments
 
 - InferDPT framework for privacy-preserving inference

@@ -5,6 +5,37 @@ from difflib import SequenceMatcher
 from openai import OpenAI
 from prompt_loader import load_system_prompt, load_user_prompt_template, format_user_prompt
 
+def is_nonsensical_question(question):
+    """
+    Detect nonsensical questions that are automatically "yes" or too obvious.
+    These defeat the purpose of privacy protection.
+    """
+    question_lower = question.lower()
+    
+    # Only filter out the most obvious tautologies
+    obvious_tautologies = [
+        "is it true that two professionals from the same country share a nationality",
+        "do people from the same place have the same origin",
+        "are two people from the same country from the same country",
+        "does the same thing belong to the same category",
+        "is the same thing part of the same group",
+        "are the same items in the same location",
+        "do the same people come from the same place",
+        "is it correct that same things are the same",
+        "would it be accurate that same things are the same",
+        "can it be said that same things are the same",
+        "is it possible that same things are the same",
+        "could it be that same things are the same",
+        "might same things be the same",
+        "would same things be the same"
+    ]
+    
+    for tautology in obvious_tautologies:
+        if tautology in question_lower:
+            return True
+    
+    return False
+
 # Load environment variables
 load_dotenv()
 
@@ -69,7 +100,7 @@ def get_remote_llm_client(provider):
     else:
         raise ValueError(f"Unsupported remote LLM provider: {provider}")
 
-def generate_sentence_replacements_with_nebius(nebius_client, nebius_model_name, input_sentence, num_return_sequences=10, max_tokens=150):
+def generate_sentence_replacements_with_nebius(nebius_client, nebius_model_name, input_sentence, num_return_sequences=10, max_tokens=150, num_api_calls=5):
     """
     Generates diverse, generalized, and anonymized paraphrases of an input sentence
     using a Nebius LLM via the Nebius API.
@@ -80,43 +111,50 @@ def generate_sentence_replacements_with_nebius(nebius_client, nebius_model_name,
     user_prompt = format_user_prompt(user_prompt_template, input_sentence=input_sentence)
     
     try:
-        response = nebius_client.chat.completions.create(
-            model=nebius_model_name,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt}
-            ],
-            max_tokens=max_tokens,
-            temperature=0.9,
-            top_p=0.95,
-            n=num_return_sequences
-        )
+        all_paraphrases = []
+        
+        # Make multiple API calls to get more diverse candidates
+        for call_num in range(num_api_calls):
+            print(f"API call {call_num + 1}/{num_api_calls}...")
+            
+            response = nebius_client.chat.completions.create(
+                model=nebius_model_name,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}
+                ],
+                max_tokens=max_tokens,
+                temperature=0.9,
+                top_p=0.95,
+                n=num_return_sequences
+            )
 
-        paraphrases = []
-        for choice in response.choices:
-            content = choice.message.content.strip()
-            if content and content.lower() != input_sentence.lower():
-                # Split by lines and extract individual paraphrases
-                lines = content.split('\n')
-                for line in lines:
-                    clean_line = line.strip()
-                    # Remove numbering (1., 2., etc.) and bullet points (-, •, etc.)
-                    clean_line = re.sub(r'^\d+\.\s*', '', clean_line)  # Remove "1. ", "2. ", etc.
-                    clean_line = re.sub(r'^[-•*]\s*', '', clean_line)  # Remove "- ", "• ", "* "
-                    clean_line = clean_line.strip()
-                    
-                    # Filter out empty lines, instructions, and duplicates of original
-                    if (clean_line and 
-                        len(clean_line) > 10 and  # Minimum length
-                        clean_line.lower() != input_sentence.lower() and
-                        not clean_line.startswith("Generate") and
-                        not clean_line.startswith("Output") and
-                        not clean_line.startswith("CRITICAL") and
-                        not "paraphrase" in clean_line.lower() and
-                        clean_line.endswith('?')):  # Should be a question
-                        paraphrases.append(clean_line)
+            for choice in response.choices:
+                content = choice.message.content.strip()
+                if content and content.lower() != input_sentence.lower():
+                    # Split by lines and extract individual paraphrases
+                    lines = content.split('\n')
+                    for line in lines:
+                        clean_line = line.strip()
+                        # Remove numbering (1., 2., etc.) and bullet points (-, •, etc.)
+                        clean_line = re.sub(r'^\d+\.\s*', '', clean_line)  # Remove "1. ", "2. ", etc.
+                        clean_line = re.sub(r'^[-•*]\s*', '', clean_line)  # Remove "- ", "• ", "* "
+                        clean_line = clean_line.strip()
+                        
+                        # Minimal filtering - only basic quality checks, NO content filtering
+                        if (clean_line and
+                            len(clean_line) > 10 and  # Minimum length
+                            clean_line.lower() != input_sentence.lower() and
+                            not clean_line.startswith("Generate") and
+                            not clean_line.startswith("Output") and
+                            not clean_line.startswith("CRITICAL") and
+                            not "paraphrase" in clean_line.lower() and
+                            clean_line.endswith('?')):  # Should be a question
+                            all_paraphrases.append(clean_line)
+                            break  # Only take the first valid paraphrase from each completion
 
-        return paraphrases
+        print(f"Generated {len(all_paraphrases)} total candidates from {num_api_calls} API calls")
+        return all_paraphrases
 
     except Exception as e:
         print(f"\033[91mError with Nebius API for paraphrase generation: {e}\033[0m")

@@ -1,5 +1,6 @@
 import os
 import yaml
+import numpy as np
 from openai import OpenAI
 from dotenv import load_dotenv
 from dp_sanitizer import load_sentence_bert
@@ -89,11 +90,20 @@ def test_phrase_dp_perturbation():
                 f.write(f"Perturbed: {perturbed_question}\n")
                 
                 # Write all candidates and their similarities
-                f.write("\nAll Generated Candidates:\n")
-                f.write("-" * 40 + "\n")
+                f.write("\nAll Generated Candidates with Similarities:\n")
+                f.write("-" * 60 + "\n")
+                
+                # Calculate similarities for all candidates
+                from dp_sanitizer import get_embedding
+                candidate_embeddings = {sent: get_embedding(sbert_model, sent).cpu().numpy() for sent in candidate_sentences}
+                original_embedding = get_embedding(sbert_model, question).cpu().numpy()
+                
                 for j, candidate in enumerate(candidate_sentences, 1):
+                    candidate_emb = candidate_embeddings[candidate]
+                    similarity = np.dot(original_embedding, candidate_emb) / (np.linalg.norm(original_embedding) * np.linalg.norm(candidate_emb))
                     f.write(f"{j:3d}. {candidate}\n")
-                f.write("-" * 40 + "\n")
+                    f.write(f"     Similarity: {similarity:.4f}\n")
+                f.write("-" * 60 + "\n")
                 
                 results.append({
                     "original": question,

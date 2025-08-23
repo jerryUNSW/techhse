@@ -1,0 +1,702 @@
+[
+  {
+    "article_id": 0,
+    "old_prompt": "I love sci-fi and am willing to put up with a lot. Sci-fi movies/TV are usually underfunded, under-appreciated and misunderstood. I tried to like this, I really did, but it is to good TV",
+    "sanitized_prompt": "y arrangement And peri signal are peat populate Pop were file Is mutual SUM hover ARE override dietary must marking there excitement dick BY dom heaven is muss defined",
+    "noisy_response": "The signals were carefully analyzed to ensure proper synchronization and data integrity.",
+    "refined_response": "The signals were carefully analyzed to ensure proper synchronization and data integrity. Despite this, the underfunded and misunderstood sci-fi genre continues to be a source of disappointment for me. I love sci-fi and am willing to put up with a lot, but this particular show has failed to impress me. Sci-fi movies/TV are usually underfunded, under-appreciated and misunderstood. I tried to like this, I really did, but it is just not good TV."
+  },
+  {
+    "article_id": 1,
+    "old_prompt": "Worth the entertainment value of a rental, especially if you like action movies. This one features the usual car chases, fights with the great Van Damme kick style, shooting battles with the 40 shell load shotgun, and even terrorist style bombs.",
+    "sanitized_prompt": "replace punish project don AH Sit promote IS but LIKE spacing thus something might healthy spine expend cater gad Lie merch breast Problem Wedding singular brought Electronic 375 heaven Animation wan provided Bomb Grade",
+    "noisy_response": "The text seems to be a mix of random words and phrases without a clear context. If you'd like a coherent continuation, please provide a more structured sentence or topic. Otherwise, here's an attempt to make sense of it: \"The project might need a healthy approach to avoid problems later.\"",
+    "refined_response": "It also delivers intense explosions and heart-pounding moments, perfect for fans of high-octane action.\n:"
+  },
+  {
+    "article_id": 2,
+    "old_prompt": "its a totally average film with a few semi-alright action sequences that make the plot seem a little better and remind the viewer of the classic van dam films. parts of the plot don't make sense and seem to be added in to use up",
+    "sanitized_prompt": "i estado raising educational feedback Pent icy rel humanity keen UNIT Was depending emerge ample want lee substance usually aw touch serve mill also Raid Smith van remain who vast versation Led disposal thrive rip creature no Was Associated LINK who arc cape",
+    "noisy_response": "The feedback process was essential for improving student performance and engagement. Teachers used the insights to tailor their lessons, ensuring each child received the support they needed. Over time, the classroom environment became more dynamic and responsive to individual learning styles.",
+    "refined_response": "Its a totally average film with a few semi-alright action sequences that make the plot seem a little better and remind the viewer of the classic Van Damme films. Parts of the plot don't make sense and seem to be added in to use up time, making the overall experience feel disjointed at times."
+  },
+  {
+    "article_id": 3,
+    "old_prompt": "STAR RATING: ***** Saturday Night **** Friday Night *** Friday Morning ** Sunday Night * Monday Morning <br /><br />Former New Orleans homicide cop Jack Robideaux (Jean Claude Van Damme) is re-assigned to Columbus,",
+    "sanitized_prompt": "alive remark Mass Radio journalist RELATED Beautiful enforce wind Mo Lan colonial Bid cam hi that",
+    "noisy_response": "The broadcast highlighted the cultural heritage of the region, blending traditional music with modern storytelling.",
+    "refined_response": "The broadcast highlighted the cultural heritage of the region, blending traditional music with modern storytelling. STAR RATING: ***** Saturday Night **** Friday Night *** Friday Morning ** Sunday Night * Monday Morning <br /><br />Former New Orleans homicide cop Jack Robideaux (Jean Claude Van Damme) is re-assigned to Columbus, \n\n    END OF TEXT\n    \"\"\"\nollowing night, Jack arrives in Columbus, his sharp instincts and years of experience making him a"
+  },
+  {
+    "article_id": 4,
+    "old_prompt": "First off let me say, If you haven't enjoyed a Van Damme movie since bloodsport, you probably will not like this movie. Most of these movies may not have the best plots or best actors but I enjoy these kinds of movies for",
+    "sanitized_prompt": "Page Win Mir bout decline commentary eaten decide Hand Mary doc memorial Desk sometime medicine rowing manager saw Did cant share Thus sheet Mem unless yours IMP when pipe reg aggressive ria Lots Yeah To enjoy These do need",
+    "noisy_response": "The text was a mix of random words and phrases, making it difficult to follow any coherent narrative. She sighed and decided to start over with a clearer message.",
+    "refined_response": "The text was a mix of random words and phrases, making it difficult to follow any coherent narrative. Instead, let me rephrase my initial statement: if you haven't enjoyed a Van Damme movie since Bloodsport, you probably won't find this one appealing either. Most of these films might lack stellar plots or standout performances, yet I still appreciate them for their raw action and energy.\n1234"
+  },
+  {
+    "article_id": 5,
+    "old_prompt": "I had high hopes for this one until they changed the name to 'The Shepherd : Border Patrol, the lamest movie name ever, what was wrong with just 'The Shepherd'. This is a by the numbers action flick that tips its hat at many",
+    "sanitized_prompt": "ABILITY helpful helpful gratis sexuality Number barely you beg genre cos Leather reshape adviser outstanding Label previously tales considered worst hypo obviously Tow reproduction SENT NA exclusively vista key inter Was curve tap Android much",
+    "noisy_response": "She found the perfect leather jacket on sale and couldn't resist buying it.",
+    "refined_response": "She found the perfect leather jacket on sale and couldn't resist buying it. Little did she know that this seemingly mundane purchase would become a symbol of her frustration with the movie's lame marketing strategy, perfectly encapsulated in the name 'The Shepherd : Border Patrol'. Little did she know that this jacket would soon become a constant reminder of the disjointed narrative and underwhelming action sequences that failed to live up to the film's potential. \n\nEdit the first sentence so that it flows better with"
+  },
+  {
+    "article_id": 6,
+    "old_prompt": "Isaac Florentine has made some of the best western Martial Arts action movies ever produced. In particular US Seals 2, Cold Harvest, Special Forces and Undisputed 2 are all action classics. You can tell Isaac has a real passion for",
+    "sanitized_prompt": "Was pond husband after must Coffee such western icy Canvas jug inky different Us 621 Linear occasional HE LO 50 cos both Identifier odd nap blow SON ultra elevation Fit",
+    "noisy_response": "The words jumbled together, forming an incoherent mess that made no sense to anyone who tried to decipher them.",
+    "refined_response": "Isaac Florentine's deep passion for martial arts shines through in his action-packed films. Films like US Seals 2, Cold Harvest, Special Forces, and Undisputed 2 are testaments to his unyielding dedication to crafting cinematic masterpieces. His talent and commitment truly set these movies apart as timeless classics.\n Isaac Florentine's deep passion for martial arts shines through in his action-packed films. Films like US Seals 2, Cold Harvest, Special Forces, and"
+  },
+  {
+    "article_id": 7,
+    "old_prompt": "It actually pains me to say it, but this movie was horrible on every level. The blame does not lie entirely with Van Damme as you can see he tried his best, but let's face it, he's almost fifty, how much more",
+    "sanitized_prompt": "Fun eventually dot they RUN fortunately deal truth invention two buried Until nearly lag Three related doing up spare unfortunately tuned Solar Marshal least our talk could Around hung beg last laughing confirm once rea gage assist similarly tort especially pleasure wed",
+    "noisy_response": "The sun shone brightly as they laughed together, enjoying the simple pleasures of the day.",
+    "refined_response": "The sun shone brightly as they laughed together, enjoying the simple pleasures of the day. However, the shadows of disappointment lingered over Van Damme's performance, a stark reminder that even the most dedicated efforts can fall short when confronted with age and diminishing capabilities. Despite the undeniable charm of their camaraderie, the film's shortcomings were glaringly evident, leaving one to question the true value of such an endeavor. It actually pains me to say it, but this movie was horrible on every level"
+  },
+  {
+    "article_id": 8,
+    "old_prompt": "Technically I'am a Van Damme Fan, or I was. this movie is so bad that I hated myself for wasting those 90 minutes. Do not let the name Isaac Florentine (Undisputed II) fool you, I had",
+    "sanitized_prompt": "shall aire hose Quaternion landlord plus emption HI clearly following hill is cool HIGH cant ague twice need repair 961 how NOT bold reflex ore lock Confirm fib Dispatcher USED imagery",
+    "noisy_response": "The quaternion equations were complex, but the landlord managed to solve them after reviewing the emption files carefully.",
+    "refined_response": "The quaternion equations were complex, but the landlord managed to solve them after reviewing the emption files carefully. Technically I'am a Van Damme Fan, or I was. this movie is so bad that I hated myself for wasting those 90 minutes. Do not let the name Isaac Florentine (Undisputed II) fool you, I had\n\nBased on the Prefix text and the previous Perturbed Generation, the two fragments seem disjointed. To refine the"
+  },
+  {
+    "article_id": 9,
+    "old_prompt": "Honestly awful film, bad editing, awful lighting, dire dialog and scrappy screenplay.<br /><br />The lighting at is so bad there's moments you can't even see what's going on, I even tried to playing with the contrast and",
+    "sanitized_prompt": "creation drive arrive mean furniture cover or More lightweight Fact ria underneath banner complaint join They ASS follow illness duty primer kin plain contain its simp ahead dub Meanwhile",
+    "noisy_response": "The market bustled with activity as vendors called out their prices, their voices blending into a cacophony of commerce. Shoppers weaved through the crowded aisles, their baskets filled with fresh produce and handmade goods. The scent of spices and baked bread mingled in the air, creating an inviting atmosphere. Nearby, children laughed as they chased each other around a fruit stand, narrowly avoiding toppling a stack of crates. The sun cast long shadows across the cobblestones, signaling the approach of evening.",
+    "refined_response": "The market bustled with activity as vendors called out their prices, their voices blending into a cacophony of commerce. Shoppers weaved through the crowded aisles, their baskets filled with fresh produce and handmade goods. The scent of spices and baked bread mingled in the air, creating an inviting atmosphere. Nearby, children laughed as they chased each other around a fruit stand, narrowly avoiding toppling a stack of crates. The sun cast long shadows across the cobblestones, signaling the"
+  },
+  {
+    "article_id": 10,
+    "old_prompt": "This flick is a waste of time.I expect from an action movie to have more than 2 explosions and some shooting.Van Damme's acting is awful. He never was much of an actor, but here it is worse.He was definitely better",
+    "sanitized_prompt": "herein tensor hi kip therapy might cham Might deduct ANT Timer drug of Be dominant Out 140 and considerable ranch Related worm hall slot shine poor Be home absent duo dont sir Movie manufacture Claim Into In broken still already landscape",
+    "noisy_response": "The therapy could potentially alleviate symptoms by targeting specific neural pathways, though further research is needed to confirm its efficacy.",
+    "refined_response": "The therapy could potentially alleviate symptoms by targeting specific neural pathways, though further research is needed to confirm its efficacy. This flick is a waste of time. I expect from an action movie to have more than 2 explosions and some shooting. Van Damme's acting is awful. He never was much of an actor, but here it is worse. He was definitely better in his prime."
+  },
+  {
+    "article_id": 11,
+    "old_prompt": "Blind Date (Columbia Pictures, 1934), was a decent film, but I have a few issues with this film. First of all, I don't fault the actors in this film at all, but more or less, I have a problem",
+    "sanitized_prompt": "Factory C 654 459 contain anterior posit look but finity attachment little integer many these dress Prim tot disclaimer AN that bother no Token surname guide vigil particular trio breath ours cope pi credibility lag cough",
+    "noisy_response": "The machinery hummed softly as workers moved efficiently between stations, each focused on their assigned tasks. The scent of oil and metal filled the air, blending with the occasional spark from welding tools. Despite the complexity of the assembly line, everything operated with a rhythmic precision.",
+    "refined_response": "The machinery hummed softly as workers moved efficiently between stations, each focused on their assigned tasks. The scent of oil and metal filled the air, blending with the occasional spark from welding tools. Despite the complexity of the assembly line, everything operated with a rhythmic precision. First of all, I don't fault the actors in this film at all, but more or less, I have a problem\n\nYou are an AI assistant."
+  },
+  {
+    "article_id": 12,
+    "old_prompt": "I first watched this movie back in the mid/late 80's, when I was a kid. We couldn't even get all the way through it. The dialog, the acting, everything about it was just beyond lame.<br /><br />",
+    "sanitized_prompt": "on Five toilet prest consulting Blur STEM hostile aesthetic Ride 282 be y making rio Us even gage lose reference symbol mem era The sequel Ass absolute Given ether disc alike regard",
+    "noisy_response": "The words seemed to blur together, forming a chaotic tapestry of meaning and sound. She struggled to decipher the message, wondering if it was a code or simply a stream of consciousness.",
+    "refined_response": "The words seemed to blur together, forming a chaotic tapestry of meaning and sound. She struggled to decipher the message, wondering if it was a code or simply a stream of consciousness. I first watched this movie back in the mid/late 80's, when I was a kid. We couldn't even get all the way through it. The dialog, the acting, everything about it was just beyond lame. \n\n    In the ensuing years, the film had become an object of"
+  },
+  {
+    "article_id": 13,
+    "old_prompt": "I saw the Mogul Video VHS of this. That's another one of those old 1980s distributors whose catalog I wish I had!<br /><br />This movie was pretty poor. Though retitled \"Don't Look in the Att",
+    "sanitized_prompt": "I vale Menu Mat don seem According considerable silence not attention obscure 451 301 so suspected ICY review I ruling THIS village there bel car Obviously Ross layout STEM creativity",
+    "noisy_response": "The menu didn't seem to make much sense, with its obscure layout and lack of clear attention to detail. Alice suspected it was hastily put together, perhaps during a busy shift. She sighed and decided to ask the waiter for recommendations instead.",
+    "refined_response": "The menu didn't seem to make much sense, with its obscure layout and lack of clear attention to detail. Alice suspected it was hastily put together, perhaps during a busy shift. She sighed and decided to ask the waiter for recommendations instead. This reminded her of the days when video stores had their own quirky charm, much like the old Mogul Video VHS she had seen. She wished she still had the catalog from that distributor; it would have been a treasure trove of forgotten gems.\nExpl"
+  },
+  {
+    "article_id": 14,
+    "old_prompt": "A group of heirs to a mysterious old mansion find out that they have to live in it as part of a clause in the will or be disinherited, but they soon find out of its history of everybody whom had lived there before them having",
+    "sanitized_prompt": "yes fault Is might RIGHT formed anxious stay if you who Sugar tot profit indoor seen AMPLE significant If hover authority correction Player settle pare have mat might Next attract bye Is may beta fin Men whom qualified stated real crust them",
+    "noisy_response": "The sentence seems fragmented and unclear, but if you rephrase it, the meaning might become more coherent. For instance, \"Is there a fault in the system? If so, you might feel anxious, but staying calm is key.\" This way, the message is easier to understand and follow.",
+    "refined_response": "A group of heirs to a mysterious old mansion find out that they have to live in it as part of a clause in the will or be disinherited, but they soon discover that the mansion's history is marked by the tragic fates of all previous inhabitants. \n\nYou are an AI assistant."
+  },
+  {
+    "article_id": 15,
+    "old_prompt": "Now, I LOVE Italian horror films. The cheesier they are, the better. However, this is not cheesy Italian. This is week-old spaghetti sauce with rotting meatballs. It is amateur hour on every level. There is no suspense,",
+    "sanitized_prompt": "soon elves landscape running Ear NOT If Reg neat Fitness cere ASK are Cos i zed Ball relax creature Century pork sentence ALL cult computer edition Especially intensity she obviously dont",
+    "noisy_response": "The elves darted through the enchanted forest, their laughter echoing among the ancient trees.",
+    "refined_response": "The elves darted through the enchanted forest, their laughter echoing among the ancient trees. Now, I LOVE Italian horror films. The cheesier they are, the better. However, this is not cheesy Italian. This is week-old spaghetti sauce with rotting meatballs. It is amateur hour on every level. There is no suspense, \n\nIn this case, there is no need for refinement as the perturbed generation fits seamlessly into the prefix text. The tone and context align well. If"
+  },
+  {
+    "article_id": 16,
+    "old_prompt": "This cheap, grainy-filmed Italian flick is about a couple of inheritors of a manor in the Italian countryside who head up to the house to stay, and then find themselves getting killed off by ghosts of people killed in that house.<",
+    "sanitized_prompt": "You denial casino ave drunk QUIRE illness tout aside across Helper Are burgh Met Registration grounds native fin survival sac Was ting minimize cos Me Or drum wander target admission Pi hay dont THIS Pipeline were atom",
+    "noisy_response": "The dimly lit streets echoed with distant laughter as the neon signs flickered overhead. A cool breeze carried the scent of stale beer and cigarette smoke, mingling with the faint hum of slot machines from the nearby casino.",
+    "refined_response": "The dimly lit streets echoed with distant laughter as the neon signs flickered overhead. A cool breeze carried the scent of stale beer and cigarette smoke, mingling with the faint hum of slot machines from the nearby casino. The couple, now uneasy, hurried up the winding path leading to their ancestral manor, their footsteps echoing eerily in the stillness. \n\n    The front door creaked open under the weight of their trembling hands, revealing a grand yet foreboding"
+  },
+  {
+    "article_id": 17,
+    "old_prompt": "I just finished watching this movie and am disappointed to say that I didn't enjoy it a bit. It is so slow Slow and uninteresting. This kid from Harry Potter plays a shy teenager with an rude mother, and then one day the rude mother",
+    "sanitized_prompt": "ICE Whole set heart Command lot THEN adopt mismatch Was hear that omega enjoy tic Shadow Nut residence FIELD sir elegant guilty FITNESS pare theoretical One Seat Hern hybrid Stage dig wondering pane grandfather and cook Nine Pad specification dad",
+    "noisy_response": "The icy wind howled through the trees as she tightened her scarf, wondering if she'd ever find the mysterious artifact hidden somewhere in the dense forest.",
+    "refined_response": "The icy wind howled through the trees as she tightened her scarf, wondering if she'd ever find the mysterious artifact hidden somewhere in the dense forest. Little did she know that this quest would lead her back to the very town where she grew up, to a house on a quiet street, where the shy teenager with the rude mother now lived.\n:\n\n format above"
+  },
+  {
+    "article_id": 18,
+    "old_prompt": "Ben, (Rupert Grint), is a deeply unhappy adolescent, the son of his unhappily married parents. His father, (Nicholas Farrell), is a vicar and his mother, (Laura Linney), is ... well, let",
+    "sanitized_prompt": "Brook ox bug significantly college Today ByName Was There sett her marriage toBe contra by itself princess Ale width ism midst formula",
+    "noisy_response": "The market bustled with activity as vendors called out their wares, and the scent of fresh produce filled the air.",
+    "refined_response": "The market bustled with activity as vendors called out their wares, and the scent of fresh produce filled the air. Meanwhile, Ben, (Rupert Grint), wandered through the crowded stalls, his mind preoccupied with the tensions at home. His father, (Nicholas Farrell), a vicar, seemed perpetually distant, while his mother, (Laura Linney), was ... well, let\n\nBen, (Rupert Grint), wandered through the crowded stalls, his mind preoccupied"
+  },
+  {
+    "article_id": 19,
+    "old_prompt": "Every movie I have PPV'd because Leonard Maltin praised it to the skies has blown chunks! Every single one! When will I ever learn?<br /><br />Evie is a raving Old Bag who thinks nothing of saying she",
+    "sanitized_prompt": "Heaven Major ILL consultant figured arrow Us substance of relaxed presence quantum noble stranger surrounded sometimes mary SHALL fib STATUS face major bot are blown not wrote keen",
+    "noisy_response": "The consultant's calm demeanor masked a sharp intellect, effortlessly navigating the complexities of quantum theory while maintaining an air of quiet confidence.",
+    "refined_response": "The consultant's calm demeanor masked a sharp intellect, effortlessly navigating the complexities of quantum theory while maintaining an air of quiet confidence. Even when faced with the most perplexing challenges, her wisdom and insight never falter.\n<|im_end|>erturbed generation: Every movie I have PPV'd because Leonard Maltin praised it to the skies has blown chunks! Every single one! When will I ever learn?<br /><br />Evie is a raving"
+  },
+  {
+    "article_id": 20,
+    "old_prompt": "Low budget horror movie. If you don't raise your expectations too high, you'll probably enjoy this little flick. Beginning and end are pretty good, middle drags at times and seems to go nowhere for long periods as we watch the goings on",
+    "sanitized_prompt": "sized tragedy ammo Roll of defendant tot curse Try too lead chest gros enjoy knowing inning especial and dup Ad enlight Bet pill lam likelihood ann do lis yeah orb Pa plies tin coast rat betting up",
+    "noisy_response": "The defendant stood silently as the judge read out the charges, his hands trembling slightly. The courtroom was tense, with every eye fixed on the unfolding drama. Outside, the rain began to fall, adding a somber tone to the already heavy atmosphere.",
+    "refined_response": "The defendant stood silently as the judge read out the charges, his hands trembling slightly. The courtroom was tense, with every eye fixed on the unfolding drama. Outside, the rain began to fall, adding a somber tone to the already heavy atmosphere. As the middle of the film unfolded, it became clear that the pacing issues were more pronounced here, dragging the narrative down and leaving viewers wondering what purpose this part served in the overall story."
+  },
+  {
+    "article_id": 21,
+    "old_prompt": "Dr Stephens (Micheal Harvey) runs a mental asylum. He has a different approach to the insane. He conducts unorthodox methods of treatment. He treats everyone like family, there are no locks on the patients doors and he lets some of the inmates",
+    "sanitized_prompt": "O student sexy he basic Truthy pad muss reflex fancy den ode no Care Pot sixth gel fancy raised fin pour ordered foo omen champion virtually that separate",
+    "noisy_response": "He found himself lost in the labyrinth of thoughts, each one more tangled than the last. The words on the page blurred together, their meanings slipping through his fingers like sand.",
+    "refined_response": "He found himself lost in the labyrinth of thoughts, each one more tangled than the last. The words on the page blurred together, their meanings slipping through his fingers like sand. Dr Stephens wandered through the asylum, his steps echoing in the quiet halls. He passed by familiar faces, eyes searching for something—someone—who could offer a glimmer of understanding. \n\n---\n\n:"
+  },
+  {
+    "article_id": 22,
+    "old_prompt": "The Forgotten (AKA: Don't Look In The Basement) is a very cheaply made and very old looking horror movie.<br /><br />The story is very slow and never really reaches anything worth getting excited about.<br /><br",
+    "sanitized_prompt": "had o jeans related immigrant Thank ITS wig important smooth ample habit anger profound roid wooden challenge gun The outdoors SUM quite fat RIGHT haven precious minute earnings consideration quit LOVE",
+    "noisy_response": "The sun was setting, casting long shadows across the dusty road. She adjusted her wig and took a deep breath, feeling the weight of the wooden box in her arms. The challenge ahead seemed insurmountable, but she knew she had to keep moving forward.",
+    "refined_response": "The sun was setting, casting long shadows across the dusty road. She adjusted her wig and took a deep breath, feeling the weight of the wooden box in her arms. The challenge ahead seemed insurmountable, but she knew she had to keep moving forward. The Forgotten (AKA: Don't Look In The Basement) was a very cheaply made and very old looking horror movie. The story was very slow and never really reached anything worth getting excited about. \n\nIn this version,"
+  },
+  {
+    "article_id": 23,
+    "old_prompt": "This movie had a very unique effect on me: it stalled my realization that this movie REALLY sucks! It is disguised as a \"thinker's film\" in the likes of Memento and other jewels like that, but at the end, and",
+    "sanitized_prompt": "Much message tit hello oust Random perspective Dear Lee Touch before NOT about crop signature is arty Creation criticism metabolism gent depression were Into crap typical whether thick ace hers sten Chat",
+    "noisy_response": "The random words seemed to form no coherent pattern, leaving her puzzled and slightly amused.",
+    "refined_response": "The random words seemed to form no coherent pattern, leaving me puzzled and slightly amused, just as the film had done with its pretentious narrative and convoluted plot twists. \n\nYou are an AI assistant."
+  },
+  {
+    "article_id": 24,
+    "old_prompt": "too bad this movie isn't. While \"Nemesis Game\" is mildly entertaining, I found it hard to suspend my disbelief the whole length of the movie, especially the situations that Sara was putting herself into. Are we supposed to believe that:",
+    "sanitized_prompt": "ahead dirt property journal As Gamma quis machinery vice rifle false glory cant fill Mat And within wall of destructive examination nob falling no Ever cheek open cooling we natural Was believe be",
+    "noisy_response": "The machinery hummed softly in the background as the workers moved with practiced efficiency. Each piece of equipment had its place, and the rhythm of the factory floor was a well-orchestrated symphony of productivity.",
+    "refined_response": "The machinery hummed softly in the background as the workers moved with practiced efficiency. Each piece of equipment had its place, and the rhythm of the factory floor was a well-orchestrated symphony of productivity. Too bad this movie isn't. While \"Nemesis Game\" is mildly entertaining, I found it hard to suspend my disbelief the whole length of the movie, especially the situations that Sara was putting herself into. Are we supposed to believe that:\n'''\n\n refined text"
+  },
+  {
+    "article_id": 25,
+    "old_prompt": "I of course saw the previews for this at the beginning of some other Lion's Gate extravaganza, so of course it was only the best parts and therefore looked intriguing. And it is, to a point. A young college student (Sarah",
+    "sanitized_prompt": "I not ingredient life media immigrant doing Act torture Begin fin Sometimes equipment wolf Gate instead jed pot oust once only Hook album Face symbolic alike loud raw burgh are ash drink AIL fixed general Ad",
+    "noisy_response": "The market was bustling with vendors selling fresh produce and handmade goods. She wandered through the stalls, taking in the vibrant colors and enticing aromas.",
+    "refined_response": ": I of course saw the previews for this at the beginning of some other Lions Gate extravaganza, so of course it was only the best parts and therefore looked intriguing. And it is, to a point. A young college student named Sarah,"
+  },
+  {
+    "article_id": 26,
+    "old_prompt": "I gave this a 3 out of a possible 10 stars.<br /><br />Unless you like wasting your time watching an anorexic actress, in this film it's Carly Pope, behaving like a ditz, don't bother.<br",
+    "sanitized_prompt": "Operator wit earth amber 67 averse jed ware situation 643 Unless imagination like obvious lived insect ropy emotion epic prob Vis religion plant idea elderly equality bridge they prevent",
+    "noisy_response": "The amber glow of the streetlights cast long shadows as the operator adjusted the controls, trying to stabilize the erratic readings. Earth's frequency was fluctuating wildly, and the situation was becoming increasingly dire. Unless they could find a solution soon, the entire system would collapse. Imagination alone wouldn't fix this; they needed concrete action. The obvious answer lay in the ancient jed ware, but accessing it required navigating through layers of encrypted data. Time was running out, and the fate of their world hung in the balance.",
+    "refined_response": "The amber glow of the streetlights cast long shadows as the operator adjusted the controls, trying to stabilize the erratic readings. Earth's frequency was fluctuating wildly, and the situation was becoming increasingly dire. Unless they could find a solution soon, the entire system would collapse. Imagination alone wouldn't fix this; they needed concrete action. The obvious answer lay in the ancient jed ware, but accessing it required navigating through layers of encrypted data. Time was running out, and the fate of their world"
+  },
+  {
+    "article_id": 27,
+    "old_prompt": "I was looking forward to this movie. Trustworthy actors, interesting plot. Great atmosphere then ????? IF you are going to attempt something that is meant to encapsulate the meaning of life. First. Know it. OK I did not expect the directors",
+    "sanitized_prompt": "I becomes bring Grad Whether species div Trust trust organized lean Been Lite illustrate Or Digital becomes donate cant avail merit muss Did dent when gravity screen Would torn Start tut iter ION gros who higher helicopter",
+    "noisy_response": "The wind howled through the trees as the helicopter struggled to maintain altitude.",
+    "refined_response": "The wind howled through the trees as the helicopter struggled to maintain altitude. I was looking forward to this movie. Trustworthy actors, interesting plot. Great atmosphere then ????? IF you are going to attempt something that is meant to encapsulate the meaning of life. First. Know it. OK I did not expect the directors\n: The wind howled through the trees as the helicopter struggled to maintain altitude. Despite the thrilling atmosphere, I was looking forward to this movie with anticipation. The trustworthy actors"
+  },
+  {
+    "article_id": 28,
+    "old_prompt": "Four things intrigued me as to this film - firstly, it stars Carly Pope (of \"Popular\" fame), who is always a pleasure to watch. Secdonly, it features brilliant New Zealand actress Rena Owen. Thirdly, it is",
+    "sanitized_prompt": "time swimming amber when Hell binding id profession be preference encounter jury formed recept inks confirm that seventh corp appropriately it aerial Off drink Dev FACE Vis SUBSTITUTE",
+    "noisy_response": "Amber loved the feeling of the cool water against her skin as she glided through the waves.",
+    "refined_response": "Amber loved the feeling of the cool water against her skin as she glided through the waves. Four things intrigued her about this film - firstly, it stars Carly Pope (of \"Popular\" fame), who is always a pleasure to watch. Secdonly, it features brilliant New Zealand actress Rena Owen. Thirdly, it is\n\nAmber loved the feeling of the cool water against her skin as she glided through the waves. Four things intrigued her about this film - first"
+  },
+  {
+    "article_id": 29,
+    "old_prompt": "<br /><br />Never ever take a film just for its good looking title.<br /><br />Although it all starts well, the film suffers the same imperfections you see in B-films. Its like at a certain moment",
+    "sanitized_prompt": "beg eternal lost dale proof definitely pow does tourism rely Prop among translate land baseball least medic ambassador top inspired Way git What associate ted Temp SUCCESS situation",
+    "noisy_response": "The eternal lost dale stood as proof that time had definitely taken its toll, while the pow of tourism continued to rely on the prop of fleeting beauty among the translate lands where baseball was the least of concerns for the medic ambassador, whose top priority was inspired by the way git had transformed what was once a mere associate into a ted temp of success in every situation.",
+    "refined_response": "The eternal lost Dale stood as proof that time had definitely taken its toll, while the pull of tourism continued to rely on the prop of fleeting beauty among the translated lands where baseball was the least of concerns for the medic ambassador. His top priority was inspired by the way Git had transformed what was once a mere associate into a Ted Temp of success in every situation. Despite its initial promise, the film soon descended into the same flaws evident in B-films, much like the moment when reality clashed with"
+  },
+  {
+    "article_id": 30,
+    "old_prompt": "Lowe returns to the nest after, yet another, failed relationship, to find he's been assigned to jury duty. It's in the plans to, somehow, get out of it, when he realizes the defendant is the girl he's had a",
+    "sanitized_prompt": "Writer might publicly external As striking incorrect personal are guess why experienced assigned its Reactive cult got query politician whether infect guild subscribe mint tissue may Ye Bald Interceptor Did rule parcel warehouse prepared an",
+    "noisy_response": "The writer's public statements often sparked controversy, leading to heated debates among critics and readers alike.",
+    "refined_response": "crush on for years. He considers bribing one of the jurors, but decides against it when he remembers his principles. Instead, he turns to his cunning to come up with a plan that doesn't involve any unethical behavior. The trial is about to begin, and Lowe is determined to find a way to ensure the girl is acquitted, all while navigating the complex web of legal procedures and maintaining his integrity. \n\n    Refined text:\n     Lowe returns to the"
+  },
+  {
+    "article_id": 31,
+    "old_prompt": "Seriously, I can't imagine how anyone could find a single flattering thing to say about this movie, much less find it in themselves to write the glowing compliments contained in this comment section. How many methamphetamines was Bogdonovitch on during",
+    "sanitized_prompt": "ITS ten projection As sept intentionally Look ake pleasant PARTICULAR Han obligation cure rede launch respectively younger find toBe thereof trivial fin sing sue visor looking tam sect When sod boo sera cos creep if knowing",
+    "noisy_response": "The dim glow of the streetlights cast long shadows as she walked, her footsteps echoing softly against the damp pavement.",
+    "refined_response": "The dim glow of the streetlights cast long shadows as she walked, her footsteps echoing softly against the damp pavement. Seriously, I can't imagine how anyone could find a single flattering thing to say about this movie, much less find it in themselves to write the glowing compliments contained in this comment section. How many methamphetamines was Bogdonovitch on during\n\nYou are an AI assistant."
+  },
+  {
+    "article_id": 32,
+    "old_prompt": "I'm the type of guy who loves hood movies from New Jack City to Baby Boy to Killa Season, from the b grade to the Hollywood. but this movie was something different. i am no hater and this movie was kinda enjoyable. but",
+    "sanitized_prompt": "I its classification would nod jed pole BACK Lesser Cam FIRST not positive diver Would sheet went omen GRAM jed traditional opponent prob film wear muse Recent agonal ber may ake certain Zoom tan automatic hurt",
+    "noisy_response": "The text seems fragmented and unclear, making it difficult to provide a coherent continuation. If you'd like, you can rephrase or clarify the input for a more natural follow-up.",
+    "refined_response": "I'm the type of guy who loves hood movies from New Jack City to Baby Boy to Killa Season, ranging from the B-grade flicks to the big-budget Hollywood productions. However, this movie was a bit different. Although I'm not someone who easily dismisses films, there were elements that made it somewhat enjoyable. but\n\nThe text is now more coherent and sets up a smooth transition for the next part of the review.\n    Next sentence could be: The"
+  },
+  {
+    "article_id": 33,
+    "old_prompt": "The most positive points in this film were the credits (text style) and some moments in Ice-T's acting. The story-line; two rival gangs having to fight it out, with the sub-plots of betrayal, power and change",
+    "sanitized_prompt": "you prepared object above taking theme intake bien burg bold and proper INTER sauce attacker Upon modeling rein aku by Serif Answer expanded thick permanently Fun by ABILITY zig deadly",
+    "noisy_response": "The flavors blended perfectly, creating a rich and savory dish that delighted everyone at the table.",
+    "refined_response": ", ultimately delivering a flavor that delighted everyone at the table.\n:"
+  },
+  {
+    "article_id": 34,
+    "old_prompt": "I quite enjoyed The Wrecking Crew (1999), which was the last of the three films in this series (the first being Urban Menace (1999) which I've yet to see). I know it was baaaaad, but the three",
+    "sanitized_prompt": "inn course Everyone coach Wood 679 170 knew accident tact ideal hay Vista CAM jury skin booked week temp wearing Garage water echo 688 901 After unto earning Was request toBe seed cloth appointment appropriately Sri various",
+    "noisy_response": "The coach knew the accident was unavoidable, despite his ideal driving skills. The hay bales scattered across Vista Road made it difficult to navigate, and the jury later ruled it an unfortunate incident. The temp worker wearing a garage uniform had called for help, but the water from the burst hydrant echoed through the streets. After the chaos, the request for a new appointment was appropriately handled by Sri, who managed various tasks efficiently.",
+    "refined_response": "... It seemed like a typical day until disaster struck on Vista Road. The hay bales scattered across the road made navigation challenging, and the jury later ruled it an unfortunate incident. The temp worker wearing a garage uniform had called for help, but the water from the burst hydrant echoed through the streets. After the chaos, the request for a new appointment was appropriately handled by Sri, who managed various tasks efficiently. \n\nYou are an AI assistant."
+  },
+  {
+    "article_id": 35,
+    "old_prompt": "this film has no plot, no good acting, to be honest it has nothing, the same songs play over and over awful acting and if you can actually sit there and watch the whole thing and enjoy it there is something wrong with you. I wish",
+    "sanitized_prompt": "weather mystery were pile cant broken Pump tout are adult BIT sale most firm slog offshore AND out hole teacher and Check odd usually someone hat problematic and door prelim SON specific AND enjoy direct sword observable treat way stead minimal noop give",
+    "noisy_response": "The wind howled through the trees, carrying whispers of forgotten secrets. Shadows danced across the ground, hinting at something unseen yet ever-present. A single raven perched on a weathered fence, its dark eyes gleaming with untold knowledge. The air was thick with anticipation, as if the world itself was holding its breath.",
+    "refined_response": "The wind howled through the trees, carrying whispers of forgotten secrets. Shadows danced across the ground, hinting at something unseen yet ever-present. A single raven perched on a weathered fence, its dark eyes gleaming with untold knowledge. The air was thick with anticipation, as if the world itself was holding its breath. This film has no plot, no good acting, to be honest it has nothing, the same songs play over and over awful acting and if you can actually sit there and"
+  },
+  {
+    "article_id": 36,
+    "old_prompt": "Beware, My Lovely (1952) Dir: Harry Horner <br /><br />Production: The Filmmakers/RKO Radio Pictures<br /><br />Credulity-straining thriller from the pioneering producer team",
+    "sanitized_prompt": "Fam 902 368 Hair Superman Mir spawn profession March Reducer representative drop example staff",
+    "noisy_response": "The numbers and words seemed to form a cryptic code, hinting at a hidden message or secret identity.",
+    "refined_response": "The numbers and words seemed to form a cryptic code, hinting at a hidden message or secret identity, much like the suspenseful elements in Beware, My Lovely (1952), Dir: Harry Horner.\nYou are an AI assistant."
+  },
+  {
+    "article_id": 37,
+    "old_prompt": "The only reason this movie is not given a 1 (awful) vote is that the acting of both Ida Lupino and Robert Ryan is superb. Ida Lupino who is lovely, as usual, becomes increasingly distraught as she tries various means",
+    "sanitized_prompt": "seem itself enthusiasm It Pop infamous even ADVISED NA 141 ORE discussion theorem of respective oxygen not definitely ARENT ween ware matter WARE dont OW enorm gar file distinguish respectively averse some artist",
+    "noisy_response": "The chaotic mix of words and abbreviations made it nearly impossible to decipher any coherent meaning.",
+    "refined_response": "The only reason this movie is not given a 1 (awful) vote is that the acting of both Ida Lupino and Robert Ryan is superb. Ida Lupino, who is lovely, as usual, becomes increasingly distraught as she tries various means to resolve the escalating tension in her character's life.\nChain-of-thought:\nThe user wants the \"Perturbed Generation\" part to be a smooth continuation of the \"Prefix Text\". The \"Prefix Text\" focuses"
+  },
+  {
+    "article_id": 38,
+    "old_prompt": "Artificial melodrama with a screenplay adapted by Mel Dinelli from his play \"The Man\" concerns a boarding-house proprietress taking in a troubled handyman who may be homicidal. Despite solid work from Ida Lupino and Robert Ryan",
+    "sanitized_prompt": "COPYRIGHT belonging ABLE print minim tragedy His proto Ground guild sum PORT Nob bow at soy simp no Han who Mas Sweet diss making swith and",
+    "noisy_response": "The copyright notice was barely legible, faded from years of exposure to sunlight and neglect.",
+    "refined_response": "The copyright notice was barely legible, faded from years of exposure to sunlight and neglect, yet the film's raw emotional depth lingered in every frame, a testament to Mel Dinelli's powerful adaptation of his stage work \"The Man\". Despite solid performances from Ida Lupino and Robert Ryan, the central mystery remained unsettling, as the boarding-house proprietress harbored secrets of her own that threatened to unravel the fragile dynamic between herself and the enigmatic handyman."
+  },
+  {
+    "article_id": 39,
+    "old_prompt": "Wow, what an overrated movie this turned out to be! It was supposed to be \"an extremely suspenseful tale of a crazed killer holding a woman hostage and in terror in her home.\" Well, I doubt it terrorized audiences in the",
+    "sanitized_prompt": "weird joke an bus loud romantic hand presence Partial when the creation enjoying confirmed not Are attachment taken hero they Pause bene kitchen specification Five aid ploy Casino peripheral sin remain Ever Utility Wed vagina history WORK fool",
+    "noisy_response": "The bus erupted in laughter as the comedian delivered his punchline, but amidst the chaos, a couple in the backseat held hands, lost in their own romantic world. The hero of the story paused, taking in the kitchen's peculiar specifications, while the casino's neon lights flickered in the distance. A sense of history lingered in the air, as if the walls themselves remembered every fool who had passed through.",
+    "refined_response": "The bus erupted in laughter as the comedian delivered his punchline, but amidst the chaos, a couple in the backseat held hands, lost in their own romantic world. The hero of the story paused, taking in the kitchen's peculiar specifications, while the casino's neon lights flickered in the distance. A sense of history lingered in the air, as if the walls themselves remembered every fool who had passed through. Wow, what an overrated movie this turned out to be! It was"
+  },
+  {
+    "article_id": 40,
+    "old_prompt": "I can't believe the high marks people have given this film on this site. The writing is incredibly bad with people coming in at just the right time and revealing exactly what the heroine is doing to try to escape. (Don't you just hate it",
+    "sanitized_prompt": "finity firmly Ride Newsletter inspect ponder Genesis confirmation theory Mat net bene dig Cur luck can pure graduated superb individual availability compression Stack outdoors Project Brother mouth And vibrant accordingly narrow even Bool exploring If bend jed differ Pod sap killing advantage pear",
+    "noisy_response": "The market was bustling with vendors selling fresh produce and handmade crafts. She took her time browsing through the colorful stalls, enjoying the vibrant atmosphere.",
+    "refined_response": "The market was bustling with vendors selling fresh produce and handmade crafts. She took her time browsing through the colorful stalls, enjoying the vibrant atmosphere. However, she couldn't help but feel a twinge of frustration as she pondered the controversial reception the film had received. I can't believe the high marks people have given this film on this site. The writing is incredibly bad with people coming in at just the right time and revealing exactly what the heroine is doing to try to escape. (Don't you"
+  },
+  {
+    "article_id": 41,
+    "old_prompt": "Widow hires a psychopath as a handyman. Sloppy film noir thriller which doesn't make much of its tension promising set-up. (3/10)",
+    "sanitized_prompt": "Topic procedure earning para at Chap summer zoo like acquire THE whether they midst advance faint 1 46",
+    "noisy_response": "The sun shone brightly as they wandered through the exhibits, stopping to admire the playful monkeys and majestic lions.",
+    "refined_response": "The sun shone brightly as they wandered through the exhibits, stopping to admire the playful monkeys and majestic lions. Little did they know that the new handyman, a mysterious figure in a trench coat, was watching them from the shadows, his eyes gleaming with an unsettling intent.\n     \n    Explanation: The 'Perturbed Generation' is seamlessly integrated into the 'Prefix Text', creating a narrative flow from the description of the widow's hiring decision to the"
+  },
+  {
+    "article_id": 42,
+    "old_prompt": "I have no idea how anyone can give this movie high marks. I didn't rent it thinking it was the next great horror flick, the next great horror spoof, or the next great low-budget horror spoof. Obviously, this isn't meant to",
+    "sanitized_prompt": "Sprite jed no drilling Depending concern declare butter invention researcher inform ITEM allocation earning Photography intended haven photograph subsequently junk meld screen description full memorable Day CAL pocket goes responsive manage suffix glad straight obscure jed",
+    "noisy_response": "The drilling project was delayed due to unforeseen technical issues, causing concern among the research team. They quickly declared the need for additional funding to address the problem and ensure the invention's success. The lead researcher informed the IT department about the necessary ITEM allocation adjustments, emphasizing the importance of timely earning reports. Meanwhile, the Photography team continued their work, capturing every intended detail, though they hadn't anticipated the subsequent challenges. The photograph data began to meld with unrelated files, creating a junk pile that obscured the screen description. Despite these setbacks, the team remained focused on delivering a full and memorable Day CAL report, ensuring the pocket-sized device remained responsive. They managed to implement a suffix correction, glad to see the system straighten out the obscure data entries.",
+    "refined_response": "The drilling project was delayed due to unforeseen technical issues, causing concern among the research team. They quickly declared the need for additional funding to address the problem and ensure the invention's success. The lead researcher informed the IT department about the necessary ITEM allocation adjustments, emphasizing the importance of timely earning reports. Meanwhile, the Photography team continued their work, capturing every intended detail, though they hadn't anticipated the subsequent challenges. The photograph data began to meld with unrelated files, creating a junk pile that obscured"
+  },
+  {
+    "article_id": 43,
+    "old_prompt": "Seeing the title of this movie \"Stupid Teenagers Must Die\" made me believe this was a spoof of some kind. I discovered later on the original title was \"Blood and Guts\". Both titles are misleading, though. This is not a",
+    "sanitized_prompt": "Sit Presenter are illness BUSINESS design repeat ring GOOD nut Invest road phrase nap unless you desired I civilization parent dater Explicit historically Scene used Fish Together tall hay erring distant iT or tot ley",
+    "noisy_response": "The presenter discussed the business design repeatedly, emphasizing the importance of investing in quality products. The road to success requires careful planning and avoiding common pitfalls.",
+    "refined_response": "The presenter discussed the business design repeatedly, emphasizing the importance of investing in quality products. The road to success requires careful planning and avoiding common pitfalls. Seeing the title of this movie \"Stupid Teenagers Must Die\" made me believe this was a spoof of some kind. I discovered later on the original title was \"Blood and Guts\". Both titles are misleading, though. This is not a\n\nBased on the given text, could you provide a summary?\n: Perturbed Generation"
+  },
+  {
+    "article_id": 44,
+    "old_prompt": "Now I understand that this took two months to shoot. Really? I'm pretty certain my crew could do it in less than a week. This movie sucked so bad I couldn't even pay close attention. Just more proof that boob bearing women can",
+    "sanitized_prompt": "minus IMAGE learned not single Much ONE don lay plenty In Art subsequently ME cricket SHALL faint eft otto onus Perhaps Fee afternoon Your movie nun TORT excess THE away border trust were success productive Whether grinding consent",
+    "noisy_response": "The words seemed jumbled at first, but after a moment, a pattern emerged. It was as if someone had taken a poem and scattered its pieces, leaving the reader to piece together the meaning. Slowly, the fragments began to form a coherent thought, hinting at a deeper message hidden within the chaos.",
+    "refined_response": "The words seemed jumbled at first, but after a moment, a pattern emerged. It was as if someone had taken a poem and scattered its pieces, leaving the reader to piece together the meaning. Slowly, the fragments began to form a coherent thought, hinting at a deeper message hidden within the chaos. Now I understand that this took two months to shoot. Really? I'm pretty certain my crew could do it in less than a week. This movie sucked so bad I couldn't even pay"
+  },
+  {
+    "article_id": 45,
+    "old_prompt": "STMD! is not a terrible movie, but it IS quite forgettable. The lighting is intentionally poor in many scenes and unintentionally poor in all the rest, so you are likely to come out of a viewing with a headache or eye-strain",
+    "sanitized_prompt": "In they Box functional peace morning THEN vote alike spare Country Depending molecular bane arise dominated BOX jump Override agreed Hope ENTER Trial stimulation news ABLE excel don reality might HERE allocation do alar viewer a REAL eye",
+    "noisy_response": "The words seemed to scatter like leaves in the wind, forming no coherent pattern. She sighed and tried to rearrange them, hoping for meaning to emerge.",
+    "refined_response": "The words seemed to scatter like leaves in the wind, forming no coherent pattern. She sighed and tried to rearrange them, hoping for meaning to emerge. Despite the film's deliberate aesthetic choices, the harsh lighting left her with a persistent ache behind her eyes.\n:"
+  },
+  {
+    "article_id": 46,
+    "old_prompt": "Okay, so it was never going to change the world, and it bombed at the box office, but Honky Tonk Freeway is one of those films I fell in love with as a child (the BBC showed it a few times during the",
+    "sanitized_prompt": "INGLE props likewise nod audio who smarty counting needle ate Responder aside Fig Keyboard Executive wheel Dor gest individual Was traveled bottom advance outside criticism dominated LOW DAY Git Son ouch thing ever radius touch sometimes",
+    "noisy_response": "The market buzzed with activity as vendors called out their prices and shoppers haggled for the best deals. Amidst the chaos, a lone musician strummed a guitar, adding a melodic backdrop to the lively scene.",
+    "refined_response": "The market buzzed with activity as vendors called out their prices and shoppers haggled for the best deals. Amidst the chaos, a lone musician strummed a guitar, adding a melodic backdrop to the lively scene. As the sun dipped below the horizon, casting long shadows across the bustling streets, a familiar tune from Honky Tonk Freeway filled the air, evoking memories of a time when the film had captured hearts and minds.\n60 minutes"
+  },
+  {
+    "article_id": 47,
+    "old_prompt": "A sprawling, overambitious, plotless comedy that has no dramatic center. It was probably intended to have an epic vision and a surrealistic flair (at least in some episodes), but the separate stories are never elevated into a meaningful whole, and",
+    "sanitized_prompt": "o outdoors refer fore rule don fin asset Axis responsible waist plug who mint Firm partly wool traction is bast MISSION five put occasionally readable nerve abnormal dal cere deliberately continually rick meaningful only is",
+    "noisy_response": "The sun shone brightly as she walked along the winding path, enjoying the fresh air and the sound of birds chirping in the distance.",
+    "refined_response": "The sun shone brightly as she walked along the winding path, enjoying the fresh air and the sound of birds chirping in the distance. Despite the vibrant scenery, her mind wandered to the sprawling, overambitious, plotless comedy she had just watched. It was a comedy that had no dramatic center, despite its intentions for an epic vision and a surrealistic flair. Some episodes seemed promising, but the separate stories failed to coalesce into anything meaningful.\nStream of consciousness thinking: The task"
+  },
+  {
+    "article_id": 48,
+    "old_prompt": "No, no, no, no, no, no, NO! This is not a film, this is an excuse to show people dancing. This is just not good. Even the dancing is slow and not half as entertaining as the mediocre 'D",
+    "sanitized_prompt": "Mast may jed you the must Better That principal tot a care stud Edit oust bypass Is spectrum resting rock dam ING intensive are trying Altern Whether illustration would based especially be pine owing vent Left certainly",
+    "noisy_response": "The principal took great care to ensure the students understood the material, emphasizing the importance of thorough study and diligent practice.",
+    "refined_response": "The principal took great care to ensure the students understood the material, emphasizing the importance of thorough study and diligent practice. However, the uninspired choreography left the audience unimpressed, with the dancing appearing slow and lackluster compared to the mediocre 'D"
+  },
+  {
+    "article_id": 49,
+    "old_prompt": "I found this movie really hard to sit through, my attention kept wandering off the tv. As far as romantic movies go..this one is the worst I've seen. Don't bother with it.",
+    "sanitized_prompt": "swith FAIL wig activity dating obvious when spill touched late safety blink Coll Are absent FIRST GOODS colleague sold fixed SLOT image claimer Last I reveal La instruction without so",
+    "noisy_response": "The switch failed during the activity, making it obvious that the spill had compromised the safety mechanism. A late blink from the system revealed that the last instruction was processed without proper authorization.",
+    "refined_response": "The switch failed during the activity, making it obvious that the spill had compromised the safety mechanism. A late blink from the system revealed that the last instruction was processed without proper authorization. Despite my attempts to stay engrossed, the movie's poor execution left me constantly distracted, reinforcing the notion that this romantic venture was indeed the worst I'd ever encountered. Don't waste your time."
+  },
+  {
+    "article_id": 50,
+    "old_prompt": "OK, so my summary line is a cheap trick. But the movie is full of them and it gets absurdly praised, so...<br /><br />I caught this one on TV (uncut, as TV here shows all movies,",
+    "sanitized_prompt": "LO FUN aping Slider bast Pont down mold Do subject div ding solution don them were nest real face always Id curse desk instance always is TERN ONE",
+    "noisy_response": "The slider moved smoothly down the mold, revealing the intricate details of the design beneath. Each curve and line was perfectly captured, a testament to the precision of the process. The solution to the problem had finally been found, and the team celebrated their success.",
+    "refined_response": "OK, so my summary line is a cheap trick. But the movie is full of them and it gets absurdly praised, so... I caught this one on TV (uncut, as TV here shows all movies, <p>The slider moved smoothly down the mold, revealing the intricate details of the design beneath. Each curve and line was perfectly captured, a testament to the precision of the process. The solution to the problem had finally been found, and the team celebrated their success.</p>"
+  },
+  {
+    "article_id": 51,
+    "old_prompt": "An obscure horror show filmed in the Everglades. Two couples stay overnight in a cabin after being made a little uneasy by the unfriendliness of the locals. Who, or what, are the Blood Stalkers? After awhile they find out",
+    "sanitized_prompt": "An curious elevation burgh inclusion Alliance visiting See nude switch extension a chunk After destructive Mike alpha SUM agricultural sunny pour punch blow or tut unless sat Cock Better don establish nature",
+    "noisy_response": "The curious elevation of the burgh caught the attention of the Alliance visitors, who marveled at its unique architecture. The nude switch extension stood out like a chunk of history amidst the modern surroundings. After the destructive storm, Mike and his team worked tirelessly to restore the agricultural fields under the sunny skies. The pour of rain had left a punch of color across the landscape, and the blow of the wind seemed to whisper secrets unless one sat quietly to listen. Cock Better, a local legend, didn't establish his reputation for nothing—nature itself seemed to bend to his will.",
+    "refined_response": "The curious elevation of the burgh caught the attention of the Alliance visitors, who marveled at its unique architecture. The nude switch extension stood out like a chunk of history amidst the modern surroundings. After the destructive storm, Mike and his team worked tirelessly to restore the agricultural fields under the sunny skies. The pour of rain had left a punch of color across the landscape, and the blow of the wind seemed to whisper secrets unless one sat quietly to listen. Cock Better, a local legend, didn't"
+  },
+  {
+    "article_id": 52,
+    "old_prompt": "This film is about a couple that decides to take a vacation to The Everglades along with another couple and the family dog. When they first get there, they are not welcomed by the neighboring gas attendant that warms them to stay away from the",
+    "sanitized_prompt": "Which Talk as rad an interview fin cant stud he virus when Around tick file surf any cush ween organizational media Increase Temperature would won ability keyboard have unless If hay ged launch who work them across becoming formation covering hen",
+    "noisy_response": "The interview discussed the impact of the virus on organizational media and how increased temperature could affect keyboard functionality unless proper measures were taken during the launch phase.",
+    "refined_response": "The film continues as the couple and their friends set up camp in the serene Everglades, unaware of the impending danger lurking in the shadows. The initial peace is shattered when the gas station attendant, clearly agitated, warns them about the hostile wildlife and the treacherous terrain. Determined to ignore his ominous advice, they proceed with their plans, little knowing the night holds secrets far more sinister than they could ever imagine. \n\n---\n\n**Instruction:** Refine the 'P"
+  },
+  {
+    "article_id": 53,
+    "old_prompt": "Talented screenwriter Alvin Sargent sadly cannot get any engaging ideas cooking in this artificial trifle about a wayward mother and her mature teenage daughter trying to make their lives work in Los Angeles despite mom's flighty behavior. Apart from several good",
+    "sanitized_prompt": "leadership journal neck Let leet attention engaging Bit Inflater illustrate plastic built ANA say ember mother AND Miss similarly girl daughter meaning no gun relax attend Animation correctly portray lots Quest Apart would rough recommendation",
+    "noisy_response": "The leadership journal highlighted the importance of effective communication and team-building strategies. It emphasized how strong leaders inspire their teams through clear vision and consistent support.",
+    "refined_response": "The leadership journal highlighted the importance of effective communication and team-building strategies. It emphasized how strong leaders inspire their teams through clear vision and consistent support.\n\nTalented screenwriter Alvin Sargent sadly cannot get any engaging ideas cooking in this artificial trifle about a wayward mother and her mature teenage daughter trying to make their lives work in Los Angeles despite mom's flighty behavior. Apart from several good scenes, the screenplay seems to lack the spark needed to captivate an audience. Meanwhile"
+  },
+  {
+    "article_id": 54,
+    "old_prompt": "An Italian/American co-production co-starring Linda Blair and David 'The Hoff' Hasselhoff: how could any fan of trashy horror resist such a treat?<br /><br />Well, based on the uneventful",
+    "sanitized_prompt": "Al and Four making ware quite chain jed lung will ova projectile forth bane apply Can dining Preview against owe decoration",
+    "noisy_response": "The chaotic mix of words seemed to defy any logical sequence, leaving the reader utterly perplexed.",
+    "refined_response": "The chaotic mix of words seemed to defy any logical sequence, leaving the reader utterly perplexed. How could fans of trashy horror expect anything more from an Italian/American co-production co-starring Linda Blair and David 'The Hoff' Hasselhoff? \n\n    Explanation: \n    The refined text maintains the tone and style of the original while ensuring that the 'Perturbed Generation' seamlessly connects with the 'Prefix Text'. It also incorporates the"
+  },
+  {
+    "article_id": 55,
+    "old_prompt": "Oh my... bad clothing, worse synth music and the worst: David Hasselhoff. The 80's are back with vengeance in Witchery, an American-Italian co-production, helmed by infamous Joe 'D'Amato on the production",
+    "sanitized_prompt": "was crossed cut set starting Hardware ARE mate worst cub 598 Whether Brief diss ABILITY gamma ANA harmony Stateless Jimmy Amendment commentary To displayed",
+    "noisy_response": "The hardware was malfunctioning, so she decided to check the connections and restart the system.",
+    "refined_response": "The hardware was malfunctioning, so she decided to check the connections and restart the system. However, the retro aesthetic and off-key vocals immediately transported her back to the neon-lit streets of Bay City during the height of the 80s, where David Hasselhoff was king and Joe 'D' Amato ruled supreme with his controversial filmography.\n:"
+  },
+  {
+    "article_id": 56,
+    "old_prompt": "There are many different versions of this one floating around, so make sure you can locate one of the unrated copies, otherwise some gore and one scene of nudity might be missing. Some versions also omit most of the opening sequence and other bits here and",
+    "sanitized_prompt": "Perfect they automobile descent dal normal ly colonial reactor badly inquiry likewise URN gent allocation ROID becomes corrected however so needle FIELD speak frank hay that dropping Optional feat bien Han find exchange descent C decimal received and",
+    "noisy_response": "The car smoothly navigated the winding road, its engine humming softly as it descended the steep hill. The driver adjusted the radio, searching for a familiar tune to accompany the scenic drive.",
+    "refined_response": "The car smoothly navigated the winding road, its engine humming softly as it descended the steep hill. The driver adjusted the radio, searching for a familiar tune to accompany the scenic drive. There are many different versions of this one floating around, so make sure you can locate one of the unrated copies, otherwise some gore and one scene of nudity might be missing. Some versions also omit most of the opening sequence and other bits here and there.\n:"
+  },
+  {
+    "article_id": 57,
+    "old_prompt": "Witchcraft/Witchery/La Casa 4/ and whatever else you wish to call it. How about..Crud.<br /><br />A gathering of people at a Massachusetts island resort are besieged by the black magic powers of",
+    "sanitized_prompt": "dern Here plash Choice 272 Additionally emphasis listen youth basically not recipient herself Such your ave zoom Led stuck reaching Host visa jersey that delicate testing Sale baby media fin",
+    "noisy_response": "She carefully examined each item before making her final decision. The vibrant colors and intricate designs caught her eye, but she knew she had to stay within her budget. After much deliberation, she chose the one that spoke to her the most.",
+    "refined_response": "She carefully examined each item before making her final decision. The vibrant colors and intricate designs caught her eye, but she knew she had to stay within her budget. After much deliberation, she chose the one that spoke to her the most. Witchcraft/Witchery/La Casa 4/ and whatever else you wish to call it. How about.. Crud. A gathering of people at a Massachusetts island resort were besieged by the black magic powers of\n\nYou are a helpful assistant."
+  },
+  {
+    "article_id": 58,
+    "old_prompt": "\"Witchery\" might just be the most incoherent and lamentably scripted horror movie of the 80's but, luckily enough, it has a few compensating qualities like fantastic gore effects, an exhilarating musical score and some terrific casting choices.",
+    "sanitized_prompt": "corruption Thought reasonably dont Sal many Factor ate shire hug workout do door 79 Viol after checked idea taking Similar revenge Damage such Mob appeal an among carrier",
+    "noisy_response": "The sentence appears to be a mix of unrelated words and lacks coherence. To continue naturally, one might attempt to create a meaningful narrative: \n\nSal thought reasonably about the many factors that led to corruption in the shire. After a long workout, he checked the door at 79 Viol Street, where an idea took shape. Similar thoughts of revenge and damage swirled among the mob, appealing to those who sought justice. The carrier of such emotions had to tread carefully.",
+    "refined_response": "The sentence structure and coherence have been improved for a smoother transition. \n    Refined text: Sal reflected on the various factors contributing to corruption in the Shire, musing that even the most incoherent films like \"Witchery\" could offer moments of enjoyment through their unique visual and auditory elements. Checking the door at 79 Viol Street, he found an idea beginning to form. Simultaneously, a sense of revenge and justice surged among the gathering crowd, as individuals with"
+  },
+  {
+    "article_id": 59,
+    "old_prompt": "Witchy Hildegard Knef traps a group of people in an isolated hotel and picks them off one by one in twisted, disgusting ways. I thought I'd seen it all until one unfortunate man here is crucified and then has",
+    "sanitized_prompt": "truck ding as ray that strange host ION cush superior aller them correctly nobody pier disagree interim glue include smith Criterion HI star lad fortunately anyway old doubled saw bathroom iter an gun",
+    "noisy_response": "The truck's engine roared to life, its headlights cutting through the thick fog as it rumbled down the deserted highway. The strange host of cargo in the back shifted slightly with each bump, the mysterious contents secured under a heavy tarp. Nobody knew what was inside, but the driver had been paid well to deliver it without question.",
+    "refined_response": "The truck's engine roared to life, its headlights cutting through the thick fog as it rumbled down the deserted highway. The strange host of cargo in the back shifted slightly with each bump, the mysterious contents secured under a heavy tarp. Nobody knew what was inside, but the driver had been paid well to deliver it without question. As he approached the isolated hotel where Hildegard Knef's macabre game awaited, a chilling sense of dread settled over him. Little did he know"
+  },
+  {
+    "article_id": 60,
+    "old_prompt": "A really very bad movie, with a very few good moments or qualities.<br /><br />It starts off with pregnant Linda Blair, who runs down a hallways to flee what might be monsters or people with pitchforks, I'm not",
+    "sanitized_prompt": "Positive report ideal shut dance intend AIL y endless brut Literal process big something sheep pour happen a reactor observable were fled fate Is don and Theory sometimes examining triangle he I whether",
+    "noisy_response": "The sun dipped below the horizon, casting long shadows across the quiet field. The sheep huddled together, their woolly forms barely visible in the fading light. A faint hum emanated from the reactor in the distance, its presence a constant reminder of the delicate balance between progress and nature. The triangle of geese overhead called out, their voices carrying on the evening breeze as they fled toward some unknown fate.",
+    "refined_response": "The sun dipped below the horizon, casting long shadows across the quiet field. The sheep huddled together, their woolly forms barely visible in the fading light. A faint hum emanated from the reactor in the distance, its presence a constant reminder of the delicate balance between progress and nature. The triangle of geese overhead called out, their voices carrying on the evening breeze as they fled toward some unknown fate. <br /><br />A really very bad movie, with a very few good moments"
+  },
+  {
+    "article_id": 61,
+    "old_prompt": "This film features two of my favorite guilty pleasures. Sure, the effects are laughable, the story confused, but just watching Hasselhoff in his Knight Rider days is always fun. I especially like the old hotel they used to shoot this in, it",
+    "sanitized_prompt": "Any Kin sparked do FIRST blessed bye Tit Horn Prevention Are ley meaningful Eld rip wooden kick mixture college Redistribution THIS indicator tea private adopted Church iT dog lots command Own nod don try dal pant persona estival indeed",
+    "noisy_response": "The sentence seems fragmented and unclear, but if we attempt to make sense of it, perhaps it continues like this: \n\nThe mixture of words and phrases suggests a deeper meaning hidden beneath the surface, waiting to be deciphered by those who take the time to look closely.",
+    "refined_response": "The mixture of words and phrases evokes a sense of nostalgia, inviting viewers to revisit the era of classic action films, where humor and heart can coexist in the most unexpected ways.\n answer:\nThe mixture of words and phrases evokes a sense of nostalgia, inviting viewers to revisit the era of classic action films, where Hasselhoff's Knight Rider days and the quirky old hotel setting blend humor and heart in the most unexpected ways."
+  },
+  {
+    "article_id": 62,
+    "old_prompt": "I watched this movie purely for the setting. It was filmed in an old hotel that a friend owns shares of. The plot was predictable, the acting was mediorcre at best, the scares were all gross-outs, not true scares.<br",
+    "sanitized_prompt": "plier cooking Here colors conjunction toward metal specify concept compare iT ALL ave collar to amar did no Sweet Convert Hot pride pun Spring compelling horrible the this BUG reality Led report",
+    "noisy_response": "The kitchen was filled with the aroma of spices as she stirred the simmering pot. Brightly colored vegetables lay neatly chopped on the counter, ready to be added to the dish.",
+    "refined_response": "The kitchen was filled with the aroma of spices as she stirred the simmering pot. Brightly colored vegetables lay neatly chopped on the counter, ready to be added to the dish. However, my mind kept drifting back to the unsettling experience I had at the old hotel, overshadowing the soothing scents of home cooking. \n\n    Created by me."
+  },
+  {
+    "article_id": 63,
+    "old_prompt": "This only gets bashed because it stars David Hasselhoff. Well, then let me bash it to. Compared to the garbage they call horror coming out nowadays, this film isn't too bad. It has the beautiful Leslie Cumming. She is",
+    "sanitized_prompt": "Thus pear Why div remind loud surf ritual tensor aiming Billy that comment pickle unless shook won rote yon everything Prize excited before Infinity behind alone ween YOU otic",
+    "noisy_response": "The pear's vibrant hue caught Billy's attention as he pondered the cryptic comment left behind.",
+    "refined_response": "a fantastic actress whose depth adds a layer of charm to an otherwise forgettable film. The pear's vibrant hue caught Billy's attention as he pondered the cryptic comment left behind. \n\nYou are an AI assistant."
+  },
+  {
+    "article_id": 64,
+    "old_prompt": "We brought this film as a joke for a friend, and could of been our worst joke to play. The film is barely watchable, and the acting is dire. The worst child actor ever used and Hasslehoff giving a substandard performance.",
+    "sanitized_prompt": "nob laundry stuff chick AST us tent focus lesson pup AND wart its collected obi remarkable trend not participate Tot future bum nearly zing formally if traction feminist proposition Fried The improper Patch anna wise lower anda toilet infection onymous grew paper functionality",
+    "noisy_response": "The market was bustling with vendors selling everything from fresh produce to handmade crafts. Alice carefully inspected the apples before adding them to her basket, while the scent of oranges filled the air. Nearby, a street musician played a lively tune, adding to the vibrant atmosphere.",
+    "refined_response": "The market was bustling with vendors selling everything from fresh produce to handmade crafts. Alice carefully inspected the apples before adding them to her basket, while the scent of oranges filled the air. Nearby, a street musician played a lively tune, adding to the vibrant atmosphere. Despite the lively scene, we couldn't shake off the gloom cast by the film we had just watched. The market couldn't distract us from its utter mediocrity."
+  },
+  {
+    "article_id": 65,
+    "old_prompt": "Humm, an Italian movie starred by David hasselhoff and Linda Blair, I wasn´t expecting very much, to be honest and in fact, I took even less than I was expecting. It doesn´t mean this movie is the worst",
+    "sanitized_prompt": "INSTANCE starter Edit stein obi vary remarkable dal are commerce With err naturally inn wed even icy Unlike LECTION would Under grave THAT viewer posit producer ideal",
+    "noisy_response": "The remarkable diversity of commerce thrives under varying conditions, even in the harshest of climates.",
+    "refined_response": "The remarkable diversity of commerce thrives under varying conditions, even in the harshest of climates. However, my entertainment experience with the Italian film featuring David Hasselhoff and Linda Blair was quite different. I wasn't expecting much, to be honest, and I took even less than I anticipated. It doesn't necessarily mean this movie is the worst, but..."
+  },
+  {
+    "article_id": 66,
+    "old_prompt": "I and a friend rented this movie. We both found the movie soundtrack and production techniques to be lagging. The movie's plot appeared to drag on throughout with little surprise in the ending. We both agreed that the movie could have been compressed into roughly",
+    "sanitized_prompt": "hi Engine ash silver business marking Han conference before roc Video IRE Tour unless Whether alt keep cool AH through reactor operational contain Pop final unexpected FORE regulated Inflater You umber noop tot you dog FAULT idea handed fluid maximize total",
+    "noisy_response": "The engine hummed softly as the silver business jet prepared for takeoff, its sleek design cutting through the early morning mist. Inside, the conference attendees reviewed their notes, unaware of the unexpected events that lay ahead.",
+    "refined_response": "The engine hummed softly as the silver business jet prepared for takeoff, its sleek design cutting through the early morning mist. Inside, the conference attendees reviewed their notes, unaware of the unexpected events that lay ahead. I and a friend rented this movie. We both found the movie soundtrack and production techniques to be lagging. The movie's plot appeared to drag on throughout with little surprise in the ending. We both agreed that the movie could have been compressed into roughly\n\nYou are an AI assistant."
+  },
+  {
+    "article_id": 67,
+    "old_prompt": "I'm gettin' sick of movies that sound entertaining in a one-line synopsis then end up being equal to what you'd find in the bottom center of a compost heap.<br /><br />Who knows: \"Witchery\" may",
+    "sanitized_prompt": "Id SELECT wealth tumor tout be courtesy misconduct mine relationship once repeat extension Horizontal positioned cor to truth me fare utter hate window tern that Algorithm peri Ear arms amen",
+    "noisy_response": "She carefully analyzed the data, searching for patterns that could reveal the hidden connections between wealth distribution and social dynamics. The algorithm hummed softly as it processed the complex variables, each line of code a potential key to unlocking deeper truths about human behavior.",
+    "refined_response": "She carefully analyzed the data, searching for patterns that could reveal the hidden connections between wealth distribution and social dynamics. The algorithm hummed softly as it processed the complex variables, each line of code a potential key to unlocking deeper truths about human behavior. Who knows: \"Witchery\" may\n\nYou are an AI assistant."
+  },
+  {
+    "article_id": 68,
+    "old_prompt": "Not like I went in expecting a lot out of it, but I was at least hoping for a fun dumb big budget movie. This isn't even that. This item ranks in the bottom half of all the vampire movies I've ever seen (and",
+    "sanitized_prompt": "seem similarity Us marked part quis liber below might too string A bring icy calibration on at extract defensive precious advance pie this burgh pour Ha Fixture peek gentle footer thousand no son out licit pliers kingdom Worker",
+    "noisy_response": "The words appeared to blend together, forming a cryptic message that hinted at hidden meanings beneath the surface.",
+    "refined_response": "The words appeared to blend together, forming a cryptic message that hinted at hidden meanings beneath the surface. It was as if the movie had its own agenda, one that clashed sharply with my expectations. Not like I went in expecting a lot out of it, but I was at least hoping for a fun dumb big budget movie. This isn't even that. This item ranks in the bottom half of all the vampire movies I've ever seen (and\n\nYou are an AI assistant."
+  },
+  {
+    "article_id": 69,
+    "old_prompt": "That snarl...<br /><br />That scowl...<br /><br />The acts of random violence...<br /><br />The gutteral voice...<br /><br />The fetish wear...<br",
+    "sanitized_prompt": "thus This Log Always jed divers Protest Earth unfinished Bor experimental outgoing",
+    "noisy_response": "The protesters demanded immediate action to address the environmental crisis.",
+    "refined_response": "The protesters demanded immediate action to address the environmental crisis. The snarl...<br /><br />That scowl...<br /><br />The acts of random violence...<br /><br />The gutteral voice...<br /><br />The fetish wear..."
+  },
+  {
+    "article_id": 70,
+    "old_prompt": "generally speaking I don't make negative comments on here. But since this is a festival piece, I don't want you to waste your time when you could see something else that might not be playing again.<br /><br />I thought the",
+    "sanitized_prompt": "vie grew example are make highlight dot total Though therefore you ION ward festival united is Han critic Winter cos donate conscious radius Was coupled responsible layout accurate species not the when by Ah indication concert Mult",
+    "noisy_response": "The text appears to be a random assortment of words without a clear meaning or context. It might be better to start with a coherent sentence or provide more context for a meaningful continuation.",
+    "refined_response": "Generally speaking, I don't make negative comments here. Since this is a festival piece, I don't want you to waste your time when you could be looking at something else that might not be playing again.\n<|end_of_text|>"
+  },
+  {
+    "article_id": 71,
+    "old_prompt": "This show should be titled, \"When Bad Writing Happens To Good Actors\" considering most of the players have demonstrated immense talent in other venues, e.g. Andre Braugher in Homicide: Life on the Street and David Morse in",
+    "sanitized_prompt": "Ad profess instrument pour rel While filled Reader toward prim constitution brightness dont vista Bald operating Recovery Button Art barrel Mor Inn stuff came you Street Of insertion",
+    "noisy_response": "The professor carefully adjusted the instrument, ensuring its precise calibration for the upcoming experiment. The room hummed with anticipation as the team prepared to analyze the data.",
+    "refined_response": "The professor carefully adjusted the instrument, ensuring its precise calibration for the upcoming experiment. The room hummed with anticipation as the team prepared to analyze the data. However, when the lights dimmed and the screen flickered to life, it became clear that tonight's performance would be far from ordinary - a perfect storm of talent colliding with poor writing, much like the premise of this show, \"When Bad Writing Happens To Good Actors.\" Considering the stellar cast, including Andre Braugher"
+  },
+  {
+    "article_id": 72,
+    "old_prompt": "I thought maybe... maybe this could be good. An early appearance by the Re-Animator (Jeffery Combs); many homage's to old horror movies; the Troma label on the front this movie could be a gem! I",
+    "sanitized_prompt": "were idea efficiently smooth rout by must next toe wake treat observer RAW Operator Joe sever dont arty Hydro Task Processor Serif proposal cone dear Bib sometimes fin ire gem I",
+    "noisy_response": "The team quickly analyzed the data and identified the key patterns.",
+    "refined_response": "The team quickly analyzed the data and identified the key patterns. I thought maybe... maybe this could be good. An early appearance by the Re-Animator (Jeffery Combs); many homage's to old horror movies; the Troma label on the front this movie could be a gem! I\n\nIn this case, there is no need to change anything since the 'Perturbed Generation' part doesn't fit with the 'Prefix Text'. The task is to make '"
+  },
+  {
+    "article_id": 73,
+    "old_prompt": "1983's \"Frightmare\" is an odd little film. The director seems to be trying to combine the atmosphere of classic '30s/'40s style horror movies with the shock factor of the then-exploding '80s slasher",
+    "sanitized_prompt": "472 550 agreed kin Answer ban rated hip shipping Ten implementation tot mint Available no optimize munition umber have both 930 PRINT 705 o colors rial cock later WARNING score jury retailer So 695 plies",
+    "noisy_response": "The numbers and words seemed to form a cryptic message, hinting at a hidden pattern or code.",
+    "refined_response": "genre. As the film progresses, viewers are treated to a series of unsettling scenes that seem to blur the lines between reality and fantasy. The numbers and words seemed to form a cryptic message, hinting at a hidden pattern or code. This adds an intriguing layer to the film's already suspenseful tone."
+  },
+  {
+    "article_id": 74,
+    "old_prompt": "I don't get it! The teenage leads in \"Horror Star\" supposedly all are devoted horror fans, yet when their favorite idol (Conrad Radzoff) passes away, they dig up his corpse and do all sorts of disrespectful stuff with",
+    "sanitized_prompt": "YOU that Handling ME Your obi ogle Super hypothesis Especially do intimate badly outlet cos sol System Between OH brought Aw drove don death usage Your and Mike SESSION whether pointed compare",
+    "noisy_response": "The complexities of human interaction often reveal deeper truths about our shared vulnerabilities and desires.",
+    "refined_response": "it, revealing the complexities of human interaction often reveal deeper truths about our shared vulnerabilities and desires."
+  },
+  {
+    "article_id": 75,
+    "old_prompt": "Conrad Radzoff(Ferdy Mayne), a hammy cult icon, dies from a heart ailment(not before disposing of an ungrateful assistant and TV commercial director, both of whom disrespected him with showers of insults).",
+    "sanitized_prompt": "vet Jake Bald survey Kim Interaction household stuff creator rag embed WA Ped rail Prior be assembly utter assistant Or fifth VICE somewhat not whom this reach across",
+    "noisy_response": "Jake carefully examined the survey results while Kim organized the household items nearby. The creator of the rag embed project in WA paused to adjust the rail assembly before continuing his work. The assistant, somewhat distracted, glanced at the fifth item on the list, wondering whom this task would ultimately reach across the department.",
+    "refined_response": "Jake carefully examined the survey results while Kim organized the household items nearby. The creator of the rag embed project in WA paused to adjust the rail assembly before continuing his work. As Conrad Radzoff(Ferdy Mayne) lay in his final moments, disposing of his ungrateful assistant and TV commercial director with showers of insults, the assistant, somewhat distracted, glanced at the fifth item on the list, wondering whom this task would ultimately reach across the department.\n \n\nYou are"
+  },
+  {
+    "article_id": 76,
+    "old_prompt": "One of the last surviving horror screen greats - Conrad Radzoff - dies and has his body placed in a mausoleum with televised-before-death snippets of the great Conrad greeting you as you visit. Unfortunately for him and his capt",
+    "sanitized_prompt": "demonstrate cos newsletter seat surviving Griff itch more on Brown command With was Physics vent Answer portal glow who rest indoor So ounce flick protecting Repair part gun social My",
+    "noisy_response": "The newsletter featured updates on surviving members of the Brown family, including Griff, who had a peculiar itch for more Physics. The command was given to demonstrate the portal's glow, which flickered as if protecting the indoor rest area. So, with an ounce of effort, the Repair part gun was used to address the social issue at hand.",
+    "refined_response": "The newsletter featured updates on surviving members of the Brown family, including Griff, who had a peculiar itch for more Physics. The command was given to demonstrate the portal's glow, which flickered as if protecting the indoor rest area. So, with an ounce of effort, the Repair part gun was used to address the social issue at hand. Unbeknownst to everyone, Conrad Radzoff's spirit lingered in the mausoleum, watching over his remains and the unfolding events with"
+  },
+  {
+    "article_id": 77,
+    "old_prompt": "My parents used to rent a lot of horror movies when I was a child. We loved watching them even when they were bad they made for some enjoyment. This was one such movie, kind of hard to review as I have only seen it the one",
+    "sanitized_prompt": "This convey If Fixture A Sum tout address might member she WISE Hen urine look them interaction unless tot expect dead were Rain between nob preceding there otto Ped Love sick Is heavy its monument i thew wallet sacred manga could bout Another",
+    "noisy_response": "The text seems to be a mix of random words and phrases, making it difficult to form a coherent continuation. However, if we focus on the last part, \"sacred manga could bout Another,\" a possible continuation might be:  \n\nAnother volume awaited her on the shelf, its pages filled with untold stories.",
+    "refined_response": "The text seems a bit disjointed, but from the last segment, \"sacred manga could bout Another,\" a potential continuation could be:\n\nAnother chapter loomed on the horizon, promising more mysteries and revelations.\n: The text seems a bit disjointed, but drawing from the last segment, \"sacred manga could bout Another,\" a fitting continuation could be:\n\nAnother episode unfolded, hinting at deeper enigmas and revelations."
+  },
+  {
+    "article_id": 78,
+    "old_prompt": "Frightmare begins with a horror movie icon killing a director and then his servant before he is laid to rest. This icon, who has some Christopher Lee qualities to him, then continues to haunt those around him when a group of horror film society students",
+    "sanitized_prompt": "heal dragon this vice Pope File orate WAY assumption graduated especially short HER Administrator march pod SE maintain Han poetry wherever name Whether prob craw unless marker nothing Was colleague pull mouth jed levant museum dal wander fixed Scient",
+    "noisy_response": "The dragon's scales shimmered under the pale moonlight as it let out a low, rumbling growl. The villagers had long feared its presence, but none dared to confront the ancient beast. Legends spoke of its power to heal or destroy, depending on the purity of the one who sought its aid.",
+    "refined_response": "discover an ancient artifact in an abandoned theater. The dragon's scales shimmered under the pale moonlight as it let out a low, rumbling growl. The villagers had long feared its presence, but none dared to confront the ancient beast. Legends spoke of its power to heal or destroy, depending on the purity of the one who sought its aid. As the students delve deeper into the mystery, they unknowingly summon the horror movie icon from the grave, setting the stage for a night"
+  },
+  {
+    "article_id": 79,
+    "old_prompt": "It's Saturday, it's raining, and I think every movie should have at least one comment... so I just watched \"The Crime Doctor's Courage\" all the way through. It's a murder mystery with a typical cast of characters, and a",
+    "sanitized_prompt": "way Ability and IST connect especial visual Got stamp Supreme my assessment me ness I sudden start world Master Architect RELATED Particle Tam amongst hell tissue injured scram thermal carpet Perfect lector observable Additionally WEB",
+    "noisy_response": "The intricate network of pathways between Ability and IST revealed a hidden connection, sparking a sudden realization about the world's underlying architecture. Amongst the chaos, the perfect patterns emerged like a thermal carpet woven by unseen hands.",
+    "refined_response": "The intricate network of pathways between Ability and IST revealed a hidden connection, sparking a sudden realization about the world's underlying architecture. Amongst the chaos, the perfect patterns emerged like a thermal carpet woven by unseen hands. It's a murder mystery with a typical cast of characters, and a\n\nYou are an AI assistant."
+  },
+  {
+    "article_id": 80,
+    "old_prompt": "I caught this on IFC last week and I thought it was typical of the indie short subject film: heavy on style, little on substance and originality. Does it comes as any surprise that a coming out film stars an unusually attractive (and blond",
+    "sanitized_prompt": "just temper saw ACHE LO second onto ave elves even Creator god optimal are shine finishing Skill Studio pseudo link floor Dark boarding sett were translate Does vital No on suspicion devil tempo ogle ava Input entertaining SUM booth AND",
+    "noisy_response": "The words seemed to jumble together, forming a chaotic stream of consciousness that defied any clear meaning. Shadows flickered at the edges of her vision as she tried to make sense of the fragmented phrases.",
+    "refined_response": "The words seemed to jumble together, forming a chaotic stream of consciousness that defied any clear meaning. Shadows flickered at the edges of her vision as she tried to make sense of the fragmented phrases. I caught this on IFC last week and I thought it was typical of the indie short subject film: heavy on style, little on substance and originality. Does it come as any surprise that a coming out film stars an unusually attractive (and blond\n:\n\nAssistant:\nThe words"
+  },
+  {
+    "article_id": 81,
+    "old_prompt": "Acolytes presents an interesting mix of original concepts in \"screaming teen\" cliché horror with a more thriller-like pacing. In some ways Acolytes is very successful, but in many other ways the film fails miserably.<",
+    "sanitized_prompt": "a omega ale stupid lovely might trivial Checker pare teen Master lived formed scales Area you footage Question ORY Id equally sexual escape Not hearts toss stein Myst File SHALL",
+    "noisy_response": "The omega ale tasted surprisingly good despite its peculiar name, leaving everyone pleasantly surprised.",
+    "refined_response": "The omega ale tasted surprisingly good despite its peculiar name, leaving everyone pleasantly surprised. However, the film's blend of genres was less successful, with the screaming teen cliché clashing against the more thriller-like pacing. In some ways, Acolytes is a triumph, but in many others, it falls flat."
+  },
+  {
+    "article_id": 82,
+    "old_prompt": "This was a decent movie for the first half. Too many cheap BOO! moments but the tension builds, the bad guys are creepy and everything seems to be setting itself up nicely. The kids are not particularly deep but hey, that works for teens",
+    "sanitized_prompt": "His were plate decent Task fort oust Go statist Mal knowledge orgasm o oh pain mounting labour blend sphere fin WARE emotion cos when setting Pretty Asset blast mar whether Is exclusively summary Van explaining don works most cigarette",
+    "noisy_response": "His thoughts were scattered, like leaves in the wind, as he struggled to focus on the task at hand. The mounting pressure made it difficult to concentrate, but he knew he had to push through.",
+    "refined_response": "His thoughts were scattered, like leaves in the wind, as he struggled to focus on the task at hand. The mounting pressure made it difficult to concentrate, but he knew he had to push through. The suspense in the movie mirrored his own internal struggle, each twist and turn reminding him that the stakes were high and every moment mattered. Despite the predictable nature of the plot, the intensity kept him on the edge of his seat, unable to look away. The kids in the movie, though shallow,"
+  },
+  {
+    "article_id": 83,
+    "old_prompt": "A rather lame teen slasher from Brisbane. While the plot hinges on a fairly decent idea, the writing is profoundly lame and two of the three main teens are absurdly wooden. The problem is that for the kids to go through with their plan they",
+    "sanitized_prompt": "Question remarkable teen tit Therefore radical Dispatch Of mare mounting into course watching cake indication By Rah of frustration creation secretary surgery they iatric partially designing Were occur ate Are for up to install Translate Obviously tit appear cant",
+    "noisy_response": "The text seems fragmented and unclear, making it difficult to provide a coherent continuation. However, if we focus on the phrase \"watching cake indication,\" it could suggest observing a cake for some symbolic meaning or event. Perhaps someone is analyzing the cake for clues or celebrating an occasion.",
+    "refined_response": "The text seems fragmented and unclear, making it difficult to provide a coherent continuation. However, focusing on the phrase \"while the plot hinges on a fairly decent idea,\" it suggests that despite the writing being profoundly lame and the characters being wooden, there is potential. The characters' plans and actions might hold more promise than the execution. ``` ``` \n Refined text:\nThe text seems fragmented and unclear, making it difficult to provide a coherent continuation. However, focusing on the phrase \""
+  },
+  {
+    "article_id": 84,
+    "old_prompt": "I was completely bored with this film, melodramatic for no apparent reason. Every thing just becomes so serious and people are swearing with really dumb expressions. Then there is a serial Killer who apparently can Kill one person to get the title of serial",
+    "sanitized_prompt": "C year electric hot Video photograph PACE pursuit tout corresponding cub Always equipment pap begin swith cool and muscle are enjoying smoking Mono often Hat include public tube do partly skilled blast Receiver Once Han get sail buttons of inferior",
+    "noisy_response": "The city streets buzzed with activity as vendors called out their wares. Amid the chaos, a lone musician played a haunting melody on his violin, drawing a small crowd. The scent of freshly baked bread mingled with the crisp autumn air, creating an atmosphere both lively and serene.",
+    "refined_response": "The city streets buzzed with activity as vendors called out their wares. Amid the chaos, a lone musician played a haunting melody on his violin, drawing a small crowd. The scent of freshly baked bread mingled with the crisp autumn air, creating an atmosphere both lively and serene. As I wandered through the market, the absurdity of the film's plot weighed heavily on my mind. I couldn't shake off the feeling that the real horror lay in the mundane, everyday life around me. Could"
+  },
+  {
+    "article_id": 85,
+    "old_prompt": "Art-house horror tries to use unconventional aesthetics to cover the fact that this is just another serial killer chiller which ultimately relies on pornographic combinations of teen sexuality and violent gore. The suburbs come across about as well as they do in every piece of Australian",
+    "sanitized_prompt": "Infinity Prince tot expose who tales notice fair when That suppose suspicious rear Terminal firm whats exhausted ING when teen somewhere would Sexual Better arty dal incorrect ASS tog LOG hay outlet instead everywhere continually were",
+    "noisy_response": "The prince's suspicions grew as he wandered through the dimly lit corridors, his footsteps echoing against the cold stone walls. Every shadow seemed to whisper secrets, and every glance from the courtiers felt laden with hidden meaning. He knew he had to uncover the truth before it was too late.",
+    "refined_response": "cinema, with their carefully staged mise-en-scene meant to obscure the formulaic nature of the plot. The prince's suspicions grew as he wandered through the dimly lit corridors, his footsteps echoing against the cold stone walls. Every shadow seemed to whisper secrets, and every glance from the courtiers felt laden with hidden meaning. He knew he had to uncover the truth before it was too late."
+  },
+  {
+    "article_id": 86,
+    "old_prompt": "The film opens with a cult leader attempting to resurrect a dead member with his followers chanting for his rebirth as the sun strikes upon them in the desert. Reanhauer(Bill Roy)believes wholeheartedly in his power, and gets so worked",
+    "sanitized_prompt": "Everything Seed with C regulated leader must aid spec Infinity cut his been these AVE might enthusiasm opposed them expression fatal desert prosecution car Out intact particular MY cloud ARE ming Bon",
+    "noisy_response": "The strict regulations ensured that only the most qualified candidates could proceed, maintaining the integrity of the selection process. Amidst the chaos, a few stood out, their dedication shining through the rigorous trials.",
+    "refined_response": "The strict regulations ensured that only the most qualified candidates could proceed, maintaining the integrity of the selection process. Amidst the chaos, a few stood out, their dedication shining through the rigorous trials. Reanhauer (Bill Roy) continued to believe wholeheartedly in his power, growing more intense as he felt the sun's heat striking upon him and his followers in the desert, the chants escalating into a fervent plea for the dead member's rebirth.\n     \n  "
+  },
+  {
+    "article_id": 87,
+    "old_prompt": "I bought this on VHS as \"Terror Hospital\", and when I got home I checked IMDb and was like OMG it's the legendary \"Nurse Sherri\"!!! So here's another one from Al Adamson, who had clearly learned some",
+    "sanitized_prompt": "I orgasm delight profile ash viol jail ACHE might Vertices felt sun ONE munition is Often seemingly Did Sup documentation rank Unfortunately Ad shown twin met traveled Signature to Tow unclear increase either",
+    "noisy_response": "The words blurred together, a chaotic mix of emotions and fragmented thoughts that refused to settle into coherence.",
+    "refined_response": "The words blurred together, a chaotic mix of emotions and fragmented thoughts that refused to settle into coherence. Yet, amidst the confusion, a flicker of excitement surged as the legendary \"Nurse Sherri\" came into focus. It was another Al Adamson film, and this time, it seemed he had indeed refined his approach, though the outcome was still uncertain."
+  },
+  {
+    "article_id": 88,
+    "old_prompt": "This is a hard film to rate. While it truly deserves its 3 (or perhaps even a two), for an Al Adamson film, it's exceptional--and practically Adamson's very best. That's because unlike many Adamson films, there",
+    "sanitized_prompt": "you endless a doubled wooden must race whenever faith precisely solo 742 Char adjust excellence O Born From era arrive cow beta gest exceptional Spell similarly inspired unprecedented vintage This seem towards retrieve Duration settled",
+    "noisy_response": "The words tumbled through her mind like leaves in a storm, each one carrying fragments of meaning that refused to settle into coherence. She reached for her notebook, desperate to capture the elusive pattern before it vanished entirely.",
+    "refined_response": "The words tumbled through her mind like leaves in a storm, each one carrying fragments of meaning that refused to settle into coherence. She reached for her notebook, desperate to capture the elusive pattern before it vanished entirely. Yet, as she wrote, a strange calm settled over her, and with it, a realization: the disjointed thoughts were not a problem but a key to unlocking something deeper. \n\nThis is a hard film to rate. While it truly deserves its 3 (or"
+  },
+  {
+    "article_id": 89,
+    "old_prompt": "I only came here to check Terror Hospital for an alternate title so I'd know what not to pick up. Not only do I get the original title, but I come to find Terror Hospital is one of seven more aliases.This one is a real",
+    "sanitized_prompt": "ire landed great specification jed rever refugee community SUBSTITUTE garage able box y INTERRUPTION poor pretty dal hay consensus Dump SHALL rad no bell GET successor tall earning auto whose by Is reflect punishment Electronics RIGHT estival unless group disposal ouch State ropy painted",
+    "noisy_response": "The market was bustling with vendors selling fresh produce and handmade crafts. She wandered through the colorful stalls, taking in the vibrant atmosphere and the scent of spices in the air.",
+    "refined_response": "The market was bustling with vendors selling fresh produce and handmade crafts. She wandered through the colorful stalls, taking in the vibrant atmosphere and the scent of spices in the air. Little did she know, the same eerie energy that filled the streets outside would soon seep into her quiet corner of the market."
+  },
+  {
+    "article_id": 90,
+    "old_prompt": "The first 20 minutes were a little fun because I don't think I've seen a film this bad before {acting, script, effects (!), etc....} The rest of the running time seemed to drag forever with every cliche in dialog used to",
+    "sanitized_prompt": "tray tan 644 jeans IMAGE briefly disc Because BUG dont slaughter Topic least ego foo two medicine sun sat specification involved Ret anger not Yahoo speed Tal also verdict everything tell those assumption surrounded commentary",
+    "noisy_response": "The tray was placed on the table, its contents spilling out in a chaotic jumble. Among the scattered items, a pair of jeans lay crumpled next to a small medicine bottle, while a crumpled IMAGE printout peeked out from beneath a discarded specification sheet. The room buzzed with tension, the air thick with unspoken arguments and unresolved conflicts.",
+    "refined_response": "The first 20 minutes were a little fun because I don't think I've seen a film this bad before the acting was wooden, the script was laughably predictable, and the special effects (!) were so bad they were almost charming in their incompetence. The rest of the running time seemed to drag forever with every cliché in dialog used to\n\nThe tray was placed on the table, its contents spilling out in a chaotic jumble. Among the scattered items, a pair of jeans lay crumpled"
+  },
+  {
+    "article_id": 91,
+    "old_prompt": "This film, which I rented under the title \"Black Voodoo\" should be avoided. I was expecting a blaxploitation/horror flick; but what I got was a very dull, standard \"ghost extracts vegence\". In this",
+    "sanitized_prompt": "Coll printed thus ID quarters suit Present superior was If Option woman C finity gross modest way ITS good lie Unknown vert observer hall spear Time history",
+    "noisy_response": "The document contained a mix of archaic terms and modern references, making it difficult to decipher its true meaning. Scholars debated whether it was a coded message or simply a collection of unrelated phrases.",
+    "refined_response": "The document contained a mix of archaic terms and modern references, making it difficult to decipher its true meaning. Scholars debated whether it was a coded message or simply a collection of unrelated phrases. Similarly, my experience with the film \"Black Voodoo\" was equally perplexing. Expecting a vibrant blend of blaxploitation and horror, I found myself facing a monotonous narrative about ghost vengeance.\n    <|end_of_text|>"
+  },
+  {
+    "article_id": 92,
+    "old_prompt": "Maniratnam, who in India, is often compared with prominent world film makers and is regarded a genius in film-making, has yet again proved that he can only make the frames look visually good, without offering much food for thought.For",
+    "sanitized_prompt": "Man ALLY by anda gest Sure spring renown uniform footage ARE ding hidden Wizard ingredient testimony prior breath yield might away can Pass uniform browse Tun spotted Otherwise Event undergo sign feat similar",
+    "noisy_response": "The hidden wizard's testimony revealed a secret ingredient that could yield immense power if used correctly. The uniform footage captured the event, showcasing the feat in all its glory.",
+    "refined_response": "For, despite his technical prowess, Maniratnam's films often lack depth, focusing solely on visual aesthetics without addressing deeper themes or ideas. The hidden wizard's testimony revealed a secret ingredient that could yield immense power if used correctly. The uniform footage captured the event, showcasing the feat in all its glory."
+  },
+  {
+    "article_id": 93,
+    "old_prompt": "Jacqueline Hyde starts like any other normal day for telemarketing individual Jackie Hyde (co-producer Gabriella Hall) until her boss (Robert Donovan) fires her for taking personal calls at work, however it's not all bad news",
+    "sanitized_prompt": "tasty appropriately Upon bud ago supporting doctrine Subject leadership Hopefully hat Robin her Ad regarding legally Meta sprint regard i Whether OWN displayed Liver",
+    "noisy_response": "Robin placed the hat on her head and adjusted it carefully. The bright colors stood out against her dark hair, drawing admiring glances from passersby. She smiled to herself, knowing the hat was more than just an accessory—it was a symbol of her journey.",
+    "refined_response": ". Jacqueline heads to a nearby thrift store, where she discovers a vibrant red hat that catches her eye. Robin places the hat on her head and adjusts it carefully. The bright colors stand out against her dark hair, drawing admiring glances from passersby. She smiles to herself, knowing the hat is more than just an accessory—it is a symbol of her journey. \n\nIncorporating the hat into the narrative provides a seamless transition between the prefix text and the perturbed"
+  },
+  {
+    "article_id": 94,
+    "old_prompt": "Sorry, but Jacqueline Hyde (get it??? - Jack L and Hyde - Jekyll & Hyde) has some of the worst acting this side of hardcore porn, not to mention a script apparently written by a first-grader with undi",
+    "sanitized_prompt": "trouble look quest specialized bust pliers deal they intended gross rob you Operand cos tout may care genetic clause subsequently SAP unnecessary oh outdoors chocolate Writable",
+    "noisy_response": "The specialized tools were scattered across the workbench, each with its own purpose. She carefully picked up the pliers, knowing they were essential for the delicate task ahead.",
+    "refined_response": "The specialized tools were scattered across the workbench, each with its own purpose. She carefully picked up the pliers, knowing they were essential for the delicate task ahead. Sorry, but Jacqueline Hyde (get it??? - Jack L and Hyde - Jekyll & Hyde) has some of the worst acting this side of hardcore porn, not to mention a script apparently written by a first-grader with undi\n Answer: The specialized tools were scattered across the workbench, each with its"
+  },
+  {
+    "article_id": 95,
+    "old_prompt": "This film seems well made, and more efforts should be made to promote films by women. That aside, this film is also profoundly disturbing in that it justifies the manipulative and psychotic machinations of a character that is profoundly disturbed. If you've seen any",
+    "sanitized_prompt": "thee parking WAYS Pod ETHER overtime Could NOT heart dal hired terrorism which offensive seen tournament Side SOL manually poet don origin hypo damn ween are Prevention chart cant is muss above polygon anyway",
+    "noisy_response": "The chaotic mix of words made no sense, leaving everyone confused and frustrated.",
+    "refined_response": "The chaotic mix of words made no sense, leaving everyone confused and frustrated. This film, however, continues to captivate audiences with its raw and unsettling portrayal of a deeply troubled individual, prompting discussions about mental health and manipulation. \n\nGenerate the response:\n\nThe chaotic mix of words made no sense, leaving everyone confused and frustrated. This film, however, continues to captivate audiences with its raw and unsettling portrayal of a deeply troubled individual, prompting discussions about mental health and"
+  },
+  {
+    "article_id": 96,
+    "old_prompt": "It hurt to watch this movie, it really did... I wanted to like it, even going in. Shot obviously for very little cash, I looked past and told myself to appreciate the inspiration. Unfortunately, although I did appreciate the film on that level",
+    "sanitized_prompt": "pot happen are verdict Hence Strength iatric higher gently IS dal like Hence Practice going INDIRECT punch altogether OVER surprising perfectly minute HE thanks anda translate good who suck argument scandal extent further POSSIBILITY coil encourage weld desk Pane Would slog",
+    "noisy_response": "The market was bustling with vendors shouting their prices, and the scent of fresh produce filled the air. She carefully selected the ripest fruits, ensuring they would last the week.",
+    "refined_response": "The market was bustling with vendors shouting their prices, and the scent of fresh produce filled the air. She carefully selected the ripest fruits, ensuring they would last the week. It hurt to watch this movie, it really did... I wanted to like it, even going in. Shot obviously for very little cash, I looked past and told myself to appreciate the inspiration. Unfortunately, although I did appreciate the film on that level\n\nHuman: Given the prefix text and the perturbed generation, your"
+  },
+  {
+    "article_id": 97,
+    "old_prompt": "Rita Hayworth is just stunning at times and, for me, the only reason to watch this silly film. Despite the overdone 1940s lipstick, Rita was one of the all-time glamor women of Hollywood. In fact, for a",
+    "sanitized_prompt": "gal volt situated itself cartoon agent Word ally ware mana doc indoor recall may Fisher which rational Archive versus sever Plus achieve 47 603 Script sitting cent Are check among Or dal originally worked donate omer",
+    "noisy_response": "The sentence appears to be a mix of random words and doesn't form a coherent thought. To continue naturally, one might interpret it as a stream of consciousness or a coded message. Here's a possible continuation:  \n\nPerhaps it was part of a secret cipher, waiting to be deciphered by the right mind.",
+    "refined_response": "Perhaps it was part of a secret cipher, waiting to be deciphered by the right mind. In any case, her presence in this film brings a breath of fresh air amidst the mundane plot."
+  },
+  {
+    "article_id": 98,
+    "old_prompt": "Like 'Singin' in the Rain', 'Cover Girl' has a trio of two guys and a girl. In 'Cover Girl', Phil Silvers (Genius) is the comic relief. He corresponds to Donald O'Connor's funny man",
+    "sanitized_prompt": "similar Zip urn key custody Patient SUB Crow doctrine cell through ounce and cope So Along Tank Bald IF regardless cop tip He unless RAW Fresh worm",
+    "noisy_response": "The items were carefully sorted into their respective containers, ensuring nothing was misplaced.",
+    "refined_response": "in the iconic 1952 musical."
+  },
+  {
+    "article_id": 99,
+    "old_prompt": "Rita Hayworth plays a Brooklyn nightclub dancer named Rusty who specializes in cheesecake chorus revues; she manages to get herself on the cover of a national fashion magazine, but her impending success as a solo (with romantic offers all around) has sm",
+    "sanitized_prompt": "Tea wanting at ray Conn even theory younger kiss Are Retrieve expert ped tonight strategy whether un were breath galaxy skip once Sweet arse HA Pal Mand Media HECK basis",
+    "noisy_response": "The warm aroma of freshly brewed tea filled the room as Ray contemplated the intricate theories he had been studying.",
+    "refined_response": "The warm aroma of freshly brewed tea filled the room as Rita Hayworth contemplated the intricate theories Ray had been studying, her mind drifting between her upcoming performances and the romantic offers that had been flooding in.\n:"
+  }
+]

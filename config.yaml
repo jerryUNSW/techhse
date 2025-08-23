@@ -7,7 +7,7 @@
 
 ## a medical QA 
 dataset:
-  name: medmcqa
+  name: "hotpotqa/hotpot_qa"
   split: validation
   num_samples: 10 # Adjust as needed
 

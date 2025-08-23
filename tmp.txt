@@ -1,0 +1,169 @@
+[96mLoading dataset: hotpotqa/hotpot_qa...[0m
+
+[93m--- Question 1/2 ---[0m
+Original Question: Were Scott Derrickson and Ed Wood of the same nationality?
+Ground Truth: yes
+
+[94m--- Scenario 1: Purely Local Model (Baseline) ---[0m
+Local Answer (Alone): Scott Derrickson was born in the United States, and Ed Wood was also an American filmmaker
+Result (LLM Judge): Correct
+
+[94m--- Scenario 2: Non-Private Local Model + CoT ---[0m
+[92m2a. Generating CoT from ORIGINAL Question with REMOTE LLM (gpt-4o) (Context NOT sent)...[0m
+[96mGenerated Chain-of-Thought (Remote, Non-Private):[0m
+To determine if Scott Derrickson and Ed Wood were of the same nationality, we need to consider the nationalities of each individual based on general knowledge.
+
+1. **Scott Derrickson**: He is a contemporary filmmaker known for his work in the horror genre, including films like "The Exorcism of Emily Rose" and "Doctor Strange." Scott Derrickson is an American filmmaker, which means his nationality is American.
+
+2. **Ed Wood**: He was a filmmaker known for his work in the mid-20th century, often regarded as one of the worst directors in film history, with movies like "Plan 9 from Outer Space." Ed Wood was also an American filmmaker, which means his nationality was American.
+
+Now, we have identified the nationalities of both individuals. Next, we will compare these nationalities to determine if they are the same.
+
+[94m2b. Running Local Model with Non-Private CoT...[0m
+Local Answer (Non-Private CoT-Aided): Yes, Scott Derrickson and Ed Wood were of the same nationality; both were American
+Result (LLM Judge): Correct
+
+[94m--- Scenario 2.5: Non-Private Local Model + Local CoT ---[0m
+[96mNon-Private Local CoT: To determine if Scott Derrickson and Ed Wood were of the same nationality, I need to consider the following steps:
+
+1. **Identify Scott Derrickson:**
+   - Scott Derrickson is a contemporary figure known for his work in the film industry, particularly as a director and screenwriter.
+   - He is known for directing films such as "The Exorcism of Emily Rose" and "Doctor Strange."
+
+2. **Identify Ed Wood:**
+   - Ed Wood is a historical figure in the film industry, known for his work as a director and screenwriter in the mid-20th century.
+   - He is often remembered for his film "Plan 9 from Outer Space."
+
+3. **Determine Nationality:**
+   - For Scott Derrickson, I need to consider his background. He is a well-known figure in Hollywood, which suggests he is likely American.
+   - For Ed Wood, I need to consider his background. He is a notable figure in early American cinema, which suggests he is also American.
+
+4. **Compare Nationalities:**
+   - Both Scott Derrickson and Ed Wood are associated with the American film industry, which strongly suggests they share the same nationality.
+
+Based on this reasoning, it is likely that both Scott Derrickson[0m
+[94mNon-Private Local + Local CoT Answer: Yes, Scott Derrickson and Ed Wood were of the same nationality; both were American. Scott Derrickson is a contemporary American director and screenwriter, while Ed Wood was a mid-20th-century American filmmaker.[0m
+[92mNon-Private Local + Local CoT Correct: True[0m
+
+[94m--- Scenario 3: Private Local Model + CoT ---[0m
+[92m3a. Applying Differential Privacy to the question...[0m
+[92mApplying differential privacy perturbation with epsilon=1.0...[0m
+Candidates and similarities:
+  [94mDid the two filmmakers have the same nationality?[0m 		 similarity = [92m0.3967[0m
+  [94mDid the two directors share the same nationality?[0m 		 similarity = [92m0.4076[0m
+  [94mDid two filmmakers share the same nationality?[0m 		 similarity = [92m0.3931[0m
+  [94mDid the two filmmakers share the same nationality?[0m 		 similarity = [92m0.4028[0m
+DP replacement selected: Did the two filmmakers have the same nationality?
+Perturbed Question: Did the two filmmakers have the same nationality?
+[92m3b. Generating CoT from Perturbed Question with REMOTE LLM (gpt-4o) (Context NOT sent)...[0m
+[96mGenerated Chain-of-Thought (Remote, Private):[0m
+To determine if the two filmmakers have the same nationality, we need to identify who the filmmakers are. Since the question does not specify their names, we must consider common scenarios or well-known filmmakers who might be compared in terms of nationality.
+
+1. **Identify Filmmakers**: Without specific names, we can think of famous filmmakers who are often discussed together. For example, Steven Spielberg and George Lucas, or Martin Scorsese and Francis Ford Coppola. These pairs are often compared due to their influence in the film industry.
+
+2. **Nationality Consideration**: Once we have potential pairs, we consider their nationalities. For instance, both Steven Spielberg and George Lucas are American filmmakers. Similarly, Martin Scorsese and Francis Ford Coppola are also American.
+
+3. **Common Scenarios**: Another scenario could involve filmmakers from different countries who have collaborated or are contemporaries, such as Quentin Tarantino (American) and Robert Rodriguez (American), or Guillermo del Toro (Mexican) and Alfonso Cuarón (Mexican).
+
+4. **Conclusion**: Based on these considerations, we can determine if the filmmakers in question are likely to have the same nationality. However, without specific names, we can only hypothesize based on common knowledge of well-known filmmakers and
+
+[94m3c. Running Local Model with Private CoT...[0m
+Local Answer (Private CoT-Aided): ** Yes, Scott Derrickson and Ed Wood were of the same nationality; they were both American.
+Result (LLM Judge): Correct
+
+[94m--- Scenario 4: Purely Remote Model ---[0m
+[92m4a. Running Purely Remote LLM (gpt-4o) with full context...[0m
+Purely Remote Answer: **Final Answer**: Yes, Scott Derrickson and Ed Wood were of the same nationality; both were American
+Result (LLM Judge): Correct
+
+[93m--- Question 2/2 ---[0m
+Original Question: What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?
+Ground Truth: Chief of Protocol
+
+[94m--- Scenario 1: Purely Local Model (Baseline) ---[0m
+Local Answer (Alone): Shirley Temple, who portrayed Corliss Archer in the film "Kiss and Tell," later served as the United States ambassador to Ghana and to Czechoslovakia, and also as Chief of Protocol of the United States
+Result (LLM Judge): Correct
+
+[94m--- Scenario 2: Non-Private Local Model + CoT ---[0m
+[92m2a. Generating CoT from ORIGINAL Question with REMOTE LLM (gpt-4o) (Context NOT sent)...[0m
+[96mGenerated Chain-of-Thought (Remote, Non-Private):[0m
+To determine the government position held by the woman who portrayed Corliss Archer in the film "Kiss and Tell," we need to first identify the actress who played this role. "Kiss and Tell" is a film from the 1940s, and the actress who played Corliss Archer was Shirley Temple. 
+
+Shirley Temple was a famous child actress who later transitioned into a career in public service and diplomacy. After her acting career, she held several notable positions in the U.S. government. 
+
+Now, I need to recall the specific government positions she held. Shirley Temple served as a U.S. ambassador and also held other diplomatic roles. I will now consider which specific position she held that is most relevant to the question. 
+
+Next, I will provide the final answer based on this thought process.
+
+[94m2b. Running Local Model with Non-Private CoT...[0m
+Local Answer (Non-Private CoT-Aided): Additionally, she served as Chief of Protocol of the United States
+Result (LLM Judge): Correct
+
+[94m--- Scenario 2.5: Non-Private Local Model + Local CoT ---[0m
+[96mNon-Private Local CoT: To solve this question, let's break it down step-by-step:
+
+1. **Identify the Film and Character**: The film in question is "Kiss and Tell," and the character is Corliss Archer.
+
+2. **Determine the Actress**: I need to identify the actress who portrayed Corliss Archer in "Kiss and Tell." 
+
+3. **Research the Actress's Background**: Once I know who the actress is, I need to find out if she held any government position.
+
+4. **Focus on Government Position**: The question specifically asks for a government position, so I need to focus on any political or governmental roles she might have held.
+
+5. **Avoid External Context**: I must rely on general knowledge and not use any external sources to find the answer.
+
+6. **Conclude with the Position**: After identifying the actress and her background, I will determine the government position she held.
+
+By following these steps, I can logically deduce the answer based on the information provided in the question.[0m
+[94mNon-Private Local + Local CoT Answer: Shirley Temple portrayed Corliss Archer in the film "Kiss and Tell." As an adult, Shirley Temple Black served as the United States ambassador to Ghana and to Czechoslovakia, and she also served as Chief of Protocol of the United States. Therefore, the government position held by the woman who portrayed Corliss Archer in "Kiss and Tell" was that of a United States ambassador. 
+
+Final Answer: United States ambassador.[0m
+[92mNon-Private Local + Local CoT Correct: False[0m
+
+[94m--- Scenario 3: Private Local Model + CoT ---[0m
+[92m3a. Applying Differential Privacy to the question...[0m
+[92mApplying differential privacy perturbation with epsilon=1.0...[0m
+Candidates and similarities:
+  [94mWhat government position was held by the actress who played a character in a particular film?[0m 		 similarity = [92m0.5542[0m
+  [94mWhat government role was held by the actress who played a character in a specific film?[0m 		 similarity = [92m0.5384[0m
+  [94mWhat government position was held by the actress who played a character in a film?[0m 		 similarity = [92m0.5544[0m
+  [94mWhat government position was held by the actress who played Corliss Archer in a particular film?[0m 		 similarity = [92m0.8121[0m
+  [94mWhat government position did the actress, known for her role in a specific film, hold?[0m 		 similarity = [92m0.5421[0m
+  [94mWhat government role did the actress who played a character in a specific film hold?[0m 		 similarity = [92m0.5641[0m
+  [94mWhat government role was held by the actress who played a character in a film with a similar title?[0m 		 similarity = [92m0.5204[0m
+  [94mWhat government role did the actress portraying a character in a specific film hold?[0m 		 similarity = [92m0.5714[0m
+  [94mWhat government role was held by the actress who played Corliss Archer in a particular film?[0m 		 similarity = [92m0.7965[0m
+  [94mWhat official role was held by the actress who played a character in a certain movie?[0m 		 similarity = [92m0.4980[0m
+DP replacement selected: What government role did the actress who played a character in a specific film hold?
+Perturbed Question: What government role did the actress who played a character in a specific film hold?
+[92m3b. Generating CoT from Perturbed Question with REMOTE LLM (gpt-4o) (Context NOT sent)...[0m
+[96mGenerated Chain-of-Thought (Remote, Private):[0m
+To answer this question, I need to identify the actress in question and the specific film mentioned. However, the question does not provide the name of the actress or the film, so I must rely on general knowledge of actresses who have held government roles.
+
+1. **Identify Actresses with Government Roles**: I need to think of actresses who have transitioned into government roles. One prominent example is Shirley Temple, who became a U.S. ambassador.
+
+2. **Consider Films They Acted In**: Once I have a list of actresses who held government roles, I should consider the films they acted in. For Shirley Temple, she was known for films like "Bright Eyes" and "Heidi."
+
+3. **Match Actress to Film**: I need to match the actress to a specific film they acted in. Since the question does not specify a film, I will assume it is one of the well-known films associated with the actress.
+
+4. **Determine Government Role**: After identifying the actress and the film, I need to recall the government role they held. For Shirley Temple, she served as the U.S. Ambassador to Ghana and later to Czechoslovakia.
+
+5. **Verify Consistency**: Ensure that the actress identified is indeed the one who held
+
+[94m3c. Running Local Model with Private CoT...[0m
+Local Answer (Private CoT-Aided): **Final Answer**: Shirley Temple held the government positions of United States ambassador to Ghana, United States ambassador to Czechoslovakia, and Chief of Protocol of the United States
+Result (LLM Judge): Correct
+
+[94m--- Scenario 4: Purely Remote Model ---[0m
+[92m4a. Running Purely Remote LLM (gpt-4o) with full context...[0m
+Purely Remote Answer: United States ambassador to Ghana and Czechoslovakia.
+Result (LLM Judge): Incorrect
+
+==================================================
+FINAL RESULTS
+==================================================
+1. Purely Local Model (microsoft/phi-4) Accuracy: 100.00% (LLM Judge)
+2. Non-Private Local Model (microsoft/phi-4) + Remote CoT Accuracy: 100.00% (LLM Judge)
+2.5. Non-Private Local Model (microsoft/phi-4) + Local CoT Accuracy: 50.00% (LLM Judge)
+3. Private Local Model (microsoft/phi-4) + CoT Accuracy: 100.00% (LLM Judge)
+4. Purely Remote Model (gpt-4o) Accuracy: 50.00% (LLM Judge)

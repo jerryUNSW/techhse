@@ -1,6 +1,6 @@
 Generate 10 DIVERSE and AGGRESSIVELY GENERALIZED paraphrases of the following question.
 CRITICAL: You MUST replace ALL specific names, places, dates, and organizations with general terms.
-Each paraphrase must be significantly different from the others.
+Each paraphrase must be significantly different from the others and MEANINGFUL.
 
 ### MANDATORY GENERALIZATION RULES:
 - ALWAYS replace specific names with: "an individual", "a person", "someone", "a professional", "a public figure", "a notable figure"
@@ -14,6 +14,19 @@ Each paraphrase must be significantly different from the others.
 - Vary vocabulary extensively (synonyms, different expressions)
 - Change question formats (direct questions, indirect questions, different question words)
 - Use different levels of formality and complexity
+
+### CRITICAL: AVOID TAUTOLOGICAL QUESTIONS
+DO NOT create questions that are automatically "yes" or too obvious, such as:
+- "Do people from the same place have the same origin?"
+- "Is it true that two professionals from the same country share a nationality?"
+- "Are the same items in the same location?"
+- "Do the same people come from the same place?"
+
+Instead, create questions that:
+- Ask about meaningful relationships or characteristics
+- Require actual knowledge or investigation to answer
+- Maintain the original question's intent while being generalized
+- Are genuinely informative and not obvious
 
 ### TASK:
 Original: {input_sentence}

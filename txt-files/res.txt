@@ -1,0 +1,565 @@
+(priv-env) yizhang@asus:~/HSE-privacy/priv-llm-infer$ python3 multi-hop-with-judge.py 
+Loading dataset: hotpotqa/hotpot_qa...
+Loading local model: microsoft/phi-2...
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.15it/s]
+Local model loaded successfully!
+
+--- Question 1/50 ---
+Question: Were Scott Derrickson and Ed Wood of the same nationality?
+Ground Truth: yes
+Running Local Model...
+Local Answer: Answer: The film was called "The Devil's Doll"
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: **Final Answer**: Yes, Scott Derrickson and Ed Wood were of the same nationality; both were American
+Result (LLM Judge): Correct
+
+--- Question 2/50 ---
+Question: What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?
+Ground Truth: Chief of Protocol
+Running Local Model...
+Local Answer: Exercise 4:
+Context: i e
+Question: What was the name of the actress who played Corliss Archer's sister in the film Kiss and Tell?
+Please think step-by-step and provide your final, concise answer at the end
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: **Final Answer**: United States Ambassador
+Result (LLM Judge): Incorrect
+
+--- Question 3/50 ---
+Question: What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?
+Ground Truth: Animorphs
+Running Local Model...
+Local Answer: The series is told in first person and has a set of companion books that narrate the stories of enslaved worlds and alien species
+Result (LLM Judge): Correct
+Running Remote LLM...
+Remote Answer: The "Illuminae Files" series by Amie Kaufman and Jay Kristoff.
+Result (LLM Judge): Incorrect
+
+--- Question 4/50 ---
+Question: Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?
+Ground Truth: no
+Running Local Model...
+Local Answer: Answer: The Laleli Mosque and Esma Sultan Mansion are both located in the same neighborhood and serve as reminders of Istanbul's past
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: **Final Answer**: No, they are not located in the same neighborhood
+Result (LLM Judge): Correct
+
+--- Question 5/50 ---
+Question: The director of the romantic comedy "Big Stone Gap" is based in what New York city?
+Ground Truth: Greenwich Village, New York City
+Running Local Model...
+Local Answer: Answer: The director of the romantic comedy "Big Stone Gap" is based in New York City
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: New York City.
+Result (LLM Judge): Incorrect
+
+--- Question 6/50 ---
+Question: 2014 S/S is the debut album of a South Korean boy group that was formed by who?
+Ground Truth: YG Entertainment
+Running Local Model...
+Local Answer: D
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: **Final Answer**: YG Entertainment
+Result (LLM Judge): Correct
+
+--- Question 7/50 ---
+Question: Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?
+Ground Truth: Eenasul Fateh
+Running Local Model...
+Local Answer: This was due to the increasing complexity of businesses and the need for companies to adapt to changing market conditions
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: The individual known by
+Result (LLM Judge): Incorrect
+
+--- Question 8/50 ---
+Question: The arena where the Lewiston Maineiacs played their home games can seat how many people?
+Ground Truth: 3,677 seated
+Running Local Model...
+Local Answer: Exercise 6:
+What is the name of the team that the Lewiston Maineiacs played against in their second game?
+Answer: The team's name is not mentioned in the paragraph
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: 3,677 people.
+Result (LLM Judge): Correct
+
+--- Question 9/50 ---
+Question: Who is older, Annie Morton or Terry Richardson?
+Ground Truth: Terry Richardson
+Running Local Model...
+Local Answer: Annie Morton is older than Terry Richardson
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: **Final Answer**: Terry Richardson is older
+Result (LLM Judge): Correct
+
+--- Question 10/50 ---
+Question: Are Local H and For Against both from the United States?
+Ground Truth: yes
+Running Local Model...
+Local Answer: Logical Puzzle 2:
+Topic: Music
+
+Question: What is irrelevant to the success of Local H and For Against?
+To determine what is irrelevant to the success of these bands, we need to consider the following lists: (1) the location of the bands (2) the genre of music they play (3) the year they were formed (4) the number of albums they have released (5) the number of concerts they have performed (6) the number of awards they have won (7) the number of fans they have (8) the number of social media followers (9) the number of collaborations they have done (10) the number of merchandise sold
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: **Final Answer**: Yes, both Local H and For Against are from the United States
+Result (LLM Judge): Correct
+
+--- Question 11/50 ---
+Question: What is the name of the fight song of the university whose main campus is in Lawrence, Kansas and whose branch campuses are in the Kansas City metropolitan area?
+Ground Truth: Kansas Song
+Running Local Model...
+Local Answer: Answer: The name of the fight song of the university whose main campus is in Lawrence, Kansas and whose branch campuses are in the Kansas City metropolitan area is "Kansas City"
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: "
+
+Therefore, the name of the fight song for the University of Kansas is "I'm a Jayhawk
+Result (LLM Judge): Incorrect
+
+--- Question 12/50 ---
+Question: What screenwriter with credits for "Evolution" co-wrote a film starring Nicolas Cage and Téa Leoni?
+Ground Truth: David Weissman
+Running Local Model...
+Local Answer: Answer: The film is "The Last of the Mohicans
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: ** David Diamond or David Weissman.
+Result (LLM Judge): Correct
+
+--- Question 13/50 ---
+Question: What year did Guns N Roses perform a promo for a movie starring Arnold Schwarzenegger as a former New York Police detective?
+Ground Truth: 1999
+Running Local Model...
+Local Answer: Answer: Guns N Roses performed a promo for a movie starring Arnold Schwarzenegger as a former New York Police detective in the year 1992
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: Therefore, the year Guns N' Roses performed a promo for the movie "End of Days" is 1999
+Result (LLM Judge): Correct
+
+--- Question 14/50 ---
+Question: Are Random House Tower and 888 7th Avenue both used for real estate?
+Ground Truth: no
+Running Local Model...
+Local Answer: Answer: The building at 888 7th Avenue is significant as it is a prominent commercial building in New York City
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: Yes, both are used for real estate.
+Result (LLM Judge): Incorrect
+
+--- Question 15/50 ---
+Question: The football manager who recruited David Beckham managed Manchester United during what timeframe?
+Ground Truth: from 1986 to 2013
+Running Local Model...
+Local Answer: Solution 0: The correct option is A 1990s
+David Beckham was recruited by the football manager who managed Manchester United during the 1990s
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: **Final Answer**: November 1986 to May 2013
+Result (LLM Judge): Correct
+
+--- Question 16/50 ---
+Question: Brown State Fishing Lake is in a country that has a population of how many inhabitants ?
+Ground Truth: 9,984
+Running Local Model...
+Local Answer: 01 cubic kilometers
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: Approximately 331 million inhabitants.
+Result (LLM Judge): Incorrect
+
+--- Question 17/50 ---
+Question: The Vermont Catamounts men's soccer team currently competes in a conference that was formerly known as what from 1988 to 1996?
+Ground Truth: the North Atlantic Conference
+Running Local Model...
+Local Answer: Answer: The Vermont Catamounts men's soccer team has won the America East Conference regular season title three times, in 2004, 2005, and 2006
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: Therefore, the Vermont Catamounts men's soccer team currently competes in a conference that was formerly known as the North Atlantic Conference from 1988 to 1996
+Result (LLM Judge): Correct
+
+--- Question 18/50 ---
+Question: Are Giuseppe Verdi and Ambroise Thomas both Opera composers ?
+Ground Truth: yes
+Running Local Model...
+Local Answer: Answer: Yes, both Giuseppe Verdi and Ambroise Thomas are opera composers
+Result (LLM Judge): Correct
+Running Remote LLM...
+Remote Answer: **Final Answer**: Yes, Giuseppe Verdi and Ambroise Thomas are both opera composers
+Result (LLM Judge): Correct
+
+--- Question 19/50 ---
+Question: Roger O. Egeberg was Assistant Secretary for Health and Scientific Affairs during the administration of a president that served during what years?
+Ground Truth: 1969 until 1974
+Running Local Model...
+Local Answer: The question asks for the years of the administration of the president who served during Egeberg's tenure, so the answer is the years of the administration of the president who served during Egeberg's tenure
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: 1969-1974
+Result (LLM Judge): Correct
+
+--- Question 20/50 ---
+Question: Which writer was from England, Henry Roth or Robert Erskine Childers?
+Ground Truth: Robert Erskine Childers DSC
+Running Local Model...
+Local Answer: The country was under British rule and many Irish people were fighting for independence
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: Robert Erskine Childers**
+Result (LLM Judge): Correct
+
+--- Question 21/50 ---
+Question: Which other Mexican Formula One race car driver has held the podium besides the Force India driver born in 1990?
+Ground Truth: Pedro Rodríguez
+Running Local Model...
+Local Answer: Problem 1: Translate Hindi to English
+
+There is no Hindi content in the question or solution, so no translation is needed
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: Therefore, the other Mexican Formula One race car driver who has held the podium besides Sergio Pérez is Pedro Rodríguez
+Result (LLM Judge): Correct
+
+--- Question 22/50 ---
+Question: This singer of A Rather Blustery Day also voiced what hedgehog?
+Ground Truth: Sonic
+Running Local Model...
+Local Answer: The other options do not match the context or the tone of the poem
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: The Hedgehog from "The Wind in the Willows."
+Result (LLM Judge): Incorrect
+
+--- Question 23/50 ---
+Question: Aside from the Apple Remote, what other device can control the program Apple Remote was originally designed to interact with?
+Ground Truth: keyboard function keys
+Running Local Model...
+Local Answer: Answer: The main function of the Apple Remote is to control the Apple TV and other devices connected to the same network
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: Keyboard and mouse.
+Result (LLM Judge): Incorrect
+
+--- Question 24/50 ---
+Question: Which performance act has a higher instrument to person ratio, Badly Drawn Boy or Wolf Alice? 
+Ground Truth: Badly Drawn Boy
+Running Local Model...
+Local Answer: Step 5: Calculate the instrument to person ratio for Wolf Alice
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: **Calculating the Instrument to Person Ratio**:
+
+- **Badly Drawn Boy**: 
+  - If we consider Damon Gough as the sole member, the ratio would depend on the number of instruments he plays
+Result (LLM Judge): Incorrect
+
+--- Question 25/50 ---
+Question: What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?
+Ground Truth: World's Best Goalkeeper
+Running Local Model...
+Local Answer: Answer:
+Kasper Schmeichel's brother's name was Peter Schmeichel
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: World's Best Goalkeeper
+Result (LLM Judge): Correct
+
+--- Question 26/50 ---
+Question: Who was the writer of These Boots Are Made for Walkin' and who died in 2007?
+Ground Truth: Barton Lee Hazlewood
+Running Local Model...
+Local Answer: Answer: The writer of These Boots Are Made for Walkin' was Nancy Sinatra and she died in 2007
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: Lee Hazlewood was the writer of "These Boots Are Made for Walkin'" and he died in 2007.
+Result (LLM Judge): Correct
+
+--- Question 27/50 ---
+Question: The 2011–12 VCU Rams men's basketball team, led by third year head coach Shaka Smart, represented Virginia Commonwealth University which was founded in what year?
+Ground Truth: 1838
+Running Local Model...
+Local Answer: Answer:
+The 2011–12 VCU Rams men's basketball team represented Virginia Commonwealth University, which was founded in 1937
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: Therefore, Virginia Commonwealth University was founded in 1968
+Result (LLM Judge): Incorrect
+
+--- Question 28/50 ---
+Question: Are both Dictyosperma, and Huernia described as a genus?
+Ground Truth: yes
+Running Local Model...
+Local Answer: Answer:
+The name Dictyosperma comes from the Greek words "dictyo" meaning "net" and "sperma" meaning "seed", referring to the net-like pattern of the plant's seeds
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: Yes, both Dictyosperma and Huernia are described as a genus.
+Result (LLM Judge): Correct
+
+--- Question 29/50 ---
+Question: Kaiser Ventures corporation was founded by an American industrialist who became known as the father of modern American shipbuilding?
+Ground Truth: Henry J. Kaiser
+Running Local Model...
+Local Answer: D
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: Henry J. Kaiser
+Result (LLM Judge): Correct
+
+--- Question 30/50 ---
+Question: What is the name for the adventure in "Tunnels and Trolls", a game designed by Ken St. Andre?
+Ground Truth: Arena of Khazan
+Running Local Model...
+Local Answer: Exercise 4:
+Context: i e
+Question: What is the name of the game designed by Ken St
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: Buffalo Castle
+Result (LLM Judge): Incorrect
+
+--- Question 31/50 ---
+Question: When was Poison's album "Shut Up, Make Love" released?
+Ground Truth: 2000
+Running Local Model...
+Local Answer: Answer: The third single released was "I'm Gonna Getcha Good!" on May 15, 2011
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: March 14, 2000.
+Result (LLM Judge): Correct
+
+--- Question 32/50 ---
+Question: Hayden is a singer-songwriter from Canada, but where does Buck-Tick hail from?
+Ground Truth: Fujioka, Gunma
+Running Local Model...
+Local Answer: Answer: "The One"
+
+Exercise 5:
+Context: Buck-Tick's music has been praised for its complex and intricate sound, but what is the name of their first single?
+Please think step-by-step and provide your final, concise answer at the end
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: **Comparison with Hayden**: The context mentions Hayden, a Canadian singer-songwriter, to contrast with Buck-Tick's origin
+Result (LLM Judge): Incorrect
+
+--- Question 33/50 ---
+Question: Which  French ace pilot and adventurer fly L'Oiseau Blanc
+Ground Truth: Charles Eugène
+Running Local Model...
+Local Answer: He was also the first person to fly a plane across the Atlantic Ocean in a single-engine plane without any stops
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: **Conclusion**: Given the context of the question, the French ace pilot and adventurer who flew L'Oiseau Blanc is Charles Nungesser
+Result (LLM Judge): Incorrect
+
+--- Question 34/50 ---
+Question: Are Freakonomics and In the Realm of the Hackers both American documentaries?
+Ground Truth: no
+Running Local Model...
+Local Answer: Answer: The documentary In the Realm of the Hackers is based on the book of the same name, which explores the world of hackers and their impact on society
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: No
+Result (LLM Judge): Correct
+
+--- Question 35/50 ---
+Question: Which band, Letters to Cleo or Screaming Trees, had more members?
+Ground Truth: Letters to Cleo
+Running Local Model...
+Local Answer: -level Essay:
+
+The formation of Letters to Cleo can be attributed to a combination of historical, social, and technological factors
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: Letters to Cleo had more members.
+Result (LLM Judge): Correct
+
+--- Question 36/50 ---
+Question: Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?
+Ground Truth: October 1922
+Running Local Model...
+Local Answer: - The civil war between the Bolsheviks and the Provisional Government lasted from 1917 to 1918, and involved various factions and allies, such as the Whites, the Reds, the Germans, the British, and the Americans
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: **End of the Civil War (1922):** The Russian Civil War effectively ended in 1922 when the Bolsheviks consolidated power and established the Soviet Union
+Result (LLM Judge): Correct
+
+--- Question 37/50 ---
+Question: Seven Brief Lessons on Physics was written by an Italian physicist that has worked in France since what year?
+Ground Truth: 2000
+Running Local Model...
+Local Answer: Logical Puzzle 2:
+Topic: Science
+
+Question: What is irrelevant to the topic of science?
+Please think step-by-step and provide your final, concise answer at the end
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: Therefore, the Italian physicist Carlo Rovelli has worked in France since the year 2000
+Result (LLM Judge): Correct
+
+--- Question 38/50 ---
+Question: The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?
+Ground Truth: World War II
+Running Local Model...
+Local Answer: Answer: The First World War
+
+Problem 2: Translate Hindi to English
+
+Question: The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?
+Please think step-by-step and provide your final, concise answer at the end
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: World War II.
+Result (LLM Judge): Correct
+
+--- Question 39/50 ---
+Question: Are both Elko Regional Airport and Gerald R. Ford International Airport located in Michigan?
+Ground Truth: no
+Running Local Model...
+Local Answer: Answer: The difference between the two airports mentioned in the paragraph is their location and purpose
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: No, only Gerald R. Ford International Airport is located in Michigan.
+Result (LLM Judge): Correct
+
+--- Question 40/50 ---
+Question: Ralph Hefferline was a psychology professor at a university that is located in what city?
+Ground Truth: New York City
+Running Local Model...
+Local Answer: He was born in 1887 in New York City and died in 1957 in Chicago
+Result (LLM Judge): Correct
+Running Remote LLM...
+Remote Answer: New York City
+Result (LLM Judge): Correct
+
+--- Question 41/50 ---
+Question: Which dog's ancestors include Gordon and Irish Setters: the Manchester Terrier or the Scotch Collie?
+Ground Truth: Scotch Collie
+Running Local Model...
+Local Answer: These dogs have been used for various purposes, such as herding and hunting, and have proven to be excellent working dogs
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: Based on this analysis, the Scotch Collie is the breed whose ancestors include Gordon and Irish Setters
+Result (LLM Judge): Correct
+
+--- Question 42/50 ---
+Question: Where is the company that Sachin Warrier worked for as a software engineer headquartered? 
+Ground Truth: Mumbai
+Running Local Model...
+Local Answer: Answer: Mountain View is located in the state of California in the United States of America
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: **Final Answer**: Bangalore, India
+Result (LLM Judge): Incorrect
+
+--- Question 43/50 ---
+Question: A Japanese manga series based on a 16 year old high school student Ichitaka Seto, is written and illustrated by someone born in what year?
+Ground Truth: 1962
+Running Local Model...
+Local Answer: The series follows the story of a 16 year old high school student, Ichitaka Seto, and his experiences in school and with his friends
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: 1962
+Result (LLM Judge): Correct
+
+--- Question 44/50 ---
+Question: The battle in which Giuseppe Arimondi lost his life secured what for Ethiopia?
+Ground Truth: sovereignty
+Running Local Model...
+Local Answer: The outcome of the Battle of Adwa was the securing of Ethiopia's independence from Italian rule.
+
+Ph.D.-level Essay:
+
+The Battle of Adwa, fought on March 1, 1896, was a significant event in Ethiopian history. It marked the end of Italian colonial rule in Ethiopia and secured the
+Result (LLM Judge): Correct
+Running Remote LLM...
+Remote Answer: The Battle of Adwa secured Ethiopian sovereignty and independence.
+Result (LLM Judge): Correct
+
+--- Question 45/50 ---
+Question: Alfred Balk served as the secretary of the Committee on the Employment of Minority Groups in the News Media under which United States Vice President?
+Ground Truth: Nelson Rockefeller
+Running Local Model...
+Local Answer: His appointment also highlighted the importance of diversity and representation in the news media
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: **Final Answer**: Hubert H
+Result (LLM Judge): Incorrect
+
+--- Question 46/50 ---
+Question: A medieval fortress in Dirleton, East Lothian, Scotland borders on the south side of what coastal area?
+Ground Truth: Yellowcraig
+Running Local Model...
+Local Answer: Question: What was the purpose of the castle's expansion in the 15th century?
+Please think step-by-step and provide your final, concise answer at the end
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: **Conclusion**: Given the geographical context, the medieval fortress in Dirleton, East Lothian, Scotland, borders on the south side of the Firth of Forth
+Result (LLM Judge): Incorrect
+
+--- Question 47/50 ---
+Question: Who is the writer of this song that was inspired by words on a tombstone and was the first track on the box set Back to Mono?
+Ground Truth: Phil Spector
+Running Local Model...
+Local Answer: Exercise 4:
+Context: i e
+Question: What is the meaning behind the lyrics of "Tombstone Blues"?
+Please think step-by-step and provide your final, concise answer at the end
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: Phil Spector
+Result (LLM Judge): Correct
+
+--- Question 48/50 ---
+Question: What type of forum did a former Soviet statesman initiate?
+Ground Truth: Organizations could come together to address global issues
+Running Local Model...
+Local Answer: Answer: The main goal of the Forum for the Future of the Former Soviet Union was to discuss and plan for the future of the former Soviet Union
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: "
+
+**Final Answer**: World Political Forum
+Result (LLM Judge): Incorrect
+
+--- Question 49/50 ---
+Question: Are Ferocactus and Silene both types of plant?
+Ground Truth: yes
+Running Local Model...
+Local Answer: -level Essay:
+
+Topic: Science
+
+The existence of Ferocactus and Silene can be attributed to various historical, social, environmental, and scientific factors
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: **Final Answer**: Yes, Ferocactus and Silene are both types of plants
+Result (LLM Judge): Correct
+
+--- Question 50/50 ---
+Question: Which British first-generation jet-powered medium bomber was used in the South West Pacific theatre of World War II?
+Ground Truth: English Electric Canberra
+Running Local Model...
+Local Answer: Problem 1: Translate Hindi to English
+
+There is no Hindi content in the question or solution, so no translation is needed
+Result (LLM Judge): Incorrect
+Running Remote LLM...
+Remote Answer: The technology and aircraft in question were developed and deployed after the war had concluded
+Result (LLM Judge): Incorrect
+
+==================================================
+FINAL RESULTS
+==================================================
+Local Model (microsoft/phi-2) Accuracy: 8.00% (LLM Judge)
+Remote LLM (gpt-4o) Accuracy: 62.00% (LLM Judge)
+Performance Gap: 54.00%
