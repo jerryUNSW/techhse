@@ -100,7 +100,8 @@ def get_remote_llm_client(provider):
     else:
         raise ValueError(f"Unsupported remote LLM provider: {provider}")
 
-def generate_sentence_replacements_with_nebius(nebius_client, nebius_model_name, input_sentence, num_return_sequences=10, max_tokens=150, num_api_calls=5):
+def generate_sentence_replacements_with_nebius(nebius_client, nebius_model_name, 
+    input_sentence, num_return_sequences=10, max_tokens=150, num_api_calls=5):
     """
     Generates diverse, generalized, and anonymized paraphrases of an input sentence
     using a Nebius LLM via the Nebius API.

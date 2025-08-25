@@ -62,7 +62,7 @@ def generate_tasks(n_vectors):
 
 def initialize_embeddings(epsilon):
     """Initialize embeddings and related data structures if not already present."""
-    base_path = "/home/yizhang/HSE-privacy/priv-llm-infer/InferDPT/data"
+    base_path = "InferDPT/data"
     embeddings_path = f"{base_path}/cl100_embeddings.json"
     sorted_embeddings_path = f"{base_path}/sorted_cl100_embeddings.json"
     sensitivity_path = f"{base_path}/sensitivity_of_embeddings.json"

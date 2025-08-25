@@ -41,8 +41,8 @@ def test_epsilon_range(question, epsilon_range=(1, 5), num_steps=5):
             nebius_client,
             model_name,
             question,
-            num_return_sequences=5,
-            num_api_calls=5
+            num_return_sequences=10,
+            num_api_calls=10
         )
         
         print(f"Generated {len(candidate_sentences)} candidates")
@@ -126,7 +126,7 @@ def run_epsilon_experiment():
 
 def save_epsilon_results(all_results):
     """Save epsilon experiment results to a file."""
-    filename = "epsilon_experiment_results.txt"
+    filename = "epsilon_experiment_results_100candidates.txt"
     
     with open(filename, 'w') as f:
         f.write("EPSILON EXPERIMENT RESULTS\n")

@@ -232,6 +232,32 @@ If you use this code in your research, please cite:
 - ✅ **Quality Improvements**: Eliminated tautological/nonsensical questions through improved prompt engineering
 - ✅ **Full Transparency**: Enhanced result recording to include all candidates with similarity scores
 
+### December 19, 2024 - Critical Observation: Similarity Score Diversity Issue
+
+**Problem Identified:**
+- ❌ **Limited Similarity Range**: Current candidates all have very similar similarity scores (mostly around 25-35%)
+- ❌ **Exponential Mechanism Ineffectiveness**: This narrow range doesn't provide enough diversity for the exponential mechanism to work effectively
+- ❌ **Poor Privacy-Utility Tradeoffs**: The exponential mechanism needs a wide range of utility scores to make meaningful privacy-utility tradeoffs
+
+**Root Cause Analysis:**
+- The current prompts are too restrictive and focused on aggressive generalization
+- All candidates end up with similar low similarity scores due to uniform anonymization approach
+- The exponential mechanism cannot effectively distinguish between candidates with similar utility scores
+
+**Solution Approach:**
+- 🔄 **Spectrum-Based Generation**: Modified prompts to generate candidates across a spectrum of generalization levels
+- 🔄 **Target Similarity Ranges**: 
+  - High Specificity (60-80% similarity): Keep some original names/places
+  - Medium Generalization (40-60% similarity): Replace most specifics
+  - High Generalization (20-40% similarity): Aggressive anonymization
+  - Maximum Privacy (10-20% similarity): Complete anonymization
+- 🔄 **Progressive Generalization**: Implemented rules for varying levels of name/place replacement
+
+**Expected Impact:**
+- Wider range of similarity scores (10% to 80%) for better exponential mechanism performance
+- More meaningful privacy-utility tradeoffs across different epsilon values
+- Better demonstration of differential privacy effectiveness
+
 **Technical Improvements:**
 - **Candidate Generation**: Fixed parsing logic to handle LLM responses correctly (25 candidates instead of ~200)
 - **Prompt Externalization**: Created `prompt_loader.py` for modular prompt management
@@ -250,6 +276,38 @@ If you use this code in your research, please cite:
 - `prompt_loader.py` - Prompt management utilities
 - `utils.py` - Enhanced candidate generation and parsing
 - `test_phrase_dp.py` - Improved result recording
+
+### December 19, 2024 - InferDPT Integration and Comparison
+
+**Major Achievement:**
+- ✅ **InferDPT Integration**: Successfully integrated InferDPT framework for comparison with custom phrase-level DP
+- ✅ **Scenario 3.2 Implementation**: Added new experimental scenario using InferDPT's token-level perturbation
+- ✅ **Comprehensive Testing**: Created `test_inferdpt.py` for systematic evaluation of InferDPT performance
+- ✅ **Epsilon Analysis**: Tested InferDPT with varying epsilon values (0.1, 0.5, 1.0, 2.0, 5.0)
+
+**InferDPT Testing Results:**
+- **Test Question**: "Were Scott Derrickson and Ed Wood of the same nationality?"
+- **Epsilon Values**: [0.1, 0.5, 1.0, 2.0, 5.0]
+- **Success Rate**: 5/5 (100%)
+- **Average Similarity**: 0.0587 (very low)
+- **Similarity Range**: -0.0471 to 0.1339
+
+**Key Findings:**
+- **Token-Level Perturbation**: InferDPT performs token-by-token replacement, resulting in semantically incoherent text
+- **High Privacy, Low Utility**: Provides extremely high privacy protection but very low semantic coherence
+- **No Clear Epsilon Trend**: Similarity scores don't show consistent relationship with epsilon values
+- **Comparison with Phrase DP**: Your custom approach maintains much better semantic coherence while providing reasonable privacy
+
+**Technical Implementation:**
+- **Fixed Data Path**: Corrected hardcoded path in `inferdpt.py` to use relative path `InferDPT/data/`
+- **Multi-Scenario Framework**: Updated `multi_hop_experiment_copy.py` to include both phrase DP (3.1) and InferDPT (3.2)
+- **Comprehensive Documentation**: Detailed analysis in `testing-inferdpt.txt`
+
+**Files Added/Modified:**
+- `test_inferdpt.py` - New InferDPT testing framework
+- `inferdpt.py` - Fixed data path configuration
+- `multi_hop_experiment_copy.py` - Added Scenario 3.2 (InferDPT)
+- `testing-inferdpt.txt` - Comprehensive test results
 
 ### Previous Progress
 - **Git Version Control**: Initialized repository with comprehensive `.gitignore`

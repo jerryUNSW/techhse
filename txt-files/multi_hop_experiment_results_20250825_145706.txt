@@ -1,0 +1,156 @@
+[96mLoading dataset: hotpotqa/hotpot_qa...[0m
+
+[93m--- Question 1/10 ---[0m
+Original Question: Were Scott Derrickson and Ed Wood of the same nationality?
+Ground Truth: yes
+
+[94m--- Scenario 1: Purely Local Model (Baseline) ---[0m
+Local Answer (Alone): Scott Derrickson was born in the United States, and Ed Wood was also an American filmmaker
+Result (LLM Judge): Correct
+
+[94m--- Scenario 2: Non-Private Local Model + CoT ---[0m
+[92m2a. Generating CoT from ORIGINAL Question with REMOTE LLM (gpt-4o) (Context NOT sent)...[0m
+[96mGenerated Chain-of-Thought (Remote, Non-Private):[0m
+To determine if Scott Derrickson and Ed Wood were of the same nationality, we need to consider the nationalities of each individual based on general knowledge.
+
+1. **Scott Derrickson**: He is a contemporary filmmaker known for his work in the horror genre, including films like "The Exorcism of Emily Rose" and "Doctor Strange." Scott Derrickson was born in the United States, making him American.
+
+2. **Ed Wood**: He was a filmmaker known for his work in the 1950s, often regarded as one of the worst directors in film history, with movies like "Plan 9 from Outer Space." Ed Wood was also born in the United States, making him American.
+
+Both individuals are known to be American filmmakers. Therefore, based on this information, it appears that Scott Derrickson and Ed Wood share the same nationality.
+
+[94m2b. Running Local Model with Non-Private CoT...[0m
+Local Answer (Non-Private CoT-Aided): Yes, Scott Derrickson and Ed Wood were of the same nationality; both were American
+Result (LLM Judge): Correct
+
+[94m--- Scenario 2.5: Non-Private Local Model + Local CoT ---[0m
+[96mNon-Private Local CoT: To determine if Scott Derrickson and Ed Wood were of the same nationality, I need to consider the following steps:
+
+1. **Identify Scott Derrickson:**
+   - Scott Derrickson is a contemporary figure known for his work in the film industry, particularly as a director and screenwriter.
+   - He is known for directing films such as "The Exorcism of Emily Rose" and "Doctor Strange."
+
+2. **Identify Ed Wood:**
+   - Ed Wood is a historical figure in the film industry, known for his work as a director and screenwriter in the mid-20th century.
+   - He is often remembered for his film "Plan 9 from Outer Space."
+
+3. **Determine Nationality:**
+   - For Scott Derrickson, I need to consider his background. He is a well-known figure in Hollywood, which suggests he is likely American.
+   - For Ed Wood, I need to consider his background. He is a notable figure in early American cinema, which suggests he is also American.
+
+4. **Compare Nationalities:**
+   - If both Scott Derrickson and Ed Wood are identified as American, then they share the same nationality.
+
+Based on these steps, I can conclude that both Scott Derrickson and Ed Wood are[0m
+[94mNon-Private Local + Local CoT Answer: Yes, Scott Derrickson and Ed Wood were of the same nationality; both were American. Scott Derrickson is a contemporary American director and screenwriter, while Ed Wood was a mid-20th-century American filmmaker.[0m
+[92mNon-Private Local + Local CoT Correct: True[0m
+
+[94m--- Scenario 3.1: Private Local Model + CoT (Phrase DP) ---[0m
+[92m3.1a. Applying Phrase-Level Differential Privacy to the question...[0m
+[92mApplying differential privacy perturbation with epsilon=1.0...[0m
+API call 1/5...
+API call 2/5...
+API call 3/5...
+API call 4/5...
+API call 5/5...
+Generated 50 total candidates from 5 API calls
+Candidates and similarities:
+  [94mIs a notable figure from a region considered to have the same nationality as a professional from the same area?[0m 		 similarity = [92m0.3008[0m
+  [94mDoes a professional named Derrickson and the individual known as Ed Wood share the same nationality?[0m 		 similarity = [92m0.8303[0m
+  [94mIs it possible that the professionals associated with a particular industry shared the same nationality?[0m 		 similarity = [92m0.3300[0m
+  [94mIs there a shared nationality between an individual associated with a film industry and a notable director from the past?[0m 		 similarity = [92m0.3569[0m
+  [94mIs an individual and another public figure from the same country of origin?[0m 		 similarity = [92m0.3075[0m
+  [94mDo Scott Derrickson and Ed Wood belong to the same country?[0m 		 similarity = [92m0.9186[0m
+  [94mDo two professionals, such as a person involved in filmmaking and another in directing, share the same nationality?[0m 		 similarity = [92m0.3189[0m
+  [94mIs it true that the nationalities of two well-known directors overlap?[0m 		 similarity = [92m0.3785[0m
+  [94mDoes a renowned filmmaker and an individual from the past share a common country of origin?[0m 		 similarity = [92m0.2967[0m
+  [94mIs a public figure and a professional connected by the same national background?[0m 		 similarity = [92m0.2629[0m
+  [94mIs a person from the same region likely to share the same nationality as another professional?[0m 		 similarity = [92m0.2914[0m
+  [94mIs a professional and a public figure from the same country?[0m 		 similarity = [92m0.2397[0m
+  [94mIs there a shared nationality between a notable figure in the film industry and a famous director?[0m 		 similarity = [92m0.3201[0m
+  [94mDoes the professional from the United States share the same nationality as the filmmaker?[0m 		 similarity = [92m0.2993[0m
+  [94mIs the national background of a notable director comparable to that of a famous filmmaker from a different era?[0m 		 similarity = [92m0.2686[0m
+  [94mDoes an individual known for directing films share the same nationality as another renowned director from the past?[0m 		 similarity = [92m0.3327[0m
+  [94mIs a professional from one country the same nationality as a public figure from another country?[0m 		 similarity = [92m0.2508[0m
+  [94mIs there a common nationality shared by Scott Derrickson and Ed Wood?[0m 		 similarity = [92m0.9086[0m
+  [94mIs there a shared nationality between the individuals Scott Derrickson and Ed Wood?[0m 		 similarity = [92m0.9485[0m
+  [94mIs there a shared nationality between a notable director and a legendary filmmaker?[0m 		 similarity = [92m0.3063[0m
+  [94mDoes an individual like Scott Derrickson share the same nationality as a professional such as Ed Wood?[0m 		 similarity = [92m0.8105[0m
+  [94mIs it possible that two filmmakers shared the same country of origin?[0m 		 similarity = [92m0.3289[0m
+  [94mIs an individual involved in film direction from the same country as a notable figure in cult cinema?[0m 		 similarity = [92m0.2293[0m
+  [94mIs the nationality of a notable figure in the film industry and another individual from a different era shared?[0m 		 similarity = [92m0.3287[0m
+  [94mWhat nationality did the directors Scott Derrickson and Ed Wood share?[0m 		 similarity = [92m0.8412[0m
+  [94mDo an individual and another professional share the same nationality, perhaps originating from a similar place?[0m 		 similarity = [92m0.3265[0m
+  [94mDo an individual like Scott Derrickson and a person like Ed Wood share the same nationality?[0m 		 similarity = [92m0.8854[0m
+  [94mDid the individual who directed a horror film and the person known for his low-budget projects share the same country of origin?[0m 		 similarity = [92m0.2940[0m
+  [94mIs it possible that two notable filmmakers, like a director and a screenwriter, share the same national origin?[0m 		 similarity = [92m0.3430[0m
+  [94mDo a director and a filmmaker share the same nationality?[0m 		 similarity = [92m0.2713[0m
+  [94mDo a professional from the film industry and another creative individual share the same country of origin?[0m 		 similarity = [92m0.3160[0m
+  [94mIs there a shared nationality between a notable figure in the film industry and a legendary filmmaker?[0m 		 similarity = [92m0.2892[0m
+  [94mIs the individual behind "Sinister" and the creator of "Glen or Glenda" from the same country of origin?[0m 		 similarity = [92m0.2428[0m
+  [94mDo the nationalities of a notable film director and a controversial filmmaker align?[0m 		 similarity = [92m0.2589[0m
+  [94mIs there any shared nationality between the filmmaker who directed "Sinister" and the director known for "Plan 9 from Outer Space"?[0m 		 similarity = [92m0.2329[0m
+  [94mIs the nationality of a professional filmmaker the same as that of a notable director from a distinct period?[0m 		 similarity = [92m0.2318[0m
+  [94mIs the nationality of a notable filmmaker and a renowned director from the same country?[0m 		 similarity = [92m0.2741[0m
+  [94mIs it possible that two filmmakers, one known for horror and another for camp, might share the same country of origin?[0m 		 similarity = [92m0.2715[0m
+  [94mIs there any shared nationality between two professionals in the film industry?[0m 		 similarity = [92m0.3311[0m
+  [94mIs the nationality of a notable director and a famous filmmaker the same?[0m 		 similarity = [92m0.2750[0m
+  [94mDo a director and a screenwriter share a nationality, considering they both hail from the same country?[0m 		 similarity = [92m0.3227[0m
+  [94mIs an individual and another professional known to be from the same country?[0m 		 similarity = [92m0.3441[0m
+  [94mDo two directors share the same nationality?[0m 		 similarity = [92m0.3426[0m
+  [94mIs it possible that two professionals from the same region share a common heritage?[0m 		 similarity = [92m0.3582[0m
+  [94mIs it possible that an individual and a public figure from different professional backgrounds share the same nationality?[0m 		 similarity = [92m0.3329[0m
+  [94mIs it possible that a notable director and an unconventional filmmaker share a common national background?[0m 		 similarity = [92m0.2678[0m
+  [94mIs it possible that two professionals from the same country have different cultural backgrounds?[0m 		 similarity = [92m0.3418[0m
+  [94mDoes the individual known as Scott Derrickson share the same nationality as the person known as Ed Wood?[0m 		 similarity = [92m0.9386[0m
+  [94mIs it accurate to say that two notable directors share a nationality?[0m 		 similarity = [92m0.3398[0m
+  [94mIs it known if the nationalities of two filmmakers, one associated with modern horror films and the other known for campy 1950s movies, align?[0m 		 similarity = [92m0.2778[0m
+DP replacement selected: Is it known if the nationalities of two filmmakers, one associated with modern horror films and the other known for campy 1950s movies, align?
+Perturbed Question: Is it known if the nationalities of two filmmakers, one associated with modern horror films and the other known for campy 1950s movies, align?
+[92m3.1b. Generating CoT from Perturbed Question with REMOTE LLM (gpt-4o) (Context NOT sent)...[0m
+[96mGenerated Chain-of-Thought (Remote, Private):[0m
+To determine if the nationalities of the two filmmakers align, we need to identify who these filmmakers might be based on the descriptions provided.
+
+1. **Modern Horror Filmmaker**: This could refer to a director known for contemporary horror films. Some well-known modern horror filmmakers include:
+   - Jordan Peele (American) known for "Get Out" and "Us".
+   - Ari Aster (American) known for "Hereditary" and "Midsommar".
+   - James Wan (Australian) known for "The Conjuring" series and "Saw".
+   - Guillermo del Toro (Mexican) known for "Pan's Labyrinth" and "Crimson Peak".
+
+2. **Campy 1950s Filmmaker**: This description suggests a director known for making films in the 1950s that are considered campy, often characterized by exaggerated style and humor. A prominent figure in this category is:
+   - Ed Wood (American), known for films like "Plan 9 from Outer Space" and "Glen or Glenda".
+
+Next, we compare the nationalities of the filmmakers identified:
+
+- If we consider Jordan Peele or Ari Aster as the modern horror filmmaker, both are American, aligning with Ed Wood's
+
+[94m3.1c. Running Local Model with Private CoT...[0m
+Local Answer (Private CoT-Aided): ** Yes, Scott Derrickson and Ed Wood were of the same nationality; both were American.
+Result (LLM Judge): Correct
+
+[94m--- Scenario 3.2: Private Local Model + CoT (InferDPT) ---[0m
+[92m3.2a. Applying InferDPT Differential Privacy to the question...[0m
+Loading inferdpt.py
+Embeddings will be loaded when perturb_sentence is called
+Initializing the embeddings for InferDPT.
+# Initialize sorted embeddings if not present
+Traceback (most recent call last):
+  File "/home/yizhang/tech4HSE/multi_hop_experiment_copy.py", line 415, in <module>
+    run_experiment_for_model(model_name)
+  File "/home/yizhang/tech4HSE/multi_hop_experiment_copy.py", line 396, in run_experiment_for_model
+    _, is_correct_inferdpt = run_scenario_3_2_inferdpt_local_cot(
+  File "/home/yizhang/tech4HSE/multi_hop_experiment_copy.py", line 254, in run_scenario_3_2_inferdpt_local_cot
+    perturbed_question = perturb_sentence(original_question, config["epsilon"])
+  File "/home/yizhang/tech4HSE/inferdpt.py", line 176, in perturb_sentence
+    token_to_vector_dict, sorted_distance_data, delta_f_new = initialize_embeddings(epsilon)
+  File "/home/yizhang/tech4HSE/inferdpt.py", line 145, in initialize_embeddings
+    sorted_distance_dict_matrix = json.load(f)
+  File "/home/yizhang/miniconda3/envs/priv-env/lib/python3.10/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "/home/yizhang/miniconda3/envs/priv-env/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/home/yizhang/miniconda3/envs/priv-env/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/home/yizhang/miniconda3/envs/priv-env/lib/python3.10/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+KeyboardInterrupt

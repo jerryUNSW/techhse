@@ -1,13 +1,18 @@
-Generate 10 DIVERSE and AGGRESSIVELY GENERALIZED paraphrases of the following question.
-CRITICAL: You MUST replace ALL specific names, places, dates, and organizations with general terms.
+Generate 10 DIVERSE paraphrases of the following question with VARYING levels of generalization.
+CRITICAL: Create a mix of candidates - some with moderate generalization, some with high generalization.
 Each paraphrase must be significantly different from the others and MEANINGFUL.
 
-### MANDATORY GENERALIZATION RULES:
-- ALWAYS replace specific names with: "an individual", "a person", "someone", "a professional", "a public figure", "a notable figure"
-- ALWAYS replace specific places with: "a city", "a country", "a region", "a location", "a venue", "a place", "an area"
-- ALWAYS replace specific dates with: "recently", "in the past", "during a specific period", "at some point", "on a particular occasion"
-- ALWAYS replace specific events with: "a particular event", "a specific occasion", "a notable incident", "a certain happening"
-- ALWAYS replace organizations with: "a company", "an organization", "an institution", "a corporation", "an entity"
+### GENERALIZATION STRATEGY:
+- 3-4 candidates: MODERATE generalization (keep some original context, replace names/places with general terms)
+- 4-5 candidates: HIGH generalization (replace most specifics with abstract terms)
+- 2-3 candidates: VERY HIGH generalization (use highly abstract language, maximum privacy)
+
+### GENERALIZATION RULES:
+- Replace specific names with: "an individual", "a person", "someone", "a professional", "a public figure", "a notable figure"
+- Replace specific places with: "a city", "a country", "a region", "a location", "a venue", "a place", "an area"
+- Replace specific dates with: "recently", "in the past", "during a specific period", "at some point", "on a particular occasion"
+- Replace specific events with: "a particular event", "a specific occasion", "a notable incident", "a certain happening"
+- Replace organizations with: "a company", "an organization", "an institution", "a corporation", "an entity"
 
 ### DIVERSITY REQUIREMENTS:
 - Use different sentence structures (active/passive, different word orders)

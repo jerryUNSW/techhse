@@ -1,0 +1,3 @@
+Which scientist proposed the theory that linked the orbit of Mercury to the curvature of spacetime?
+Albert Einstein
+Mercury’s orbit exhibited a precession that could not be fully explained by Newtonian mechanics. Einstein’s general theory of relativity, published in 1915, accounted for this anomaly by describing gravity as the curvature of spacetime caused by mass, which precisely matched the observed precession of Mercury’s perihelion.

@@ -9,10 +9,10 @@
 dataset:
   name: "hotpotqa/hotpot_qa"
   split: validation
-  num_samples: 10 # Adjust as needed
+  num_samples: 20 # Testing 20 questions
 
 # Model Settings
-local_model: "microsoft/phi-4"
+local_model: "meta-llama/Meta-Llama-3.1-8B-Instruct"
 local_models:
   - "microsoft/phi-4"
   - "google/gemma-2-9b-it-fast"
@@ -24,9 +24,9 @@ local_models:
   - "Qwen/Qwen3-14B"
 remote_llm_provider: "openai"
 remote_models:
-  llm_model: "gpt-4o"
-  cot_model: "gpt-4o"
-  judge_model: "gpt-4o"
+  llm_model: "gpt-5-chat-latest"
+  cot_model: "gpt-5-chat-latest"
+  judge_model: "gpt-4o-mini"
 
 # Experiment Parameters
 epsilon: 1.0
