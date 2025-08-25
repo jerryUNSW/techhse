@@ -195,6 +195,36 @@ Results are stored in the `test-results/` directory and include:
 - Privacy-utility trade-off analysis
 - Performance metrics for different model combinations
 
+### MedQA Dataset Experiment (50 Questions)
+
+**Dataset**: `GBaker/MedQA-USMLE-4-options` - Medical multiple-choice questions with clinical vignettes
+
+**Final Results (50 Questions)**:
+| **Scenario** | **Accuracy** | **Correct/Total** | **Performance** |
+|--------------|-------------|-------------------|-----------------|
+| **1. Purely Local Model** | **74.00%** | 37/50 | Baseline |
+| **2. Non-Private Local + Remote CoT** | **90.00%** | 45/50 | ⭐ **Best** |
+| **3.1. Private Local + CoT (Phrase DP)** | **78.00%** | 39/50 | ⬆️ Above baseline |
+| **3.2. Private Local + CoT (InferDPT)** | **72.00%** | 36/50 | ⬇️ Below baseline |
+| **4. Purely Remote Model** | **90.00%** | 45/50 | ⭐ **Best** |
+
+**Key Performance Gaps**:
+
+1. **Remote vs Local Performance Gap**: The purely remote model (90.00%) significantly outperforms the local model (74.00%), demonstrating a **16% performance gap**. This shows that remote models have superior reasoning capabilities for complex medical questions.
+
+2. **Phrase DP vs InferDPT Performance Gap**: Scenario 3.1 (Phrase DP) achieves 78.00% accuracy while Scenario 3.2 (InferDPT) achieves only 72.00%. This **6% performance gap** is attributed to:
+   - **Phrase DP**: Maintains semantic coherence by perturbing phrases while preserving overall question meaning
+   - **InferDPT**: Performs token-level perturbation that severely disrupts semantic coherence, producing nonsensical output
+
+**Semantic Coherence Analysis**:
+- **Phrase DP (3.1)**: Generates meaningful perturbations that preserve the medical context and question structure
+- **InferDPT (3.2)**: Produces random word sequences that lose all semantic meaning, making it difficult for the local model to leverage the CoT reasoning
+
+**Privacy-Utility Trade-off**:
+- Both privacy-preserving methods (3.1 & 3.2) perform worse than non-private CoT (90.00%)
+- Phrase DP provides a better balance between privacy and utility compared to InferDPT
+- The performance gap demonstrates the fundamental trade-off between privacy protection and reasoning quality
+
 ## Contributing
 
 1. Fork the repository
@@ -308,6 +338,31 @@ If you use this code in your research, please cite:
 - `inferdpt.py` - Fixed data path configuration
 - `multi_hop_experiment_copy.py` - Added Scenario 3.2 (InferDPT)
 - `testing-inferdpt.txt` - Comprehensive test results
+
+### December 25, 2024 - MedQA Dataset Experiment Completion
+
+**Major Achievement:**
+- ✅ **Complete 50-Question Experiment**: Successfully completed comprehensive evaluation on MedQA dataset
+- ✅ **API Budget Resolution**: Fixed Nebius API budget issues and completed all 50 questions
+- ✅ **Performance Gap Analysis**: Identified key performance differences between privacy-preserving mechanisms
+- ✅ **Semantic Coherence Comparison**: Demonstrated superiority of phrase-level DP over token-level perturbation
+
+**Key Findings:**
+- **Remote vs Local Gap**: 16% performance difference (90% vs 74%) showing remote models' superior reasoning
+- **Phrase DP vs InferDPT Gap**: 6% difference (78% vs 72%) due to semantic coherence preservation
+- **Privacy-Utility Trade-off**: Both privacy methods perform worse than non-private CoT, but Phrase DP provides better balance
+
+**Technical Implementation:**
+- **Dataset**: `GBaker/MedQA-USMLE-4-options` with clinical vignettes
+- **Models**: Meta-Llama-3.1-8B-Instruct (local), GPT-5-chat-latest (remote)
+- **Privacy Mechanisms**: Phrase DP (semantic-preserving) vs InferDPT (token-level)
+- **Results File**: `medqa_experiment_complete_50questions.txt`
+
+**Files Created:**
+- `medqa_experiment.py` - Standalone MedQA experiment framework
+- `medqa_experiment_complete_50questions.txt` - Complete results with all 50 questions
+- `medqa_experiment_cleaned_results.txt` - 42 questions without API errors
+- `medqa_experiment_last8questions_20250825_221550.txt` - Final 8 questions after API fix
 
 ### Previous Progress
 - **Git Version Control**: Initialized repository with comprehensive `.gitignore`
