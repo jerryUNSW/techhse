@@ -7,9 +7,9 @@
 
 ## a medical QA 
 dataset:
-  name: "hotpotqa/hotpot_qa"
-  split: validation
-  num_samples: 20 # Testing 20 questions
+  name: "GBaker/MedQA-USMLE-4-options"  # Changed to MedQA-USMLE for clinical vignettes
+  split: test
+  num_samples: 10 # Testing 10 questions for MedQA
 
 # Model Settings
 local_model: "meta-llama/Meta-Llama-3.1-8B-Instruct"

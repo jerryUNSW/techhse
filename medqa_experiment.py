@@ -382,9 +382,9 @@ def run_experiment_for_model(model_name):
     # Initialize results
     results = MedQAExperimentResults()
     
-    # Get sample questions - test only the last 8 questions (43-50)
-    start_index = 42  # Start from question 43 (0-indexed)
-    num_samples = 8   # Test 8 questions
+    # Get sample questions - test 500 questions starting from 51st (instances 51-550)
+    start_index = 50  # Start from question 51 (0-indexed)
+    num_samples = 500  # Test 500 questions
     sample_questions = dataset.select(range(start_index, start_index + num_samples))
     
     print(f"{CYAN}Testing {len(sample_questions)} questions from MedQA test set{RESET}")

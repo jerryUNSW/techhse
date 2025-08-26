@@ -34,8 +34,6 @@ tech4HSE/
 └── test-results/                # Experiment results
 ```
 
-## Installation
-
 ### Prerequisites
 
 - Python 3.8+
@@ -225,34 +223,158 @@ Results are stored in the `test-results/` directory and include:
 - Phrase DP provides a better balance between privacy and utility compared to InferDPT
 - The performance gap demonstrates the fundamental trade-off between privacy protection and reasoning quality
 
-## Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
 
-## License
+## Datasets
 
-[Add your license information here]
+### 1. MedQA-USMLE-4-options Dataset
 
-## Citation
+**Dataset Name**: `GBaker/MedQA-USMLE-4-options`  
+**Type**: Medical Question Answering with Multiple Choice, No local context
+**Format**: Clinical vignettes with patient scenarios  
+**Questions**: 4-option multiple choice questions  
+**Source**: USMLE (United States Medical Licensing Examination) style questions  
 
-If you use this code in your research, please cite:
+**Usage in Code**:
+```python
+from datasets import load_dataset
 
-```bibtex
-@article{tech4hse2024,
-  title={Tech4HSE: Privacy-Preserving Multi-Hop Question Answering},
-  author={[Your Name]},
-  journal={[Journal/Conference]},
-  year={2024}
-}
+# Load the MedQA dataset
+dataset = load_dataset('GBaker/MedQA-USMLE-4-options')
+
+# Available splits: ['train', 'test']
+# Train: 10,178 examples
+# Test: 1,273 examples
+# Total: 11,451 examples
+
+# Example format:
+# {
+#   'question': 'A 23-year-old pregnant woman at 22 weeks gestation presents...',
+#   'answer': 'Nitrofurantoin',
+#   'options': {'A': 'Ampicillin', 'B': 'Ceftriaxone', 'C': 'Doxycycline', 'D': 'Nitrofurantoin'},
+#   'meta_info': 'step2&3',
+#   'answer_idx': 'D',
+#   'metamap_phrases': ['23 year old pregnant woman', 'weeks presents', 'burning', ...]
+# }
 ```
+
+**Available Fields**:
+- **`question`**: Clinical vignette with patient scenario (string, ~583 chars)
+- **`answer`**: Correct answer text (string, ~14 chars)
+- **`options`**: Dictionary with 4 multiple choice options (A, B, C, D)
+- **`meta_info`**: USMLE step information (string, e.g., 'step1', 'step2&3')
+- **`answer_idx`**: Correct answer letter (string, A/B/C/D)
+- **`metamap_phrases`**: List of medical concepts extracted from question
+
+**Current Experiment Status**: 250/500 questions processed (50% completion)
+
+### 2. MedMCQA Dataset
+
+**Dataset Name**: `medmcqa/medmcqa`  
+**Type**: Medical Question Answering with Multiple Choice, No local context  
+**Format**: Multiple choice questions covering 21 medical subjects  
+**Questions**: AIIMS & NEET PG entrance exam MCQs  
+**Source**: Indian medical entrance exam questions  
+
+**Usage in Code**:
+```python
+from datasets import load_dataset
+
+# Load the MedMCQA dataset
+dataset = load_dataset("medmcqa")
+
+# Available splits: ['train', 'validation', 'test']
+# Train: 182,822 examples
+# Validation: 4,183 examples
+# Test: 6,150 examples
+# Total: 193,155 examples
+
+# Example format:
+# {
+#   'id': 'e9ad821a-c438-4965-9f77-760819dfa155',
+#   'question': 'Chronic urethral obstruction due to benign prismatic hyperplasia can lead to the following change in kidney parenchyma',
+#   'opa': 'Hyperplasia',
+#   'opb': 'Hyperophy',
+#   'opc': 'Atrophy',
+#   'opd': 'Dyplasia',
+#   'cop': 2,
+#   'choice_type': 'single',
+#   'exp': 'Chronic urethral obstruction because of urinary calculi, prostatic hyperophy, tumors, normal pregnancy, tumors, uterine prolapse or functional disorders cause hydronephrosis which by definition is use...',
+#   'subject_name': 'Anatomy',
+#   'topic_name': 'Urinary tract'
+# }
+```
+
+**Available Fields**:
+- **`id`**: Unique question identifier (string, 36 chars)
+- **`question`**: Question text (string, ~118 chars)
+- **`opa`**: Option A (string, ~11 chars)
+- **`opb`**: Option B (string, ~9 chars)
+- **`opc`**: Option C (string, ~7 chars)
+- **`opd`**: Option D (string, ~8 chars)
+- **`cop`**: Correct option number (integer, 1-4)
+- **`choice_type`**: Question type (string, 'single' or 'multi')
+- **`exp`**: Expert's explanation of the answer (string, ~381 chars)
+- **`subject_name`**: Medical subject name (string, ~7 chars, e.g., 'Anatomy', 'Biochemistry')
+- **`topic_name`**: Medical topic name from the subject (string, ~13 chars)
+
+**Key Characteristics**:
+- **Large Scale**: 193,155 high-quality medical questions
+- **21 Medical Subjects**: Anesthesia, Anatomy, Biochemistry, Dental, ENT, Forensic Medicine, etc.
+- **2.4k Healthcare Topics**: Covers wide range of medical topics
+- **Real Exam Questions**: From AIIMS & NEET PG entrance exams
+- **Expert Explanations**: Includes detailed explanations for answers
+- **Single/Multi Choice**: Supports both single and multiple choice questions
+
+### 3. EMRQA-MSQUAD Dataset
+
+**Dataset Name**: `Eladio/emrqa-msquad`  
+**Type**: Medical Question Answering with Extractive QA  
+**Format**: Medical records WITH CONTEXT + questions + extractive answers  
+**Questions**: Natural language questions about patient information  
+**Source**: Real medical records and clinical notes  
+
+**Usage in Code**:
+```python
+from datasets import load_dataset
+
+# Load the EMRQA-MSQUAD dataset
+dataset = load_dataset("Eladio/emrqa-msquad")
+
+# Available splits: ['train', 'validation']
+# Train: 130,956 examples
+# Validation: 32,739 examples
+# Total: 163,695 examples
+
+# Example format:
+# {
+#   'context': 'Mrs. Wetterauer is a 54-year-old female with coronary artery disease...',
+#   'question': 'Has the patient ever taken glyburide for their diabetes mellitus?',
+#   'answers': {
+#     'text': ['Glyburide 5 mg p.o. q.d.,'],
+#     'answer_start': [1553],
+#     'answer_end': [1578]
+#   }
+# }
+```
+
+**Available Fields**:
+- **`context`**: Complete medical record/patient history (long text)
+- **`question`**: Medical question about patient information (string)
+- **`answers`**: Dictionary containing:
+  - **`text`**: List of answer text(s) extracted from context
+  - **`answer_start`**: List of starting character positions in context
+  - **`answer_end`**: List of ending character positions in context
+
+**Key Characteristics**:
+- **Real Medical Data**: Actual clinical questions from medical records
+- **Extractive QA**: Answers are exact text spans from the context
+- **Privacy-Sensitive**: Contains real patient information that needs protection
+- **Rich Medical Terminology**: Uses proper medical abbreviations and drug names
 
 ## Project Progress
 
-### December 19, 2024 - Enhanced Differential Privacy Implementation
+### August 19, 2025 - Enhanced Differential Privacy Implementation
 
 **Major Achievements:**
 - ✅ **Improved DP Candidate Generation**: Enhanced the phrase-level differential privacy mechanism to generate diverse, meaningful candidates
@@ -262,7 +384,7 @@ If you use this code in your research, please cite:
 - ✅ **Quality Improvements**: Eliminated tautological/nonsensical questions through improved prompt engineering
 - ✅ **Full Transparency**: Enhanced result recording to include all candidates with similarity scores
 
-### December 19, 2024 - Critical Observation: Similarity Score Diversity Issue
+### August 19, 2025 - Critical Observation: Similarity Score Diversity Issue
 
 **Problem Identified:**
 - ❌ **Limited Similarity Range**: Current candidates all have very similar similarity scores (mostly around 25-35%)
@@ -307,7 +429,7 @@ If you use this code in your research, please cite:
 - `utils.py` - Enhanced candidate generation and parsing
 - `test_phrase_dp.py` - Improved result recording
 
-### December 19, 2024 - InferDPT Integration and Comparison
+### August 19, 2025 - InferDPT Integration and Comparison
 
 **Major Achievement:**
 - ✅ **InferDPT Integration**: Successfully integrated InferDPT framework for comparison with custom phrase-level DP
@@ -339,7 +461,7 @@ If you use this code in your research, please cite:
 - `multi_hop_experiment_copy.py` - Added Scenario 3.2 (InferDPT)
 - `testing-inferdpt.txt` - Comprehensive test results
 
-### December 25, 2024 - MedQA Dataset Experiment Completion
+### August 25, 2025 - MedQA Dataset Experiment Completion
 
 **Major Achievement:**
 - ✅ **Complete 50-Question Experiment**: Successfully completed comprehensive evaluation on MedQA dataset
