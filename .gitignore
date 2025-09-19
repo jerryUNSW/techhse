@@ -24,3 +24,10 @@ venv/
 # External repositories
 InferDPT/
 
+# Overleaf project folder
+68ad44193c5dfb725ec03fdb/
+
+# Email configuration (contains sensitive information)
+email_config.json
+daily_email.log
+

@@ -1,0 +1,30 @@
+{
+  "phrase_dp": {
+    "method": "Phrase DP",
+    "total_questions": 10,
+    "mean_similarity": 0.7621987462043762,
+    "std_similarity": 0.07370314747095108,
+    "min_similarity": 0.5917176008224487,
+    "max_similarity": 0.8534005880355835,
+    "high_similarity_count": 9,
+    "medium_similarity_count": 1,
+    "low_similarity_count": 0,
+    "high_similarity_percentage": 90.0,
+    "medium_similarity_percentage": 10.0,
+    "low_similarity_percentage": 0.0
+  },
+  "inferdpt": {
+    "method": "InferDPT",
+    "total_questions": 10,
+    "mean_similarity": 0.08271048218011856,
+    "std_similarity": 0.05029676482081413,
+    "min_similarity": 0.005176868289709091,
+    "max_similarity": 0.1849043071269989,
+    "high_similarity_count": 0,
+    "medium_similarity_count": 0,
+    "low_similarity_count": 10,
+    "high_similarity_percentage": 0.0,
+    "medium_similarity_percentage": 0.0,
+    "low_similarity_percentage": 100.0
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "original_question": "Were Scott Derrickson and Ed Wood of the same nationality?",
+    "final_dp_replacement": "Is there a shared nationality between a notable figure and a filmmaker associated with the same country?",
+    "candidates": [],
+    "num_candidates": 0
+  },
+  {
+    "original_question": "What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?",
+    "final_dp_replacement": "What role in government did the actress who played Corliss Archer in \"Kiss and Tell\" hold before or after her acting career?",
+    "candidates": [],
+    "num_candidates": 0
+  },
+  {
+    "original_question": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+    "final_dp_replacement": "What is the title of a first-person science fantasy young adult series that includes companion books about enslaved planets and extraterrestrial species?",
+    "candidates": [],
+    "num_candidates": 0
+  },
+  {
+    "original_question": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
+    "final_dp_replacement": "Is there a connection between the neighborhood locations of the Laleli Mosque and Esma Sultan Mansion?",
+    "candidates": [],
+    "num_candidates": 0
+  },
+  {
+    "original_question": "The director of the romantic comedy \"Big Stone Gap\" is based in what New York city?",
+    "final_dp_replacement": "Which city in New York is the residence of the director of a romantic comedy similar to \"Big Stone Gap\"?",
+    "candidates": [],
+    "num_candidates": 0
+  },
+  {
+    "original_question": "2014 S/S is the debut album of a South Korean boy group that was formed by who?",
+    "final_dp_replacement": "Who formed the organization behind the debut album of a South Korean boy group in 2014?",
+    "candidates": [],
+    "num_candidates": 0
+  },
+  {
+    "original_question": "Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?",
+    "final_dp_replacement": "Which notable individual, known by the stage name Aladin, has worked as a consultant to enhance the performance of various organizations?",
+    "candidates": [],
+    "num_candidates": 0
+  },
+  {
+    "original_question": "The arena where the Lewiston Maineiacs played their home games can seat how many people?",
+    "final_dp_replacement": "What is the seating capacity of the venue where a regional hockey team played its home games?",
+    "candidates": [],
+    "num_candidates": 0
+  },
+  {
+    "original_question": "Who is older, Annie Morton or Terry Richardson?",
+    "final_dp_replacement": "Is a public figure older than a professional, considering two individuals from a specific comparison?",
+    "candidates": [],
+    "num_candidates": 0
+  },
+  {
+    "original_question": "Are Local H and For Against both from the United States?",
+    "final_dp_replacement": "Is it true that both Local H and For Against originated from the same country?",
+    "candidates": [],
+    "num_candidates": 0
+  }
+]

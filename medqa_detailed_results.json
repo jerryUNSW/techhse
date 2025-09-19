@@ -1,38 +1,38 @@
 {
-  "analysis_date": "2025-08-26T10:55:33.878926",
-  "total_questions_processed": 250,
+  "analysis_date": "2025-08-26T22:51:45.908153",
+  "total_questions_processed": 500,
   "total_questions_target": 500,
-  "completion_percentage": 50.0,
+  "completion_percentage": 100.0,
   "performance_metrics": {
     "local_alone": {
-      "correct": 193,
-      "incorrect": 57,
-      "total": 250,
-      "accuracy": 77.2
+      "correct": 384,
+      "incorrect": 116,
+      "total": 500,
+      "accuracy": 76.8
     },
     "non_private_cot": {
-      "correct": 232,
-      "incorrect": 19,
-      "total": 251,
-      "accuracy": 92.43027888446214
+      "correct": 465,
+      "incorrect": 36,
+      "total": 501,
+      "accuracy": 92.81437125748504
     },
     "phrase_dp_cot": {
-      "correct": 213,
-      "incorrect": 36,
-      "total": 249,
-      "accuracy": 85.54216867469879
+      "correct": 419,
+      "incorrect": 81,
+      "total": 500,
+      "accuracy": 83.8
     },
     "inferdpt_cot": {
-      "correct": 177,
-      "incorrect": 71,
-      "total": 248,
-      "accuracy": 71.37096774193549
+      "correct": 359,
+      "incorrect": 140,
+      "total": 499,
+      "accuracy": 71.9438877755511
     },
     "purely_remote": {
-      "correct": 222,
-      "incorrect": 27,
-      "total": 249,
-      "accuracy": 89.1566265060241
+      "correct": 449,
+      "incorrect": 51,
+      "total": 500,
+      "accuracy": 89.8
     }
   },
   "scenario_names": {

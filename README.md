@@ -513,6 +513,338 @@ dataset = load_dataset("Eladio/emrqa-msquad")
 - **Multi-Hop Framework**: Implemented comprehensive experiment scenarios
 - **Privacy Mechanisms**: Established phrase-level differential privacy foundation
 
+## Privacy Evaluation Framework
+
+### Current Privacy Evaluation (Document-Level)
+We have implemented a comprehensive privacy evaluation framework based on the InferDPT paper methodology, but adapted for document-level analysis:
+
+#### 1. BERT Inference Attack (Document-Level)
+- **Method**: Uses BERT embeddings to measure semantic similarity between original and perturbed questions
+- **Process**: Encode full original vs perturbed questions, calculate cosine similarity
+- **Privacy Level**: `1 - document_similarity` (higher = better privacy)
+- **Results**: Phrase DP: 23.7% privacy, InferDPT: 99.3% privacy
+
+#### 2. Embedding Inversion Attack (Document-Level)
+- **Method**: Measures how well original embeddings can be recovered from perturbed ones
+- **Process**: Calculate L2 distance between full question embeddings
+- **Privacy Level**: `normalized_embedding_distance` (higher = better privacy)
+- **Results**: Phrase DP: 33.6% privacy, InferDPT: 70.4% privacy
+
+#### 3. GPT Inference Attack (Document-Level)
+- **Method**: Uses GPT-4o-mini to attempt recovering original questions from perturbed ones
+- **Process**: Send perturbed question to GPT with recovery prompt, compare with original
+- **Privacy Level**: `1 - document_recovery_similarity` (higher = better privacy)
+- **Results**: Phrase DP: 31.2% privacy, InferDPT: 95.5% privacy
+
+### Planned Privacy Evaluation (Token-Level)
+We are planning to implement the original InferDPT paper's token-level privacy evaluation methods:
+
+#### 1. BERT Inference Attack (Token-Level)
+- **Method**: BERT tries to recover individual tokens by masking them
+- **Process**: Replace each token with "[MASK]", see if BERT can predict original token
+- **Success Metric**: Token-by-token accuracy (does recovered token = original token?)
+- **Privacy Level**: `1 - token_recovery_accuracy`
+
+#### 2. Embedding Inversion Attack (Token-Level)
+- **Method**: For each perturbed token, find closest original token in embedding space
+- **Process**: Compute Euclidean distance between perturbed token embedding and all original token embeddings
+- **Success Metric**: Can we find original token in top-K closest embeddings?
+- **Privacy Level**: `1 - token_recovery_accuracy`
+
+#### 3. GPT Inference Attack (Token-Level)
+- **Method**: GPT tries to recover individual tokens from perturbed text
+- **Process**: Give GPT perturbed text, ask it to predict each original token
+- **Success Metric**: Token-by-token accuracy
+- **Privacy Level**: `1 - token_recovery_accuracy`
+
+### Planned Privacy Evaluation (Tiered Sensitivity)
+We are planning to implement a more sophisticated privacy evaluation using **tiered sensitivity levels** for different entity types:
+
+#### Current Issue with NER-Based Evaluation
+Our current NER-based evaluation treats all entity types equally, but not all entities are equally sensitive:
+- **"John Smith"** (PERSON) - Very sensitive (patient name)
+- **"61-year-old"** (DATE) - Very sensitive (specific age)
+- **"insulin"** (PRODUCT) - Less sensitive (medical term needed for reasoning)
+- **"last week"** (DATE) - Less sensitive (relative time)
+
+#### Proposed Tiered Sensitivity Approach
+
+**Tier 1: Highly Sensitive (Always Privacy Risk)**
+- **PERSON**: Patient names, doctor names, family members
+- **GPE**: Hospital locations, cities, specific addresses
+- **MONEY**: Financial information, costs, payments
+
+**Tier 2: Moderately Sensitive (Context Dependent)**
+- **DATE**: Specific dates, ages, appointment times
+- **CARDINAL**: Lab values, vital signs, specific measurements
+- **QUANTITY**: Exact measurements, dosages, amounts
+- **TIME**: Specific times, durations
+
+**Tier 3: Low Sensitivity (Usually Safe)**
+- **PRODUCT**: Drug names, medical devices (needed for reasoning)
+- **WORK_OF_ART**: Book titles, movie names
+- **LANGUAGE**: Language names
+- **EVENT**: Medical events, procedures
+
+**Tier 4: Medical Context Dependent**
+- **ORG**: Specific hospitals vs generic medical organizations
+- **FAC**: Specific facilities vs generic medical facilities
+- **NORP**: Ethnicity (sensitive but sometimes needed for medical context)
+
+#### Weighted Privacy Calculation
+```python
+sensitivity_weights = {
+    'PERSON': 1.0,      # Highly sensitive
+    'GPE': 1.0,         # Highly sensitive  
+    'MONEY': 1.0,       # Highly sensitive
+    'DATE': 0.8,        # Moderately sensitive
+    'CARDINAL': 0.6,    # Moderately sensitive
+    'QUANTITY': 0.6,    # Moderately sensitive
+    'TIME': 0.7,        # Moderately sensitive
+    'ORG': 0.5,         # Context dependent
+    'FAC': 0.5,         # Context dependent
+    'PRODUCT': 0.3,     # Low sensitivity
+    'WORK_OF_ART': 0.1, # Very low sensitivity
+    'LANGUAGE': 0.1,    # Very low sensitivity
+    'EVENT': 0.2,       # Low sensitivity
+    'LAW': 0.4,         # Moderate sensitivity
+    'NORP': 0.3,        # Low sensitivity
+    'ORDINAL': 0.5,     # Moderate sensitivity
+    'PERCENT': 0.4      # Moderate sensitivity
+}
+
+privacy_level = 1 - (weighted_risk / total_weight)
+```
+
+#### Benefits of Tiered Sensitivity
+1. **More Realistic Assessment**: Reflects actual privacy risks
+2. **Context-Aware**: Considers medical reasoning needs
+3. **Weighted Importance**: More sensitive entities have higher impact
+4. **Domain-Agnostic**: Can be adapted for different domains
+5. **Better Privacy-Utility Balance**: Distinguishes between necessary and unnecessary information
+
+#### Future Implementation
+We will probably implement this tiered sensitivity approach to provide a more nuanced and realistic privacy evaluation that better reflects the actual privacy risks in different contexts.
+
+### Planned Privacy Evaluation (Linguistic Quality Assessment)
+We are planning to conduct additional experiments to evaluate the **linguistic quality** of perturbations, which is crucial for practical deployment:
+
+#### Current Gap in Evaluation
+Our current privacy evaluations focus primarily on **privacy protection** but don't assess **linguistic quality**:
+- **InferDPT**: High privacy (96.1%) but poor linguistic quality (token-level noise creates "jibberish")
+- **Phrase DP**: Good privacy (91.2%) but better linguistic quality (semantic coherence preserved)
+
+#### Proposed Linguistic Quality Metrics
+
+**1. Semantic Coherence**
+- **Method**: Measure semantic similarity between original and perturbed text
+- **Metric**: BERT embedding similarity, semantic role labeling
+- **Goal**: Ensure perturbed text maintains meaningful structure
+
+**2. Grammatical Correctness**
+- **Method**: Use language models to assess grammaticality
+- **Metric**: Perplexity scores, grammatical error detection
+- **Goal**: Ensure perturbed text is grammatically valid
+
+**3. Readability Assessment**
+- **Method**: Standard readability metrics (Flesch-Kincaid, etc.)
+- **Metric**: Reading level, sentence complexity
+- **Goal**: Ensure perturbed text remains readable
+
+**4. Medical Domain Appropriateness**
+- **Method**: Domain-specific language model evaluation
+- **Metric**: Medical terminology preservation, clinical context maintenance
+- **Goal**: Ensure medical reasoning capability is preserved
+
+#### Comprehensive Evaluation Framework
+```python
+def comprehensive_evaluation(original, perturbed):
+    # Privacy Assessment
+    privacy_score = ner_pii_privacy_evaluation(original, perturbed)
+    
+    # Linguistic Quality Assessment
+    semantic_coherence = bert_similarity(original, perturbed)
+    grammatical_correctness = perplexity_score(perturbed)
+    readability = flesch_kincaid_score(perturbed)
+    domain_appropriateness = medical_domain_score(perturbed)
+    
+    # Combined Score
+    linguistic_quality = (semantic_coherence + grammatical_correctness + 
+                         readability + domain_appropriateness) / 4
+    
+    return privacy_score, linguistic_quality
+```
+
+#### Expected Results and Conclusion
+Based on our preliminary analysis, we expect to find:
+
+**Privacy vs Linguistic Quality Trade-off:**
+- **InferDPT**: High privacy (96.1%) + Low linguistic quality (token noise)
+- **Phrase DP**: Good privacy (91.2%) + High linguistic quality (semantic preservation)
+
+**Overall Assessment:**
+When considering **both privacy protection AND linguistic quality**, we anticipate concluding that **Phrase DP is the overall better approach** because:
+
+1. **Balanced Performance**: Good privacy protection (91.2%) with excellent linguistic quality
+2. **Practical Usability**: Perturbed text remains readable and semantically coherent
+3. **Medical Reasoning**: Preserves medical terminology and clinical context
+4. **Real-world Deployment**: More suitable for actual medical applications
+5. **Privacy-Utility Balance**: Achieves the optimal trade-off between privacy and utility
+
+**Comprehensive Conclusion:**
+While InferDPT provides slightly better raw privacy protection, **Phrase DP emerges as the superior method overall** when considering the complete picture of privacy protection, linguistic quality, and practical usability for medical question answering applications.
+
+### Key Differences Between Approaches
+| Aspect | Current (Document-Level) | Planned (Token-Level) |
+|--------|-------------------------|----------------------|
+| **Granularity** | Document-level | Token-level |
+| **BERT Attack** | Compare full documents | Mask individual tokens |
+| **Embedding Attack** | Compare full document embeddings | Find closest token embeddings |
+| **GPT Attack** | Recover full questions | Recover individual tokens |
+| **Evaluation** | Semantic similarity | Token accuracy |
+| **Use Case** | Medical QA (preserve meaning) | Text generation (token privacy) |
+
+## Comprehensive Evaluation Framework
+
+### **Date: September 19, 2025**
+
+Based on our comprehensive experimental analysis, we have established a three-dimensional evaluation framework for comparing Phrase DP and InferDPT methods. This framework considers the fundamental trade-offs in privacy-preserving question answering systems:
+
+#### **1. Privacy Protection (PII Protection)**
+- **Objective**: Measure how well each method protects personal identifying information
+- **Evaluation Method**: NER-based PII privacy evaluation using spaCy
+- **Metrics**: 
+  - Protection level by entity type (PERSON, GPE, ORG, DATE, etc.)
+  - Overall privacy protection score (0-1 scale)
+  - Entity preservation analysis
+- **Key Finding**: Both methods provide excellent privacy protection (>0.9), with InferDPT slightly outperforming Phrase DP (0.961 vs 0.912)
+
+#### **2. Reasoning Ability (Accuracy in Answering Questions)**
+- **Objective**: Measure the utility preservation - how well the system can answer questions correctly
+- **Evaluation Method**: Multi-hop question answering experiments on MedQA dataset
+- **Metrics**:
+  - Accuracy percentage on medical multiple-choice questions
+  - Performance comparison across different scenarios
+  - Utility-accuracy trade-off analysis
+- **Key Finding**: Phrase DP maintains higher accuracy (83.80% vs 71.94%) due to better semantic preservation
+
+#### **3. Linguistic Quality**
+- **Objective**: Measure how well each method preserves semantic coherence and readability
+- **Evaluation Method**: BERT-based semantic similarity evaluation
+- **Metrics**:
+  - Mean semantic similarity between original and perturbed questions
+  - Quality distribution (High >0.7, Medium 0.4-0.7, Low <0.4)
+  - Statistical analysis of similarity distributions
+- **Key Finding**: Phrase DP maintains significantly better semantic coherence (73.7% vs 4.4% mean similarity)
+
+#### **Evaluation Results Summary**
+
+| Dimension | Phrase DP | InferDPT | Winner |
+|-----------|-----------|----------|---------|
+| **Privacy Protection** | 0.912 | 0.961 | InferDPT (5.4% better) |
+| **Reasoning Ability** | 83.80% | 71.94% | Phrase DP (16.5% better) |
+| **Linguistic Quality** | 73.7% | 4.4% | Phrase DP (16.7x better) |
+
+#### **Overall Assessment**
+- **Phrase DP**: Optimal balance across all three dimensions, providing excellent privacy protection while maintaining high utility and semantic coherence
+- **InferDPT**: Superior privacy protection but at significant cost to utility and linguistic quality
+- **Recommendation**: Phrase DP is the preferred approach for most applications requiring both privacy and utility
+
+This three-dimensional evaluation framework provides a comprehensive assessment methodology for privacy-preserving question answering systems, ensuring that all critical aspects of system performance are considered in method comparison and selection.
+
+#### **Future Research Direction: Tree of Privacy Attacks (ToPA)**
+
+Based on the "Tree of Attacks: Jailbreaking Black-Box LLMs Automatically" paper, we propose adapting the Tree of Attacks with Pruning (TAP) methodology to create a comprehensive privacy evaluation and defense system for our Phrase DP mechanism.
+
+**Tree of Privacy Attacks (ToPA) Framework:**
+
+**Core Methodology (Adapted from TAP):**
+- **Attacker LLM**: Generates adversarial prompts designed to extract sensitive information from sanitized questions
+- **Evaluator LLM**: Assesses whether generated prompts are likely to succeed in privacy attacks
+- **Target System**: Our Phrase DP sanitization mechanism
+- **Branching Factor**: Generate multiple attack variations per iteration
+- **Pruning Strategy**: Eliminate ineffective attacks and retain promising ones
+
+**Implementation Strategy:**
+1. **Branch Phase**: Generate multiple adversarial prompts targeting different privacy vulnerabilities:
+   - Direct PII extraction attempts
+   - Context manipulation attacks
+   - Prompt injection techniques
+   - Semantic reconstruction attacks
+
+2. **Prune Phase 1**: Use evaluator to identify attacks likely to succeed against current Phrase DP
+
+3. **Attack Phase**: Test remaining attacks against our sanitization system
+
+4. **Prune Phase 2**: Retain most successful attacks for next iteration refinement
+
+**Privacy-Specific Adaptations:**
+- **Objective Function**: Instead of jailbreaking, focus on extracting PII or reconstructing original questions
+- **Success Metrics**: Measure information leakage rather than harmful content generation
+- **Attack Categories**:
+  - **PII Extraction**: Attempts to recover names, locations, medical terms
+  - **Context Reconstruction**: Efforts to rebuild original question context
+  - **Semantic Inference**: Attacks that infer sensitive information from sanitized output
+
+**Benefits for Privacy Protection:**
+- **Proactive Vulnerability Assessment**: Systematically discover privacy weaknesses
+- **Adaptive Defense**: Continuously improve Phrase DP based on discovered attack patterns
+- **Comprehensive Testing**: Cover diverse attack vectors beyond current evaluation methods
+- **Automated Red-Teaming**: Scale privacy testing without manual effort
+
+**Integration with Current Framework:**
+This approach adds a fourth dimension to our evaluation framework: **Adversarial Robustness**, complementing:
+1. **Privacy Protection** (PII extraction resistance)
+2. **Reasoning Ability** (accuracy preservation)  
+3. **Linguistic Quality** (semantic coherence)
+4. **Adversarial Robustness** (resistance to sophisticated attacks)
+
+**Expected Outcomes:**
+- Identify previously unknown privacy vulnerabilities in Phrase DP
+- Develop more robust sanitization prompts through adversarial training
+- Create a benchmark for privacy mechanism evaluation
+- Establish automated privacy testing pipeline for continuous improvement
+
+---
+
+## Future Enhancements
+
+### Meeting Notes - January 2025
+
+Based on colleague feedback and discussions, the following improvements are planned for future implementation:
+
+#### 1. Rule-Based Privacy Guardrails for Phrase DP
+- **Objective**: Add an additional layer of privacy protection to the existing Phrase DP mechanism
+- **Implementation**: Integrate rule-based filters that can catch and sanitize sensitive information before Phrase DP processing
+- **Benefits**: 
+  - Enhanced privacy protection through multi-layered approach
+  - Reduced reliance on DP noise alone for privacy preservation
+  - Better handling of edge cases and specific sensitive patterns
+
+#### 2. Context Summarization Technique
+- **Objective**: Reduce privacy exposure by summarizing context before remote LLM processing
+- **Implementation**: 
+  - Summarize full context into a few key sentences locally
+  - Send only the summarized context to remote LLM instead of full text
+  - Apply Phrase DP sanitizer to the summarized content
+- **Benefits**:
+  - Minimizes data sent to remote services
+  - Reduces privacy attack surface
+  - Maintains semantic information while protecting detailed content
+  - Potential performance improvements due to reduced token usage
+
+#### Implementation Priority
+1. **Phase 1**: Context summarization technique (higher impact on privacy)
+2. **Phase 2**: Rule-based privacy guardrails (complementary enhancement)
+
+#### Technical Considerations
+- Context summarization may require fine-tuning summarization models for medical domain
+- Rule-based guardrails need careful design to avoid over-sanitization
+- Both techniques should be evaluated against existing privacy attack methods
+- Performance impact assessment needed for both enhancements
+
+---
+
 ## Acknowledgments
 
 - InferDPT framework for privacy-preserving inference

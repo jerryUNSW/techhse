@@ -1,0 +1,1144 @@
+================================================================================
+TESTING phrase_DP_perturbation FUNCTION
+================================================================================
+Model: meta-llama/Meta-Llama-3.1-8B-Instruct
+Epsilon: 1.0
+Number of questions: 10
+================================================================================
+
+QUESTION 1/10
+============================================================
+Original Question: Were Scott Derrickson and Ed Wood of the same nationality?
+
+Candidates and similarities:
+Perturbed: Are a director and a screenwriter from the same cultural background?
+
+All Generated Candidates with Similarities:
+------------------------------------------------------------
+  1. Were Scott Derrickson and the director of Ed Wood, of the same nationality?
+     Similarity: 0.9287
+  2. What was the nationality of the person who directed a well-known horror film and the person who directed a well-known drama film?
+     Similarity: 0.2065
+  3. Is Ed Wood's nationality the same as Scott Derrickson's?
+     Similarity: 0.9484
+  4. What nationality is shared by the directors Scott Derrickson and Ed Wood?
+     Similarity: 0.8260
+  5. Is the nationality of Scott Derrickson identical to that of Ed Wood?
+     Similarity: 0.9494
+  6. Is a professional from the city where Scott Derrickson was born also of the same nationality as Ed Wood?
+     Similarity: 0.9039
+  7. Is Scott Derrickson from the same country as Ed Wood's country of origin?
+     Similarity: 0.9123
+  8. Is there a notable difference in the national identity between the filmmaker who directed the movie and another individual from the same geographical area?
+     Similarity: 0.3198
+  9. What nationality does an individual like Scott Derrickson share with a filmmaker like Ed Wood?
+     Similarity: 0.8178
+ 10. What is the nationality shared by Scott Derrickson and Ed Wood?
+     Similarity: 0.9323
+ 11. Were Scott Derrickson and Ed Wood both citizens of the same country?
+     Similarity: 0.9323
+ 12. Was the director of Doctor Strange and the creator of the original Universal monster films from the same country?
+     Similarity: 0.2464
+ 13. What nationality does a director who worked with Scott Derrickson and Ed Wood share?
+     Similarity: 0.8081
+ 14. Is a person known for directing horror movies and a filmmaker who created Plan 9 from Outer Space from the same country?
+     Similarity: 0.3004
+ 15. Is an individual who directed Doctor Strange from the same country as the filmmaker behind the motion picture Planet of the Apes?
+     Similarity: 0.2992
+ 16. Were individuals named Scott Derrickson and Ed Wood of the same nationality?
+     Similarity: 0.9559
+ 17. What nationality did a director and a screenwriter from the same country share?
+     Similarity: 0.3667
+ 18. Are a director and a screenwriter from the same cultural background?
+     Similarity: 0.3286
+ 19. Is a person who directed Doctor Strange from the same country as the creator of Plan 9 from Outer Space?
+     Similarity: 0.2437
+ 20. What is the nationality of a director who worked on a horror film and a comedian who hosted a television show?
+     Similarity: 0.3229
+ 21. Is the filmmaker behind Doctor Strange and the director of Plan 9 from Outer Space both citizens of the same country?
+     Similarity: 0.2522
+ 22. Is a person who directed Doctor Strange the same nationality as someone from Planet of the Apes?
+     Similarity: 0.3183
+ 23. Is a person from the same location as Scott Derrickson also a citizen of Ed Wood's country of origin?
+     Similarity: 0.8695
+ 24. What nationality is shared by the individuals who directed the movies Doctor Strange and The Texas Chain Saw Massacre?
+     Similarity: 0.3038
+ 25. Is the individual who directed Doctor Strange from the same nationality as Ed Wood, the creator of Plan 9 from Outer Space?
+     Similarity: 0.3917
+ 26. Is a director of a recent horror film and a renowned filmmaker from the same country?
+     Similarity: 0.3048
+ 27. Does a film director who directed a well-known horror movie and a film director who directed a classic American movie share a common national identity?
+     Similarity: 0.2542
+ 28. Were Scott Derrickson and Ed Wood, a renowned filmmaker, of the same nationality?
+     Similarity: 0.8934
+ 29. Is a person who directed "Doctor Strange" and the author of a novel called "Plan 9 from Outer Space" from the same country?
+     Similarity: 0.2586
+ 30. Is the filmmaker behind Doctor Strange and the director of Plan 9 from Outer Space from the same country of origin?
+     Similarity: 0.2457
+ 31. Were two individuals, Scott Derrickson and Ed Wood, of the same nationality?
+     Similarity: 0.9735
+ 32. Is a professional who directed a notable film and a filmmaker of the same nationality?
+     Similarity: 0.2990
+ 33. What nationality is shared by a filmmaker and a screenwriter who worked together recently?
+     Similarity: 0.3191
+ 34. Is it true that Scott Derrickson and Ed Wood have the same national identity?
+     Similarity: 0.8644
+ 35. Is there a notable difference in nationality between the director of Doctor Strange and the filmmaker behind Plan 9 from Outer Space?
+     Similarity: 0.2415
+ 36. Is the nationality of the director of Doctor Strange the same as that of the director of Plan 9 from Outer Space?
+     Similarity: 0.2352
+ 37. What nationality do a professional and a director from the same country share?
+     Similarity: 0.2768
+ 38. Was there a shared national identity between the directors Scott Derrickson and Ed Wood?
+     Similarity: 0.8390
+ 39. What nationality shares an individual like Scott Derrickson and Ed Wood?
+     Similarity: 0.8995
+ 40. What nationality did Scott Derrickson and Ed Wood share recently?
+     Similarity: 0.9474
+ 41. Is a professional behind the film Doctor Strange and a director behind Plan 9 from Outer Space from the same background?
+     Similarity: 0.2649
+ 42. What is the shared nationality of the director of Doctor Strange and the director of Plan 9 from Outer Space?
+     Similarity: 0.2395
+ 43. Does an individual from the same background as Scott Derrickson share a common nationality with a fellow filmmaker?
+     Similarity: 0.6109
+ 44. Is a director from the United States and a filmmaker from the United Kingdom likely to share a common nationality?
+     Similarity: 0.2903
+ 45. Is a filmmaker of the same nationality as a director from the same country?
+     Similarity: 0.2939
+ 46. Were Scott Derrickson and Ed Wood of the same national origin?
+     Similarity: 0.9530
+ 47. What nationality do a director and a filmmaker from the same country share?
+     Similarity: 0.2698
+ 48. Were Scott Derrickson and the filmmaker of Ed Wood of the same birthplace?
+     Similarity: 0.9049
+ 49. Is Scott Derrickson from the same country as Ed Wood?
+     Similarity: 0.9353
+ 50. Is there a connection between the nationalities of the creators of a well-known film and another individual from a different cultural background?
+     Similarity: 0.3086
+------------------------------------------------------------
+
+QUESTION 2/10
+============================================================
+Original Question: What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?
+
+Candidates and similarities:
+Perturbed: What job in government was held by the actress who portrayed Corliss Archer in the movie Kiss and Tell?
+
+All Generated Candidates with Similarities:
+------------------------------------------------------------
+  1. What government office was held by the actress who played Corliss Archer in the movie Kiss and Tell?
+     Similarity: 0.9535
+  2. What government position did a female actress hold who played Corliss Archer in the film Kiss and Tell?
+     Similarity: 0.9686
+  3. What government role was held by the actress who played the title character in the movie Kiss and Tell?
+     Similarity: 0.7516
+  4. What official role did a female actress hold when she appeared in a film adaptation of a novel inspired by a teenage girl's diary?
+     Similarity: 0.3726
+  5. What government role was held by the actress who played Corliss Archer in the movie Kiss and Tell?
+     Similarity: 0.9548
+  6. What government role did someone famous for playing a rebellious teenager in a classic film hold at some point?
+     Similarity: 0.3641
+  7. What public office was held by the individual who portrayed Corliss Archer in the movie Kiss and Tell?
+     Similarity: 0.9356
+  8. What was the government role of the actress who played Corliss Archer in the movie Kiss and Tell?
+     Similarity: 0.9472
+  9. What office did the actress who played Corliss Archer hold in a government context?
+     Similarity: 0.7966
+ 10. What public figure held a government role that was played by an actress who portrayed Corliss Archer in a film?
+     Similarity: 0.7913
+ 11. What office did a female public figure occupy who acted as the title character in the movie based on the novel Kiss and Tell?
+     Similarity: 0.7304
+ 12. What position did a female government official hold who was played by a person in a movie about a teenager?
+     Similarity: 0.5269
+ 13. What government position was held by the actress who played Corliss Archer in the 1945 film Kiss and Tell?
+     Similarity: 0.9197
+ 14. What role did the female actor who played Corliss Archer in the movie Kiss and Tell hold in the government?
+     Similarity: 0.9310
+ 15. What government position was an individual holding when they portrayed Corliss Archer in the movie Kiss and Tell?
+     Similarity: 0.9399
+ 16. What job in government was held by the actress who portrayed Corliss Archer in the movie Kiss and Tell?
+     Similarity: 0.9533
+ 17. What is the role of the person who played the title character in the movie about a teenager?
+     Similarity: 0.3685
+ 18. What government role was held by the female lead actress in the movie that featured the story of Corliss Archer?
+     Similarity: 0.7971
+ 19. What government post was an actress known for her portrayal of Corliss Archer in a 1950s movie held at some point?
+     Similarity: 0.7465
+ 20. What role in government was occupied by the actress who portrayed the protagonist in the movie adaptation of the story Kiss and Tell?
+     Similarity: 0.7442
+ 21. What role did the person who played the lead in Kiss and Tell take in a government agency?
+     Similarity: 0.6719
+ 22. What government post did a female actor hold who played a character in a movie adaptation of a novel that was later made into a TV series?
+     Similarity: 0.5074
+ 23. What government role did an actress play who portrayed a character in a film based on a book series?
+     Similarity: 0.4575
+ 24. What government position was held by the actress who portrayed Corliss Archer in the movie Kiss and Tell?
+     Similarity: 0.9783
+ 25. What role did a prominent female figure assume in the movie that starred the actress who played Corliss Archer?
+     Similarity: 0.7563
+ 26. What government role did someone who played a fictional teenage girl in a 1945 film hold at any point in their life?
+     Similarity: 0.4173
+ 27. What public figure held a government role in the movie featuring the actress who played Corliss Archer in the film Kiss and Tell?
+     Similarity: 0.9442
+ 28. What public figure held a government position that was portrayed by an actress in a movie adaptation of a novel?
+     Similarity: 0.4921
+ 29. What position of authority was held by the actress who portrayed the character in the movie that featured the actress in the title role?
+     Similarity: 0.4976
+ 30. What government role did the actress who played Corliss Archer in the 1945 film Kiss and Tell hold?
+     Similarity: 0.8843
+ 31. What government position did a certain actress hold while portraying a character in the movie Kiss and Tell?
+     Similarity: 0.7800
+ 32. What public figure was associated with the role of a young woman in a classic movie where she was portrayed as a high school student?
+     Similarity: 0.4381
+ 33. What government position was held by the woman who played the role of Corliss Archer in the movie Kiss and Tell?
+     Similarity: 0.9871
+ 34. What was the government position held by the actress who played the title role in the movie Kiss and Tell recently?
+     Similarity: 0.7657
+ 35. What job did the actress who played Corliss Archer in the movie Kiss and Tell hold in government?
+     Similarity: 0.9199
+ 36. What position of authority was held by a female public figure in the movie adaptation of the novel Corliss Archer?
+     Similarity: 0.7422
+ 37. What role did the actress playing the title character in the movie Corliss Archer hold in a government office?
+     Similarity: 0.7833
+ 38. What government position did the actress who played Corliss Archer in the movie Kiss and Tell hold?
+     Similarity: 0.9396
+ 39. What role in government was held by the actress who played the title character in the movie based on the popular comic strip?
+     Similarity: 0.4101
+ 40. What government position was held by a female figure known for her portrayal in a classic Hollywood film?
+     Similarity: 0.5145
+ 41. What government position was occupied by the actress who played Corliss Archer in the movie based on the book?
+     Similarity: 0.7866
+ 42. What role did an individual in a government position hold in a film that featured a woman portraying a character inspired by Corliss Archer?
+     Similarity: 0.7745
+ 43. What government position was held by the actress who starred in the film Kiss and Tell?
+     Similarity: 0.7726
+ 44. What role did an actress hold in a movie when she played a character inspired by Corliss Archer in a 1945 film?
+     Similarity: 0.7027
+ 45. What government office was held by the actress who played Corliss Archer in the 1945 film Kiss and Tell?
+     Similarity: 0.9098
+ 46. What role did a prominent female figure hold in the government when she played the lead in a classic movie about a high school student?
+     Similarity: 0.4784
+ 47. What government role was held by the actress who played Corliss Archer in the movie Kiss and Tell?
+     Similarity: 0.9548
+ 48. What role did the actress hold in the film where she played the title character in a 1945 comedy?
+     Similarity: 0.4065
+ 49. What job did a female politician hold who acted in a movie about a girl named Corliss Archer?
+     Similarity: 0.7662
+ 50. What was the public office held by the actress who played Corliss Archer in the movie Kiss and Tell?
+     Similarity: 0.9305
+------------------------------------------------------------
+
+QUESTION 3/10
+============================================================
+Original Question: What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?
+
+Candidates and similarities:
+Perturbed: What science fiction series featuring a first-person narrator includes companion books exploring the stories of enslaved worlds and extraterrestrial civilizations?
+
+All Generated Candidates with Similarities:
+------------------------------------------------------------
+  1. What young adult series, set in a science fantasy world, is told through a first-person narrative, with companion books that explore the stories of captive worlds and extraterrestrial civilizations?
+     Similarity: 0.8580
+  2. What young adult science fantasy series, narrated in the first person, includes companion books that recount the histories of occupied planets and extraterrestrial civilizations?
+     Similarity: 0.8024
+  3. What young adult science fiction series is told through first-person narration, accompanied by companion books exploring the stories of captive worlds and extraterrestrial civilizations?
+     Similarity: 0.8155
+  4. What young adult science fiction series is written in the first person and features companion books about enslaved worlds and alien civilizations?
+     Similarity: 0.9118
+  5. What is the name of the science fiction novel series that is written from the first-person perspective and includes companion books that explore the experiences of enslaved planets and extraterrestrial civilizations?
+     Similarity: 0.8135
+  6. What young adult science fiction series, written in a first-person narrative, features companion books that explore the lives of enslaved worlds and extraterrestrial civilizations?
+     Similarity: 0.9188
+  7. What young adult science fiction series features a first-person narrative and companion books that explore the experiences of enslaved worlds and extraterrestrial beings?
+     Similarity: 0.9257
+  8. What science fiction series, often directed towards a young adult audience, features a first-person narrative and companion books detailing the histories of enslaved planets and extraterrestrial life forms?
+     Similarity: 0.8463
+  9. What young adult science fiction series is told from the perspective of a main character in a first-person narrative, and features companion books that explore the experiences of enslaved worlds and extraterrestrial civilizations?
+     Similarity: 0.9107
+ 10. What young adult series combines science fiction and fantasy, told in first person narrative, with companion books that explore the lives of enslaved worlds and extraterrestrial species?
+     Similarity: 0.9428
+ 11. What young adult series blending science fiction and fantasy, told from the perspective of a protagonist, features companion books that reveal the stories of planets and extraterrestrial civilizations that have been subjugated?
+     Similarity: 0.7138
+ 12. What is the name of the popular young adult science fantasy series that follows a first-person narrative and explores the stories of enslaved worlds and alien species through companion books?
+     Similarity: 0.9591
+ 13. What is the name of the popular young adult science fiction series that features a first-person narrative and companion books that explore the stories of enslaved worlds and extraterrestrial species?
+     Similarity: 0.9316
+ 14. What young adult science fiction series features first-person narratives and companion books about enslaved worlds and alien species?
+     Similarity: 0.9426
+ 15. What young adult science fantasy series features a first-person narrative and companion books about enslaved worlds and alien species?
+     Similarity: 0.9655
+ 16. What fiction series for young adults, blending science and fantasy, is written in a first-person perspective and features companion books that explore the experiences of worlds in bondage and extraterrestrial civilizations?
+     Similarity: 0.7931
+ 17. What is the identity of the science fiction series written in the first person, with its companion novels detailing the histories of various planets and extraterrestrial civilizations?
+     Similarity: 0.6426
+ 18. What young adult science fiction series is written in first person and features companion books about enslaved worlds and alien civilizations?
+     Similarity: 0.9143
+ 19. What is the name of the young adult science fantasy series written in the first person, which includes companion books featuring the histories of enslaved planets and extraterrestrial civilizations?
+     Similarity: 0.8962
+ 20. What young adult science fiction series features a first-person narrative and companion books about enslaved worlds?
+     Similarity: 0.9189
+ 21. What series, often classified as science fantasy, is written in the first person and features companion books that explore the stories of captive worlds and extraterrestrial beings?
+     Similarity: 0.8159
+ 22. What young adult science fiction series, presented in a first-person narrative, features companion books that delve into the lives of enslaved worlds and extraterrestrial civilizations?
+     Similarity: 0.9085
+ 23. What young adult science fiction series features a first-person narrative and companion books that explore the stories of captive worlds and extraterrestrial civilizations?
+     Similarity: 0.8211
+ 24. What young adult science fiction series features multiple narratives told from the perspective of individuals from diverse worlds and species?
+     Similarity: 0.7241
+ 25. What series of young adult science fiction novels features first-person narration and companion books set on worlds with enslaved alien populations?
+     Similarity: 0.9044
+ 26. What young adult series, often classified as science fantasy, features a first-person narrative and companion books that delve into the tales of subjugated worlds and extraterrestrial civilizations?
+     Similarity: 0.8262
+ 27. What series of young adult fantasy novels is told through a first-person narrative, featuring companion books that explore the histories of enslaved worlds and extraterrestrial civilizations?
+     Similarity: 0.9064
+ 28. What popular young adult science fiction series is known for its first-person narrative and companion books about enslaved worlds and extraterrestrial beings?
+     Similarity: 0.9128
+ 29. What young adult science fiction series features a first-person narrative and companion books exploring the lives of captive planets and extraterrestrial civilizations?
+     Similarity: 0.7629
+ 30. What series of science fiction novels, primarily aimed at a young adult audience, features a protagonist who shares their personal experiences through a narrative voice that is often first-person, with supplementary companion volumes that explore the lives of worlds and civilizations that have been subjugated by external forces?
+     Similarity: 0.7256
+ 31. What is the name of the science fiction series that features a protagonist and companion books that explore different planets and alien civilizations?
+     Similarity: 0.6455
+ 32. What popular science fiction series, often classified as young adult, employs a first-person narrative and includes companion novels that explore the lives of enslaved planets and extraterrestrial civilizations?
+     Similarity: 0.8300
+ 33. What adult science fiction series with a protagonist and companion novels about enslaved worlds has a significant impact on its genre?
+     Similarity: 0.8163
+ 34. What young adult science fantasy series is written in the first person and features companion books about enslaved worlds and alien species?
+     Similarity: 0.9576
+ 35. What young adult series, known for its blend of science fiction and fantasy, features a unique narrative style that includes companion books detailing the experiences of other worlds and extraterrestrial civilizations?
+     Similarity: 0.7890
+ 36. What young adult science fiction series, written in first-person narrative, features companion books about planets and extraterrestrial civilizations enslaved in a particular universe?
+     Similarity: 0.8285
+ 37. What popular young adult science fantasy series features a first-person narrative and companion books about captive planets and extraterrestrial life?
+     Similarity: 0.7864
+ 38. What young adult science fiction series is written in the first person and features companion books that explore the stories of enslaved worlds and extraterrestrial species?
+     Similarity: 0.9345
+ 39. What science fiction series featuring a first-person narrator includes companion books exploring the stories of enslaved worlds and extraterrestrial civilizations?
+     Similarity: 0.8814
+ 40. What  popular science fiction series, written in the first person, features companion novels exploring the histories of enslaved worlds and extraterrestrial civilizations?
+     Similarity: 0.8535
+ 41. What young adult science fiction series, narrated from a personal perspective, features companion books that explore the histories of planets and extraterrestrial civilizations?
+     Similarity: 0.6777
+ 42. What young adult science fantasy series features a narrative voice that moves between first person and third person perspectives, accompanied by companion books that explore the history of planets and various extraterrestrial civilizations?
+     Similarity: 0.7474
+ 43. What series of science fantasy novels written for young adults features a protagonist's voice and companion books detailing the experiences of enslaved worlds and extraterrestrial civilizations?
+     Similarity: 0.8543
+ 44. What young adult science fiction series, written in first person, explores multiple narratives from various enslaved worlds?
+     Similarity: 0.8801
+ 45. What young adult science fiction series, primarily in first-person, explores various planets and their inhabitants through companion narratives?
+     Similarity: 0.6990
+ 46. What is the identity of the popular science fiction series that explores the lives of enslaved worlds and alien species, with companion books offering a unique perspective?
+     Similarity: 0.8377
+ 47. What novel series for young adults, blending science and fantasy, features a first-person narrative and companion books that explore the histories of various worlds and alien cultures?
+     Similarity: 0.8151
+ 48. What popular young adult science fiction series is written in the first person, with companion books that explore the experiences of captive worlds and extraterrestrial civilizations?
+     Similarity: 0.8104
+ 49. What fantasy series, often aimed at a younger audience, explores the lives of certain individuals who have been bound to other worlds and species?
+     Similarity: 0.7171
+ 50. What young adult science fiction series features a first-person narrative and companion books about enslaved worlds and alien civilizations?
+     Similarity: 0.9274
+------------------------------------------------------------
+
+QUESTION 4/10
+============================================================
+Original Question: Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?
+
+Candidates and similarities:
+Perturbed: Are the Laleli Mosque and Esma Sultan Mansion situated in the same local area?
+
+All Generated Candidates with Similarities:
+------------------------------------------------------------
+  1. Are the Laleli Mosque and Esma Sultan Mansion situated in the same local area?
+     Similarity: 0.9829
+  2. Does a person visiting the Laleli Mosque also visit the Esma Sultan Mansion in the same neighborhood?
+     Similarity: 0.9300
+  3. Do the Laleli Mosque and Esma Sultan Mansion share a nearby residential district?
+     Similarity: 0.9525
+  4. Are people who visit the Laleli Mosque and Esma Sultan Mansion familiar with the surrounding area?
+     Similarity: 0.8850
+  5. Are there individuals who associate Laleli Mosque and Esma Sultan Mansion with a similar area?
+     Similarity: 0.9282
+  6. Do people from a particular community in Istanbul frequent the same area as the Laleli Mosque?
+     Similarity: 0.6719
+  7. Are individuals who frequent the Laleli Mosque and Esma Sultan Mansion often familiar with the surrounding neighborhood's layout?
+     Similarity: 0.8836
+  8. Are individuals associated with the Laleli Mosque and Esma Sultan Mansion residents of the same neighborhood?
+     Similarity: 0.9253
+  9. Are the Laleli Mosque and Esma Sultan Mansion situated in the same vicinity?
+     Similarity: 0.9823
+ 10. Are people familiar with the Laleli Mosque and Esma Sultan Mansion wondering if they are situated within the same community?
+     Similarity: 0.9392
+ 11. Are two notable landmarks situated in the same vicinity?
+     Similarity: 0.4326
+ 12. Is an individual familiar with the area around the Laleli Mosque aware that the Esma Sultan Mansion is nearby?
+     Similarity: 0.8640
+ 13. Are individuals associated with the Laleli Mosque and Esma Sultan Mansion residing in the same vicinity?
+     Similarity: 0.9513
+ 14. Is a person who visited the Laleli Mosque also likely to have stayed near the Esma Sultan Mansion?
+     Similarity: 0.8766
+ 15. Are the buildings housing the Laleli Mosque and Esma Sultan Mansion situated within the same local vicinity?
+     Similarity: 0.9570
+ 16. Are people who visit the Laleli Mosque and Esma Sultan Mansion generally familiar with the local area?
+     Similarity: 0.8685
+ 17. Are the two notable landmarks situated in the same district?
+     Similarity: 0.4900
+ 18. Are the Laleli Mosque and the Esma Sultan Mansion situated within the same urban area?
+     Similarity: 0.9767
+ 19. Are the two notable buildings situated in the same vicinity?
+     Similarity: 0.5465
+ 20. Are the two notable buildings situated in the same nearby district?
+     Similarity: 0.5342
+ 21. Are people who visit the Laleli Mosque and Esma Sultan Mansion familiar with the same community?
+     Similarity: 0.8953
+ 22. Are the Laleli Mosque and the Esma Sultan Mansion situated in the same vicinity?
+     Similarity: 0.9803
+ 23. Are two notable landmarks situated within the same vicinity?
+     Similarity: 0.4305
+ 24. Are the Laleli Mosque and Esma Sultan Mansion situated within the same vicinity?
+     Similarity: 0.9804
+ 25. Are the Laleli Mosque and Esma Sultan Mansion situated in the same vicinity?
+     Similarity: 0.9823
+ 26. Are the Laleli Mosque and Esma Sultan Mansion situated in the same neighborhood?
+     Similarity: 0.9959
+ 27. Are two notable buildings, the Laleli Mosque and Esma Sultan Mansion, situated in the same vicinity in a large city?
+     Similarity: 0.9309
+ 28. Are the Laleli Mosque and Esma Sultan Mansion situated in the same local area?
+     Similarity: 0.9829
+ 29. Are people who frequent the Laleli Mosque and Esma Sultan Mansion familiar with the local area?
+     Similarity: 0.8694
+ 30. Are the Laleli Mosque and Esma Sultan Mansion situated in close proximity?
+     Similarity: 0.9602
+ 31. Are the Laleli Mosque and Esma Sultan Mansion situated in adjacent areas?
+     Similarity: 0.9652
+ 32. Does someone who is familiar with the Laleli Mosque in Istanbul also know the location of the Esma Sultan Mansion in the same area?
+     Similarity: 0.8886
+ 33. Are the two prominent landmarks situated in the same district of a large city?
+     Similarity: 0.4627
+ 34. Is the Laleli Mosque situated in the same local area as the Esma Sultan Mansion?
+     Similarity: 0.9722
+ 35. Are the Laleli Mosque and Esma Sultan Mansion situated in the same residential district?
+     Similarity: 0.9795
+ 36. Are the two notable buildings in Istanbul situated in close proximity to one another?
+     Similarity: 0.5903
+ 37. Are individuals associated with the Laleli Mosque and Esma Sultan Mansion residents of the same area?
+     Similarity: 0.9322
+ 38. Are individuals associated with the Laleli Mosque and Esma Sultan Mansion residing in the same community?
+     Similarity: 0.9314
+ 39. Are the Laleli Mosque and Esma Sultan Mansion situated in the same geographic area?
+     Similarity: 0.9660
+ 40. Are the Laleli Mosque and Esma Sultan Mansion situated within the same urban area?
+     Similarity: 0.9779
+ 41. Are individuals who frequent the Laleli Mosque and Esma Sultan Mansion familiar with the surrounding neighborhood?
+     Similarity: 0.8845
+ 42. Are the Laleli Mosque and Esma Sultan Mansion situated in the same immediate vicinity?
+     Similarity: 0.9780
+ 43. Are the Laleli Mosque and Esma Sultan Mansion situated in the same area?
+     Similarity: 0.9817
+ 44. Are two notable landmarks situated in adjacent areas of Istanbul?
+     Similarity: 0.5247
+ 45. Do individuals who frequent the Laleli Mosque and Esma Sultan Mansion reside within the same vicinity?
+     Similarity: 0.9397
+ 46. Are people who frequent the Laleli Mosque and Esma Sultan Mansion living in the same local environment?
+     Similarity: 0.8988
+ 47. Do people from the same city share similar architectural landmarks nearby?
+     Similarity: 0.4428
+ 48. Are individuals living in a place with the Laleli Mosque also residing in the same neighborhood as individuals living near the Esma Sultan Mansion?
+     Similarity: 0.9157
+ 49. Are individuals from the Laleli Mosque and Esma Sultan Mansion known to inhabit the same neighborhood?
+     Similarity: 0.9383
+ 50. Are two historical landmarks situated in the same geographic vicinity?
+     Similarity: 0.4126
+------------------------------------------------------------
+
+QUESTION 5/10
+============================================================
+Original Question: The director of the romantic comedy "Big Stone Gap" is based in what New York city?
+
+Candidates and similarities:
+Perturbed: What New York city is the basis for the director of the romantic comedy "Big Stone Gap"?
+
+All Generated Candidates with Similarities:
+------------------------------------------------------------
+  1. What is the urban setting of the film "Big Stone Gap" located in, specifically a major city in New York?
+     Similarity: 0.8041
+  2. The director of a romantic comedy film is based in a New York city, but not necessarily in the most prominent one. What metropolitan area is home to this director?
+     Similarity: 0.6202
+  3. What is the New York location associated with the director of the romantic comedy "Big Stone Gap"?
+     Similarity: 0.9347
+  4. What city is the home base of the director behind the romantic comedy "Big Stone Gap"?
+     Similarity: 0.9145
+  5. What city in New York is the setting for the movie "Big Stone Gap"?
+     Similarity: 0.8392
+  6. What city in New York is the backdrop for the romantic comedy "Big Stone Gap"?
+     Similarity: 0.8985
+  7. What New York city is home to the director of the film "Big Stone Gap", a romantic comedy?
+     Similarity: 0.9579
+  8. What city in New York is the setting for the director's film?
+     Similarity: 0.6185
+  9. What city is the director of a well-known romantic comedy based in, located in a state known for its charming small towns?
+     Similarity: 0.5555
+ 10. What city in New York is the setting for a romantic comedy directed by an individual?
+     Similarity: 0.6534
+ 11. What New York city is the director of the romantic comedy "Big Stone Gap" based in?
+     Similarity: 0.9862
+ 12. What is the location of the director of the film "Big Stone Gap", a romantic comedy set in New York state?
+     Similarity: 0.9168
+ 13. What New York city is the basis for the director of the romantic comedy "Big Stone Gap"?
+     Similarity: 0.9744
+ 14. What New York city is the director of the romantic comedy "Big Stone Gap" based in?
+     Similarity: 0.9862
+ 15. What New York city is the director of the romantic comedy "Big Stone Gap" based in?
+     Similarity: 0.9862
+ 16. What city in New York is the basis for the film "Big Stone Gap"?
+     Similarity: 0.8810
+ 17. Is the creative lead behind the film "Big Stone Gap" based in a major urban center within New York state?
+     Similarity: 0.8394
+ 18. What is the primary city associated with the director of the film adaptation of "Big Stone Gap", which is a romantic comedy?
+     Similarity: 0.8757
+ 19. What is the primary location of the individual responsible for the film "Big Stone Gap", which is a romantic comedy set in New York?
+     Similarity: 0.9207
+ 20. What city in New York is home to the director of the romantic comedy "Big Stone Gap"?
+     Similarity: 0.9648
+ 21. What is the hometown of the filmmaker behind the movie Big Stone Gap?
+     Similarity: 0.7895
+ 22. What city in New York is the setting for the romantic comedy "Big Stone Gap"?
+     Similarity: 0.8862
+ 23. What is the location of the film studio behind the romantic comedy "Big Stone Gap"?
+     Similarity: 0.8073
+ 24. What individual is associated with a romantic comedy set in a specific New York city?
+     Similarity: 0.6006
+ 25. What is the hometown of the producer of the 2014 film Big Stone Gap, which is set in a small town in New York?
+     Similarity: 0.8486
+ 26. What city in New York is the director of the romantic comedy "Big Stone Gap" based in?
+     Similarity: 0.9847
+ 27. What city in New York is the setting for the romantic comedy "Big Stone Gap"?
+     Similarity: 0.8862
+ 28. What is the location of the production headquarters of the romantic comedy "Big Stone Gap" in New York state?
+     Similarity: 0.8391
+ 29. Is the creator of the romantic comedy "Big Stone Gap" affiliated with a particular New York city?
+     Similarity: 0.9026
+ 30. What is the main location of the director behind the romantic comedy "Big Stone Gap"?
+     Similarity: 0.8856
+ 31. What New York city is the setting for the romantic comedy "Big Stone Gap" directed by an individual?
+     Similarity: 0.9194
+ 32. What city in New York is home to the director of the romantic comedy "Big Stone Gap"?
+     Similarity: 0.9648
+ 33. What city in New York is the setting for the film "Big Stone Gap"?
+     Similarity: 0.8456
+ 34. What New York city is home to the director of the romantic comedy "Big Stone Gap"?
+     Similarity: 0.9648
+ 35. What city in New York is the setting for the romantic comedy "Big Stone Gap"?
+     Similarity: 0.8862
+ 36. What New York city serves as the primary setting for the director of the romantic comedy "Big Stone Gap"?
+     Similarity: 0.9579
+ 37. What is the hometown of the filmmaker behind the romantic comedy "Big Stone Gap"?
+     Similarity: 0.8607
+ 38. What New York city is the setting for the romantic comedy "Big Stone Gap" directed by?
+     Similarity: 0.9168
+ 39. What city in New York is the director of the romantic comedy "Big Stone Gap" based in?
+     Similarity: 0.9847
+ 40. What city in New York is the setting for the romantic comedy "Big Stone Gap"?
+     Similarity: 0.8862
+ 41. What city in New York State is the setting for the romantic comedy "Big Stone Gap"?
+     Similarity: 0.8727
+ 42. What is the urban center of New York that serves as the home base for the director of the romantic comedy Big Stone Gap?
+     Similarity: 0.8787
+ 43. What city in the state of New York serves as the residence of the person behind the movie Big Stone Gap?
+     Similarity: 0.8324
+ 44. What New York city is the setting for the romantic comedy "Big Stone Gap" that is based in?
+     Similarity: 0.8927
+ 45. What city in New York is the inspiration for the romantic comedy "Big Stone Gap"?
+     Similarity: 0.8830
+ 46. What is the hometown of the person behind the film adaptation of "Big Stone Gap"?
+     Similarity: 0.7734
+ 47. What New York city is home to the creative force behind the heartwarming romantic comedy "Big Stone Gap"?
+     Similarity: 0.8762
+ 48. What is the location of the film production for the romantic comedy "Big Stone Gap"?
+     Similarity: 0.8091
+------------------------------------------------------------
+
+QUESTION 6/10
+============================================================
+Original Question: 2014 S/S is the debut album of a South Korean boy group that was formed by who?
+
+Candidates and similarities:
+Perturbed: What is the origin of a South Korean boy group formed in 2014?
+
+All Generated Candidates with Similarities:
+------------------------------------------------------------
+  1. What is the identity of the individual or group responsible for the formation of the South Korean boy group behind the 2014 S/S album?
+     Similarity: 0.8733
+  2. What is the identity of the individual or group behind the formation of a South Korean boy group that released its debut album 2014 S/S?
+     Similarity: 0.8827
+  3. Who formed the South Korean boy group behind the 2014 S/S album?
+     Similarity: 0.9452
+  4. What is the identity of the person or group responsible for forming the South Korean boy group behind the debut album 2014 S/S?
+     Similarity: 0.8671
+  5. What is the name of the South Korean boy group whose debut album was released in 2014?
+     Similarity: 0.8949
+  6. What is the identity of the South Korean boy group that released its debut album, 2014 S/S, in 2014?
+     Similarity: 0.9155
+  7. What was the debut album of a South Korean boy group formed by someone in 2014?
+     Similarity: 0.8933
+  8. What is the name of the individual or group that formed the South Korean boy group behind the 2014 S/S album?
+     Similarity: 0.9330
+  9. What is the name of the individual who founded the South Korean boy group behind the 2014 S/S album?
+     Similarity: 0.9015
+ 10. What is the identity of the individual or group who founded the South Korean boy group behind their 2014 summer/spring debut album?
+     Similarity: 0.8109
+ 11. What is the background information about the debut album of a South Korean boy group formed in 2014 S/S?
+     Similarity: 0.9198
+ 12. What is the identity of the individual or group who formed the South Korean boy group behind their debut album 2014 S/S?
+     Similarity: 0.8890
+ 13. What was the name of the entity that created the South Korean boy group for their 2014 S/S debut album?
+     Similarity: 0.9116
+ 14. What is the name of the South Korean boy group that debuted in 2014 and was formed by someone?
+     Similarity: 0.8453
+ 15. What is the identity of the South Korean boy group that released the debut album 2014 S/S?
+     Similarity: 0.9237
+ 16. What was the name of the South Korean boy group whose debut album was 2014 S/S?
+     Similarity: 0.9417
+ 17. What was the name of the person or entity that formed the South Korean boy group behind the 2014 S/S album?
+     Similarity: 0.9291
+ 18. What is the identity of the person who formed the South Korean boy group that released its debut album in 2014 S/S?
+     Similarity: 0.8869
+ 19. What was the name of the person who formed the South Korean boy group that released its debut album, 2014 S/S?
+     Similarity: 0.9279
+ 20. Who was behind the creation of the South Korean boy group's 2014 S/S album?
+     Similarity: 0.9118
+ 21. What is the background of the group behind the album "2014 S/S" which was a South Korean boy group created by someone?
+     Similarity: 0.8786
+ 22. What is the name of the establishment that formed the South Korean boy group behind their 2014 S/S album?
+     Similarity: 0.9101
+ 23. What was the formation context of the South Korean boy group behind the debut album 2014 S/S?
+     Similarity: 0.9172
+ 24. What is the identity of the individual or group who formed the South Korean boy group behind the album 2014 S/S?
+     Similarity: 0.8955
+ 25. What was the name of the person or group behind the formation of a South Korean boy group that released their debut album 2014 S/S?
+     Similarity: 0.9128
+ 26. What is the identity of the person behind the formation of a South Korean boy group that released its debut album, 2014 S/S?
+     Similarity: 0.8538
+ 27. What is the identity of the individual who formed a South Korean boy group whose debut album is 2014 S/S?
+     Similarity: 0.8943
+ 28. What is the identity of the group behind the 2014 S/S album?
+     Similarity: 0.7566
+ 29. What is the background information on a South Korean boy group that debuted with the album 2014 S/S?
+     Similarity: 0.8744
+ 30. What is the name of the South Korean boy group that released its debut album, 2014 S/S, which was formed by whom?
+     Similarity: 0.9684
+ 31. Who launched the South Korean boy band behind their 2014 album?
+     Similarity: 0.8399
+ 32. What is the origin of a South Korean boy group formed in 2014?
+     Similarity: 0.8099
+ 33. What was the 2014 album named S/S by a South Korean boy group released by?
+     Similarity: 0.9540
+ 34. What is the identity of the 2014 S/S album's South Korean boy group creators?
+     Similarity: 0.8556
+ 35. What is the identity of the founder of a popular South Korean boy group that released their debut album, "2014 S/S", in 2014?
+     Similarity: 0.8998
+ 36. What is the identity of the creator behind the debut album of a South Korean boy group formed in 2014?
+     Similarity: 0.8005
+ 37. A South Korean boy group's debut album in 2014 Summer was launched by whom?
+     Similarity: 0.8754
+ 38. What was the name of the individual or group that formed the South Korean boy group that released their debut album "2014 S/S"?
+     Similarity: 0.9467
+ 39. A South Korean boy group's debut album, 2014 S/S, was formed by which artist or entity?
+     Similarity: 0.9632
+ 40. What is the identity of the creator behind the 2014 S/S album by a South Korean boy group formed in the same era?
+     Similarity: 0.8665
+ 41. What is the identity of the individual or group responsible for forming a notable South Korean boy group that released its debut album in 2014?
+     Similarity: 0.8412
+ 42. What is the name of the artist who created the 2014 S/S album by a South Korean boy group he founded?
+     Similarity: 0.8783
+ 43. What is the identity of the individual who formed the South Korean boy group behind the debut album 2014 S/S?
+     Similarity: 0.8965
+ 44. What is the identity of the person who formed a South Korean boy group that released its debut album in 2014 S/S?
+     Similarity: 0.8851
+ 45. What is the name of the individual who created the 2014 S/S album, which is the debut work of a South Korean boy group they founded?
+     Similarity: 0.9213
+ 46. What is the name of the South Korean boy group formed by the creator of their debut album, released in 2014 during the spring/summer season?
+     Similarity: 0.8701
+ 47. What was the group that debuted with the album 2014 S/S and was formed by a South Korean creator?
+     Similarity: 0.9191
+ 48. What was the name of the creator of the South Korean boy group that debuted with their 2014 S/S album?
+     Similarity: 0.8939
+ 49. What is the identity of the founder of the South Korean boy group that released its debut album "2014 S/S"?
+     Similarity: 0.8809
+ 50. What is the identity of the creator of the 2014 S/S album, a debut release by a South Korean boy group established by whom?
+     Similarity: 0.9201
+------------------------------------------------------------
+
+QUESTION 7/10
+============================================================
+Original Question: Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?
+
+Candidates and similarities:
+Perturbed: What individual, known by the alias Aladin, provided consulting services to enhance organizational performance?
+
+All Generated Candidates with Similarities:
+------------------------------------------------------------
+  1. Who did the public figure identify as by his stage name Aladin, and how did he contribute to organizations as a consultant?
+     Similarity: 0.9069
+  2. Who is the public figure known by their stage name Aladin and provided consulting services to companies to enhance their operational efficiency?
+     Similarity: 0.8373
+  3. Who was a consultant with the professional alias Aladin, known for assisting organizations in enhancing their performance?
+     Similarity: 0.8737
+  4. Who was a public figure known as Aladin, providing consulting services to enhance organizational performance?
+     Similarity: 0.8693
+  5. Who is the individual known by the stage name Aladin, who assisted companies in enhancing their performance as a consultant?
+     Similarity: 0.9221
+  6. What was the professional known as Aladin in his field, who provided expert advice to businesses looking to improve their performance?
+     Similarity: 0.8341
+  7. Who does an individual refer to by their stage name and assist organizations with improving their performance as a consultant?
+     Similarity: 0.6539
+  8. Who did an individual known by his stage name Aladin assist in enhancing their performance as a consultant?
+     Similarity: 0.9511
+  9. What was the stage name of a consultant who assisted companies in enhancing their performance?
+     Similarity: 0.6443
+ 10. What consultant was known by the stage name Aladin?
+     Similarity: 0.9086
+ 11. What individual is known by the stage name Aladin and has assisted numerous organizations in enhancing their performance as a consultant in a particular field?
+     Similarity: 0.8979
+ 12. Who is the consultant known by a stage name that was also the name of a famous character from a tale about a youth who finds a magic lamp with a genie?
+     Similarity: 0.4324
+ 13. Who was known professionally as Aladin and assisted institutions in enhancing their effectiveness as a consultant?
+     Similarity: 0.7961
+ 14. Who is the person known for his stage name Aladin, and what is his profession as a consultant?
+     Similarity: 0.9114
+ 15. What professional was known as Aladin and worked with organizations to enhance their performance as a consultant?
+     Similarity: 0.8992
+ 16. Who was the consultant known by his stage name Aladin and who helped organizations improve their performance?
+     Similarity: 0.9890
+ 17. What individual, known by his stage name Aladin, provided consulting services to improve organizational efficiency?
+     Similarity: 0.8981
+ 18. What was the identity of the individual going by the stage name Aladin who assisted businesses in enhancing their operational efficiency as a consultant?
+     Similarity: 0.8408
+ 19. What is the identity of a notable figure previously referred to as Aladin who offered advisory services to businesses?
+     Similarity: 0.7427
+ 20. Who was a public figure famous for his performance name Aladin and worked with companies to boost their productivity?
+     Similarity: 0.8030
+ 21. Who was the consultant known for helping organizations improve their performance under the stage name Aladin?
+     Similarity: 0.9599
+ 22. What individual, famous by a different name, assisted businesses in their enhancement as a professional advisor?
+     Similarity: 0.5169
+ 23. What professional, known by an alias, contributed to organizational growth through consulting recently?
+     Similarity: 0.6051
+ 24. What was the stage name of someone who assisted companies in enhancing their productivity as a professional?
+     Similarity: 0.5411
+ 25. What was the stage name of a notable figure who served as a consultant to various organizations, helping them enhance their performance?
+     Similarity: 0.7156
+ 26. What was the alias of the consultant who provided organizations with performance improvement services?
+     Similarity: 0.6750
+ 27. Who was known as Aladin, a consultant who assisted various organizations in enhancing their performance?
+     Similarity: 0.9063
+ 28. What was the stage name of a consultant who helped companies enhance their performance?
+     Similarity: 0.7079
+ 29. What was the professional name of a consultant who assisted organizations in enhancing their performance?
+     Similarity: 0.6203
+ 30. What was the professional alias of a consultant who assisted institutions in enhancing their operational efficiency?
+     Similarity: 0.5327
+ 31. Who was a consultant known by his stage name and helped organizations optimize their operations?
+     Similarity: 0.7206
+ 32. Who was this individual known by his stage name Aladin, and what impact did he have on the performance of the organizations he consulted?
+     Similarity: 0.9082
+ 33. What was the stage name of someone who provided consulting services to improve organizational performance?
+     Similarity: 0.6892
+ 34. What person was known by the stage name Aladin and provided consulting services to organizations to enhance their performance?
+     Similarity: 0.9572
+ 35. What was the professional known for going by the alias Aladin and providing consulting services to enhance organizational efficiency?
+     Similarity: 0.8322
+ 36. Who was the consultant behind the stage name Aladin and helped companies enhance their efficiency?
+     Similarity: 0.9090
+ 37. What individual, known by a notable stage name, has contributed to the betterment of organizational performance as a consultant in recent times?
+     Similarity: 0.7236
+ 38. What individual, known by the alias Aladin, provided consulting services to enhance organizational performance?
+     Similarity: 0.8639
+ 39. Who was the consultant behind the stage name Aladin, assisting organizations in enhancing their performance?
+     Similarity: 0.9350
+ 40. Who was this person known as Aladin, offering his expertise as a consultant to various organizations?
+     Similarity: 0.8488
+ 41. What was the pseudonym of a renowned consultant who provided performance improvement services to businesses?
+     Similarity: 0.6844
+ 42. What was the name of the consultant who performed under the stage name Aladin and assisted companies in enhancing their efficiency?
+     Similarity: 0.8696
+ 43. What was the alias of the professional who assisted businesses in enhancing their efficiency through consulting services?
+     Similarity: 0.5613
+ 44. Who did an individual use as their stage name when they consulted with organizations to enhance their performance?
+     Similarity: 0.6457
+ 45. What was the stage name of a consultant who assisted organizations in enhancing their efficiency?
+     Similarity: 0.5764
+ 46. What was the name of the consultant who used the stage name Aladin and worked with various companies?
+     Similarity: 0.9082
+ 47. Who was recognized as Aladin, working as a consultant to enhance organizational efficiency?
+     Similarity: 0.8239
+ 48. What professional was known as Aladin and provided consulting services to help companies enhance their productivity recently?
+     Similarity: 0.8021
+ 49. Who was a professional known by an alias and assisted companies in optimizing their operations through consulting services?
+     Similarity: 0.6091
+------------------------------------------------------------
+
+QUESTION 8/10
+============================================================
+Original Question: The arena where the Lewiston Maineiacs played their home games can seat how many people?
+
+Candidates and similarities:
+Perturbed: How many spectators can be accommodated in the stadium where the Lewiston Maineiacs played their home games?
+
+All Generated Candidates with Similarities:
+------------------------------------------------------------
+  1. What is the capacity of the venue where a certain hockey team from Lewiston, Maine, would play their home games?
+     Similarity: 0.7678
+  2. What is the maximum seating capacity of the venue where the Lewiston Maineiacs held their home games?
+     Similarity: 0.8776
+  3. What can you tell me about the seating capacity of a typical hockey arena in Lewiston, Maine?
+     Similarity: 0.7488
+  4. What is the maximum capacity of the arena in which the Lewiston Maineiacs hosted their home games?
+     Similarity: 0.9048
+  5. What can an individual infer about the seating capacity of an arena that hosted a team from Lewiston, Maine?
+     Similarity: 0.7877
+  6. What is the seating capacity of the venue where the Maineiacs played their matches?
+     Similarity: 0.7833
+  7. How many spectators can an arena in Lewiston, Maine designed for the Maineiacs team comfortably seat?
+     Similarity: 0.8731
+  8. How many people can attend games at a venue where a certain minor league team held home events in Lewiston?
+     Similarity: 0.7276
+  9. How many individuals can a stadium accommodate that is used by a Maine-based professional ice hockey team?
+     Similarity: 0.6154
+ 10. What is the capacity of the venue that a professional ice hockey team in Maine calls home?
+     Similarity: 0.6610
+ 11. How many people can be accommodated by a particular arena in the location where the Maineiacs play their home matches?
+     Similarity: 0.8347
+ 12. What is the seating capacity of the venue where the Lewiston Maineiacs typically stage their home events?
+     Similarity: 0.8164
+ 13. What is the seating capacity of the venue where a professional team from Lewiston, Maine, holds their home games?
+     Similarity: 0.8235
+ 14. What is the maximum capacity of the venue that was the home of the Lewiston Maineiacs?
+     Similarity: 0.7973
+ 15. What is the capacity of the venue where the Lewiston Maineiacs hosted their matches?
+     Similarity: 0.8154
+ 16. What is the approximate capacity of the venue where a certain minor league ice hockey team based in Lewiston, Maine, played their home games?
+     Similarity: 0.7107
+ 17. What is the capacity of the venue where a particular hockey team, the Lewiston Maineiacs, would play their home matches?
+     Similarity: 0.7951
+ 18. What number of spectators does the arena used by the Lewiston Maineiacs team accommodate for their home games?
+     Similarity: 0.9160
+ 19. Can someone who attended a game at the venue of the Lewiston Maineiacs in Maine estimate the seating capacity?
+     Similarity: 0.8154
+ 20. What is the capacity of the venue where the Lewiston Maineiacs staged their home matches?
+     Similarity: 0.8271
+ 21. What is the capacity of the venue where the Lewiston Maineiacs hosted their home games?
+     Similarity: 0.8970
+ 22. What is the capacity of an arena in a specific city where a professional hockey team plays their home games?
+     Similarity: 0.5927
+ 23. How many individuals can attend events at the venue where a certain professional ice hockey team played their home matches?
+     Similarity: 0.5677
+ 24. The arena that hosted the home games of the Lewiston Maineiacs can hold approximately what number of spectators?
+     Similarity: 0.9247
+ 25. What is the maximum capacity of a venue that a team like the Lewiston Maineiacs called home in Maine?
+     Similarity: 0.8172
+ 26. What is the seating capacity of a typical venue associated with a minor league ice hockey team like the Lewiston Maineiacs?
+     Similarity: 0.7275
+ 27. What is the seating capacity of the venue that serves as the home arena for the Lewiston Maineiacs?
+     Similarity: 0.8758
+ 28. What is the capacity of an arena where a professional hockey team from Maine hosts its home games?
+     Similarity: 0.7203
+ 29. What is the seating capacity of the venue where a certain minor league hockey team, based in Lewiston, hosts its home games?
+     Similarity: 0.7123
+ 30. What is the maximum capacity of the venue where a professional ice hockey team, such as the Maineiacs, typically plays their home games?
+     Similarity: 0.6545
+ 31. What is the seating capacity of the venue where a certain professional ice hockey team, based in Lewiston, plays its home games?
+     Similarity: 0.7130
+ 32. What is the seating capacity of the venue used by the Lewiston Maineiacs for their home games?
+     Similarity: 0.8716
+ 33. What is the seating capacity of the venue where the Maineiacs play their home games?
+     Similarity: 0.8481
+ 34. How many individuals can be accommodated in the venue where the Maineiacs from Lewiston typically stage their home games?
+     Similarity: 0.8718
+ 35. What is the maximum capacity of the venue where the Lewiston Maineiacs hosted their home matches?
+     Similarity: 0.8185
+ 36. What is the capacity of the venue where the Lewiston Maineiacs typically held their home events?
+     Similarity: 0.8195
+ 37. What is the capacity of the venue where a particular hockey team based in Lewiston, Maine, hosts its home games?
+     Similarity: 0.7582
+ 38. What is the seating capacity of a typical arena where a minor league hockey team plays its home games?
+     Similarity: 0.6445
+ 39. What is the maximum number of spectators that can be accommodated in the venue where a professional hockey team from Maine is based?
+     Similarity: 0.6415
+ 40. What is the approximate seating capacity of the venue where the Lewiston Maineiacs typically hosted their home games?
+     Similarity: 0.8683
+ 41. How many individuals can be seated in the venue where the Maineiacs held their home events?
+     Similarity: 0.7793
+ 42. How many spectators can be accommodated in the stadium where the Lewiston Maineiacs played their home games?
+     Similarity: 0.8792
+ 43. What can be learned about the seating capacity of an arena where a minor league hockey team used to play its home games?
+     Similarity: 0.6183
+ 44. How many individuals can be seated in the arena where the Lewiston Maineiacs hold their home games?
+     Similarity: 0.9476
+ 45. The arena hosting the Lewiston Maineiacs' home games has a seating capacity of what magnitude?
+     Similarity: 0.8942
+ 46. What is the capacity of the venue where the Lewiston Maineiacs play their home matches?
+     Similarity: 0.8550
+ 47. How many people could attend a game at the venue where the Lewiston Maineiacs used to host their home games?
+     Similarity: 0.8868
+ 48. What is the capacity of the venue where a hockey team from Maine typically plays their home matches?
+     Similarity: 0.6745
+ 49. What is the seating capacity of the venue associated with the Lewiston Maineiacs?
+     Similarity: 0.8122
+------------------------------------------------------------
+
+QUESTION 9/10
+============================================================
+Original Question: Who is older, Annie Morton or Terry Richardson?
+
+Candidates and similarities:
+Perturbed: What is the age difference between Annie Morton and Terry Richardson?
+
+All Generated Candidates with Similarities:
+------------------------------------------------------------
+  1. Who is the older individual between Annie Morton and Terry Richardson?
+     Similarity: 0.9511
+  2. Is it true that one of two individuals, Annie Morton and Terry Richardson, has a greater age?
+     Similarity: 0.8404
+  3. Who is the more senior individual between Annie Morton and Terry Richardson?
+     Similarity: 0.8921
+  4. Who is the more senior individual, Annie Morton or Terry Richardson?
+     Similarity: 0.8951
+  5. Who can be identified as the elder between Annie Morton and Terry Richardson?
+     Similarity: 0.8981
+  6. Who is more senior, Annie Morton or Terry Richardson?
+     Similarity: 0.9038
+  7. Who is the more mature of the two, Annie Morton or Terry Richardson?
+     Similarity: 0.9051
+  8. What is the age difference between Annie Morton and Terry Richardson?
+     Similarity: 0.9343
+  9. Is there a difference in age between Annie Morton and Terry Richardson?
+     Similarity: 0.9256
+ 10. Who is older, the younger person from the company or the older professional?
+     Similarity: 0.3859
+ 11. Who is the more senior individual, Annie Morton or Terry Richardson?
+     Similarity: 0.8951
+ 12. Is someone older, an individual from a particular background or a public figure from a different field?
+     Similarity: 0.2813
+ 13. Is Annie Morton or Terry Richardson the older individual?
+     Similarity: 0.9605
+ 14. What is the age difference between Annie Morton and Terry Richardson?
+     Similarity: 0.9343
+ 15. Who is the elder, a public figure or a notable figure who resided in a city?
+     Similarity: 0.2976
+ 16. Who is the older of two individuals, Annie Morton or Terry Richardson, from their respective pasts?
+     Similarity: 0.9140
+ 17. Who is more senior, Annie Morton or Terry Richardson?
+     Similarity: 0.9038
+ 18. Who is the older individual, Annie Morton or Terry Richardson?
+     Similarity: 0.9765
+ 19. Is there a person in the public eye who is more elderly than another individual?
+     Similarity: 0.3127
+ 20. What is the age difference between Terry Richardson and Annie Morton?
+     Similarity: 0.9393
+ 21. Who is the more senior person between Annie Morton and Terry Richardson?
+     Similarity: 0.9049
+ 22. Who is older, the individual from the Morton family or the person from the Richardson family?
+     Similarity: 0.7279
+ 23. What age difference exists between the two notable individuals?
+     Similarity: 0.4289
+ 24. Who is the person with the earlier birthdate, Annie Morton or Terry Richardson?
+     Similarity: 0.8873
+ 25. Who does Annie Morton think is older, herself or Terry Richardson?
+     Similarity: 0.9527
+ 26. What is the age difference between Annie Morton and Terry Richardson?
+     Similarity: 0.9343
+ 27. Who is older, the person from the location with the lesser known date of birth or the individual with the publicized date of birth?
+     Similarity: 0.3427
+ 28. Who is the more mature individual, the person known as Annie Morton or Terry Richardson?
+     Similarity: 0.8897
+ 29. Is someone who is a few years older than Terry Richardson in the same city as Annie Morton's colleague?
+     Similarity: 0.8651
+ 30. What is the age disparity between a public figure and a notable individual from a particular region?
+     Similarity: 0.2596
+ 31. What is the age difference between Annie Morton and Terry Richardson?
+     Similarity: 0.9343
+ 32. Is a person who resides in a certain city older than a notable figure who hails from a specific region?
+     Similarity: 0.2391
+ 33. Who is the older individual, Annie Morton or Terry Richardson?
+     Similarity: 0.9765
+ 34. Who do you think is older, a person from a certain family or a renowned individual from a distinct background?
+     Similarity: 0.3535
+ 35. Is there an age disparity between two notable figures from a specific profession?
+     Similarity: 0.3246
+ 36. Is the older individual between Annie Morton and Terry Richardson a professional in a senior position?
+     Similarity: 0.7920
+ 37. Is there a notable age difference between the two public figures?
+     Similarity: 0.3699
+ 38. Who is the elder between Annie Morton and Terry Richardson?
+     Similarity: 0.9295
+ 39. Is Terry Richardson more senior than Annie Morton?
+     Similarity: 0.8887
+ 40. Who is the elder between Annie Morton and Terry Richardson?
+     Similarity: 0.9295
+ 41. Is Annie Morton more senior than Terry Richardson?
+     Similarity: 0.8914
+ 42. Who is the person that has reached an advanced age, compared to their peer Annie Morton or Terry Richardson?
+     Similarity: 0.7892
+ 43. Who do we consider the older individual between Annie Morton and Terry Richardson?
+     Similarity: 0.9225
+ 44. Who is the older individual, Annie Morton or Terry Richardson?
+     Similarity: 0.9765
+ 45. Who is the older individual, Annie Morton or Terry Richardson?
+     Similarity: 0.9765
+ 46. Who is older between two individuals who worked together recently?
+     Similarity: 0.4293
+ 47. What is the age difference between a well-known person and a public figure from the same field who are from different cities?
+     Similarity: 0.3272
+ 48. Who is the senior individual between Annie Morton and Terry Richardson?
+     Similarity: 0.8939
+ 49. Who is the older individual, Annie Morton or Terry Richardson?
+     Similarity: 0.9765
+ 50. Who is older, someone with a similar age to Annie Morton or a peer of Terry Richardson?
+     Similarity: 0.9192
+------------------------------------------------------------
+
+QUESTION 10/10
+============================================================
+Original Question: Are Local H and For Against both from the United States?
+
+Candidates and similarities:
+Perturbed: Are individuals associated with Local H and For Against both residents of the United States?
+
+All Generated Candidates with Similarities:
+------------------------------------------------------------
+  1. Are individuals associated with Local H and For Against located in the same geographical area?
+     Similarity: 0.7575
+  2. 1 Are two individuals associated with the Local H and For Against group from the same geographic region in North America?
+     Similarity: 0.6248
+  3. Are individuals associated with Local H and For Against native to the same country?
+     Similarity: 0.6976
+  4. 1 Is it true that individuals associated with Local H and For Against share a common geographical origin in the United States?
+     Similarity: 0.7018
+  5. Are individuals associated with Local H and For Against originally from the same country?
+     Similarity: 0.7792
+  6. Are individuals affiliated with Local H and For Against both American citizens?
+     Similarity: 0.8288
+  7. Are individuals affiliated with Local H and For Against from the same country?
+     Similarity: 0.8265
+  8. Are two professionals associated with Local H and For Against from the same nation of origin?
+     Similarity: 0.7538
+  9. Are two professionals from Local H and For Against both from America?
+     Similarity: 0.7785
+ 10. Are professionals with similar views from the same region?
+     Similarity: 0.3021
+ 11. Is there a person from a company in the United States who is on the same side as another individual from the same country?
+     Similarity: 0.3654
+ 12. Are individuals associated with Local H and For Against both residents of the United States?
+     Similarity: 0.8616
+ 13. Are two individuals associated with Local H and For Against from the same geographical region?
+     Similarity: 0.7181
+ 14. Are H and Against both from the same country as For?
+     Similarity: 0.7942
+ 15. Are individuals with opposing views both from the same nation?
+     Similarity: 0.3059
+ 16. Are individuals affiliated with Local H and For Against both native to the United States?
+     Similarity: 0.8145
+ 17. Is a certain professional from Local H and For Against located in the United States?
+     Similarity: 0.7233
+ 18. Are individuals associated with Local H and For Against both residents of the United States?
+     Similarity: 0.8616
+ 19. Are individuals associated with Local H and For Against both from the same country?
+     Similarity: 0.8376
+ 20. Are individuals associated with Local H and For Against from the same national origin?
+     Similarity: 0.7804
+ 21. Is a professional from Location H and a person from Location Against both from the same country?
+     Similarity: 0.5808
+ 22. Are individuals associated with Local H and For Against both residents of the United States?
+     Similarity: 0.8616
+ 23. Are individuals from Local H and For Against typically residents of the same country?
+     Similarity: 0.8191
+ 24. Are individuals associated with Local H and For Against both American citizens?
+     Similarity: 0.8281
+ 25. Are individuals associated with Local H and For Against from the same geographical region?
+     Similarity: 0.7317
+ 26. Are people from the company For Against and Local H all from the same country?
+     Similarity: 0.7434
+ 27. Are two individuals from Local H and For Against's respective backgrounds American?
+     Similarity: 0.7587
+ 28. Are individuals with opposing views in Local H both residents of the United States?
+     Similarity: 0.7122
+ 29. Are an individual from Location H and another individual from Location Against both from the United States?
+     Similarity: 0.7145
+ 30. Are individuals affiliated with Local H and For Against from the same country of origin?
+     Similarity: 0.7867
+ 31. Are individuals associated with Local H and For Against from the same country?
+     Similarity: 0.8186
+ 32. Are individuals from the companies Local H and For Against also from the United States?
+     Similarity: 0.8046
+ 33. Does someone from Local H and For Against share the same nationality as many well-known US artists?
+     Similarity: 0.4968
+ 34. Is there a connection between a local hero from a certain city and a notable figure from the same country?
+     Similarity: 0.1698
+ 35. Are two prominent figures associated with local organizations from the same American location?
+     Similarity: 0.3996
+ 36. Are individuals associated with Local H and For Against from the same country?
+     Similarity: 0.8186
+ 37. Are professionals from the same institution from a country in North America?
+     Similarity: 0.3483
+ 38. Are a person from Local H and another person from For Against both native to the same country?
+     Similarity: 0.6678
+ 39. Do people associated with Local H and For Against share a common nationality with someone from the United States?
+     Similarity: 0.6938
+ 40. Are both individuals from the local For Against movement affiliated with the US?
+     Similarity: 0.5750
+ 41. Are individuals associated with Local H and For Against residing in the same American location?
+     Similarity: 0.8214
+ 42. Are people from the groups Local H and For Against both from America?
+     Similarity: 0.7819
+ 43. Are individuals associated with Local H and For Against originating from the same country?
+     Similarity: 0.7853
+ 44. Are there two notable figures, one from Local H and the other from For Against, who share a common American origin?
+     Similarity: 0.5479
+ 45. Are both individuals associated with Local H and For Against citizens of the United States?
+     Similarity: 0.8416
+ 46. Is an individual associated with Local H and For Against also from the United States?
+     Similarity: 0.8953
+ 47. Are individuals H and For Against both American citizens?
+     Similarity: 0.7209
+ 48. Are individuals representing Local H and For Against from the same country?
+     Similarity: 0.8031
+ 49. Are individuals associated with Local H and For Against residents of the United States?
+     Similarity: 0.8450
+ 50. Are there any individuals affiliated with Local H and For Against who hail from the United States?
+     Similarity: 0.7151
+------------------------------------------------------------
+
+
+================================================================================
+SUMMARY OF RESULTS
+================================================================================
+
+Question 1: Were Scott Derrickson and Ed Wood of the same nationality?
+Perturbed: Are a director and a screenwriter from the same cultural background?
+
+Question 2: What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?
+Perturbed: What job in government was held by the actress who portrayed Corliss Archer in the movie Kiss and Tell?
+
+Question 3: What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?
+Perturbed: What science fiction series featuring a first-person narrator includes companion books exploring the stories of enslaved worlds and extraterrestrial civilizations?
+
+Question 4: Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?
+Perturbed: Are the Laleli Mosque and Esma Sultan Mansion situated in the same local area?
+
+Question 5: The director of the romantic comedy "Big Stone Gap" is based in what New York city?
+Perturbed: What New York city is the basis for the director of the romantic comedy "Big Stone Gap"?
+
+Question 6: 2014 S/S is the debut album of a South Korean boy group that was formed by who?
+Perturbed: What is the origin of a South Korean boy group formed in 2014?
+
+Question 7: Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?
+Perturbed: What individual, known by the alias Aladin, provided consulting services to enhance organizational performance?
+
+Question 8: The arena where the Lewiston Maineiacs played their home games can seat how many people?
+Perturbed: How many spectators can be accommodated in the stadium where the Lewiston Maineiacs played their home games?
+
+Question 9: Who is older, Annie Morton or Terry Richardson?
+Perturbed: What is the age difference between Annie Morton and Terry Richardson?
+
+Question 10: Are Local H and For Against both from the United States?
+Perturbed: Are individuals associated with Local H and For Against both residents of the United States?

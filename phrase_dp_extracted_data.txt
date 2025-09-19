@@ -1,0 +1,103 @@
+PHRASE DP CANDIDATES AND FINAL REPLACEMENTS EXTRACTION
+============================================================
+
+QUESTION 1
+----------------------------------------
+Original Question: Were Scott Derrickson and Ed Wood of the same nationality?
+Final DP Replacement: Is there a shared nationality between a notable figure and a filmmaker associated with the same country?
+Number of Candidates: 0
+
+Candidates with Similarity Scores:
+
+============================================================
+
+QUESTION 2
+----------------------------------------
+Original Question: What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?
+Final DP Replacement: What role in government did the actress who played Corliss Archer in "Kiss and Tell" hold before or after her acting career?
+Number of Candidates: 0
+
+Candidates with Similarity Scores:
+
+============================================================
+
+QUESTION 3
+----------------------------------------
+Original Question: What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?
+Final DP Replacement: What is the title of a first-person science fantasy young adult series that includes companion books about enslaved planets and extraterrestrial species?
+Number of Candidates: 0
+
+Candidates with Similarity Scores:
+
+============================================================
+
+QUESTION 4
+----------------------------------------
+Original Question: Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?
+Final DP Replacement: Is there a connection between the neighborhood locations of the Laleli Mosque and Esma Sultan Mansion?
+Number of Candidates: 0
+
+Candidates with Similarity Scores:
+
+============================================================
+
+QUESTION 5
+----------------------------------------
+Original Question: The director of the romantic comedy "Big Stone Gap" is based in what New York city?
+Final DP Replacement: Which city in New York is the residence of the director of a romantic comedy similar to "Big Stone Gap"?
+Number of Candidates: 0
+
+Candidates with Similarity Scores:
+
+============================================================
+
+QUESTION 6
+----------------------------------------
+Original Question: 2014 S/S is the debut album of a South Korean boy group that was formed by who?
+Final DP Replacement: Who formed the organization behind the debut album of a South Korean boy group in 2014?
+Number of Candidates: 0
+
+Candidates with Similarity Scores:
+
+============================================================
+
+QUESTION 7
+----------------------------------------
+Original Question: Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?
+Final DP Replacement: Which notable individual, known by the stage name Aladin, has worked as a consultant to enhance the performance of various organizations?
+Number of Candidates: 0
+
+Candidates with Similarity Scores:
+
+============================================================
+
+QUESTION 8
+----------------------------------------
+Original Question: The arena where the Lewiston Maineiacs played their home games can seat how many people?
+Final DP Replacement: What is the seating capacity of the venue where a regional hockey team played its home games?
+Number of Candidates: 0
+
+Candidates with Similarity Scores:
+
+============================================================
+
+QUESTION 9
+----------------------------------------
+Original Question: Who is older, Annie Morton or Terry Richardson?
+Final DP Replacement: Is a public figure older than a professional, considering two individuals from a specific comparison?
+Number of Candidates: 0
+
+Candidates with Similarity Scores:
+
+============================================================
+
+QUESTION 10
+----------------------------------------
+Original Question: Are Local H and For Against both from the United States?
+Final DP Replacement: Is it true that both Local H and For Against originated from the same country?
+Number of Candidates: 0
+
+Candidates with Similarity Scores:
+
+============================================================
+

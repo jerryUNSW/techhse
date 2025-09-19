@@ -1,39 +1,54 @@
-Generate 10 DIVERSE paraphrases of the following question with VARYING levels of generalization.
-CRITICAL: Create a mix of candidates - some with moderate generalization, some with high generalization.
-Each paraphrase must be significantly different from the others and MEANINGFUL.
+MANDATORY: Generate 10 COMPLETELY ANONYMIZED paraphrases of the following question.
+CRITICAL: EVERY candidate MUST eliminate ALL specific names, titles, and identifiers.
 
-### GENERALIZATION STRATEGY:
-- 3-4 candidates: MODERATE generalization (keep some original context, replace names/places with general terms)
-- 4-5 candidates: HIGH generalization (replace most specifics with abstract terms)
-- 2-3 candidates: VERY HIGH generalization (use highly abstract language, maximum privacy)
+### AGGRESSIVE PRIVACY REQUIREMENTS:
+- ZERO TOLERANCE: NO specific names, character names, or unique identifiers allowed in ANY candidate
+- COMPLETE ABSTRACTION: Replace ALL proper nouns and specific entities with generic terms
+- SENSITIVE INFO ELIMINATION: Remove ALL titles, exact dates, specific locations, unique events
+- VALIDATION MANDATE: Each candidate must be completely anonymized before output
 
-### GENERALIZATION RULES:
-- Replace specific names with: "an individual", "a person", "someone", "a professional", "a public figure", "a notable figure"
-- Replace specific places with: "a city", "a country", "a region", "a location", "a venue", "a place", "an area"
-- Replace specific dates with: "recently", "in the past", "during a specific period", "at some point", "on a particular occasion"
-- Replace specific events with: "a particular event", "a specific occasion", "a notable incident", "a certain happening"
-- Replace organizations with: "a company", "an organization", "an institution", "a corporation", "an entity"
+### FORBIDDEN CONTENT:
+❌ NEVER include specific names like "Annie Morton", "Terry Richardson", "Corliss Archer"
+❌ NEVER include specific titles like "Kiss and Tell", "Big Stone Gap", "2014 S/S"
+❌ NEVER include exact dates, locations, or unique identifiers
+❌ NEVER create candidates that retain any identifiable information
+
+### REQUIRED TRANSFORMATIONS:
+✅ Person names → "an individual", "a person", "someone", "a professional", "a public figure"
+✅ Character names → "a character", "the protagonist", "a role", "a performer"
+✅ Film/book titles → "a film", "a movie", "a production", "a work", "a project"
+✅ Specific places → "a location", "an area", "a region", "a setting", "a venue"
+✅ Organizations → "an organization", "an entity", "an institution", "a group"
+✅ Exact dates → "a time", "a period", "recently", "previously", "at some point"
+
+### EXAMPLES OF COMPLETE ABSTRACTION:
+
+Original: "What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?"
+✅ GOOD: "What government position was held by a female performer from a classic film?"
+❌ BAD: "What government position was held by the actress who played Corliss Archer in Kiss and Tell?"
+
+Original: "Who is older, Annie Morton or Terry Richardson?"
+✅ GOOD: "Who is older, an individual from one profession or someone from another field?"
+❌ BAD: "Who is older, Annie Morton or Terry Richardson?"
+
+Original: "Are Local H and For Against both from the United States?"
+✅ GOOD: "Are individuals from different groups both from the same country?"
+❌ BAD: "Are Local H and For Against both from the United States?"
 
 ### DIVERSITY REQUIREMENTS:
-- Use different sentence structures (active/passive, different word orders)
-- Vary vocabulary extensively (synonyms, different expressions)
-- Change question formats (direct questions, indirect questions, different question words)
-- Use different levels of formality and complexity
+- Use different sentence structures while maintaining anonymity
+- Vary vocabulary extensively using generic terms
+- Change question formats (direct/indirect questions, different question words)
+- Create different levels of abstraction while keeping ALL sensitive info removed
 
-### CRITICAL: AVOID TAUTOLOGICAL QUESTIONS
-DO NOT create questions that are automatically "yes" or too obvious, such as:
-- "Do people from the same place have the same origin?"
-- "Is it true that two professionals from the same country share a nationality?"
-- "Are the same items in the same location?"
-- "Do the same people come from the same place?"
-
-Instead, create questions that:
-- Ask about meaningful relationships or characteristics
-- Require actual knowledge or investigation to answer
-- Maintain the original question's intent while being generalized
-- Are genuinely informative and not obvious
+### QUALITY ASSURANCE:
+- Each candidate MUST be checked for sensitive information before inclusion
+- Reject any candidate containing specific names, titles, or identifiers
+- Ensure question logic and reasoning potential is preserved
+- Maintain meaningfulness while guaranteeing complete privacy
 
 ### TASK:
 Original: {input_sentence}
 
-Output ONLY the 10 paraphrases, one per line, without any formatting, numbering, or bullet points:
+Output ONLY the 10 completely anonymized paraphrases, one per line, without any formatting, numbering, or bullet points.
+EACH CANDIDATE MUST BE COMPLETELY FREE OF SPECIFIC NAMES AND IDENTIFIERS.
