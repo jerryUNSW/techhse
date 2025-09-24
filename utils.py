@@ -73,63 +73,46 @@ def get_remote_llm_client(provider):
 def generate_sentence_replacements_with_nebius(nebius_client, nebius_model_name, 
     input_sentence, num_return_sequences=10, max_tokens=150, num_api_calls=5):
     """
-    Generates diverse, generalized, and anonymized paraphrases of an input sentence
-    using a Nebius LLM via the Nebius API.
+    DEPRECATED: Use `generate_sentence_replacements_with_nebius_diverse` instead.
     """
-    # Load prompts from external files
-    system_prompt = load_system_prompt()
-    user_prompt_template = load_user_prompt_template()
-    user_prompt = format_user_prompt(user_prompt_template, input_sentence=input_sentence)
-    
-    try:
-        all_paraphrases = []
-        
-        # Make multiple API calls to get more diverse candidates
-        for call_num in range(num_api_calls):
-            print(f"API call {call_num + 1}/{num_api_calls}...")
-            
-            response = nebius_client.chat.completions.create(
-                model=nebius_model_name,
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt}
-                ],
-                max_tokens=max_tokens,
-                temperature=0.9,
-                top_p=0.95,
-                n=num_return_sequences
-            )
+    raise NotImplementedError("generate_sentence_replacements_with_nebius is deprecated. Use the *_diverse variant.")
 
-            for choice in response.choices:
-                content = choice.message.content.strip()
-                if content and content.lower() != input_sentence.lower():
-                    # Split by lines and extract individual paraphrases
-                    lines = content.split('\n')
-                    for line in lines:
-                        clean_line = line.strip()
-                        # Remove numbering (1., 2., etc.) and bullet points (-, •, etc.)
-                        clean_line = re.sub(r'^\d+\.\s*', '', clean_line)  # Remove "1. ", "2. ", etc.
-                        clean_line = re.sub(r'^[-•*]\s*', '', clean_line)  # Remove "- ", "• ", "* "
-                        clean_line = clean_line.strip()
-                        
-                        # Minimal filtering - only basic quality checks, NO content filtering
-                        if (clean_line and
-                            len(clean_line) > 10 and  # Minimum length
-                            clean_line.lower() != input_sentence.lower() and
-                            not clean_line.startswith("Generate") and
-                            not clean_line.startswith("Output") and
-                            not clean_line.startswith("CRITICAL") and
-                            not "paraphrase" in clean_line.lower() and
-                            clean_line.endswith('?')):  # Should be a question
-                            all_paraphrases.append(clean_line)
-                            break  # Only take the first valid paraphrase from each completion
-
-        print(f"Generated {len(all_paraphrases)} total candidates from {num_api_calls} API calls")
-        return all_paraphrases
-
-    except Exception as e:
-        print(f"\033[91mError with Nebius API for paraphrase generation: {e}\033[0m")
-        return []
+    # Historical implementation (commented out):
+    # system_prompt = load_system_prompt()
+    # user_prompt_template = load_user_prompt_template()
+    # user_prompt = format_user_prompt(user_prompt_template, input_sentence=input_sentence)
+    # try:
+    #     all_paraphrases = []
+    #     for call_num in range(num_api_calls):
+    #         response = nebius_client.chat.completions.create(
+    #             model=nebius_model_name,
+    #             messages=[
+    #                 {"role": "system", "content": system_prompt},
+    #                 {"role": "user", "content": user_prompt}
+    #             ],
+    #             max_tokens=max_tokens,
+    #             temperature=0.9,
+    #             top_p=0.95,
+    #             n=num_return_sequences
+    #         )
+    #         for choice in response.choices:
+    #             content = choice.message.content.strip()
+    #             if content and content.lower() != input_sentence.lower():
+    #                 lines = content.split('\n')
+    #                 for line in lines:
+    #                     clean_line = line.strip()
+    #                     clean_line = re.sub(r'^\d+\.\s*', '', clean_line)
+    #                     clean_line = re.sub(r'^[-•*]\s*', '', clean_line)
+    #                     clean_line = clean_line.strip()
+    #                     if (clean_line and len(clean_line) > 10 and clean_line.lower() != input_sentence.lower()
+    #                         and not clean_line.startswith("Generate") and not clean_line.startswith("Output")
+    #                         and not clean_line.startswith("CRITICAL") and not "paraphrase" in clean_line.lower()
+    #                         and clean_line.endswith('?')):
+    #                         all_paraphrases.append(clean_line)
+    #                         break
+    #     return all_paraphrases
+    # except Exception:
+    #     return []
 
 def generate_sentence_replacements_with_nebius_diverse(nebius_client, nebius_model_name, 
     input_sentence, num_return_sequences=10, max_tokens=150, num_api_calls=5,
@@ -563,7 +546,6 @@ def phrase_DP_perturbation_diverse(nebius_client, nebius_model_name, cnn_dm_prom
 
     print("Diverse DP replacement selected:", dp_replacement)
     return dp_replacement
-
 
 def phrase_DP_perturbation_with_candidates_diverse(nebius_client, nebius_model_name, cnn_dm_prompt, epsilon, sbert_model):
     """
