@@ -269,7 +269,7 @@ def text_generation_with_black_box_LLMs(prompt, tem=1.0, max_tokens=150):
 
 
 # if __name__ == "__main__":
-parser = get_parser()
-args = parser.parse_args()
+# parser = get_parser()
+# args = parser.parse_args()
 print("Loading inferdpt.py")
 print("Embeddings will be loaded when perturb_sentence is called")
