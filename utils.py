@@ -5,36 +5,6 @@ from difflib import SequenceMatcher
 from openai import OpenAI
 from prompt_loader import load_system_prompt, load_user_prompt_template, format_user_prompt
 
-def is_nonsensical_question(question):
-    """
-    Detect nonsensical questions that are automatically "yes" or too obvious.
-    These defeat the purpose of privacy protection.
-    """
-    question_lower = question.lower()
-    
-    # Only filter out the most obvious tautologies
-    obvious_tautologies = [
-        "is it true that two professionals from the same country share a nationality",
-        "do people from the same place have the same origin",
-        "are two people from the same country from the same country",
-        "does the same thing belong to the same category",
-        "is the same thing part of the same group",
-        "are the same items in the same location",
-        "do the same people come from the same place",
-        "is it correct that same things are the same",
-        "would it be accurate that same things are the same",
-        "can it be said that same things are the same",
-        "is it possible that same things are the same",
-        "could it be that same things are the same",
-        "might same things be the same",
-        "would same things be the same"
-    ]
-    
-    for tautology in obvious_tautologies:
-        if tautology in question_lower:
-            return True
-    
-    return False
 
 # Load environment variables
 load_dotenv()
