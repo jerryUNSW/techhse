@@ -631,68 +631,56 @@ def phrase_DP_perturbation_with_candidates_diverse(nebius_client, nebius_model_n
 
 def phrase_DP_perturbation(nebius_client, nebius_model_name, cnn_dm_prompt, epsilon, sbert_model):
     """
-    Applies differential privacy perturbation to the question using the user's provided logic.
+    DEPRECATED: Use `phrase_DP_perturbation_diverse` instead.
     """
-    print(f"\033[92mApplying differential privacy perturbation with epsilon={epsilon}...\033[0m")
+    raise NotImplementedError("phrase_DP_perturbation is deprecated. Use phrase_DP_perturbation_diverse.")
 
-    # Step 1: Generate candidate sentence-level replacements using the Nebius model
-    candidate_sentences = generate_sentence_replacements_with_nebius(
-        nebius_client,
-        nebius_model_name,
-        input_sentence=cnn_dm_prompt,
-        num_return_sequences=10,
-    )
-
-    if not candidate_sentences:
-        raise ValueError("No candidate sentences were generated. Check the Nebius API call for paraphrase generation.")
-
-    # Step 2: Precompute embeddings (assuming get_embedding and differentially_private_replacement are in dp_sanitizer)
-    from dp_sanitizer import get_embedding, differentially_private_replacement
-    candidate_embeddings = {sent: get_embedding(sbert_model, sent).cpu().numpy() for sent in candidate_sentences}
-
-    # Step 3: Select a replacement using exponential mechanism
-    dp_replacement = differentially_private_replacement(
-        target_phrase=cnn_dm_prompt,
-        epsilon=epsilon,
-        candidate_phrases=candidate_sentences,
-        candidate_embeddings=candidate_embeddings,
-        sbert_model=sbert_model
-    )
-
-    print("DP replacement selected:", dp_replacement)
-
-    return dp_replacement
+    # Historical implementation (commented out):
+    # print(f"\033[92mApplying differential privacy perturbation with epsilon={epsilon}...\033[0m")
+    # candidate_sentences = generate_sentence_replacements_with_nebius(
+    #     nebius_client,
+    #     nebius_model_name,
+    #     input_sentence=cnn_dm_prompt,
+    #     num_return_sequences=10,
+    # )
+    # if not candidate_sentences:
+    #     raise ValueError("No candidate sentences were generated. Check the Nebius API call for paraphrase generation.")
+    # from dp_sanitizer import get_embedding, differentially_private_replacement
+    # candidate_embeddings = {sent: get_embedding(sbert_model, sent).cpu().numpy() for sent in candidate_sentences}
+    # dp_replacement = differentially_private_replacement(
+    #     target_phrase=cnn_dm_prompt,
+    #     epsilon=epsilon,
+    #     candidate_phrases=candidate_sentences,
+    #     candidate_embeddings=candidate_embeddings,
+    #     sbert_model=sbert_model
+    # )
+    # print("DP replacement selected:", dp_replacement)
+    # return dp_replacement
 
 def phrase_DP_perturbation_with_candidates(nebius_client, nebius_model_name, cnn_dm_prompt, epsilon, sbert_model):
     """
-    Applies differential privacy perturbation to the question and returns both the selected replacement and all candidates.
+    DEPRECATED: Use `phrase_DP_perturbation_with_candidates_diverse` instead.
     """
-    print(f"\033[92mApplying differential privacy perturbation with epsilon={epsilon}...\033[0m")
+    raise NotImplementedError("phrase_DP_perturbation_with_candidates is deprecated. Use phrase_DP_perturbation_with_candidates_diverse.")
 
-    # Step 1: Generate candidate sentence-level replacements using the Nebius model
-    candidate_sentences = generate_sentence_replacements_with_nebius(
-        nebius_client,
-        nebius_model_name,
-        input_sentence=cnn_dm_prompt,
-        num_return_sequences=10,
-    )
-
-    if not candidate_sentences:
-        raise ValueError("No candidate sentences were generated. Check the Nebius API call for paraphrase generation.")
-
-    # Step 2: Precompute embeddings (assuming get_embedding and differentially_private_replacement are in dp_sanitizer)
-    from dp_sanitizer import get_embedding, differentially_private_replacement
-    candidate_embeddings = {sent: get_embedding(sbert_model, sent).cpu().numpy() for sent in candidate_sentences}
-
-    # Step 3: Select a replacement using exponential mechanism
-    dp_replacement = differentially_private_replacement(
-        target_phrase=cnn_dm_prompt,
-        epsilon=epsilon,
-        candidate_phrases=candidate_sentences,
-        candidate_embeddings=candidate_embeddings,
-        sbert_model=sbert_model
-    )
-
-    print("DP replacement selected:", dp_replacement)
-
-    return dp_replacement, candidate_sentences
+    # Historical implementation (commented out):
+    # print(f"\033[92mApplying differential privacy perturbation with epsilon={epsilon}...\033[0m")
+    # candidate_sentences = generate_sentence_replacements_with_nebius(
+    #     nebius_client,
+    #     nebius_model_name,
+    #     input_sentence=cnn_dm_prompt,
+    #     num_return_sequences=10,
+    # )
+    # if not candidate_sentences:
+    #     raise ValueError("No candidate sentences were generated. Check the Nebius API call for paraphrase generation.")
+    # from dp_sanitizer import get_embedding, differentially_private_replacement
+    # candidate_embeddings = {sent: get_embedding(sbert_model, sent).cpu().numpy() for sent in candidate_sentences}
+    # dp_replacement = differentially_private_replacement(
+    #     target_phrase=cnn_dm_prompt,
+    #     epsilon=epsilon,
+    #     candidate_phrases=candidate_sentences,
+    #     candidate_embeddings=candidate_embeddings,
+    #     sbert_model=sbert_model
+    # )
+    # print("DP replacement selected:", dp_replacement)
+    # return dp_replacement, candidate_sentences
