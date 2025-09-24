@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 PII Protection Experiment
-Tests how well PhraseDP, InferDPT, and SANTEXT+ protect PII information
+Tests how well PhraseDP, InferDPT, SANTEXT+, and CusText+ protect PII information
 """
 
 import pandas as pd
@@ -205,11 +205,12 @@ def run_pii_protection_experiment(start_idx: int = 0, num_rows: int = 10):
     results = {
         'PhraseDP': {},
         'InferDPT': {},
-        'SANTEXT+': {}
+        'SANTEXT+': {},
+        'CusText+': {}
     }
     
-    # Run epsilon 1.0 and 2.0
-    epsilon_values = [1.0, 2.0]
+    # Run epsilon sweep
+    epsilon_values = [1.0, 1.5, 2.0, 2.5, 3.0]
     
     # Initialize models
     sbert_model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -232,7 +233,20 @@ def run_pii_protection_experiment(start_idx: int = 0, num_rows: int = 10):
     santext_global = None
     santext_vocab_built = False
 
-    for mechanism_name in ['PhraseDP', 'InferDPT', 'SANTEXT+']:
+    # Init CusText+ vectors once
+    try:
+        from cus_text_ppi_protection_experiment import load_counter_fitting_vectors, sanitize_with_custext
+        from nltk.corpus import stopwords
+        import nltk
+        nltk.download('stopwords', quiet=True)
+        VECTORS_PATH = "/home/yizhang/tech4HSE/external/CusText/CusText/embeddings/ct_vectors.txt"
+        ct_emb_matrix, ct_idx2word, ct_word2idx = load_counter_fitting_vectors(VECTORS_PATH)
+        ct_stop_set = set(stopwords.words('english'))
+    except Exception as e:
+        print(f"Warning: CusText+ init failed: {e}")
+        ct_emb_matrix = None; ct_idx2word = None; ct_word2idx = None; ct_stop_set = set()
+
+    for mechanism_name in ['PhraseDP', 'InferDPT', 'SANTEXT+','CusText+']:
         print(f"\n=== Mechanism: {mechanism_name} ===")
         results[mechanism_name] = {}
         
@@ -367,6 +381,21 @@ def run_pii_protection_experiment(start_idx: int = 0, num_rows: int = 10):
                         # Reuse global mechanism; if epsilon were to affect probs, we could update internal parameter here if supported
                         sanitized_text = santext_global.sanitize_text(original_text)
                         print(f"    [Row {idx}] SANTEXT+ done (t={time.time()-st_t0:.2f}s)")
+                    elif mechanism_name == 'CusText+':
+                        if ct_emb_matrix is None:
+                            sanitized_text = original_text
+                        else:
+                            # Use stopword preservation
+                            sanitized_text = sanitize_with_custext(
+                                original_text,
+                                epsilon=epsilon,
+                                top_k=20,
+                                save_stop_words=True,
+                                emb_matrix=ct_emb_matrix,
+                                idx2word=ct_idx2word,
+                                word2idx=ct_word2idx,
+                                stop_set=ct_stop_set
+                            )
                     
                     # Print raw perturbed text for this mechanism/row in blue
                     try:
@@ -529,7 +558,11 @@ def create_pii_protection_plots(results: Dict, timestamp: str):
     
     # Prepare data for plotting
     mechanisms = list(results.keys())
-    epsilon_values = [1.0, 2.0]
+    # Infer epsilon values from any mechanism's keys and sort
+    eps_set = set()
+    for mech in mechanisms:
+        eps_set.update([e for e in results[mech].keys() if isinstance(e, float)])
+    epsilon_values = sorted(eps_set)
     pii_types = ['emails', 'phones', 'addresses', 'names']
     
     # Plot 1: Overall Protection Rate
@@ -638,7 +671,10 @@ def print_summary_report(results: Dict):
     print("PII PROTECTION EXPERIMENT SUMMARY")
     print("="*60)
     
-    epsilon_values = [1.0, 2.0]
+    eps_set = set()
+    for mech in results:
+        eps_set.update([e for e in results[mech].keys() if isinstance(e, float)])
+    epsilon_values = sorted(eps_set)
     
     for mechanism in results:
         print(f"\n{mechanism}:")
@@ -685,9 +721,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     print("Starting PII Protection Experiment...")
-    print(f"This will test PhraseDP, InferDPT, and SANTEXT+ on {args.rows} PII samples")
+    print(f"This will test PhraseDP, InferDPT, SANTEXT+, and CusText+ on {args.rows} PII samples")
     print(f"Starting from row {args.start}")
-    print("Epsilon values: 1.0, 2.0")
+    print("Epsilon values: 1.0, 1.5, 2.0, 2.5, 3.0")
     print("="*60)
     
     out = run_pii_protection_experiment(start_idx=args.start, num_rows=args.rows)
