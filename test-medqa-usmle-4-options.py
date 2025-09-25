@@ -106,6 +106,7 @@ class MedQAExperimentResults:
         self.non_private_cot_correct = 0
         self.local_cot_correct = 0
         self.phrase_dp_local_cot_correct = 0
+        self.phrase_dp_with_options_local_cot_correct = 0
         self.inferdpt_local_cot_correct = 0
         self.santext_local_cot_correct = 0
         self.custext_local_cot_correct = 0
@@ -386,6 +387,60 @@ def run_scenario_3_1_phrase_dp_local_cot(client, model_name, remote_client, sber
         print(f"{RED}Error during phrase DP private CoT-aided inference: {e}{RESET}")
         return False
 
+def run_scenario_3_1_2_phrase_dp_with_options_local_cot(client, model_name, remote_client, sbert_model, question, options, correct_answer):
+    """Scenario 3.1.2: Private Local Model + CoT (Phrase DP with Perturbed Options)."""
+    print(f"\n{BLUE}--- Scenario 3.1.2: Private Local Model + CoT (Phrase DP with Perturbed Options) ---{RESET}")
+
+    try:
+        # Initialize Nebius client for DP perturbation via unified helper
+        from sanitization_methods import config as sm_config
+        nebius_client = utils.get_nebius_client()
+        nebius_model_name = sm_config.get('local_model', 'microsoft/phi-4')
+
+        # Apply Phrase-Level Differential Privacy to the question
+        print(f"{YELLOW}3.1.2a. Applying PhraseDP sanitization to question...{RESET}")
+        perturbed_question = phrasedp_sanitize_text(
+            question,
+            epsilon=config['epsilon'],
+            nebius_client=nebius_client,
+            nebius_model_name=nebius_model_name,
+        )
+        print(f"Perturbed Question: {perturbed_question}")
+
+        # Apply Phrase-Level Differential Privacy to each option
+        print(f"{YELLOW}3.1.2b. Applying PhraseDP sanitization to each option...{RESET}")
+        perturbed_options = {}
+        for key, value in options.items():
+            perturbed_option = phrasedp_sanitize_text(
+                value,
+                epsilon=config['epsilon'],
+                nebius_client=nebius_client,
+                nebius_model_name=nebius_model_name,
+            )
+            perturbed_options[key] = perturbed_option
+            print(f"Option {key} - Original: {value}")
+            print(f"Option {key} - Perturbed: {perturbed_option}")
+
+        # Generate CoT from perturbed question with perturbed options
+        print(f"{YELLOW}3.1.2c. Generating CoT from Perturbed Question AND Options with REMOTE LLM...{RESET}")
+        cot_text = generate_cot_from_remote_llm(remote_client, config['remote_models']['cot_model'], perturbed_question, perturbed_options)
+        print(f"Generated Chain-of-Thought (Remote, Fully Private):\n{cot_text}")
+
+        # Use local model with original question/options but private CoT
+        print(f"{YELLOW}3.1.2d. Running Local Model with original question/options and Private CoT...{RESET}")
+        local_response = get_answer_from_local_model_with_cot(client, model_name, question, options, cot_text)
+        predicted_letter = extract_letter_from_answer(local_response)
+        is_correct = check_mcq_correctness(predicted_letter, correct_answer)
+
+        print(f"Local Answer (Fully Private CoT-Aided): {local_response}")
+        print(f"Extracted Letter: {predicted_letter}")
+        print(f"Result: {'Correct' if is_correct else 'Incorrect'}")
+
+        return is_correct
+    except Exception as e:
+        print(f"{RED}Error during phrase DP with options private CoT-aided inference: {e}{RESET}")
+        return False
+
 def run_scenario_3_2_inferdpt_local_cot(client, model_name, remote_client, question, options, correct_answer):
     """Scenario 3.2: Private Local Model + CoT (InferDPT)."""
     print(f"\n{BLUE}--- Scenario 3.2: Private Local Model + CoT (InferDPT) ---{RESET}")
@@ -596,7 +651,11 @@ def run_experiment_for_model(model_name):
         # Scenario 3.1: Private Local + CoT (Phrase DP)
         if remote_client and local_client and run_scenario_3_1_phrase_dp_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer):
             results.phrase_dp_local_cot_correct += 1
-        
+
+        # Scenario 3.1.2: Private Local + CoT (Phrase DP with Perturbed Options)
+        if remote_client and local_client and run_scenario_3_1_2_phrase_dp_with_options_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer):
+            results.phrase_dp_with_options_local_cot_correct += 1
+
         # Scenario 3.2: Private Local + CoT (InferDPT)
         if remote_client and local_client and run_scenario_3_2_inferdpt_local_cot(local_client, model_name, remote_client, question, options, correct_answer):
             results.inferdpt_local_cot_correct += 1
@@ -625,6 +684,7 @@ def run_experiment_for_model(model_name):
     print(f"1. Purely Local Model ({model_name}) Accuracy: {results.local_alone_correct}/{results.total_questions} = {results.local_alone_correct/results.total_questions*100:.2f}%")
     print(f"2. Non-Private Local Model + Remote CoT Accuracy: {results.non_private_cot_correct}/{results.total_questions} = {results.non_private_cot_correct/results.total_questions*100:.2f}%")
     print(f"3.1. Private Local Model + CoT (Phrase DP) Accuracy: {results.phrase_dp_local_cot_correct}/{results.total_questions} = {results.phrase_dp_local_cot_correct/results.total_questions*100:.2f}%")
+    print(f"3.1.2. Private Local Model + CoT (Phrase DP with Perturbed Options) Accuracy: {results.phrase_dp_with_options_local_cot_correct}/{results.total_questions} = {results.phrase_dp_with_options_local_cot_correct/results.total_questions*100:.2f}%")
     print(f"3.2. Private Local Model + CoT (InferDPT) Accuracy: {results.inferdpt_local_cot_correct}/{results.total_questions} = {results.inferdpt_local_cot_correct/results.total_questions*100:.2f}%")
     print(f"3.3. Private Local Model + CoT (SANTEXT+) Accuracy: {results.santext_local_cot_correct}/{results.total_questions} = {results.santext_local_cot_correct/results.total_questions*100:.2f}%")
     print(f"3.4. Private Local Model + CoT (CUSTEXT+) Accuracy: {results.custext_local_cot_correct}/{results.total_questions} = {results.custext_local_cot_correct/results.total_questions*100:.2f}%")
@@ -673,9 +733,10 @@ def test_single_question(question_index=0):
     
     # Initialize privacy mechanisms once for this test
     print(f"{CYAN}Initializing privacy mechanisms for single question test...{RESET}")
-    santext_mechanism = initialize_santext_mechanism()
-    custext_components = initialize_custext_components()
-    clusant_mechanism = initialize_clusant_mechanism()
+    # Skip initializing unused mechanisms to speed up testing
+    santext_mechanism = None  # initialize_santext_mechanism()
+    custext_components = None  # initialize_custext_components()
+    clusant_mechanism = None   # initialize_clusant_mechanism()
     
     question = item['question']
     options = item['options']
@@ -694,9 +755,10 @@ def test_single_question(question_index=0):
     if remote_client and local_client:
         # run_scenario_2_non_private_cot(local_client, model_name, remote_client, question, options, correct_answer)
         # run_scenario_3_1_phrase_dp_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer)
+        run_scenario_3_1_2_phrase_dp_with_options_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer)
         # run_scenario_3_2_inferdpt_local_cot(local_client, model_name, remote_client, question, options, correct_answer)
-        run_scenario_3_3_santext_local_cot(local_client, model_name, remote_client, question, options, correct_answer, santext_mechanism)
-        run_scenario_3_4_custext_local_cot(local_client, model_name, remote_client, question, options, correct_answer, custext_components)
+        # run_scenario_3_3_santext_local_cot(local_client, model_name, remote_client, question, options, correct_answer, santext_mechanism)
+        # run_scenario_3_4_custext_local_cot(local_client, model_name, remote_client, question, options, correct_answer, custext_components)
         # run_scenario_3_5_clusant_local_cot(local_client, model_name, remote_client, question, options, correct_answer, clusant_mechanism)
 
     # if remote_client:
