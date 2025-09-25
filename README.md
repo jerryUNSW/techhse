@@ -180,7 +180,18 @@ Integrates the InferDPT framework for additional privacy-preserving inference ca
 - Semantic similarity-based phrase replacement
 - Configurable privacy budget
 - Preserves semantic meaning while protecting sensitive information
--- Unified epsilon-style control of the privacy–utility trade-off (single knob \`epsilon\`)
+- Unified epsilon-style control of the privacy–utility trade-off (single knob `epsilon`)
+
+**Important Behavioral Note**: PhraseDP transforms the entire combined text into a semantically equivalent but structurally different sentence. When processing batch inputs (e.g., multiple-choice options combined as "Option A: text1\nOption B: text2..."), PhraseDP treats the entire block as a single semantic unit and may generate a completely restructured output (e.g., "What type of bacteria are characterized by...?") rather than preserving the original list structure.
+
+**Solution Implemented**: Instead of attempting complex parsing of transformed output, the batch perturbation approach now:
+1. Concatenates options with `;` separator
+2. Applies PhraseDP to generate single perturbed text
+3. Uses the perturbed text directly for Chain-of-Thought generation (no parsing needed)
+4. Remote LLM receives both perturbed question and perturbed options for privacy-preserving CoT
+5. Local model uses original question structure with the private CoT for final inference
+
+This approach maintains efficiency (single API call) while ensuring all options contribute to the perturbation process.
 
 ### CusText and CusText+ (Token-Level Sanitization)
 - CusText: Customized token-level candidate sets with the exponential mechanism; supports non-metric similarities (e.g., cosine on Counter-Fitting vectors) for improved utility-privacy trade-offs.
@@ -361,6 +372,10 @@ This enhancement will:
 - Improve utility by preserving key information in summarized form
 - Enable context-aware multi-hop reasoning while maintaining privacy guarantees
 
+### PhraseDP Performance Optimization
+
+**TODO**: Consider making PhraseDP faster for improved performance in privacy-preserving text sanitization experiments. This optimization would help reduce the computational overhead when running large-scale experiments with multiple questions and scenarios.
+
 ## Acknowledgments
 
 - InferDPT framework for privacy-preserving inference
@@ -420,6 +435,35 @@ get_answer_from_local_model_with_cot()  # Existing function
 - Generated and saved unified figures under `plots/ppi/` with timestamp; copied to Overleaf at `overleaf-folder/plots/ppi/`.
 - Included figures and captions in Overleaf `4experiment.tex` (overall line plot + per-ε radar charts), noting that 62 data points were used for PhraseDP/InferDPT/SANTEXT+.
 - Code organization: added robust parser for `ppi-protection-exp.txt`, and ensured reproducible figure generation via `generate_unified_ppi_plots.py`.
+
+### PPI Protection Plots Data Dependencies
+
+The PPI protection plots (`generate_unified_ppi_plots.py`) rely on the following JSON files:
+
+**Primary Data Sources:**
+1. **Main Results** (PhraseDP, InferDPT, SANTEXT+):
+   - `pii_protection_results_*.json` (uses latest file automatically)
+   - Contains results for PhraseDP, InferDPT, and SANTEXT+ across epsilon values
+
+2. **CluSanT Results**:
+   - `results/clusant_ppi_protection_20250924_220026.json` (hardcoded path)
+   - Contains CluSanT protection results
+
+3. **CusText+ Results** (all 5 epsilon values):
+   - `results/custext_ppi_protection_eps1.0.json`
+   - `results/custext_ppi_protection_eps1.5.json`
+   - `results/custext_ppi_protection_eps2.0.json`
+   - `results/custext_ppi_protection_eps2.5.json`
+   - `results/custext_ppi_protection_eps3.0.json`
+
+**Override Data Source:**
+4. **Text File Override** (optional):
+   - `ppi-protection-exp.txt` (can override PhraseDP, InferDPT, SANTEXT+ if available)
+
+**Generated Plots:**
+- Overall protection vs epsilon: `overall_protection_vs_epsilon_5mech_*.png`
+- Radar plots per epsilon: `protection_radar_5mech_*_eps_*.png`
+- Saved to: `plots/ppi/` and copied to `overleaf-folder/plots/ppi/`
 
 ### September 24, 2025 — Comprehensive PII Protection Experiment Results (Timestamp: 20250924_205229)
 

@@ -142,8 +142,8 @@ def generate_sentence_replacements_with_nebius(nebius_client, nebius_model_name,
     # except Exception:
     #     return []
 
-def generate_sentence_replacements_with_nebius_diverse(nebius_client, nebius_model_name, 
-    input_sentence, num_return_sequences=10, max_tokens=150, num_api_calls=5,
+def generate_sentence_replacements_with_nebius_diverse(nebius_client, nebius_model_name,
+    input_sentence, num_return_sequences=10, max_tokens=150, num_api_calls=10,
     enforce_similarity_filter=True, filter_margin=0.05,
     low_band_quota_boost=True,
     refill_underfilled_bands=True,
@@ -323,10 +323,10 @@ def generate_sentence_replacements_with_nebius_diverse(nebius_client, nebius_mod
                 return None
         
         # Make 10 API calls with different similarity-targeted prompts
-        for call_num in range(min(num_api_calls, 10)):
+        for call_num in range(10):
             prompt_config = similarity_prompts[call_num]
             
-            print(f"API call {call_num + 1}/{min(num_api_calls, 10)}: {prompt_config['level']} (target: {prompt_config['target']})")
+            print(f"API call {call_num + 1}/10: {prompt_config['level']} (target: {prompt_config['target']})")
             print(f"  Description: {prompt_config['description']}")
             
             # Create the full user prompt combining base template with similarity-specific instructions

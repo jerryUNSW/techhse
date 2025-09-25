@@ -60,6 +60,46 @@ def load_clusant_results(path):
         return r['CluSanT']
     return r
 
+def load_custext_results():
+    """Load CusText+ results from separate files for each epsilon."""
+    custext_results = {}
+    epsilons = [1.0, 1.5, 2.0, 2.5, 3.0]
+    
+    for eps in epsilons:
+        # Find the latest CusText+ file for this epsilon
+        pattern = os.path.join(RESULTS_DIR, "results", f"custext_ppi_protection_eps*.json")
+        files = glob(pattern)
+        
+        # Filter files that contain this epsilon
+        matching_files = []
+        for file_path in files:
+            try:
+                with open(file_path, 'r') as f:
+                    data = json.load(f)
+                    if data.get('summary', {}).get('epsilon') == eps:
+                        matching_files.append(file_path)
+            except:
+                continue
+        
+        if matching_files:
+            # Use the latest file for this epsilon
+            latest_file = sorted(matching_files)[-1]
+            try:
+                with open(latest_file, 'r') as f:
+                    data = json.load(f)
+                    summary = data.get('summary', {})
+                    custext_results[eps] = {
+                        'overall': summary.get('overall', 0.0),
+                        'emails': summary.get('emails', 0.0),
+                        'phones': summary.get('phones', 0.0),
+                        'addresses': summary.get('addresses', 0.0),
+                        'names': summary.get('names', 0.0)
+                    }
+            except:
+                continue
+    
+    return custext_results
+
 
 def parse_ppi_experiment_txt(path):
     """Parse ppi-protection-exp.txt to compute averaged protection by epsilon for
@@ -120,8 +160,10 @@ def parse_ppi_experiment_txt(path):
     return out
 
 
-def merge_results(main_res, clusant_eps_map):
+def merge_results(main_res, clusant_eps_map, custext_eps_map):
     merged = dict(main_res)
+    
+    # Add CluSanT results
     merged['CluSanT'] = {}
     for k, vals in clusant_eps_map.items():
         try:
@@ -129,6 +171,10 @@ def merge_results(main_res, clusant_eps_map):
         except Exception:
             continue
         merged['CluSanT'][e] = vals
+    
+    # Add CusText+ results
+    merged['CusText+'] = custext_eps_map
+    
     # ensure epsilon keys are float for others too
     for mech in list(merged.keys()):
         eps_map = merged[mech]
@@ -242,7 +288,8 @@ def main():
     main_res = load_latest_main_results()
     clusant_path = "/home/yizhang/tech4HSE/results/clusant_ppi_protection_20250924_220026.json"
     clusant = load_clusant_results(clusant_path)
-    merged = merge_results(main_res, clusant)
+    custext = load_custext_results()
+    merged = merge_results(main_res, clusant, custext)
     # Override PhraseDP/InferDPT/SANTEXT+ with averages from ppi-protection-exp.txt if available
     txt_path = "/home/yizhang/tech4HSE/ppi-protection-exp.txt"
     txt_avgs = parse_ppi_experiment_txt(txt_path)

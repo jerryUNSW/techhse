@@ -18,6 +18,14 @@ import numpy as np
 import yaml
 from typing import List, Dict, Any, Optional
 from sentence_transformers import SentenceTransformer
+
+# Color constants for output formatting
+RED = "\033[91m"
+GREEN = "\033[92m"
+BLUE = "\033[94m"
+CYAN = "\033[96m"
+YELLOW = "\033[93m"
+RESET = "\033[0m"
 from dotenv import load_dotenv
 
 # Import the individual method implementations
@@ -44,6 +52,7 @@ _custext_components = None
 _clusant_mechanism = None
 _clusant_resources = None  # cache embeddings/paths for CluSanT
 _sbert_model = None
+_inferdpt_embeddings = None
 
 def _get_sbert_model():
     """Get or create Sentence-BERT model."""
@@ -51,6 +60,16 @@ def _get_sbert_model():
     if _sbert_model is None:
         _sbert_model = SentenceTransformer('all-MiniLM-L6-v2')
     return _sbert_model
+
+def _get_inferdpt_embeddings(epsilon):
+    """Get or create InferDPT embeddings."""
+    global _inferdpt_embeddings
+    if _inferdpt_embeddings is None:
+        print(f"{CYAN}Loading InferDPT embeddings (epsilon={epsilon})...{RESET}")
+        # Import the initialize_embeddings function from inferdpt
+        from inferdpt import initialize_embeddings
+        _inferdpt_embeddings = initialize_embeddings(epsilon)
+    return _inferdpt_embeddings
 
 def _get_santext_mechanism(epsilon: float = None, p: float = 0.3):
     """Get or create SANTEXT+ mechanism."""
@@ -167,7 +186,13 @@ def inferdpt_sanitize_text(text: str, epsilon: float = None) -> str:
     if epsilon is None:
         epsilon = config.get('epsilon', 1.0)
     
-    return _inferdpt_perturb_sentence(text, epsilon)
+    # Get cached embeddings to avoid repeated initialization
+    token_to_vector_dict, sorted_distance_data, delta_f_new = _get_inferdpt_embeddings(epsilon)
+    
+    return _inferdpt_perturb_sentence(text, epsilon, 
+                                    token_to_vector_dict=token_to_vector_dict,
+                                    sorted_distance_data=sorted_distance_data,
+                                    delta_f_new=delta_f_new)
 
 def santext_sanitize_text(text: str, epsilon: float = None, p: float = 0.3) -> str:
     """

@@ -24,7 +24,7 @@ max_tokens: 256
 num_return_sequences: 10
 original_dataset:
   name: GBaker/MedQA-USMLE-4-options
-  num_samples: 10
+  num_samples: 200
   split: test
 remote_llm_provider: openai
 remote_models:

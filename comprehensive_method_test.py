@@ -87,3 +87,4 @@ def test_all_methods():
 
 if __name__ == "__main__":
     test_all_methods()
+
