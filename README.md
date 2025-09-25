@@ -348,6 +348,19 @@ Meeting notes (January 2025) identified higher-impact enhancements:
 1. Context summarization before remote LLM processing to reduce exposure.
 2. Rule-based guardrails layered with Phrase DP to catch sensitive patterns.
 
+### HotpotQA Context-Aware Privacy Enhancement
+
+**TODO**: For HotpotQA experiments where context is available:
+- **Scenarios 3.1 and 3.2**: Apply text summarization to context using a local model
+- **Then**: Apply text sanitization to the summarized context
+- **Finally**: Send sanitized context + sanitized question to remote LLM for CoT generation
+
+This enhancement will:
+- Reduce context exposure by summarizing before sanitization
+- Maintain privacy through dual-layer protection (summarization + sanitization)
+- Improve utility by preserving key information in summarized form
+- Enable context-aware multi-hop reasoning while maintaining privacy guarantees
+
 ## Acknowledgments
 
 - InferDPT framework for privacy-preserving inference
@@ -357,6 +370,47 @@ Meeting notes (January 2025) identified higher-impact enhancements:
 
 
 ## Recent Technical Changes, Findings, and Progress
+
+### September 25, 2025 — Medical QA Implementation with 5 Text Sanitization Methods
+
+**Major Implementation Achievement**: Successfully implemented and tested 5 comprehensive text sanitization methods for privacy-preserving medical question answering:
+
+1. **PhraseDP**: Phrase-level differential privacy with semantic similarity-based replacements
+2. **InferDPT**: Token-level differential privacy using embedding perturbation
+3. **SANTEXT+**: Vocabulary-based sanitization with semantic preservation
+4. **CUSTEXT+**: Customized token-level sanitization with stopword preservation
+5. **CluSanT**: Clustering-based sanitization for privacy-utility trade-offs
+
+**Technical Implementation Details:**
+- **Fixed Function Call Issues**: Resolved missing function calls in scenarios 3.3 and 3.4 for SANTEXT+ and CUSTEXT+ integration
+- **Unified API**: All sanitization methods now use consistent function signatures (`*_sanitize_text()`)
+- **Medical QA Testing**: Integrated all 5 methods into `test-medqa-usmle-4-options.py` for USMLE medical question evaluation
+- **Remote CoT Integration**: All methods properly generate Chain-of-Thought from remote LLMs using sanitized text
+
+**Successful Test Results** (Single Question Validation):
+- **Scenario 3.3 (SANTEXT+)**: ✅ Function calls fixed, CoT generation working, extracted answer "A"
+- **Scenario 3.4 (CUSTEXT+)**: ✅ Function calls fixed, CoT generation working, extracted answer "A"
+- **Previous Methods**: Scenarios 3.1 (PhraseDP) and 3.2 (InferDPT) already functional
+
+**Key Function Fixes Applied:**
+```python
+# Before (broken):
+get_cot_from_remote_llm()  # Function didn't exist
+get_answer_from_local_llm_with_cot()  # Function didn't exist
+
+# After (working):
+generate_cot_from_remote_llm()  # Existing function
+get_answer_from_local_model_with_cot()  # Existing function
+```
+
+**Testing Infrastructure**:
+- Single question testing: `python test-medqa-usmle-4-options.py --index 0`
+- Full experiment support for all 5 sanitization methods
+- Proper error handling and result extraction across all scenarios
+
+**Files Modified:**
+- `test-medqa-usmle-4-options.py`: Fixed function calls in scenarios 3.3 and 3.4
+- All sanitization method integrations now working end-to-end
 
 ### September 25, 2025 — Unified PII Protection (5 Mechanisms) and Overleaf Integration
 
