@@ -1,0 +1,349 @@
+{
+  "evaluation_date": "2025-09-18T22:03:46.688029",
+  "evaluation_method": "NER-Based PII Privacy Evaluation (100 Questions)",
+  "methods_evaluated": [
+    "phrase_dp",
+    "inferdpt"
+  ],
+  "results": {
+    "phrase_dp": {
+      "privacy_levels": [
+        1.0,
+        1.0,
+        1.0,
+        0.667,
+        1.0,
+        0.875,
+        1.0,
+        1.0,
+        1.0,
+        0.857,
+        0.875,
+        1.0,
+        0.857,
+        0.8,
+        1.0,
+        0.833,
+        1.0,
+        0.154,
+        1.0,
+        1.0,
+        1.0,
+        0.9,
+        1.0,
+        0.667,
+        0.9,
+        1.0,
+        1.0,
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.909,
+        0.857,
+        1.0,
+        0.889,
+        1.0,
+        0.889,
+        1.0,
+        0.714,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.4,
+        1.0,
+        1.0,
+        0.938,
+        1.0,
+        1.0,
+        0.8,
+        1.0,
+        0.667,
+        1.0,
+        1.0,
+        0.909,
+        1.0,
+        1.0,
+        1.0,
+        0.833,
+        0.889,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.75,
+        1.0,
+        1.0,
+        0.5,
+        0.5,
+        0.75,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.571,
+        1.0,
+        0.5,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mean_privacy_level": 0.9123762376237624,
+      "entity_analysis": {
+        "CARDINAL": {
+          "original_count": 220,
+          "preserved_count": 11,
+          "protection_level": 0.95
+        },
+        "DATE": {
+          "original_count": 251,
+          "preserved_count": 16,
+          "protection_level": 0.936
+        },
+        "GPE": {
+          "original_count": 16,
+          "preserved_count": 3,
+          "protection_level": 0.812
+        },
+        "MONEY": {
+          "original_count": 1,
+          "preserved_count": 1,
+          "protection_level": 0.0
+        },
+        "NORP": {
+          "original_count": 6,
+          "preserved_count": 0,
+          "protection_level": 1.0
+        },
+        "ORDINAL": {
+          "original_count": 15,
+          "preserved_count": 2,
+          "protection_level": 0.867
+        },
+        "ORG": {
+          "original_count": 34,
+          "preserved_count": 11,
+          "protection_level": 0.676
+        },
+        "PERCENT": {
+          "original_count": 29,
+          "preserved_count": 0,
+          "protection_level": 1.0
+        },
+        "PERSON": {
+          "original_count": 12,
+          "preserved_count": 2,
+          "protection_level": 0.833
+        },
+        "PRODUCT": {
+          "original_count": 8,
+          "preserved_count": 0,
+          "protection_level": 1.0
+        },
+        "QUANTITY": {
+          "original_count": 39,
+          "preserved_count": 2,
+          "protection_level": 0.949
+        },
+        "TIME": {
+          "original_count": 26,
+          "preserved_count": 4,
+          "protection_level": 0.846
+        }
+      }
+    },
+    "inferdpt": {
+      "privacy_levels": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.889,
+        1.0,
+        1.0,
+        1.0,
+        0.857,
+        1.0,
+        0.8,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.9,
+        0.9,
+        1.0,
+        0.882,
+        1.0,
+        0.95,
+        1.0,
+        0.909,
+        1.0,
+        1.0,
+        0.9,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.9,
+        1.0,
+        1.0,
+        0.889,
+        1.0,
+        0.875,
+        1.0,
+        1.0,
+        0.857,
+        0.889,
+        1.0,
+        1.0,
+        0.875,
+        1.0,
+        1.0,
+        1.0,
+        0.857,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.857,
+        0.875,
+        1.0,
+        0.875,
+        0.9,
+        0.8,
+        0.667,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.833,
+        0.889,
+        0.818,
+        1.0,
+        1.0,
+        0.923,
+        1.0,
+        1.0,
+        0.9,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.875,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.714,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mean_privacy_level": 0.96055,
+      "entity_analysis": {
+        "CARDINAL": {
+          "original_count": 220,
+          "preserved_count": 31,
+          "protection_level": 0.859
+        },
+        "DATE": {
+          "original_count": 251,
+          "preserved_count": 1,
+          "protection_level": 0.996
+        },
+        "GPE": {
+          "original_count": 16,
+          "preserved_count": 0,
+          "protection_level": 1.0
+        },
+        "MONEY": {
+          "original_count": 1,
+          "preserved_count": 0,
+          "protection_level": 1.0
+        },
+        "NORP": {
+          "original_count": 6,
+          "preserved_count": 0,
+          "protection_level": 1.0
+        },
+        "ORDINAL": {
+          "original_count": 15,
+          "preserved_count": 0,
+          "protection_level": 1.0
+        },
+        "ORG": {
+          "original_count": 34,
+          "preserved_count": 0,
+          "protection_level": 1.0
+        },
+        "PERCENT": {
+          "original_count": 29,
+          "preserved_count": 0,
+          "protection_level": 1.0
+        },
+        "PERSON": {
+          "original_count": 12,
+          "preserved_count": 0,
+          "protection_level": 1.0
+        },
+        "PRODUCT": {
+          "original_count": 8,
+          "preserved_count": 1,
+          "protection_level": 0.875
+        },
+        "QUANTITY": {
+          "original_count": 39,
+          "preserved_count": 0,
+          "protection_level": 1.0
+        },
+        "TIME": {
+          "original_count": 26,
+          "preserved_count": 0,
+          "protection_level": 1.0
+        }
+      }
+    }
+  },
+  "comparison": {
+    "phrase_dp_better": false,
+    "improvement_percentage": 5.4
+  }
+}

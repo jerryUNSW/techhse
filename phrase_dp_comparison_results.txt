@@ -1,0 +1,1230 @@
+================================================================================
+COMPARISON: OLD vs NEW PHRASE DP IMPLEMENTATIONS
+================================================================================
+Model: meta-llama/Meta-Llama-3.1-8B-Instruct
+Epsilon: 1.0
+Number of questions: 10
+Timestamp: 2025-09-20 14:06:29
+================================================================================
+
+QUESTION 1/10
+============================================================
+Original Question: What is the capital of France?
+
+OLD PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: What is the capital of a country in Western Europe?
+Number of candidates: 50
+Similarity range: 0.124 - 0.731
+Similarity mean: 0.632
+Similarity std: 0.121
+All candidates with similarities:
+   1. [0.652] What is the capital of a country located in Western Europe?
+   2. [0.417] What is the location of the country governed by a certain government?
+   3. [0.731] What is the capital of a country in Europe?
+   4. [0.731] What is the capital of a country in Europe?
+   5. [0.569] What is the capital of a country in a Western nation?
+   6. [0.717] What is the capital of a European country?
+   7. [0.716] What is the location of the capital of a European country?
+   8. [0.717] What is the capital of a European country?
+   9. [0.729] What is the capital of a particular country in Europe?
+  10. [0.521] What is the seat of government in a European country?
+  11. [0.663] What is the capital of a country in Western Europe?
+  12. [0.715] What is the capital of a particular European country?
+  13. [0.400] What is the primary city of a European nation often associated with art and fashion?
+  14. [0.661] What is the capital of the country located in Western Europe?
+  15. [0.523] What city serves as the seat of government for a European nation?
+  16. [0.717] What is the capital of a European country?
+  17. [0.712] What is the capital of a certain European country?
+  18. [0.663] What is the capital of a country in Western Europe?
+  19. [0.717] What is the capital of a European country?
+  20. [0.717] What is the capital of a European country?
+  21. [0.697] What is the capital of a European nation?
+  22. [0.731] What is the capital of a country in Europe?
+  23. [0.657] What is the capital of a certain country in Western Europe?
+  24. [0.581] What is the capital of a Western European country with a Romance language?
+  25. [0.712] What is the capital of a certain European country?
+  26. [0.678] What is the capital of a particular country?
+  27. [0.124] What government position was held by a female public figure in a classic film?
+  28. [0.717] What is the capital of a European country?
+  29. [0.717] What is the capital of a European country?
+  30. [0.531] What is the capital of a European country with a famous art movement?
+  31. [0.717] What is the capital of a European country?
+  32. [0.697] What is the capital of a European nation?
+  33. [0.663] What is the capital of a country in Western Europe?
+  34. [0.717] What is the capital of a European country?
+  35. [0.663] What is the capital of a country in Western Europe?
+  36. [0.440] What city serves as the central government's administrative center for a Western European nation?
+  37. [0.697] What is the capital of a European nation?
+  38. [0.484] What is the main city of a Western European nation?
+  39. [0.663] What is the capital of a country in Western Europe?
+  40. [0.432] What city serves as the administrative center of a prominent Western European nation?
+  41. [0.695] What is the capital of a certain European nation?
+  42. [0.529] What is the primary urban center of a particular European nation?
+  43. [0.642] What is the capital of a Western European country?
+  44. [0.717] What is the capital of a European country?
+  45. [0.552] What is the name of the city serving as the central government seat of a specific European country?
+  46. [0.717] What is the capital of a European country?
+  47. [0.717] What is the capital of a European country?
+  48. [0.512] What city serves as the seat of government for a major European country?
+  49. [0.493] What location serves as the central hub of a certain European nation?
+  50. [0.717] What is the capital of a European country?
+
+NEW DIVERSE PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: What is the primary city of a European nation known for its cuisine and art?
+Number of candidates: 50
+Similarity range: 0.023 - 0.731
+Similarity mean: 0.564
+Similarity std: 0.158
+All candidates with similarities:
+   1. [0.505] What is the seat of government for a European nation?
+   2. [0.519] What is the name of the city that serves as the central administrative hub for a Western European country?
+   3. [0.442] What location serves as the central government's administrative center in a European nation?
+   4. [0.453] What is the central administrative location of a European nation with a rich cultural history?
+   5. [0.536] What is the capital city of a country located in a specific geographic region?
+   6. [0.522] What is the central city of a prominent European nation?
+   7. [0.504] What is the principal city of a European nation?
+   8. [0.471] What is the administrative center of a major European nation?
+   9. [0.731] What is the capital of a country in Europe?
+  10. [0.697] What is the capital of a European nation?
+  11. [0.504] What is the principal city of a European nation?
+  12. [0.652] What is the capital of a country located in Western Europe?
+  13. [0.324] What city serves as the seat of government in a country with a famous artist movement?
+  14. [0.486] What city serves as the central administrative hub of a prominent European nation?
+  15. [0.664] What is the capital of a prominent European nation?
+  16. [0.546] What is the capital of a country in a region known for its cuisine and art?
+  17. [0.178] What position of authority does a person in a particular country's government hold in relation to a famous film from the past?
+  18. [0.426] What is the primary city in a country known for art and cuisine?
+  19. [0.023] What position of authority is held by a female performer from an older film production?
+  20. [0.695] What is the capital of a certain European nation?
+  21. [0.717] What is the capital of a European country?
+  22. [0.568] What is the capital of a European country with a famous culinary tradition?
+  23. [0.717] What is the capital of a European country?
+  24. [0.508] What is the name of the city that serves as the administrative center of a country located in Western Europe?
+  25. [0.652] What is the capital of a country located in Western Europe?
+  26. [0.465] What is the primary city of a European nation known for its cuisine and art?
+  27. [0.537] What city serves as the seat of government for a European country?
+  28. [0.455] What is the administrative center of a certain Western European nation?
+  29. [0.532] What is the principal city of a European country?
+  30. [0.043] What government position was held by a female performer from a notable film?
+  31. [0.697] What is the capital of a European nation?
+  32. [0.665] What is the capital city of a European nation?
+  33. [0.681] What city is the capital of a European country?
+  34. [0.632] What is the capital of a Western European nation?
+  35. [0.665] What is the capital city of a European nation?
+  36. [0.511] What location serves as the seat of government for a European country?
+  37. [0.717] What is the capital of a European country?
+  38. [0.509] What is the capital of the country that is famous for its art museums and fashion?
+  39. [0.717] What is the capital of a European country?
+  40. [0.624] What is the capital of a European country with a rich history?
+  41. [0.717] What is the capital of a European country?
+  42. [0.717] What is the capital of a European country?
+  43. [0.697] What is the capital of a European nation?
+  44. [0.642] What is the capital of a Western European country?
+  45. [0.614] What is the capital of a country that has the Eiffel Tower?
+  46. [0.697] What is the capital of a European nation?
+  47. [0.608] What is the capital of the country with the Eiffel Tower?
+  48. [0.663] What is the capital of a country in Western Europe?
+  49. [0.642] What is the capital of a Western European country?
+  50. [0.697] What is the capital of a European nation?
+
+============================================================
+
+QUESTION 2/10
+============================================================
+Original Question: A 45-year-old patient presents to Memorial Hospital with chest pain. What is the most likely diagnosis?
+
+OLD PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: A person of a certain age presents to an institution with a specific type of discomfort. What is the most likely diagnosis based on this presentation?
+Number of candidates: 48
+Similarity range: 0.549 - 0.886
+Similarity mean: 0.749
+Similarity std: 0.100
+All candidates with similarities:
+   1. [0.590] A person with a certain condition is seen at a medical facility. What is the probable medical condition?
+   2. [0.680] An individual from a certain age group experiences symptoms of a cardiovascular issue at a medical facility. What is the most probable medical condition?
+   3. [0.692] What is the primary medical concern of an adult experiencing chest discomfort at a specific healthcare facility?
+   4. [0.554] What is the primary concern for a 45-year-old individual with a medical condition visiting a healthcare facility?
+   5. [0.857] A patient of a certain age presents to a medical facility with chest pain symptoms. What is the most plausible medical condition?
+   6. [0.669] A person of a certain age presents to a medical facility with a common symptom. What is the probable diagnosis for this individual?
+   7. [0.838] An individual of a certain age presents to a medical facility with symptoms of chest discomfort. What is the most probable diagnosis?
+   8. [0.602] A person of a certain age presents to an institution with a specific type of discomfort. What is the most likely diagnosis based on this presentation?
+   9. [0.634] A patient in a healthcare setting at a specific age experiences symptoms of a medical condition. What is the most plausible cause of this person's health issue?
+  10. [0.606] What is the most likely health issue for an individual from a certain age group presenting with a common symptom at a medical facility?
+  11. [0.744] What medical condition is the most likely to cause chest pain in a person of a certain age?
+  12. [0.665] A person recently visited an emergency department in a medical facility with symptoms of heart-related discomfort. What is the most common explanation for such a condition?
+  13. [0.789] A person of a certain age presents to a healthcare facility in a specific location with symptoms of chest discomfort. What is the most probable medical condition?
+  14. [0.613] An individual from a certain age group presents to a medical facility with a specific symptom. What is the most probable explanation for this condition?
+  15. [0.793] A patient from a healthcare facility in a specific age group experiences discomfort in their chest area. What is the most likely medical condition?
+  16. [0.717] A person of a certain age visits a medical facility with chest pain. What is the primary reason for their visit?
+  17. [0.866] A patient in their mid-life presents to a medical facility with chest discomfort. What is the most probable medical diagnosis?
+  18. [0.812] A person of a certain age visits a healthcare facility with chest discomfort. What is the most probable medical condition?
+  19. [0.867] A person of a certain age presents at a hospital with chest discomfort. What is the probable medical diagnosis?
+  20. [0.775] A person of a certain age visits a healthcare facility with symptoms of discomfort in the chest area. What is the probable reason for their condition?
+  21. [0.840] What is the most probable cause of chest pain in a middle-aged individual presenting to a medical facility?
+  22. [0.878] What is the most plausible diagnosis for a 45-year-old individual experiencing chest pain at a medical facility?
+  23. [0.739] What is the most plausible explanation for a middle-aged individual experiencing chest discomfort at a medical facility?
+  24. [0.763] an individual experiencing chest pain visits a healthcare facility. What is the primary cause of this condition?
+  25. [0.601] A patient of a certain age attends a medical facility with a symptom. What is the probable cause of their condition?
+  26. [0.606] What is the primary cause of symptoms experienced by a middle-aged individual at a medical facility?
+  27. [0.701] What is the primary health concern for an individual experiencing chest pain at a medical facility?
+  28. [0.798] A patient of a certain age presents to a medical facility with discomfort in the chest region. What is the most plausible medical explanation for their condition?
+  29. [0.652] What is the most likely medical issue for a middle-aged patient presenting with a common symptom?
+  30. [0.827] an individual of a certain age presents to a healthcare facility with symptoms of chest discomfort; what is the most probable medical condition?
+  31. [0.882] A patient of a certain age visits a medical facility with chest pain. What is the most likely diagnosis?
+  32. [0.791] A person of a certain age visits a healthcare facility due to discomfort in their chest. What is the probable medical condition?
+  33. [0.675] A patient of a certain age presents to a hospital with a symptom associated with cardiovascular disease. What is the most probable cause?
+  34. [0.744] What is the primary medical concern for a middle-aged individual experiencing chest pain at a healthcare facility?
+  35. [0.814] A patient in their mid-40s visits a healthcare facility with chest discomfort. What could be the underlying cause?
+  36. [0.875] What is the most probable diagnosis for a middle-aged patient visiting a hospital with chest pain symptoms?
+  37. [0.816] What is the most probable medical condition for an adult experiencing chest pain at a certain medical facility?
+  38. [0.849] A patient of a certain age presents to a specific medical facility with a symptom of chest pain. What is the most likely diagnosis?
+  39. [0.886] A 45-year-old individual presents to a medical facility with chest discomfort. What is the most probable diagnosis?
+  40. [0.549] A person with certain symptoms visited a medical facility. What is the primary cause of their discomfort?
+  41. [0.742] A person of a certain age experiences discomfort in the chest area while visiting a healthcare facility. What is the primary reason for this individual's symptoms?
+  42. [0.648] A person of a certain age presents to a healthcare facility with a symptom. What is the most probable medical condition?
+  43. [0.797] A patient of a certain age experiences chest pain at a medical facility. What could be the underlying reason for this symptom?
+  44. [0.719] A person in their middle age has recently experienced discomfort in the chest area at a medical facility. What is the primary cause of this symptom?
+  45. [0.843] What is the most likely diagnosis for an individual experiencing chest pain at a medical facility?
+  46. [0.866] A 45-year-old patient from a certain location visits a healthcare facility with chest pain symptoms. What is the most plausible medical explanation for their condition?
+  47. [0.853] A person with a certain age presents to an unnamed medical facility with chest pain. What is the most probable cause of the condition?
+  48. [0.857] A patient of a certain age presents to a major medical facility with chest pain. What is the most probable medical condition?
+
+NEW DIVERSE PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: What is the primary concern of a 45-year-old patient presenting to an acute care facility with symptoms of chest pain?
+Number of candidates: 47
+Similarity range: 0.524 - 0.952
+Similarity mean: 0.788
+Similarity std: 0.120
+All candidates with similarities:
+   1. [0.524] an individual experiences a sudden onset of discomfort in their upper body, which prompts a visit to a medical facility. What is the most plausible explanation for this situation?
+   2. [0.727] An individual seeking medical attention at a hospital facility experiences discomfort in their chest area. What could be the primary cause of this issue?
+   3. [0.634] An individual of a certain age presents to a healthcare facility with a specific symptom. What is the most likely underlying condition?
+   4. [0.687] What is the most likely diagnosis for a patient from a certain age group presenting to a hospital with a common symptom?
+   5. [0.751] A person in a certain age group experiences discomfort in the chest area and visits a medical facility for treatment. What is the most likely underlying cause of their symptoms?
+   6. [0.551] An individual of a certain age presents with a symptom commonly associated with a serious health issue. What is the most plausible cause of this symptom?
+   7. [0.746] A person of a certain age experiences discomfort in the chest area. What is the probable cause?
+   8. [0.536] A person of a certain age is experiencing discomfort. What could be the underlying cause?
+   9. [0.658] What is the primary concern of a middle-aged individual experiencing chest discomfort in a healthcare setting?
+  10. [0.781] An individual experiencing chest discomfort visits a healthcare facility for assessment. What is the most probable medical explanation?
+  11. [0.772] A person of a certain age visits a medical facility with a complaint of chest discomfort. What could be the primary cause of this individual's condition?
+  12. [0.546] A person experiencing a certain health issue visits a medical facility for evaluation. What could be the primary cause of their symptoms?
+  13. [0.746] A person of a certain age visited an institution for medical attention due to a discomfort in the chest area. What might be the underlying cause?
+  14. [0.806] A person of a certain age presents to a healthcare facility with discomfort in the chest area. What is the most probable underlying condition?
+  15. [0.580] An individual in a certain age group visits a healthcare facility with symptoms related to the cardiovascular system. What is the primary cause of their condition?
+  16. [0.679] an individual of a certain age presented with a specific health issue to a medical facility, what would be the most probable medical diagnosis?
+  17. [0.777] What is the primary medical concern for an individual presenting with chest pain at a healthcare facility during a recent time?
+  18. [0.793] What is the most likely cause of chest pain in a patient of a certain age group visiting a healthcare facility?
+  19. [0.872] A patient recently arrived at a hospital with chest pain symptoms. What is the probable medical condition?
+  20. [0.834] What is the most probable medical diagnosis for a middle-aged individual experiencing chest discomfort at a hospital?
+  21. [0.784] A person of a certain age visited a medical facility complaining of chest discomfort. What would be the primary cause of their symptoms?
+  22. [0.689] What is the primary reason for a person's visit to a medical facility, given that they are experiencing chest discomfort at a certain age?
+  23. [0.823] A 45-year-old patient visits an emergency department with a complaint of chest discomfort. What is the probable cause?
+  24. [0.771] A patient of a certain age presents to a medical facility with chest discomfort. What is the primary medical condition likely affecting this individual?
+  25. [0.777] A 45-year-old individual visits a hospital with symptoms related to the heart. What is the probable cause of their condition?
+  26. [0.680] A patient in their mid-life range visits an urban healthcare facility due to upper body pain. What is the most probable medical condition?
+  27. [0.870] A patient presenting to a medical facility with chest pain. What is the most likely medical condition?
+  28. [0.813] A patient of a certain age is admitted to a hospital with discomfort in the chest area. What is the most probable medical condition?
+  29. [0.883] What is the most likely diagnosis for an adult patient presenting with chest pain at a medical facility?
+  30. [0.918] A patient aged 45 visits an unspecified hospital due to chest pain. What is the most probable diagnosis?
+  31. [0.868] A 40-year-old individual presents to a medical facility with chest discomfort. What is the probable diagnosis?
+  32. [0.948] A 45-year-old individual presents to a hospital with chest pain. What is the most likely diagnosis?
+  33. [0.868] A 45-year-old patient presents to a large medical facility with severe chest discomfort. What is the primary diagnosis?
+  34. [0.947] A 45-year-old patient presents to a local hospital with chest pain. What is the most likely diagnosis for this condition?
+  35. [0.916] What is the most likely medical condition for a 45-year-old patient experiencing chest pain at a hospital?
+  36. [0.948] A 45-year-old individual presents to a hospital with chest pain. What is the most likely diagnosis?
+  37. [0.828] A person aged 45 visits an institution with a medical complaint involving chest pain. What is the probable cause of the condition?
+  38. [0.875] A 45-year-old patient presents to a major medical facility with chest pain. What is the most likely diagnosis for a middle-aged individual visiting a large hospital with a common symptom?
+  39. [0.908] A patient, aged 45, presenting to a hospital, experiences chest pain. What is the probable diagnosis?
+  40. [0.930] A 45-year-old individual presents to a medical facility with chest pain. What is the most likely diagnosis?
+  41. [0.858] A patient at a medical facility reports experiencing chest pain. What is the probable diagnosis?
+  42. [0.885] A patient of a certain age experiences chest pain in a hospital. What is the probable diagnosis?
+  43. [0.631] A patient from a certain age group presents to a medical facility with a specific type of discomfort. What is the most likely medical condition?
+  44. [0.930] A 45-year-old individual presents to a medical facility with chest pain. What is the most likely diagnosis?
+  45. [0.882] What is the most likely medical condition diagnosed in a patient presenting with chest pain to a hospital?
+  46. [0.842] What is the primary concern of a 45-year-old patient presenting to an acute care facility with symptoms of chest pain?
+  47. [0.952] A 40-year-old patient presents to a hospital with chest pain. What is the most likely diagnosis?
+
+============================================================
+
+QUESTION 3/10
+============================================================
+Original Question: Which company was founded by Steve Jobs in 1976?
+
+OLD PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: What company was founded by a well-known individual in an earlier time period?
+Number of candidates: 48
+Similarity range: 0.073 - 0.571
+Similarity mean: 0.457
+Similarity std: 0.089
+All candidates with similarities:
+   1. [0.516] What company was established by a prominent entrepreneur at some point?
+   2. [0.485] What company was founded by a visionary entrepreneur in the past?
+   3. [0.460] What organization was established by a well-known entrepreneur at some point in the past?
+   4. [0.442] Which organization was established by an individual from a particular industry at some point?
+   5. [0.353] What entity was established by a renowned entrepreneur in a specific time period?
+   6. [0.247] What entity was established by a renowned innovator at some point?
+   7. [0.266] What organization was established by a person from a prominent field in a time period that is now part of history?
+   8. [0.489] What organization was established by a pioneering entrepreneur from a technological industry at some point in the past?
+   9. [0.470] What company was established by a visionary entrepreneur in the early days of the industry?
+  10. [0.417] What organization was established by a renowned entrepreneur in a specified year?
+  11. [0.498] What company was established by a pioneer in the technology industry at a certain time?
+  12. [0.475] What company was established by an individual in a specific time period?
+  13. [0.536] What company was established by a co-founder in a specific time period?
+  14. [0.529] What company was founded by a pioneer in the technology industry at some point in the past?
+  15. [0.483] What company was established by a famous entrepreneur during a certain period?
+  16. [0.509] What company was established by a prominent entrepreneur at a certain point in time?
+  17. [0.543] What company was established by a well-known individual in the technology industry at some point in the past?
+  18. [0.399] What entity was established by a pioneering figure in the tech industry at some point?
+  19. [0.571] What company was established by a well-known entrepreneur in the 1970s?
+  20. [0.497] What company was established by a renowned entrepreneur at some point?
+  21. [0.500] Which company was established by a renowned entrepreneur at a specific time in history?
+  22. [0.418] What company was established by a well-known entrepreneur in the mid-20th century?
+  23. [0.492] Which company was started by a well-known entrepreneur in the early years of a major technological shift?
+  24. [0.401] What organization was established by a prominent figure in the technology sector a certain number of years ago?
+  25. [0.506] What company was established by a renowned entrepreneur at some point in the past?
+  26. [0.464] What organization was established by a pioneer in the tech industry at some point in the past?
+  27. [0.516] What company was established by a prominent entrepreneur at some point?
+  28. [0.302] What entity was established by a renowned individual from the technology sector during a particular period?
+  29. [0.504] Which company was established by a renowned entrepreneur at some point?
+  30. [0.434] What organization was established by a famous entrepreneur in the past?
+  31. [0.471] What company was established by a visionary entrepreneur in an early period of the technology industry?
+  32. [0.073] What entity was established by a public figure in a particular time period?
+  33. [0.492] What company was established by a successful entrepreneur at a certain time?
+  34. [0.512] What company was established by a pioneer in the tech industry at a certain point in the past?
+  35. [0.520] What company was established by a prominent entrepreneur at some point in the past?
+  36. [0.520] What company was established by a pioneer in the industry a significant number of years ago?
+  37. [0.529] What company was founded by a well-known entrepreneur at some point in time?
+  38. [0.380] Who established a notable organization that became a standard in its industry?
+  39. [0.438] What company was established by a prominent figure in a significant time frame?
+  40. [0.405] What business was established by a pioneer in the industry at a certain point in time?
+  41. [0.483] What company was established by a renowned entrepreneur in an earlier period?
+  42. [0.519] What company was founded by a well-known individual in an earlier time period?
+  43. [0.500] What company was established by a successful entrepreneur at some point in the past?
+  44. [0.536] What company was established by a prominent figure in the tech industry at a time in the past?
+  45. [0.379] What business venture was established by a successful entrepreneur in a specific era?
+  46. [0.474] What company was established by a renowned entrepreneur during a particular era?
+  47. [0.522] What company was established by a well-known entrepreneur at some point?
+  48. [0.449] What organization was established by a renowned entrepreneur in a specific year?
+
+NEW DIVERSE PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: What entity was established by a prominent figure in a certain industry around a specific time period?
+Number of candidates: 48
+Similarity range: 0.133 - 0.597
+Similarity mean: 0.449
+Similarity std: 0.098
+All candidates with similarities:
+   1. [0.511] Which company was created by a renowned entrepreneur at a certain point in the past?
+   2. [0.512] Which company was established by an individual in the past?
+   3. [0.398] Which entity was established by an individual from a tech industry in the past?
+   4. [0.496] Which corporation was established by a well-known entrepreneur at some point in the past?
+   5. [0.518] What company was established by a prominent entrepreneur in a past decade?
+   6. [0.436] What organization was established by a prominent entrepreneur at a particular point in history?
+   7. [0.501] What company was established by a pioneering individual in a specific sector a long time ago?
+   8. [0.133] What entity was established by a renowned figure in a significant time period?
+   9. [0.328] What entity was established by a well-known entrepreneur in a bygone era?
+  10. [0.462] What position within an institution was held by an individual who co-founded a pioneering electronics company?
+  11. [0.525] What company was established by a prominent figure from the technology industry in the early years of the industry?
+  12. [0.491] What company was established by a prominent entrepreneur in the early days of technology?
+  13. [0.285] Which organization was established by an individual in a specific time?
+  14. [0.453] What company was established by a renowned entrepreneur at a pivotal time?
+  15. [0.342] What entity was established by a prominent figure in a certain industry around a specific time period?
+  16. [0.425] What corporate entity was established by a pioneering entrepreneur during a significant time period in the history of technology?
+  17. [0.357] What business was established by a prominent individual at some point in the past?
+  18. [0.452] What organization was established by a well-known entrepreneur at a specific time?
+  19. [0.341] What business was established by a well-known individual at a particular time in history?
+  20. [0.509] What company was established by a renowned entrepreneur in a specific year?
+  21. [0.530] What company was started by a pioneer in the tech industry some years ago?
+  22. [0.411] What business venture was established by an individual in a particular year?
+  23. [0.587] What company was founded by a prominent entrepreneur in the 1970s?
+  24. [0.533] What company was founded by a well-known entrepreneur at a certain point in the past?
+  25. [0.421] Someone started a company at a certain time. What is it?
+  26. [0.478] What company was established by a renowned entrepreneur in the early days of technology?
+  27. [0.405] Which company was established by a renowned entrepreneur in the mid-20th century?
+  28. [0.485] Which organization was established by a famous entrepreneur in the early 1970s?
+  29. [0.442] Which business was established by a prominent entrepreneur in a specific year?
+  30. [0.541] What company was founded by a well-known entrepreneur in the early years of a significant industry?
+  31. [0.427] What company was founded by a prominent entrepreneur in the mid-20th century?
+  32. [0.153] What entity was established by a renowned individual in a certain time frame?
+  33. [0.482] Which company was established by an individual in the early years of computing?
+  34. [0.597] What company was established by the co-founder of Apple at the beginning of the 1970s?
+  35. [0.376] What organization was established by an individual from the technology industry in the mid-20th century?
+  36. [0.413] Which company was founded by an individual in a time period shortly after the mid-point of the previous century?
+  37. [0.529] What company was established by an individual in a notable year?
+  38. [0.448] What business was established by a prominent figure in the 1970s?
+  39. [0.551] Which company was founded by an individual in a specific year?
+  40. [0.457] Which company was founded by a prominent figure in the tech industry in the mid-20th century?
+  41. [0.508] Which company was established by the co-founder of a renowned technological entity in a particular year?
+  42. [0.305] Which organization was established by an individual in a certain year?
+  43. [0.442] What company was established by an individual in a founding year that preceded the current time?
+  44. [0.502] What company was established by a renowned entrepreneur in its early years?
+  45. [0.585] Which company was founded by a renowned entrepreneur in the 1970s?
+  46. [0.364] What organization was established by a well-known entrepreneur in the mid-20th century?
+  47. [0.555] What company was established by a prominent entrepreneur in the mid-1970s?
+  48. [0.537] Which individual founded a company in a specific year?
+
+============================================================
+
+QUESTION 4/10
+============================================================
+Original Question: A 30-year-old individual visits a medical facility with fever and cough. What treatment should be considered?
+
+OLD PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: A person recently visited a medical center with symptoms of illness. What healthcare options should be considered?
+Number of candidates: 43
+Similarity range: 0.592 - 0.941
+Similarity mean: 0.802
+Similarity std: 0.101
+All candidates with similarities:
+   1. [0.635] A person experiencing symptoms recently visits a medical facility. What course of action should be taken?
+   2. [0.929] A 30-year-old person visits a medical facility due to a fever and a cough. What course of action should be taken?
+   3. [0.881] What medical intervention would be suitable for an individual presenting with fever and cough at a healthcare establishment?
+   4. [0.836] A person experiencing recent fever and cough symptoms visits a healthcare provider. What care options should be considered?
+   5. [0.772] A person experiencing a fever and cough should receive medical attention at an urgent care center. What evaluation should be undertaken?
+   6. [0.778] A person with a high fever and respiratory issues should be evaluated for potential illnesses. What type of treatment might be recommended for someone with similar symptoms?
+   7. [0.693] An individual of a certain age visits a medical facility with respiratory symptoms. What course of action should be considered?
+   8. [0.736] A person in their thirties visits a healthcare facility with a high temperature and respiratory symptoms. What type of care is recommended?
+   9. [0.863] A person with a fever and cough visits a medical facility. What course of action should be taken for this individual?
+  10. [0.592] A person experiencing symptoms visits a healthcare provider. What medical intervention should be considered?
+  11. [0.634] an individual experiencing recent respiratory symptoms visits a healthcare center, what remedy could be considered?
+  12. [0.817] What treatment should be considered for someone with a recent fever and respiratory issue?
+  13. [0.875] an individual aged thirty visits a healthcare center with a fever and a cough, what course of action should be taken?
+  14. [0.704] What treatment should be considered for a person of a certain age presenting with symptoms of illness at a healthcare institution?
+  15. [0.926] What treatment should be considered for a person with fever and cough visiting a healthcare facility?
+  16. [0.764] What treatment should be considered for someone of a certain age visiting a medical facility due to symptoms of illness?
+  17. [0.929] What treatment should be considered for an individual with a recent fever and cough who visited a medical facility?
+  18. [0.672] A patient of a certain age visits a medical facility with symptoms of a contagious illness. What therapeutic approach should be explored?
+  19. [0.845] What treatment options should be considered for someone visiting a healthcare center with a fever and a respiratory issue?
+  20. [0.893] What medical treatment should be considered for a person experiencing fever and cough who recently visited a healthcare provider?
+  21. [0.852] What healthcare option would be suitable for a person experiencing fever and cough?
+  22. [0.682] A person with a certain age and symptoms goes to a medical facility. What course of action should be taken?
+  23. [0.902] What medical intervention should be considered for a 30-year-old person presenting with symptoms of fever and cough?
+  24. [0.717] An individual of a certain age visits a medical establishment with symptoms of illness. What medical intervention would be appropriate?
+  25. [0.941] A person in their thirties visits a medical facility with a fever and a cough, what would be an appropriate treatment for them?
+  26. [0.644] What medical procedure should be considered for an individual experiencing symptoms of a certain illness at a health care institution?
+  27. [0.669] A person of a certain age presents at a healthcare facility with symptoms of illness. What course of action should be considered?
+  28. [0.837] A person who has been experiencing fever and cough for several days attends a healthcare facility. What course of action should be considered for this individual?
+  29. [0.902] A person experiencing symptoms of a fever and cough visits a medical center. What treatment should be considered for this individual?
+  30. [0.842] A person recently experiencing fever and cough at a medical facility needs to receive what kind of medical attention?
+  31. [0.821] What medical intervention is suitable for someone who recently experienced a combination of a fever and a cough?
+  32. [0.909] What treatment should be considered for a person experiencing fever and cough who visited a healthcare center recently?
+  33. [0.684] A person of a certain age visits a medical center with symptoms. What medical approach should be considered?
+  34. [0.869] What medical treatment should be considered for someone with a recent illness characterized by fever and cough?
+  35. [0.877] An individual presenting with fever and cough at a medical center, what therapeutic option would be most suitable?
+  36. [0.670] A person recently visited a medical center with symptoms of illness. What healthcare options should be considered?
+  37. [0.833] A person experiencing a fever and cough seeks medical attention. What course of action would be most appropriate?
+  38. [0.789] A person with a high fever and respiratory symptoms visits a healthcare facility. What course of action should be considered?
+  39. [0.854] What health interventions should be considered for a patient presenting with fever and cough?
+  40. [0.921] A person of a certain age visits a healthcare center with a fever and a cough. What therapy should be considered?
+  41. [0.666] An individual of a certain age experiences symptoms of illness at a healthcare facility. What course of action should be taken for optimal recovery?
+  42. [0.896] What medical intervention should be explored for a person with a fever and cough who is 30 years of age?
+  43. [0.923] A person aged 30 who has a fever and a cough may require medical attention. What potential course of treatment should be considered?
+
+NEW DIVERSE PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: A person aged 30 visits a healthcare facility with a fever and cough symptoms. What treatment option should be considered?
+Number of candidates: 48
+Similarity range: 0.464 - 0.996
+Similarity mean: 0.825
+Similarity std: 0.139
+All candidates with similarities:
+   1. [0.664] What treatment option should be explored for an individual with a recent onset of a common cold-like illness?
+   2. [0.661] What treatment should a person who exhibits symptoms of a viral infection receive?
+   3. [0.642] What medical interventions should be considered for an adult experiencing symptoms of illness?
+   4. [0.836] An individual with a recent onset of fever and cough visits a healthcare provider. What course of action should be taken?
+   5. [0.940] A person experiencing fever and cough at a certain age visits a medical facility. What should be considered for a suitable treatment approach?
+   6. [0.616] A person experiencing symptoms visits a healthcare facility. What form of care would be most beneficial?
+   7. [0.632] What symptom should be addressed in a person of a certain age who visits a medical center with specific health issues?
+   8. [0.653] A person experiencing symptoms of an illness visits a medical facility at some point. What course of action should be considered?
+   9. [0.683] A person experiencing a high temperature and respiratory issues visits a healthcare institution. What medical intervention is warranted?
+  10. [0.586] A person experiencing symptoms visits a healthcare center. What option for care is advisable?
+  11. [0.697] A person in their thirties presents with symptoms of illness to a healthcare facility. What kind of care would be suitable for someone in this situation?
+  12. [0.914] A 30-year-old person experiences fever and cough at a medical center. What therapy would be suitable?
+  13. [0.912] A 30-year-old individual is experiencing fever and cough symptoms. Which medical intervention is most relevant?
+  14. [0.703] A 30-year-old person experiencing symptoms of illness at a healthcare center what medical care would be a suitable option?
+  15. [0.464] What health issue would require a patient to receive a particular course of treatment in a medical setting?
+  16. [0.705] A 30-year-old individual seeks medical attention for symptoms of a respiratory illness. What healthcare approach should be explored?
+  17. [0.653] A person who has been experiencing a high temperature and respiratory issues recently visits a healthcare institution. What course of action should be considered for their health?
+  18. [0.654] An individual exhibiting recent respiratory symptoms attends a medical facility. What would be an appropriate course of action?
+  19. [0.893] A person in their thirties with fever and cough attends a medical facility for treatment. What diagnostic steps should be taken?
+  20. [0.896] What treatment should be considered for a patient presenting with fever and cough at a healthcare setting?
+  21. [0.658] A person in their thirties visits a healthcare center with symptoms of illness. What kind of care should they receive?
+  22. [0.919] What treatment should be considered for a young adult experiencing fever and cough symptoms during a visit to a healthcare facility?
+  23. [0.667] A 30-year-old adult presents at a healthcare institution with symptoms of an illness. What therapeutic approach should be explored?
+  24. [0.909] What treatment should be considered for an individual presenting with symptoms of fever and cough at a medical facility?
+  25. [0.863] A person visiting a medical facility with a fever and cough is seeking a particular form of care. What options should be explored?
+  26. [0.844] A person in their thirties visits a healthcare center with a fever and respiratory issues. What medical option would be suitable?
+  27. [0.910] What treatment should be considered for a 30-year-old person with recent onset of fever and cough?
+  28. [0.951] What treatment should be considered for someone with a fever and cough visiting a medical facility at a certain age?
+  29. [0.904] What medical treatment should be considered for a person who is 30 years old, has a fever, and is experiencing coughing?
+  30. [0.930] A person aged thirty visits a healthcare center with symptoms of fever and cough. What treatment should be given?
+  31. [0.960] What treatment should be considered for a person who is 30 years old and experiencing fever and cough when visiting a medical facility?
+  32. [0.835] A person aged thirty arrives at a healthcare facility complaining of a high temperature and a persistent cough. What medical intervention should be considered?
+  33. [0.941] A person with a fever and cough visits a medical facility. What treatment should be considered?
+  34. [0.932] A 30-year-old person visits a medical facility with symptoms of fever and cough. What is an appropriate course of action to consider?
+  35. [0.985] A 30-year-old individual visits a medical facility with a fever and a cough. What treatment should be considered for someone with a similar condition?
+  36. [0.830] A person with a fever and cough of a certain age attends a medical facility. What diagnosis should be considered?
+  37. [0.981] A 30-year-old person visits a medical facility with a fever and a cough. What treatment should be considered for this individual?
+  38. [0.935] An individual with a fever and cough visits a healthcare facility. What treatment should be considered for their condition?
+  39. [0.905] A 30-year-old person visits a healthcare center with symptoms of fever and cough. What care options should be considered?
+  40. [0.970] What medical treatment should be considered for a 30-year-old individual experiencing fever and cough when visiting a healthcare facility?
+  41. [0.988] A 30-year-old individual visits a medical facility with fever and cough symptoms. What treatment option should be considered?
+  42. [0.736] A person of this age visits a healthcare facility with symptoms of illness. What medical intervention is suggested?
+  43. [0.964] A person aged 30 visits a healthcare facility with a fever and cough symptoms. What treatment option should be considered?
+  44. [0.944] A 30-year-old individual visits a medical facility with symptoms that include fever and cough. What medical procedure should be considered?
+  45. [0.947] An individual aged thirty visits a medical facility complaining of fever and cough. What treatment should be considered for this patient's symptoms?
+  46. [0.811] A 30-year-old individual visits a medical facility with a high temperature and respiratory issues. What treatment should be considered?
+  47. [0.996] A 30-year-old person visits a medical facility with fever and cough. What treatment should be considered?
+  48. [0.969] A 30-year-old individual visits a medical facility with a fever and cough. What treatment should be considered for someone presenting these symptoms?
+
+============================================================
+
+QUESTION 5/10
+============================================================
+Original Question: What is the largest planet in our solar system?
+
+OLD PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: What is the name of the biggest celestial body in our cosmic neighborhood?
+Number of candidates: 50
+Similarity range: 0.655 - 0.932
+Similarity mean: 0.801
+Similarity std: 0.055
+All candidates with similarities:
+   1. [0.817] What is the size of the biggest celestial body in the planetary system?
+   2. [0.857] What is the biggest celestial body in our planetary system?
+   3. [0.857] What is the biggest celestial body in our planetary system?
+   4. [0.836] What is the largest celestial body in a typical planetary system?
+   5. [0.735] What is the largest celestial body within a specific planetary arrangement?
+   6. [0.834] What is the biggest celestial body in a particular planetary system?
+   7. [0.872] What is the largest celestial body in our planetary system?
+   8. [0.932] What is the biggest planet in our celestial system?
+   9. [0.756] What is the size comparison of the two largest celestial bodies in our planetary system?
+  10. [0.836] What is the largest celestial body in a typical planetary system?
+  11. [0.704] What is the size of the largest celestial body in a nearby astronomical region?
+  12. [0.813] What is the largest celestial body within our astronomical system?
+  13. [0.825] What is the largest celestial body within a specific planetary system?
+  14. [0.826] What is the name of the largest celestial body in a particular planetary system?
+  15. [0.830] What is the largest celestial body in a nearby planetary system?
+  16. [0.857] What is the biggest celestial body in our planetary system?
+  17. [0.798] What is the largest celestial body in the planetary system under observation?
+  18. [0.818] What is the name of the largest celestial body in a standard planetary system?
+  19. [0.738] What is the size of the largest celestial body in our galaxy?
+  20. [0.713] What is the largest celestial body in our cosmic neighborhood?
+  21. [0.655] What is the most massive celestial body in the observable universe?
+  22. [0.745] What is the size classification of the largest celestial body in a nearby astronomical system?
+  23. [0.831] What is the largest celestial body within a given planetary system?
+  24. [0.836] What is the size of the largest celestial body in our planetary system?
+  25. [0.789] What is the size of the biggest celestial body in a typical planetary system?
+  26. [0.854] What is the largest celestial body in the planetary system?
+  27. [0.709] What is the size of the biggest celestial body in the galaxy?
+  28. [0.743] What is the largest celestial body in a standard planetary arrangement?
+  29. [0.819] What is the largest celestial body within a typical planetary system?
+  30. [0.770] What is the name of the biggest celestial body in a certain system?
+  31. [0.775] What is the largest entity in our celestial system?
+  32. [0.792] What is the largest body in a given celestial system?
+  33. [0.783] What is the size of the biggest celestial body in a common planetary system?
+  34. [0.805] What is the biggest celestial body in a common planetary system?
+  35. [0.778] What is the biggest celestial body in the planetary system of a specific galaxy?
+  36. [0.836] What is the largest celestial body in a typical planetary system?
+  37. [0.770] What is the largest celestial body within a well-known astronomical system?
+  38. [0.854] What is the largest celestial body in the planetary system?
+  39. [0.757] What is the size of the largest celestial body within a given astronomical system?
+  40. [0.857] What is the biggest celestial body in our planetary system?
+  41. [0.688] What is the name of the biggest celestial body in our cosmic neighborhood?
+  42. [0.845] What is the largest celestial body in our solar system's structure?
+  43. [0.824] What is the biggest celestial body in a typical planetary system?
+  44. [0.703] What is the name of the largest celestial body in our cosmic neighborhood?
+  45. [0.825] What is the size of the biggest celestial body in our planetary system?
+  46. [0.833] What is the name of the biggest celestial body in a particular solar system?
+  47. [0.824] What is the biggest celestial body in a typical planetary system?
+  48. [0.872] What is the largest celestial body in our planetary system?
+  49. [0.836] What is the largest celestial body in a typical planetary system?
+  50. [0.787] What is the largest celestial body in a typical astronomical system?
+
+NEW DIVERSE PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: What is the largest celestial body in a typical planetary system?
+Number of candidates: 50
+Similarity range: 0.657 - 0.929
+Similarity mean: 0.832
+Similarity std: 0.053
+All candidates with similarities:
+   1. [0.736] What is the biggest celestial body in the universe?
+   2. [0.836] What is the largest celestial body in a typical planetary system?
+   3. [0.729] What is the most massive celestial body within a certain astronomical system?
+   4. [0.836] What is the largest celestial body in a typical planetary system?
+   5. [0.836] What is the largest celestial body in a typical planetary system?
+   6. [0.836] What is the largest celestial body in a typical planetary system?
+   7. [0.836] What is the largest celestial body in a typical planetary system?
+   8. [0.713] What is the largest celestial body in our cosmic neighborhood?
+   9. [0.836] What is the largest celestial body in a typical planetary system?
+  10. [0.872] What is the largest celestial body in our planetary system?
+  11. [0.836] What is the largest celestial body in a typical planetary system?
+  12. [0.830] What is the largest celestial body in our galaxy's planetary system?
+  13. [0.858] What is the largest celestial body within our planetary system?
+  14. [0.872] What is the largest celestial body in our planetary system?
+  15. [0.868] What is the largest celestial body in the planetary system we inhabit?
+  16. [0.743] What is the largest celestial body in the known universe?
+  17. [0.819] What is the largest celestial body within a typical planetary system?
+  18. [0.799] What is the largest celestial body in the planetary system of a specific star?
+  19. [0.818] What is the biggest celestial body within a particular planetary system?
+  20. [0.854] What is the largest celestial body in the planetary system?
+  21. [0.857] What is the biggest celestial body in our planetary system?
+  22. [0.857] What is the biggest celestial body in our planetary system?
+  23. [0.657] What is the size comparison between the biggest celestial body and the others in the space surrounding Earth?
+  24. [0.864] What is the largest celestial body in the solar system?
+  25. [0.854] What is the largest celestial body in the planetary system?
+  26. [0.857] What is the biggest celestial body in our planetary system?
+  27. [0.872] What is the largest celestial body in our planetary system?
+  28. [0.872] What is the largest celestial body in our planetary system?
+  29. [0.900] What is the biggest planet in our galaxy's planetary system?
+  30. [0.836] What is the largest celestial body in a typical planetary system?
+  31. [0.855] What is the biggest celestial body in the solar system around us?
+  32. [0.885] What is the largest world in our planetary system?
+  33. [0.842] What is the biggest celestial body in the planetary system?
+  34. [0.831] What is the largest celestial body within a certain planetary system?
+  35. [0.844] What is the largest celestial body in a particular planetary system?
+  36. [0.886] What is the largest celestial body in our solar system?
+  37. [0.836] What is the largest celestial body in a typical planetary system?
+  38. [0.872] What is the largest celestial body in our planetary system?
+  39. [0.812] What is the biggest celestial body in our astronomical system?
+  40. [0.886] What is the largest celestial body in our solar system?
+  41. [0.807] What is the biggest planet in our cosmic neighborhood?
+  42. [0.804] What is the largest celestial body within the planetary system of the Earth's star?
+  43. [0.884] What is the largest planet within a particular celestial system?
+  44. [0.835] What is the largest celestial body within a planetary system?
+  45. [0.929] What is the biggest world in the solar system of our planet?
+  46. [0.716] What is the largest celestial body within a particular astronomical grouping?
+  47. [0.731] What is the largest celestial body in a typical astronomical setting?
+  48. [0.872] What is the largest celestial body in our planetary system?
+  49. [0.872] What is the largest celestial body in our planetary system?
+  50. [0.822] What is the largest celestial body in the inner solar system?
+
+============================================================
+
+QUESTION 6/10
+============================================================
+Original Question: Dr. Smith at Johns Hopkins University conducted a study on diabetes. What were the main findings?
+
+OLD PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: What were the primary outcomes of a study conducted by a researcher at a renowned educational institution?
+Number of candidates: 48
+Similarity range: 0.317 - 0.738
+Similarity mean: 0.484
+Similarity std: 0.087
+All candidates with similarities:
+   1. [0.431] a researcher at a renowned institution investigated a widespread condition. What were the key outcomes of this inquiry?
+   2. [0.428] What were the primary conclusions of a recent study conducted by a researcher at a prestigious institution?
+   3. [0.382] What were the primary outcomes of a recent investigation conducted by a professional at a prominent institution?
+   4. [0.440] What were the primary outcomes of a research study conducted by an individual from a renowned institution?
+   5. [0.474] What were the primary results of a research project conducted by a medical professional at a renowned academic institution?
+   6. [0.700] What were the primary outcomes of a diabetes study conducted by a researcher at a prestigious institution?
+   7. [0.463] A researcher at an institution of higher education in a certain region conducted a study on a widespread health condition. What were the primary results?
+   8. [0.702] An individual from a renowned academic institution in the field of medicine published a study on diabetes. What were the key conclusions?
+   9. [0.491] A researcher at a prestigious institution investigated the effects of a widespread health issue. What were the primary outcomes?
+  10. [0.558] What were the main findings of a recent medical study conducted by a researcher at a prestigious university?
+  11. [0.430] What are the primary results of a recent study conducted by an individual at a prestigious institution?
+  12. [0.398] What were the primary results of the investigation by a researcher at a prominent institution?
+  13. [0.535] What were the primary results of a recent medical study conducted at a prestigious research institution?
+  14. [0.534] What were the main results of a study conducted by a researcher at a prestigious institution on a widespread health issue?
+  15. [0.484] an individual from a prestigious academic institution conducted a research project on a chronic health condition. What were the primary outcomes?
+  16. [0.738] What are the key results from a recent diabetes study conducted by a researcher at a prominent academic institution?
+  17. [0.491] What are the primary outcomes of a recent study conducted by a researcher at a prestigious university on a common health condition?
+  18. [0.403] A researcher from a prestigious university investigated a widespread condition. What were the key results?
+  19. [0.458] What were the main outcomes of a recent study conducted by a researcher at a well-known academic institution?
+  20. [0.491] an individual from a reputable institution conducted a research project about a widespread health condition. What were the primary results?
+  21. [0.434] What were the primary outcomes of a study conducted by a researcher at a renowned educational institution?
+  22. [0.510] an individual from a prestigious research institution conducted a study on a common health condition. What were the primary results?
+  23. [0.495] A researcher at a well-known university recently conducted an investigation on a prevalent medical condition. What were the key conclusions drawn from this study?
+  24. [0.519] What were the primary results of a study conducted by a researcher from a well-known educational institution on a common health condition?
+  25. [0.457] an expert from a renowned medical institution conducted an in-depth analysis on a prevalent health condition. What were the primary outcomes of this research project?
+  26. [0.472] an investigator from a prestigious institution disclosed the results of a comprehensive study on a prevalent health issue. what were the key outcomes of the investigation?
+  27. [0.523] an individual from a renowned institution conducted a study on a chronic condition. What were the primary outcomes?
+  28. [0.317] What were the key results of a research project conducted by a prominent academic at a well-known institution?
+  29. [0.514] an individual from a renowned institution conducted a study on a common health issue, what were the primary results?
+  30. [0.505] an individual from a prestigious institution conducted a study on a significant health issue. what were the primary results of this investigation?
+  31. [0.412] What were the main conclusions of a recent study conducted by a researcher from a prominent university?
+  32. [0.531] A professional at a well-known institution conducted a study on a widespread health issue. What were the primary results?
+  33. [0.530] What were the primary results of a recent investigation led by a researcher from a renowned medical institution?
+  34. [0.534] A researcher at a prominent medical institution recently published a study on a widespread health condition. What were the primary outcomes of this investigation?
+  35. [0.410] What were the primary outcomes of a research study conducted by a scientist at a prestigious educational institution?
+  36. [0.544] What were the primary results of a recent medical study conducted by a researcher at a prestigious university?
+  37. [0.440] A researcher at a renowned academic institution investigated the condition. What were the key conclusions of their work?
+  38. [0.480] A professional at a well-known university investigated a common health issue. What were the key results of the investigation?
+  39. [0.451] What were the primary results of a study conducted by a researcher at a prominent institution?
+  40. [0.487] an individual from a medical institution recently conducted research on a widespread health issue. what were the key results of the study?
+  41. [0.403] A professional from a prestigious institution investigated a common condition. What were the primary results?
+  42. [0.358] What were the primary conclusions drawn from a research project conducted by a professional at a prestigious institution?
+  43. [0.710] An investigator from a prestigious institution examined diabetes recently. What were the primary outcomes of their research?
+  44. [0.446] What were the primary results of a recent study conducted by a researcher at a prominent institution?
+  45. [0.392] What were the primary conclusions drawn from a recent study conducted by a researcher at a prestigious educational institution?
+  46. [0.500] What were the primary outcomes of a research study conducted by a medical professional at a well-known institution?
+  47. [0.388] What were the primary results of a recent investigation by a researcher at a prestigious academic institution?
+  48. [0.415] What were the key outcomes of a study conducted by a researcher at a prestigious university?
+
+NEW DIVERSE PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: A researcher from a prestigious institution analyzed a widespread condition. What were the primary outcomes of their investigation?
+Number of candidates: 48
+Similarity range: 0.309 - 0.752
+Similarity mean: 0.520
+Similarity std: 0.129
+All candidates with similarities:
+   1. [0.407] What were the primary outcomes of a research project at an esteemed academic institution focused on a prevalent health condition?
+   2. [0.507] What were the primary conclusions of a recent study at a prestigious academic institution concerning a specific health condition?
+   3. [0.490] A researcher from a prestigious academic institution investigated a widespread health condition. What were the key outcomes of the investigation?
+   4. [0.470] What were the key outcomes of a medical investigation led by a researcher at a prestigious institution?
+   5. [0.337] What were the primary outcomes of a research project conducted by a university-based professional?
+   6. [0.523] What were the primary outcomes of a recent medical study conducted by a researcher affiliated with a prestigious institution?
+   7. [0.505] 1 What are the key results from a study conducted by a researcher from a prestigious institution on a common health condition?
+   8. [0.310] What were the primary results of a recent investigation at a prominent educational institution?
+   9. [0.377] What were the key outcomes of an investigation conducted by a researcher at a prestigious institution?
+  10. [0.423] A researcher from a prestigious institution analyzed a widespread condition. What were the primary outcomes of their investigation?
+  11. [0.310] What were the primary outcomes of a research project conducted at a prominent educational institution?
+  12. [0.487] What were the primary outcomes of a recent research project led by a medical expert at a prestigious university?
+  13. [0.336] What were the key results of a recent research project conducted by a renowned expert in a prestigious university?
+  14. [0.732] An investigation into diabetes was conducted at a prominent research institution. What were the key outcomes?
+  15. [0.486] A researcher at a prestigious institution revealed insights into a widespread health issue. What were the primary outcomes?
+  16. [0.446] What were the key outcomes of a recent study conducted by a researcher from a well-known institution?
+  17. [0.488] What were the primary conclusions of a research project led by a professional from a prominent academic institution regarding a specific health condition?
+  18. [0.484] an individual at a leading research institution examined the prevalence of a chronic condition. What were the primary observations from this investigation?
+  19. [0.382] What is the key takeaway from a research study conducted by a specialist at a well-known institution?
+  20. [0.429] What were the main results of a study conducted by a researcher from a prestigious academic institution?
+  21. [0.309] What were the key takeaways from a recent research project led by a university professor?
+  22. [0.747] What were the main results of a study conducted by a researcher at a prominent university on diabetes?
+  23. [0.426] What was the primary outcome of a recent study conducted by a researcher affiliated with a prominent university?
+  24. [0.500] A researcher at a prestigious university recently conducted a study on a prevalent health issue. What were the primary conclusions?
+  25. [0.484] What were the primary conclusions of a recent study conducted by a researcher at a prestigious medical institution regarding a common endocrine disorder?
+  26. [0.461] What were the key results of a research study conducted by a medical professional at a well-known institution of higher learning?
+  27. [0.472] A researcher at an esteemed medical institution recently examined the relationship between a particular condition and various factors. What were the primary results of this investigation?
+  28. [0.752] What were the main results of a recent diabetes study conducted by a researcher at a prominent university?
+  29. [0.705] What were the primary conclusions of a research study conducted by a renowned expert at a prestigious academic institution in the field of diabetes?
+  30. [0.738] What were the primary results of a diabetes study conducted by a researcher at a renowned university?
+  31. [0.511] What were the key results of a research study conducted by a medical professional at a well-known academic institution?
+  32. [0.542] What were the key results of the study conducted by a researcher at a prestigious medical institution?
+  33. [0.487] A researcher at a prominent university conducted a study on a common health issue. What were the primary outcomes?
+  34. [0.465] What were the main findings from a recent study by a researcher at a well-known institution?
+  35. [0.708] A researcher at a prominent university conducted a study on diabetes. What were the primary outcomes?
+  36. [0.752] What were the primary results of a study conducted by a researcher at a renowned institution on diabetes?
+  37. [0.658] What are the key outcomes of a diabetes study conducted by a researcher at a well-known university?
+  38. [0.518] A researcher from a prestigious university discovered new information about a widespread health condition. What were the primary results of the investigation?
+  39. [0.740] A researcher at a prominent academic institution studied diabetes. What were the primary results?
+  40. [0.535] What were the key results of a study conducted by a researcher at a prominent university on a common medical condition?
+  41. [0.384] What were the main outcomes of a recent investigation conducted by a researcher affiliated with a prestigious university?
+  42. [0.512] A researcher at a prestigious institution conducted a study on a significant health condition. What were the key results?
+  43. [0.742] What were the primary conclusions of a study on diabetes conducted by a researcher at a prestigious university?
+  44. [0.531] What were the primary conclusions of a study conducted by a researcher at a prestigious medical institution?
+  45. [0.553] What were the primary conclusions of a study conducted by a researcher at a prominent medical institution regarding a specific health condition?
+  46. [0.704] What are the primary results of a diabetes study conducted by a researcher at a major university?
+  47. [0.547] What were the main results of a study conducted by a professional at a prominent research institution on a specific health condition?
+  48. [0.554] What were the main findings from a study conducted by a researcher at a well-known university on a specific medical condition?
+
+============================================================
+
+QUESTION 7/10
+============================================================
+Original Question: A person in New York City experiences shortness of breath. What could be the cause?
+
+OLD PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: An individual in a densely populated urban area experiences respiratory distress. What could be the underlying reason?
+Number of candidates: 48
+Similarity range: 0.582 - 0.909
+Similarity mean: 0.794
+Similarity std: 0.095
+All candidates with similarities:
+   1. [0.869] What causes a person's shortness of breath in an urban area?
+   2. [0.831] A person in a large urban area experiences a sudden lack of breath. What could be the reason?
+   3. [0.682] A person in an urban area experiences respiratory distress. What could be the reason?
+   4. [0.883] What could be the cause of shortness of breath in someone living in a large urban setting?
+   5. [0.759] A person in a large urban area experiences difficulty breathing. What could be the underlying reason?
+   6. [0.909] What could be the cause of a person experiencing shortness of breath in a city?
+   7. [0.889] A person in a major metropolitan area experiences shortness of breath. What could be the underlying reason?
+   8. [0.759] A person in a large urban area experiences difficulty breathing. What could be the underlying reason?
+   9. [0.889] A person in a major urban area experiences shortness of breath. What could be the underlying issue?
+  10. [0.679] An individual in a major city suffers from respiratory distress. What could be the reason?
+  11. [0.625] An individual in a densely populated urban area experiences respiratory distress. What could be the underlying reason?
+  12. [0.708] A person in a large city experiences respiratory distress. What could be the reason for this condition?
+  13. [0.856] A person in a large city experiences shortness of breath. What could be the cause of a person's breathing issues in an urban area?
+  14. [0.768] What could be the reason for someone in a major city experiencing difficulty breathing?
+  15. [0.785] A person in a large city experiences difficulty breathing. What might be the underlying reason for this condition?
+  16. [0.890] What could be the cause of someone experiencing shortness of breath in a large urban area?
+  17. [0.724] A person in a large urban area experiences respiratory difficulty. What might be the cause?
+  18. [0.686] What could be the reason for an individual experiencing breathing difficulties in a metropolis?
+  19. [0.642] an individual in a specific metropolitan area is experiencing respiratory distress. What might be the underlying reason?
+  20. [0.582] A person in a major city in the northeastern United States feels a sudden shortage of air. What could be the reason for this?
+  21. [0.764] A person in a major urban area experiences difficulty breathing. What could be the underlying reason?
+  22. [0.888] A person in a large city experiences shortness of breath. What could be the underlying reason?
+  23. [0.898] A person in a large urban area experiences shortness of breath. What could be the cause?
+  24. [0.859] What could be the reason for a person's shortness of breath in an urban environment?
+  25. [0.641] A person from a metropolitan area experiences a symptom related to respiration. What could be the reason?
+  26. [0.743] A person in a large urban area has trouble breathing. What could be the underlying reason?
+  27. [0.897] A person in a major city experiences shortness of breath. What might be the explanation?
+  28. [0.688] A person in a major city experiences respiratory distress. What could be the underlying reason?
+  29. [0.886] What could be the cause of shortness of breath in an individual from a specific urban area?
+  30. [0.889] A person in a major metropolitan area experiences shortness of breath. What could be the underlying reason?
+  31. [0.736] A person in a major city feels breathless. What could be the underlying reason?
+  32. [0.874] What could be the reason for a person experiencing shortness of breath in a busy urban area?
+  33. [0.768] What could be the reason for someone in a major city experiencing difficulty breathing?
+  34. [0.885] A person in a large city experiences shortness of breath. What might be the underlying reason?
+  35. [0.845] What could be the cause of shortness of breath for someone living in a bustling metropolis?
+  36. [0.834] A person in a major metropolitan area feels short of breath. What might be the underlying reason?
+  37. [0.760] an individual in a major metropolitan area experiences difficulty breathing, what might be the underlying reason?
+  38. [0.909] A person in a major urban area experiences shortness of breath. What could be the cause?
+  39. [0.758] A person in a large city experiences a difficulty in breathing. What could be the explanation?
+  40. [0.889] A person in a major metropolitan area experiences shortness of breath. What could be the underlying reason?
+  41. [0.883] What could be the cause of shortness of breath in a person from a large urban area?
+  42. [0.763] What could be the underlying cause of a person's breathing difficulty in a major urban setting?
+  43. [0.697] A person in a major metropolitan area experiences respiratory distress. What could be the underlying cause?
+  44. [0.901] A person in a major city experiences shortness of breath. What could be the underlying reason?
+  45. [0.656] An individual in a city experiences respiratory distress. What might be the explanation?
+  46. [0.901] What could be the cause of someone's shortness of breath in a major city?
+  47. [0.842] A person in a large urban area experiences a feeling of shortness of breath. What could be the underlying reason?
+  48. [0.645] an individual in a large urban setting experiences respiratory distress. What might be the underlying reason?
+
+NEW DIVERSE PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: What is the possible explanation for a person experiencing difficulty breathing in a large urban area?
+Number of candidates: 46
+Similarity range: 0.651 - 0.924
+Similarity mean: 0.837
+Similarity std: 0.075
+All candidates with similarities:
+   1. [0.823] A person in a major urban area feels a sudden lack of breath. What could be the underlying reason?
+   2. [0.845] What could be the reason for a person's shortness of breath in a densely populated urban area?
+   3. [0.769] What could be the cause of a person in a major urban area experiencing breathing difficulties?
+   4. [0.875] What could be the reason for someone experiencing shortness of breath in a urban setting?
+   5. [0.651] What are some common causes of respiratory discomfort for someone in a large urban environment?
+   6. [0.777] A person in a city experiences breathing difficulties. What might be the reason for this issue?
+   7. [0.849] What are some possible reasons for shortness of breath in a person living in a large urban area?
+   8. [0.872] A person in an urban area experiences a sudden shortness of breath. What might be the reason for this symptom?
+   9. [0.838] A person in a major metropolitan area feels short of breath. What could be the underlying reason?
+  10. [0.780] An individual in a busy metropolitan area feels a sudden constriction of breath. What underlying condition could be responsible?
+  11. [0.676] A person in a large urban area experiences respiratory distress. What could be the source?
+  12. [0.828] What could be the underlying reason for someone feeling short of breath in an urban environment?
+  13. [0.717] A person in an urban area experiences a common respiratory issue. What could be the cause?
+  14. [0.764] A person in a major urban area experiences breathing difficulties. What might be the underlying reason?
+  15. [0.838] A person in a large metropolitan area experiences a lack of breath. What could be the reason?
+  16. [0.709] Someone in a large city is struggling to breathe. What could be the explanation?
+  17. [0.767] A person in a major urban area experiences difficulty breathing. What might be the reason?
+  18. [0.887] A person in a large city experiences shortness of breath. What might be the reason?
+  19. [0.864] A person in a metropolitan area feels a sudden shortness of breath. What could be the underlying reason?
+  20. [0.849] A person in a major city feels short of breath. What might be the reason?
+  21. [0.749] Someone in a major city in the northeastern United States has trouble breathing. What might be the reason?
+  22. [0.836] What could be the reason for shortness of breath in a certain city?
+  23. [0.697] A person in a major metropolitan area experiences respiratory distress. What could be the underlying cause?
+  24. [0.838] A person in a major city on the East Coast experiences shortness of breath. What might be the reason?
+  25. [0.739] What is the possible explanation for a person experiencing difficulty breathing in a large urban area?
+  26. [0.761] A person living in a large city in the northeastern United States experiences difficulty breathing. What could be the reason?
+  27. [0.911] A person in a major metropolitan area experiences shortness of breath. What could be the cause?
+  28. [0.866] A person in a major urban area feels short of breath. What could be the cause?
+  29. [0.909] A person in a major urban area experiences shortness of breath. What could be the cause?
+  30. [0.763] Someone in a metropolitan area is having difficulty breathing. What could be the cause?
+  31. [0.907] A person in a large city experiences shortness of breath. What could be the cause?
+  32. [0.924] A person in a major city experiences shortness of breath. What could be the cause?
+  33. [0.907] A person in a large city experiences shortness of breath. What could be the cause?
+  34. [0.903] A person in a major metropolitan area experiences shortness of breath. What could be the underlying cause?
+  35. [0.924] A person in a major city experiences shortness of breath. What could be the cause?
+  36. [0.826] What could be the reason for a person in a large city feeling short of breath?
+  37. [0.911] A person in a major metropolitan area experiences shortness of breath. What could be the cause?
+  38. [0.903] A person in a major metropolitan area experiences shortness of breath. What could be the underlying cause?
+  39. [0.914] A person in a metropolitan area experiences shortness of breath. What could be the cause?
+  40. [0.903] A person in a major metropolitan area experiences shortness of breath. What could be the underlying cause?
+  41. [0.884] A person in a major city in the eastern United States experiences shortness of breath. What could be the cause?
+  42. [0.864] A person in a major city on the East Coast of the United States experiences shortness of breath. What could be the cause?
+  43. [0.924] A person in a major city experiences shortness of breath. What could be the cause?
+  44. [0.924] A person in a major city experiences shortness of breath. What could be the cause?
+  45. [0.911] A person in a major metropolitan area experiences shortness of breath. What could be the cause?
+  46. [0.924] A person in a major city experiences shortness of breath. What could be the cause?
+
+============================================================
+
+QUESTION 8/10
+============================================================
+Original Question: What is the chemical symbol for gold?
+
+OLD PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: What is the symbolic representation for a valuable metal?
+Number of candidates: 50
+Similarity range: 0.643 - 0.883
+Similarity mean: 0.765
+Similarity std: 0.067
+All candidates with similarities:
+   1. [0.801] What is the chemical symbol for a valuable metal?
+   2. [0.714] What is the symbol for a valuable metal?
+   3. [0.801] What is the chemical symbol for a valuable metal?
+   4. [0.696] What is the symbolic representation of a valuable metal in chemistry?
+   5. [0.701] What is the symbol representing a valuable metal used in jewelry?
+   6. [0.787] What chemical symbol represents a valuable metal?
+   7. [0.705] What is the symbol used to represent a valuable metal?
+   8. [0.883] What is the chemical symbol for a precious metal?
+   9. [0.699] What is the symbol for a valuable metal used in jewelry?
+  10. [0.657] What is the chemical representation for a valuable metal?
+  11. [0.652] What is the symbolic representation of a valuable metal?
+  12. [0.812] What is the symbol for a precious metal?
+  13. [0.714] What is the symbol for a valuable metal?
+  14. [0.801] What is the chemical symbol for a valuable metal?
+  15. [0.643] What is the symbolic representation for a valuable metal?
+  16. [0.769] What is the chemical abbreviation for a precious metal?
+  17. [0.715] What is the symbol representing a valuable metal?
+  18. [0.643] What is the symbolic representation for a valuable metal?
+  19. [0.801] What is the chemical symbol for a valuable metal?
+  20. [0.790] What chemical symbol is associated with a valuable metal?
+  21. [0.801] What is the chemical symbol for a valuable metal?
+  22. [0.769] What is the symbol used to represent a valuable metal in chemistry?
+  23. [0.883] What is the chemical symbol for a precious metal?
+  24. [0.780] What is the chemical symbol for a valuable metal used in jewelry?
+  25. [0.801] What is the chemical symbol for a valuable metal?
+  26. [0.810] What is the chemical symbol for a certain valuable metal?
+  27. [0.883] What is the chemical symbol for a precious metal?
+  28. [0.801] What is the chemical symbol for a valuable metal?
+  29. [0.743] What is the chemical symbol for a specific element?
+  30. [0.818] What is the chemical symbol for a certain metal?
+  31. [0.715] What is the symbol representing a valuable metal?
+  32. [0.658] What is the chemical abbreviation for a valuable metal?
+  33. [0.812] What is the symbol for a specific precious metal?
+  34. [0.801] What is the chemical symbol for a valuable metal?
+  35. [0.883] What is the chemical symbol for a precious metal?
+  36. [0.883] What is the chemical symbol for a precious metal?
+  37. [0.801] What is the chemical symbol for a valuable metal?
+  38. [0.714] What is the symbol for a valuable metal?
+  39. [0.657] What is the chemical representation for a valuable metal?
+  40. [0.721] What chemical symbol represents a valuable yellow metal?
+  41. [0.801] What is the chemical symbol for a valuable metal?
+  42. [0.801] What is the chemical symbol for a valuable metal?
+  43. [0.714] What is the symbol for a valuable metal?
+  44. [0.801] What is the chemical symbol for a valuable metal?
+  45. [0.756] What is the chemical symbol for a certain element?
+  46. [0.801] What is the chemical symbol for a valuable metal?
+  47. [0.801] What is the chemical symbol for a valuable metal?
+  48. [0.801] What is the chemical symbol for a valuable metal?
+  49. [0.658] What is the chemical abbreviation for a valuable metal?
+  50. [0.801] What is the chemical symbol for a valuable metal?
+
+NEW DIVERSE PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: What is the symbol used to represent a valuable yellow metal in chemistry?
+Number of candidates: 50
+Similarity range: 0.632 - 0.883
+Similarity mean: 0.765
+Similarity std: 0.061
+All candidates with similarities:
+   1. [0.801] What is the chemical symbol for a valuable metal?
+   2. [0.644] What is the symbol denoting a naturally occurring yellow metal?
+   3. [0.632] What is the chemical abbreviation for a valuable metal element?
+   4. [0.683] What is the symbol representing a valuable and highly prized metal?
+   5. [0.804] What is the chemical symbol for a specific metal?
+   6. [0.801] What is the chemical symbol for a valuable metal?
+   7. [0.642] What is the symbol representing a valuable yellow metal?
+   8. [0.801] What is the chemical symbol for a valuable metal?
+   9. [0.707] What is the chemical notation for a valuable metal?
+  10. [0.717] What chemical symbol is associated with a valuable yellow metal?
+  11. [0.721] What chemical symbol is used to represent a valuable yellow metal?
+  12. [0.767] What chemical symbol denotes a valuable, yellow precious metal?
+  13. [0.705] What is the symbol used to represent a valuable metal?
+  14. [0.769] What is the chemical symbol for a valuable metal often used in jewelry?
+  15. [0.751] What is the chemical symbol for a specific metal element?
+  16. [0.776] What is the symbol representing a valuable metal in chemistry?
+  17. [0.801] What is the chemical symbol for a valuable metal?
+  18. [0.760] What chemical symbol represents a highly valued metal?
+  19. [0.846] What is the symbol used to represent a precious metal in chemistry?
+  20. [0.715] What is the symbol representing a valuable metal?
+  21. [0.801] What is the chemical symbol for a valuable metal?
+  22. [0.769] What is the chemical symbol for a valuable metal often used in jewelry?
+  23. [0.769] What is the chemical symbol for a valuable metal commonly used in jewelry?
+  24. [0.823] What is the symbol for a certain precious metal?
+  25. [0.787] What chemical symbol represents a valuable metal?
+  26. [0.883] What is the chemical symbol for a precious metal?
+  27. [0.801] What is the chemical symbol for a valuable metal?
+  28. [0.646] What is the symbol for a yellow, valuable metal?
+  29. [0.787] What chemical symbol represents a valuable metal?
+  30. [0.818] What is the chemical symbol for a certain metal?
+  31. [0.801] What is the chemical symbol for a valuable metal?
+  32. [0.801] What is the chemical symbol for a valuable metal?
+  33. [0.883] What is the chemical symbol for a precious metal?
+  34. [0.714] What is the symbol for a valuable metal?
+  35. [0.801] What is the chemical symbol for a valuable metal?
+  36. [0.816] What is the chemical symbol for a yellow precious metal?
+  37. [0.804] What is the chemical symbol for a specific metal?
+  38. [0.734] What is the chemical symbol for a yellow metal?
+  39. [0.734] What is the chemical symbol for a yellow metal?
+  40. [0.801] What is the chemical symbol for a valuable metal?
+  41. [0.812] What is the symbol for a precious metal?
+  42. [0.710] What is the symbol used to represent a valuable yellow metal in chemistry?
+  43. [0.765] What is the chemical symbol for a valuable metal element?
+  44. [0.658] What is the chemical abbreviation for a specific valuable metal?
+  45. [0.801] What is the chemical symbol for a valuable metal?
+  46. [0.769] What is the symbol used to represent a valuable metal in chemistry?
+  47. [0.809] What is the chemical symbol for a particular metal?
+  48. [0.710] What is the symbol used to represent a valuable yellow metal in chemistry?
+  49. [0.883] What is the chemical symbol for a precious metal?
+  50. [0.714] What is the symbol for a valuable metal?
+
+============================================================
+
+QUESTION 9/10
+============================================================
+Original Question: A patient at General Hospital has been diagnosed with hypertension. What lifestyle changes are recommended?
+
+OLD PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: A patient at a healthcare facility has been diagnosed with high blood pressure. What modifications to their daily routine are suggested?
+Number of candidates: 50
+Similarity range: 0.520 - 0.862
+Similarity mean: 0.723
+Similarity std: 0.095
+All candidates with similarities:
+   1. [0.695] A patient at a well-known medical facility has been diagnosed with a common cardiovascular condition. What alterations in daily habits are suggested?
+   2. [0.788] A patient at a certain medical facility has been diagnosed with elevated blood pressure. What adjustments to daily habits are suggested for someone in this situation?
+   3. [0.815] A patient in a major medical facility has been diagnosed with high blood pressure. What changes to their daily routine are suggested to help manage the condition?
+   4. [0.647] What lifestyle modifications are suggested for an individual diagnosed with a specific condition at a healthcare facility?
+   5. [0.795] A patient at a medical facility has been diagnosed with a condition affecting blood pressure. What adjustments to daily habits are typically suggested?
+   6. [0.622] A patient at a prominent medical facility has been diagnosed with a certain health condition. What adjustments to their daily routine are typically recommended?
+   7. [0.671] What lifestyle modifications are typically advised for an individual with a specific medical condition at a prominent healthcare facility?
+   8. [0.815] A patient at a hospital has been diagnosed with high blood pressure. What changes are suggested to improve their health?
+   9. [0.623] What modifications in daily routine are suggested for an individual with a certain medical condition at a prominent medical institution?
+  10. [0.830] A patient at a public healthcare facility has been diagnosed with high blood pressure. What changes to their daily habits are suggested?
+  11. [0.809] A patient at a medical facility has been diagnosed with high blood pressure. What modifications to daily habits are advised for individuals with this condition?
+  12. [0.712] A patient at a certain hospital has been diagnosed with a common cardiovascular condition. What adjustments to their daily routine are often suggested to manage the condition?
+  13. [0.539] What general recommendations are typically made to an individual with a specific medical condition?
+  14. [0.591] A patient at a medical facility has been diagnosed with a certain condition. What are the recommended adjustments to daily habits and routines?
+  15. [0.689] A patient at a hospital has been diagnosed with a common cardiovascular condition. What life modifications are typically suggested?
+  16. [0.862] What lifestyle adjustments are recommended for someone experiencing hypertension in a specific healthcare setting?
+  17. [0.826] A patient at a healthcare facility has been diagnosed with high blood pressure. What modifications to their daily routine are suggested?
+  18. [0.726] A patient in a public healthcare institution has been diagnosed with a cardiovascular condition. What adjustments to daily habits are advised?
+  19. [0.812] What lifestyle adjustments are typically advised for someone with high blood pressure in a health facility?
+  20. [0.794] A patient at a medical facility has been diagnosed with elevated blood pressure. What modifications are suggested for an individual's habits?
+  21. [0.821] What lifestyle adjustments are typically suggested for an individual diagnosed with high blood pressure in a healthcare facility?
+  22. [0.804] A patient at a medical facility has been diagnosed with high blood pressure. What adjustments to daily habits are typically suggested?
+  23. [0.768] What are the recommended lifestyle adjustments for an individual with elevated blood pressure in a specific medical setting?
+  24. [0.801] A patient at a local medical institution has been diagnosed with high blood pressure. What adjustments to their daily habits are typically advised?
+  25. [0.561] A person from a medical facility has been diagnosed with a common condition affecting the circulatory system. What alterations in daily routine are typically suggested?
+  26. [0.690] A patient at a well-known institution has been diagnosed with a common cardiovascular condition. What alterations in daily routine are suggested?
+  27. [0.723] A patient at a major medical facility has been diagnosed with a common cardiovascular condition. What adjustments to daily habits are typically suggested?
+  28. [0.666] What general health guidelines would be suggested for an individual with an elevated blood pressure reading at a particular medical facility?
+  29. [0.543] A patient at a hospital has been diagnosed with a certain medical condition. What personal modifications are typically suggested?
+  30. [0.804] A patient in a hospital has been diagnosed with high blood pressure. What adjustments are suggested for their daily routine?
+  31. [0.766] A person at a hospital has recently been diagnosed with a high blood pressure condition. What life adjustments are typically suggested for this situation?
+  32. [0.797] A patient at an urban medical facility has been diagnosed with high blood pressure. What modifications to daily routines are suggested?
+  33. [0.538] A patient at a medical facility has been diagnosed with a certain medical condition. What adjustments are typically recommended?
+  34. [0.787] What lifestyle adjustments are advisable for an individual with high blood pressure in a medical setting?
+  35. [0.715] A patient in a well-known medical facility has been diagnosed with a common cardiovascular condition. What adjustments to daily habits are typically suggested?
+  36. [0.694] What modifications to a person's daily routine are suggested to help manage elevated blood pressure?
+  37. [0.817] A patient at a hospital has been diagnosed with a condition affecting blood pressure. What modifications to daily habits are advised?
+  38. [0.520] A patient at an institution has been diagnosed with a certain condition. What adjustments are suggested for someone with a similar diagnosis?
+  39. [0.553] A patient at an institution has been diagnosed with a common condition. What modifications to daily routines are recommended to manage it?
+  40. [0.783] A patient at a healthcare facility has been diagnosed with high blood pressure. What adjustments to daily routine are typically advised?
+  41. [0.810] An individual at a medical facility has been diagnosed with high blood pressure. What modifications are suggested for daily habits?
+  42. [0.785] What health modifications are advised for someone recently diagnosed with a blood pressure condition at a community medical facility?
+  43. [0.616] A patient at a specific medical facility has been diagnosed with a certain health condition. What adjustments to their daily routine are typically suggested?
+  44. [0.782] A patient at a hospital has been diagnosed with high blood pressure. What personal habits should be altered to improve overall health?
+  45. [0.687] What lifestyle modifications are suggested for an individual with a specific health condition at a public hospital?
+  46. [0.688] What adjustments to an individual's daily routine are suggested for someone diagnosed with a common cardiovascular issue at a local medical facility?
+  47. [0.610] A patient at a hospital has been diagnosed with a certain condition. What adjustments are suggested for a person's daily routine?
+  48. [0.841] A patient at a hospital has been diagnosed with high blood pressure. What changes to daily habits are suggested?
+  49. [0.716] A patient at a specific medical facility has been diagnosed with a common cardiovascular condition. What adjustments to daily habits are typically recommended?
+  50. [0.778] A patient at a hospital has been diagnosed with high blood pressure. What adjustments are suggested to help manage their condition?
+
+NEW DIVERSE PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: What modifications to daily habits are suggested for someone experiencing elevated blood pressure at a medical facility?
+Number of candidates: 50
+Similarity range: 0.567 - 0.921
+Similarity mean: 0.771
+Similarity std: 0.075
+All candidates with similarities:
+   1. [0.567] 1 What changes to an individual's daily routine are typically suggested for someone with a specific medical condition?
+   2. [0.615] A patient from a medical institution has been diagnosed with a certain health condition. What changes to their daily routine are suggested?
+   3. [0.739] What changes to daily routines are advised for someone with an elevated blood pressure reading in a typical medical facility?
+   4. [0.821] A patient at a general medical facility has been diagnosed with elevated blood pressure. What adjustments to daily habits are typically suggested?
+   5. [0.774] What are the suggested modifications to an individual's daily routine after a diagnosis of high blood pressure at a medical facility?
+   6. [0.773] What modifications to daily habits are suggested for someone experiencing elevated blood pressure at a medical facility?
+   7. [0.715] What general adjustments are typically recommended to someone diagnosed with elevated blood pressure at a large healthcare facility?
+   8. [0.707] What general modifications are typically suggested for individuals dealing with elevated blood pressure within a specific healthcare facility?
+   9. [0.797] A patient in a healthcare facility has been diagnosed with elevated blood pressure. What adjustments to daily habits are typically suggested?
+  10. [0.769] A patient at an institution has undergone a diagnosis with a condition affecting blood pressure. What modifications to daily habits are suggested to someone in this situation?
+  11. [0.796] A patient at a certain institution has been diagnosed with high blood pressure. What adjustments to daily habits are typically advised?
+  12. [0.741] What habits should someone change to manage high blood pressure in a specific medical setting?
+  13. [0.827] A patient at a certain medical facility has been diagnosed with high blood pressure. What changes to daily habits are suggested for this individual?
+  14. [0.831] A patient at a medical facility has been diagnosed with elevated blood pressure. What changes to daily habits are advised?
+  15. [0.758] What adjustments in daily habits are typically advised for someone with elevated blood pressure at a large medical facility?
+  16. [0.714] A patient at a certain hospital has been diagnosed with a common cardiovascular issue. What daily adjustments would be advised for someone in their situation?
+  17. [0.631] What lifestyle adjustments are typically suggested for someone recently diagnosed with a common health condition?
+  18. [0.724] 1 What adjustments are recommended for a patient at a healthcare facility to manage blood pressure issues?
+  19. [0.594] A person who visited a medical facility has been told to make adjustments to their daily habits to manage a specific condition. What modifications are typically suggested?
+  20. [0.727] What habits are generally encouraged to help individuals manage high blood pressure in a hospital setting?
+  21. [0.826] A patient at a hospital has been diagnosed with a condition associated with high blood pressure. What modifications to their daily habits are suggested?
+  22. [0.796] A patient at a medical facility has been diagnosed with high blood pressure. What adjustments to their daily routine are advised?
+  23. [0.738] A patient in a well-known medical facility has been diagnosed with high blood pressure. What adjustments are suggested to improve their well-being?
+  24. [0.801] A patient at a healthcare facility has been diagnosed with a condition involving high blood pressure. What alterations to daily habits are suggested?
+  25. [0.799] A patient in a medical facility has been diagnosed with high blood pressure. What adjustments to their daily routine are suggested?
+  26. [0.795] A patient at a medical facility has been diagnosed with high blood pressure. What adjustments to daily habits are suggested for optimal health?
+  27. [0.726] A patient at a regional hospital has been diagnosed with a common cardiovascular condition. What modifications to daily habits are suggested?
+  28. [0.845] A patient at a hospital has been diagnosed with high blood pressure. What changes in daily habits are recommended?
+  29. [0.725] A patient at a medical facility has been diagnosed with a cardiovascular condition. What adjustments to their daily routine are suggested?
+  30. [0.746] A patient at a certain hospital has been diagnosed with a cardiovascular condition. What adjustments to daily habits are typically recommended?
+  31. [0.884] A patient at a hospital has been diagnosed with high blood pressure. What lifestyle modifications are suggested?
+  32. [0.816] A patient at a hospital has been diagnosed with high blood pressure. What adjustments to daily habits are advised?
+  33. [0.816] A patient at a hospital has been diagnosed with high blood pressure. What adjustments to daily habits are advised?
+  34. [0.810] A patient at a healthcare facility has been diagnosed with high blood pressure. What adjustments to daily habits are advised?
+  35. [0.793] A patient at a major healthcare facility has been diagnosed with high blood pressure. What adjustments to their daily routine are typically suggested?
+  36. [0.609] A patient at a hospital has been diagnosed with a condition. What adjustments to their daily routine are typically advised?
+  37. [0.716] A patient at a prominent medical institution has been diagnosed with a common cardiovascular condition. What adjustments to daily habits are typically recommended?
+  38. [0.823] What lifestyle adjustments are suggested for someone experiencing high blood pressure at a medical facility?
+  39. [0.798] A patient at a medical facility has been diagnosed with high blood pressure. What adjustments are suggested for their daily routine?
+  40. [0.825] A patient at a major hospital has been diagnosed with high blood pressure. What adjustments to daily habits are suggested?
+  41. [0.785] A patient at a local hospital has been diagnosed with high blood pressure. What adjustments to daily routines are typically suggested?
+  42. [0.864] What lifestyle changes are suggested for a patient at a well-known medical facility with a high blood pressure diagnosis?
+  43. [0.877] A patient at a major hospital has been diagnosed with high blood pressure. What lifestyle adjustments are suggested?
+  44. [0.851] A patient at a hospital has been diagnosed with high blood pressure. What changes to their daily habits are recommended?
+  45. [0.836] A patient at a major medical facility has been diagnosed with high blood pressure. What changes to daily habits are usually recommended?
+  46. [0.680] A patient at a specific hospital has been diagnosed with a certain condition. What lifestyle modifications are recommended for their overall well-being?
+  47. [0.795] A patient at a specific hospital has been diagnosed with high blood pressure. What adjustments to their daily routine are typically recommended for this condition?
+  48. [0.815] A patient at a specific medical facility has been diagnosed with elevated blood pressure. What modifications in daily habits are suggested?
+  49. [0.921] What lifestyle changes are typically recommended for individuals with hypertension at a specific hospital?
+  50. [0.812] A patient at a well-known medical facility has been diagnosed with high blood pressure. What changes in daily routine are typically recommended?
+
+============================================================
+
+QUESTION 10/10
+============================================================
+Original Question: Which programming language was created by Guido van Rossum?
+
+OLD PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: What programming language was developed by a renowned computer scientist?
+Number of candidates: 43
+Similarity range: 0.523 - 0.733
+Similarity mean: 0.662
+Similarity std: 0.038
+All candidates with similarities:
+   1. [0.689] What programming language was designed by someone involved in a certain project?
+   2. [0.623] What programming language was created by a key figure from an educational institution?
+   3. [0.706] What programming language was developed by a certain programmer?
+   4. [0.614] What language was designed by a developer from a certain organization?
+   5. [0.691] What language was developed by a prominent programmer?
+   6. [0.660] What programming language was developed by a prominent figure in the software industry?
+   7. [0.668] What programming language was developed by a prominent computer scientist at some point in history?
+   8. [0.685] What programming language was developed by an individual from the software industry?
+   9. [0.674] What programming language was developed by a renowned individual from a specific field?
+  10. [0.559] Which language was developed by a prominent computer scientist from a notable entity?
+  11. [0.694] What programming language was developed by an individual?
+  12. [0.660] What programming language was developed by a renowned computer scientist?
+  13. [0.661] What programming language was developed by a pioneer in the field of computer science?
+  14. [0.682] What programming language was developed by a renowned computer scientist from Europe?
+  15. [0.643] Which programming language was developed by a pioneer in the field of software development?
+  16. [0.656] What programming language was developed by a pioneering computer scientist?
+  17. [0.733] What programming language was created by a well-known individual?
+  18. [0.660] What programming language was developed by a prominent figure in the field of computer science?
+  19. [0.697] What programming language was developed by a renowned individual?
+  20. [0.674] Which programming language was developed by someone from a certain field of computer science?
+  21. [0.690] What programming language was developed by a well-known individual from a particular profession?
+  22. [0.619] What language was developed by a pioneering software professional?
+  23. [0.672] What programming language was developed by a prominent individual from the field of software engineering?
+  24. [0.674] What programming language was developed by someone who is often credited with its inception?
+  25. [0.688] What programming language was developed by a prominent individual from a certain field?
+  26. [0.699] What programming language was developed by a well-known programmer?
+  27. [0.659] What programming language was developed by a prominent individual from a prestigious institution?
+  28. [0.674] What programming language was developed by a renowned individual from a specific field?
+  29. [0.673] What programming language was developed by a well-known figure in the software industry?
+  30. [0.674] What programming language was developed by a renowned professional from a specific background?
+  31. [0.691] Which programming language was developed by a prominent computer scientist from a European country?
+  32. [0.648] What programming language was developed by a pioneer in software engineering?
+  33. [0.646] What programming language was developed by a renowned software expert?
+  34. [0.701] What programming language was created by a well-known individual from a prominent technology organization?
+  35. [0.523] What language was developed by a renowned individual from a technical background?
+  36. [0.617] What programming language was developed by a key figure in the field of computer science?
+  37. [0.687] Which programming language was developed by a renowned individual from a particular field?
+  38. [0.668] Which programming language was developed by a prominent computer scientist from a certain region?
+  39. [0.676] What programming language was created by an individual from the field of computing?
+  40. [0.609] What programming language was developed by a key figure in the tech industry?
+  41. [0.673] What programming language was developed by a certain individual from a particular field?
+  42. [0.609] What programming language was developed by a key figure in the computer science field?
+  43. [0.666] What programming language was developed by a prominent computer scientist?
+
+NEW DIVERSE PHRASE DP IMPLEMENTATION:
+----------------------------------------
+Perturbed: Which programming language was invented by a prominent developer of a well-known entity?
+Number of candidates: 49
+Similarity range: 0.512 - 0.729
+Similarity mean: 0.661
+Similarity std: 0.039
+All candidates with similarities:
+   1. [0.646] What programming language was developed by a prominent figure from the computing community?
+   2. [0.584] What language was developed by a renowned software developer in Europe?
+   3. [0.677] Which programming language was developed by a person from a specific professional background?
+   4. [0.594] What language was designed by a developer for a specific platform?
+   5. [0.677] What programming language was developed by an individual from a particular country?
+   6. [0.648] Which programming language was developed by a computer professional from a specific country?
+   7. [0.697] What programming language was developed by a renowned individual?
+   8. [0.615] Which programming language was developed by a key figure in the field?
+   9. [0.512] is there a specific language that a certain individual created?
+  10. [0.633] What programming language was developed by an individual with a significant influence in the field of software development?
+  11. [0.660] What programming language was developed by a renowned computer scientist?
+  12. [0.604] What programming language was developed by someone in the IT sector?
+  13. [0.692] What programming language was designed by a well-known computer professional?
+  14. [0.661] Which programming language was developed by a prominent figure in the field of computer science?
+  15. [0.666] What programming language was developed by a prominent computer scientist?
+  16. [0.671] What programming language was developed by a prominent programmer from a certain country?
+  17. [0.654] What programming language was designed by an individual from a specific technical field?
+  18. [0.700] Which person developed a programming language?
+  19. [0.651] Which popular computer language was developed by a well-known programmer?
+  20. [0.699] What programming language was developed by a well-known programmer?
+  21. [0.729] Which programming language was created by a well-known programmer?
+  22. [0.703] Which programming language was devised by an individual behind a well-known project?
+  23. [0.669] What programming language was developed by a well-known computer scientist?
+  24. [0.690] What programming language was developed by a well-known software pioneer?
+  25. [0.631] What programming language was initially developed by a key individual within an organization?
+  26. [0.661] What programming language was developed by a prominent figure in the computer science community?
+  27. [0.615] Which programming language was developed by the creator of Python?
+  28. [0.624] What programming language was invented by the creator of Python?
+  29. [0.641] What programming language was developed by the individual who created a popular scripting tool?
+  30. [0.665] Which programming language was developed by a well-known individual from a prestigious institution?
+  31. [0.643] What programming language was developed by a prominent figure in the tech industry?
+  32. [0.706] What programming language was developed by a certain programmer?
+  33. [0.682] What programming language was developed by a specific individual from a particular industry?
+  34. [0.660] What programming language was developed by a notable computer scientist?
+  35. [0.680] What programming language was created by a well-known individual from a specific community?
+  36. [0.665] What programming language was created by a developer from a prominent institution?
+  37. [0.709] What programming language was developed by a well-known individual?
+  38. [0.703] Which programming language was developed by a prominent programmer?
+  39. [0.660] What programming language was developed by a renowned computer scientist?
+  40. [0.656] Which programming language was invented by a prominent developer of a well-known entity?
+  41. [0.677] Which programming language was developed by an individual who is known for his work in the field of computer science?
+  42. [0.635] What programming language was developed by the person who created Python?
+  43. [0.666] What programming language was developed by a prominent computer scientist?
+  44. [0.682] Which programming language was created by a well-known programmer from the 20th century?
+  45. [0.645] What programming language was developed by a renowned computer scientist from a prominent research institution?
+  46. [0.703] Which programming language was created by a renowned individual from the field of computer science?
+  47. [0.628] What programming language was developed by a software developer?
+  48. [0.678] Which programming language was created by a prominent software developer?
+  49. [0.719] Which programming language was developed by a well-known individual?
+
+============================================================
+
+
+================================================================================
+SUMMARY COMPARISON
+================================================================================
+OLD Implementation:
+  Average similarity range: 0.361 ± 0.114
+  Average similarity mean: 0.687 ± 0.121
+  Average similarity std: 0.085 ± 0.023
+
+NEW Implementation:
+  Average similarity range: 0.394 ± 0.145
+  Average similarity mean: 0.701 ± 0.136
+  Average similarity std: 0.095 ± 0.038
+
+IMPROVEMENT:
+  Range improvement: +9.3%
+  Std improvement: +11.5%

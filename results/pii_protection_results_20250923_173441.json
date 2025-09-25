@@ -1,0 +1,218 @@
+{
+  "PhraseDP": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "What is the relationship between a person in a public figure role and their occupation in a government institution?"
+        }
+      ]
+    },
+    "1.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "Is it a person from one field or a public figure from another profession that holds a position in an organization that creates content?"
+        }
+      ]
+    },
+    "2.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "Does a certain government position exist in a country with a shared identity?"
+        }
+      ]
+    },
+    "2.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "What is the relationship between a professional and a role in a certain production?"
+        }
+      ]
+    },
+    "3.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "Does someone from a particular area have a title in a certain industry at a time?"
+        }
+      ]
+    }
+  },
+  "InferDPT": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "[InferDPT-1.0] 1073d46f-2241-459b-ab01-851be8d26436"
+        }
+      ]
+    },
+    "1.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "[InferDPT-1.5] 1073d46f-2241-459b-ab01-851be8d26436"
+        }
+      ]
+    },
+    "2.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "[InferDPT-2.0] 1073d46f-2241-459b-ab01-851be8d26436"
+        }
+      ]
+    },
+    "2.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "[InferDPT-2.5] 1073d46f-2241-459b-ab01-851be8d26436"
+        }
+      ]
+    },
+    "3.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "[InferDPT-3.0] 1073d46f-2241-459b-ab01-851be8d26436"
+        }
+      ]
+    }
+  },
+  "SANTEXT+": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "1073d46f2241459bab01851be8d26436"
+        }
+      ]
+    },
+    "1.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "1073d46f2241459bab01851be8d26436"
+        }
+      ]
+    },
+    "2.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "1073d46f2241459bab01851be8d26436"
+        }
+      ]
+    },
+    "2.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "after"
+        }
+      ]
+    },
+    "3.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "1073d46f2241459bab01851be8d26436"
+        }
+      ]
+    }
+  }
+}

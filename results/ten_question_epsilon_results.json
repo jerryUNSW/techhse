@@ -1,0 +1,524 @@
+{
+  "total_questions": 10,
+  "epsilon_values": [
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0
+  ],
+  "samples_per_epsilon": 30,
+  "per_question_results": [
+    {
+      "question_idx": 1,
+      "question": "What is the capital of France?",
+      "total_candidates": 302,
+      "balanced_candidates": 20,
+      "similarity_range": [
+        0.03735123574733734,
+        0.9622172117233276
+      ],
+      "mean_similarity": 0.5474434314258644,
+      "trend_slope": 0.0580424512780847,
+      "is_monotonic": false,
+      "epsilon_results": [
+        {
+          "epsilon": 0.5,
+          "observed_mean": 0.5774603199213744,
+          "observed_sem": 0.05310376935540566,
+          "expected_mean": 0.5866470305217604
+        },
+        {
+          "epsilon": 1.0,
+          "observed_mean": 0.6625755517433087,
+          "observed_sem": 0.04519421446593381,
+          "expected_mean": 0.623815975732644
+        },
+        {
+          "epsilon": 1.5,
+          "observed_mean": 0.7079560250043869,
+          "observed_sem": 0.038965587282122474,
+          "expected_mean": 0.6589158643319075
+        },
+        {
+          "epsilon": 2.0,
+          "observed_mean": 0.691073015332222,
+          "observed_sem": 0.04775682075490385,
+          "expected_mean": 0.6913743118096453
+        },
+        {
+          "epsilon": 2.5,
+          "observed_mean": 0.739481975014011,
+          "observed_sem": 0.03923414497673748,
+          "expected_mean": 0.7208413486274575
+        },
+        {
+          "epsilon": 3.0,
+          "observed_mean": 0.7378416473666827,
+          "observed_sem": 0.04236906132248037,
+          "expected_mean": 0.7471808699092206
+        }
+      ]
+    },
+    {
+      "question_idx": 2,
+      "question": "Who wrote Romeo and Juliet?",
+      "total_candidates": 335,
+      "balanced_candidates": 335,
+      "similarity_range": [
+        0.055070068687200546,
+        0.931137204170227
+      ],
+      "mean_similarity": 0.5261712281228001,
+      "trend_slope": 0.046048867986315745,
+      "is_monotonic": true,
+      "epsilon_results": [
+        {
+          "epsilon": 0.5,
+          "observed_mean": 0.5067907363176346,
+          "observed_sem": 0.031152967466467705,
+          "expected_mean": 0.5425611649797226
+        },
+        {
+          "epsilon": 1.0,
+          "observed_mean": 0.5761672228574752,
+          "observed_sem": 0.031729671612587954,
+          "expected_mean": 0.5587093848254859
+        },
+        {
+          "epsilon": 1.5,
+          "observed_mean": 0.5941685338815054,
+          "observed_sem": 0.024244386676356065,
+          "expected_mean": 0.5746595188774397
+        },
+        {
+          "epsilon": 2.0,
+          "observed_mean": 0.6013523548841476,
+          "observed_sem": 0.03058638785078718,
+          "expected_mean": 0.5904492468817789
+        },
+        {
+          "epsilon": 2.5,
+          "observed_mean": 0.6311519344647726,
+          "observed_sem": 0.033601253247188025,
+          "expected_mean": 0.6061048405552827
+        },
+        {
+          "epsilon": 3.0,
+          "observed_mean": 0.633534183104833,
+          "observed_sem": 0.02689211471431632,
+          "expected_mean": 0.62163705677883
+        }
+      ]
+    },
+    {
+      "question_idx": 3,
+      "question": "What is the largest planet in our solar system?",
+      "total_candidates": 270,
+      "balanced_candidates": 10,
+      "similarity_range": [
+        0.05686342716217041,
+        0.989578127861023
+      ],
+      "mean_similarity": 0.7745617959786344,
+      "trend_slope": 0.039416106329077806,
+      "is_monotonic": false,
+      "epsilon_results": [
+        {
+          "epsilon": 0.5,
+          "observed_mean": 0.6397772610187531,
+          "observed_sem": 0.05204079323150513,
+          "expected_mean": 0.6023183164605297
+        },
+        {
+          "epsilon": 1.0,
+          "observed_mean": 0.7103823800881703,
+          "observed_sem": 0.05326296177878774,
+          "expected_mean": 0.6405326926508673
+        },
+        {
+          "epsilon": 1.5,
+          "observed_mean": 0.6952508178850015,
+          "observed_sem": 0.044119243731099426,
+          "expected_mean": 0.6762570230365065
+        },
+        {
+          "epsilon": 2.0,
+          "observed_mean": 0.6879013868669669,
+          "observed_sem": 0.04656847130750074,
+          "expected_mean": 0.7089525058725832
+        },
+        {
+          "epsilon": 2.5,
+          "observed_mean": 0.7870727101961772,
+          "observed_sem": 0.034439083614706295,
+          "expected_mean": 0.7383458890379953
+        },
+        {
+          "epsilon": 3.0,
+          "observed_mean": 0.7331893213093281,
+          "observed_sem": 0.04215232588373005,
+          "expected_mean": 0.7643976492496336
+        }
+      ]
+    },
+    {
+      "question_idx": 4,
+      "question": "What is the chemical symbol for gold?",
+      "total_candidates": 255,
+      "balanced_candidates": 30,
+      "similarity_range": [
+        0.10533665120601654,
+        0.9724855422973633
+      ],
+      "mean_similarity": 0.6169240963225271,
+      "trend_slope": 0.09479342574164988,
+      "is_monotonic": false,
+      "epsilon_results": [
+        {
+          "epsilon": 0.5,
+          "observed_mean": 0.43441947748263676,
+          "observed_sem": 0.05133294786763547,
+          "expected_mean": 0.5876204740042306
+        },
+        {
+          "epsilon": 1.0,
+          "observed_mean": 0.6458682323495547,
+          "observed_sem": 0.04939843392940486,
+          "expected_mean": 0.6253760343875348
+        },
+        {
+          "epsilon": 1.5,
+          "observed_mean": 0.5836091528336207,
+          "observed_sem": 0.03822889842123185,
+          "expected_mean": 0.6612476262666259
+        },
+        {
+          "epsilon": 2.0,
+          "observed_mean": 0.6260390465458234,
+          "observed_sem": 0.04555484390436802,
+          "expected_mean": 0.6945539256271951
+        },
+        {
+          "epsilon": 2.5,
+          "observed_mean": 0.6911040792862574,
+          "observed_sem": 0.04932921234164999,
+          "expected_mean": 0.7248565740630688
+        },
+        {
+          "epsilon": 3.0,
+          "observed_mean": 0.7305689806739489,
+          "observed_sem": 0.048165397194364856,
+          "expected_mean": 0.7519584997969091
+        }
+      ]
+    },
+    {
+      "question_idx": 5,
+      "question": "In which year did World War II end?",
+      "total_candidates": 237,
+      "balanced_candidates": 237,
+      "similarity_range": [
+        0.02832598239183426,
+        0.8726227283477783
+      ],
+      "mean_similarity": 0.5334390046915928,
+      "trend_slope": 0.053103363230114914,
+      "is_monotonic": false,
+      "epsilon_results": [
+        {
+          "epsilon": 0.5,
+          "observed_mean": 0.5330218642950058,
+          "observed_sem": 0.0330373054740393,
+          "expected_mean": 0.5505455396450366
+        },
+        {
+          "epsilon": 1.0,
+          "observed_mean": 0.5791930869221688,
+          "observed_sem": 0.03875695978971537,
+          "expected_mean": 0.5673000962577968
+        },
+        {
+          "epsilon": 1.5,
+          "observed_mean": 0.628025163213412,
+          "observed_sem": 0.024695012944809445,
+          "expected_mean": 0.583589908464333
+        },
+        {
+          "epsilon": 2.0,
+          "observed_mean": 0.5778781240185101,
+          "observed_sem": 0.031420603859920286,
+          "expected_mean": 0.5993154444065036
+        },
+        {
+          "epsilon": 2.5,
+          "observed_mean": 0.72102270424366,
+          "observed_sem": 0.027179756090577503,
+          "expected_mean": 0.6143934046065772
+        },
+        {
+          "epsilon": 3.0,
+          "observed_mean": 0.6438152730464936,
+          "observed_sem": 0.031229523125834893,
+          "expected_mean": 0.6287585368239577
+        }
+      ]
+    },
+    {
+      "question_idx": 6,
+      "question": "What is the speed of light in vacuum?",
+      "total_candidates": 335,
+      "balanced_candidates": 60,
+      "similarity_range": [
+        0.03310767561197281,
+        0.9962120056152344
+      ],
+      "mean_similarity": 0.5508620865198214,
+      "trend_slope": 0.04283801210778107,
+      "is_monotonic": false,
+      "epsilon_results": [
+        {
+          "epsilon": 0.5,
+          "observed_mean": 0.6547531719009082,
+          "observed_sem": 0.04447301083615789,
+          "expected_mean": 0.5845527772950238
+        },
+        {
+          "epsilon": 1.0,
+          "observed_mean": 0.6701846296588579,
+          "observed_sem": 0.04561653036149029,
+          "expected_mean": 0.6228906664203775
+        },
+        {
+          "epsilon": 1.5,
+          "observed_mean": 0.6969193355490764,
+          "observed_sem": 0.05055355195174058,
+          "expected_mean": 0.6590301483235919
+        },
+        {
+          "epsilon": 2.0,
+          "observed_mean": 0.7277384130905072,
+          "observed_sem": 0.04201513386894892,
+          "expected_mean": 0.6924061541867267
+        },
+        {
+          "epsilon": 2.5,
+          "observed_mean": 0.7236008733510971,
+          "observed_sem": 0.0445656371951399,
+          "expected_mean": 0.722690568365563
+        },
+        {
+          "epsilon": 3.0,
+          "observed_mean": 0.766472652554512,
+          "observed_sem": 0.04366380110579178,
+          "expected_mean": 0.7497745574312839
+        }
+      ]
+    },
+    {
+      "question_idx": 7,
+      "question": "Who painted the Mona Lisa?",
+      "total_candidates": 277,
+      "balanced_candidates": 277,
+      "similarity_range": [
+        0.07052131742238998,
+        0.9431797862052917
+      ],
+      "mean_similarity": 0.5856528169196435,
+      "trend_slope": 0.055519421128999664,
+      "is_monotonic": true,
+      "epsilon_results": [
+        {
+          "epsilon": 0.5,
+          "observed_mean": 0.5578321238358815,
+          "observed_sem": 0.03623359752307989,
+          "expected_mean": 0.6089487265423629
+        },
+        {
+          "epsilon": 1.0,
+          "observed_mean": 0.6691418051719665,
+          "observed_sem": 0.03815333732275173,
+          "expected_mean": 0.6314693778175691
+        },
+        {
+          "epsilon": 1.5,
+          "observed_mean": 0.6845607275764147,
+          "observed_sem": 0.03375026074032341,
+          "expected_mean": 0.6530725839350784
+        },
+        {
+          "epsilon": 2.0,
+          "observed_mean": 0.6964674204587936,
+          "observed_sem": 0.03783105722029001,
+          "expected_mean": 0.6736426594385004
+        },
+        {
+          "epsilon": 2.5,
+          "observed_mean": 0.7186192373434702,
+          "observed_sem": 0.030111119072941835,
+          "expected_mean": 0.6930910014573675
+        },
+        {
+          "epsilon": 3.0,
+          "observed_mean": 0.7200822999080022,
+          "observed_sem": 0.029203045348209663,
+          "expected_mean": 0.7113556937872535
+        }
+      ]
+    },
+    {
+      "question_idx": 8,
+      "question": "What is the smallest country in the world?",
+      "total_candidates": 307,
+      "balanced_candidates": 20,
+      "similarity_range": [
+        0.057289447635412216,
+        0.9919272661209106
+      ],
+      "mean_similarity": 0.7269238959573185,
+      "trend_slope": 0.0443263117614247,
+      "is_monotonic": false,
+      "epsilon_results": [
+        {
+          "epsilon": 0.5,
+          "observed_mean": 0.648810297002395,
+          "observed_sem": 0.050403731650180694,
+          "expected_mean": 0.5911369148382152
+        },
+        {
+          "epsilon": 1.0,
+          "observed_mean": 0.6132877881328265,
+          "observed_sem": 0.04708411956993097,
+          "expected_mean": 0.6275001365750559
+        },
+        {
+          "epsilon": 1.5,
+          "observed_mean": 0.7007502887398005,
+          "observed_sem": 0.047302461210815785,
+          "expected_mean": 0.6619152769183018
+        },
+        {
+          "epsilon": 2.0,
+          "observed_mean": 0.6443872526288033,
+          "observed_sem": 0.04770037375398399,
+          "expected_mean": 0.6939341802844023
+        },
+        {
+          "epsilon": 2.5,
+          "observed_mean": 0.8184887687365214,
+          "observed_sem": 0.026735676602648875,
+          "expected_mean": 0.7232815761454586
+        },
+        {
+          "epsilon": 3.0,
+          "observed_mean": 0.6921044070273638,
+          "observed_sem": 0.049080282445301784,
+          "expected_mean": 0.7498447717962329
+        }
+      ]
+    },
+    {
+      "question_idx": 9,
+      "question": "What is the currency of Japan?",
+      "total_candidates": 291,
+      "balanced_candidates": 291,
+      "similarity_range": [
+        0.17849299311637878,
+        0.9370847344398499
+      ],
+      "mean_similarity": 0.5831787609767258,
+      "trend_slope": 0.03341220628647574,
+      "is_monotonic": false,
+      "epsilon_results": [
+        {
+          "epsilon": 0.5,
+          "observed_mean": 0.5961274186770121,
+          "observed_sem": 0.03669314178053094,
+          "expected_mean": 0.606395677677517
+        },
+        {
+          "epsilon": 1.0,
+          "observed_mean": 0.6680291508634885,
+          "observed_sem": 0.03820223053850638,
+          "expected_mean": 0.6289785893499957
+        },
+        {
+          "epsilon": 1.5,
+          "observed_mean": 0.6851871758699417,
+          "observed_sem": 0.03584892601152691,
+          "expected_mean": 0.6506419925638323
+        },
+        {
+          "epsilon": 2.0,
+          "observed_mean": 0.7318656822045644,
+          "observed_sem": 0.030770656593432838,
+          "expected_mean": 0.6711554484009392
+        },
+        {
+          "epsilon": 2.5,
+          "observed_mean": 0.6653438354531924,
+          "observed_sem": 0.03931941163443617,
+          "expected_mean": 0.6903517461005177
+        },
+        {
+          "epsilon": 3.0,
+          "observed_mean": 0.7053456286589305,
+          "observed_sem": 0.03247763846077822,
+          "expected_mean": 0.7081280603134903
+        }
+      ]
+    },
+    {
+      "question_idx": 10,
+      "question": "Who discovered penicillin?",
+      "total_candidates": 356,
+      "balanced_candidates": 10,
+      "similarity_range": [
+        0.02527647465467453,
+        0.9517530202865601
+      ],
+      "mean_similarity": 0.5664802815430285,
+      "trend_slope": 0.09177216718594229,
+      "is_monotonic": true,
+      "epsilon_results": [
+        {
+          "epsilon": 0.5,
+          "observed_mean": 0.534197265158097,
+          "observed_sem": 0.05406394869332418,
+          "expected_mean": 0.5787576131085143
+        },
+        {
+          "epsilon": 1.0,
+          "observed_mean": 0.6977969778080781,
+          "observed_sem": 0.04831783854248919,
+          "expected_mean": 0.6164650923645416
+        },
+        {
+          "epsilon": 1.5,
+          "observed_mean": 0.7015155536433061,
+          "observed_sem": 0.0453760301559618,
+          "expected_mean": 0.6519190194570005
+        },
+        {
+          "epsilon": 2.0,
+          "observed_mean": 0.74474911292394,
+          "observed_sem": 0.04581481347228958,
+          "expected_mean": 0.6845605379825968
+        },
+        {
+          "epsilon": 2.5,
+          "observed_mean": 0.7579902410507202,
+          "observed_sem": 0.03499059544127625,
+          "expected_mean": 0.7140748502479138
+        },
+        {
+          "epsilon": 3.0,
+          "observed_mean": 0.810637180507183,
+          "observed_sem": 0.03834460170762183,
+          "expected_mean": 0.7403701220250469
+        }
+      ]
+    }
+  ]
+}

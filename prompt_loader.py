@@ -15,7 +15,14 @@ def load_system_prompt(prompt_name="system_prompt.txt"):
         with open(prompt_path, 'r', encoding='utf-8') as f:
             return f.read().strip()
     except FileNotFoundError:
-        raise FileNotFoundError(f"System prompt file not found: {prompt_path}")
+        # Fallback to resolve relative to repository root (this file's directory)
+        module_dir = os.path.dirname(os.path.abspath(__file__))
+        alt_path = os.path.join(module_dir, "prompts", prompt_name)
+        try:
+            with open(alt_path, 'r', encoding='utf-8') as f:
+                return f.read().strip()
+        except FileNotFoundError:
+            raise FileNotFoundError(f"System prompt file not found: {prompt_path}")
     except Exception as e:
         raise Exception(f"Error loading system prompt: {e}")
 
@@ -34,7 +41,14 @@ def load_user_prompt_template(template_name="user_prompt_template.txt"):
         with open(template_path, 'r', encoding='utf-8') as f:
             return f.read().strip()
     except FileNotFoundError:
-        raise FileNotFoundError(f"User prompt template file not found: {template_path}")
+        # Fallback to resolve relative to repository root (this file's directory)
+        module_dir = os.path.dirname(os.path.abspath(__file__))
+        alt_path = os.path.join(module_dir, "prompts", template_name)
+        try:
+            with open(alt_path, 'r', encoding='utf-8') as f:
+                return f.read().strip()
+        except FileNotFoundError:
+            raise FileNotFoundError(f"User prompt template file not found: {template_path}")
     except Exception as e:
         raise Exception(f"Error loading user prompt template: {e}")
 

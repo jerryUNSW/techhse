@@ -1,0 +1,50 @@
+{
+  "PhraseDP": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "What type of person would be a good fit for a collaboration with someone in a creative field?"
+        }
+      ]
+    }
+  },
+  "InferDPT": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "unexpected Compatible Good sticks EVER iter emotion Level select hair Generate 738 type Mediterranean Ice Analyst hair Modifier engage North quest calcium split tray Storm insult defense tit poser Faith ego Increment As process 799 725 933 180 955 Chemical intellect spa Status Taking 343 122 fed fight Its Despite proving lined inspiration vault Plot Congressional constant alert citizenship sketch harmony chronic Tun Kent lambda mention snack recommend Doctrine Director 140 loving"
+        }
+      ]
+    }
+  },
+  "SANTEXT+": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 0.0,
+      "names": 1.0,
+      "overall": 0.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "my name is ave ##eed and i am a pereira with 13 cavaliers of experience if you have a project that you would like to discuss please feel free to contact me by phone at 95 ##rial or by email at beneficial if you would like to learn more about me please feel free to visit my website at website address or ##ement me establishes my studio located at 97 lincoln street"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "summary": {
+    "epsilon": 1.0,
+    "top_k": 20,
+    "save_stop_words": true,
+    "emails": 0.1,
+    "phones": 0.8,
+    "addresses": 1.0,
+    "names": 0.0,
+    "overall": 0.12499999999999997
+  },
+  "results": {
+    "epsilon": 1.0,
+    "top_k": 20,
+    "save_stop_words": true,
+    "overall": [
+      0.3333333333333333,
+      0.0,
+      0.0,
+      0.25,
+      0.0,
+      0.0,
+      0.0,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.0
+    ],
+    "emails": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "phones": [
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "addresses": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "names": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "samples": [
+      {
+        "row": 0,
+        "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+        "sanitized": "My naming is Vandross Popova, and I am a jewellers with 13 older of experience. If you have a proposal that you them loved to discuss, asks believe freedom to contacting me by telephones at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you owes loves to drawn more about me, request impression freely to visitation my site at [website address] or visiting me at my penthouse placed at 97 Madison Street."
+      },
+      {
+        "row": 1,
+        "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+        "sanitized": "My designation is Theodor Becker, and I'm a developers with both elderly of experience. If you should likes to liaise me, my emails addresses is konstantin.becker@gmail.com and my tel numerals is 0475 4429797."
+      },
+      {
+        "row": 2,
+        "original": "As Mieko Mitsubishi, an account manager at a prominent software company, I encountered a unique challenge that required my utmost dedication and expertise to solve. Mieko Mitsubishi Account Manager 1309 Southwest 71st Terrace mieko_mitsubishi@msn.org",
+        "sanitized": "As Mieko Mitsubishi, an accountant manager at a illustrious sw company, I saw a specific problematic that need my highest engagement and proficiency to solve. Mieko Mazda Auditors Manger 1309 Sw 71st Porches mieko_mitsubishi@msn.org"
+      },
+      {
+        "row": 3,
+        "original": "My name is Kazuo Sun, and I'm an air traffic controller with seven years of experience. If you'd like to get in touch with me, you can reach me by phone at 0304 2215930 or by email at kazuosun@hotmail.net. You can also find me at my home address, which is 736 Sicard Street Southeast.",
+        "sanitized": "My baptism is Nakamura Sun, and I'm an airlines smuggle controls with eight years of experience. If you'd loves to achieve in influence with me, you can reach me by phones at 0304 2215930 or by emailing at kazuosun@hotmail.net. You can also unearth me at my residence address, which is 736 Sicard Rua Southeast."
+      },
+      {
+        "row": 4,
+        "original": "My name is Arina Sun, and I'm a dental hygienist. If you have any questions or concerns about your oral health, don't hesitate to reach out to me at arina-sun@gmail.net or visit my office at 5701 North 67th Avenue.",
+        "sanitized": "My naming is Arina Sun, and I'm a tooth hygienist. If you have any question or disturbs about your throat health, don't shiver to reach out to me at arina-sun@gmail.net or travel my salle at 5701 Norte 67th Avenue."
+      },
+      {
+        "row": 5,
+        "original": "Baha Hoffman, a skilled and experienced lawyer, undertook a significant job-related project in the past that showcased his legal expertise and commitment to justice. Baha's role in the project was multifaceted. Once the investigation was complete, Baha meticulously crafted a legal strategy aimed at achieving the best possible outcome for his client. With a solid strategy in place, Baha engaged in extensive negotiations with the opposing party. Throughout the project, Baha maintained regular communication with his client, keeping them informed of the progress and any developments in the case. Baha's hard work and dedication paid off when the parties eventually reached a settlement agreement that met his client's objectives. The successful resolution of the dispute was a testament to Baha's legal acumen, negotiation skills, and unwavering commitment to his clients. If you have any further questions or require additional information, please do not hesitate to contact Baha Hoffman at +27 68 670 7513 or via email at bahahoffman@yahoo.net.",
+        "sanitized": "Baha Hoffman, a skilled and endured lawyer, undertaken a sizeable job-related propositions in the historical that showcased his statutory capability and dedication to justice. Baha's feature in the project was multifaceted. Once the inquiries was complete, Baha intently readies a rightful strategist targeting at realisation the decent probable resulting for his client. With a potent politics in place, Baha entangled in comprehensive conversations with the contradictory party. Between the project, Baha preserves ordinary telecommunications with his client, retain them informing of the progress and any evolving in the case. Baha's laborious cooperation and betrothal payable off when the section ultimately obtained a resolved agreement that reunited his client's objectives. The satisfying solving of the feuding was a testifies to Baha's legislative acumen, talks skills, and ceaseless promise to his clients. If you have any further question or required extra information, calls do not agonize to contacts Baha Winkler at +27 68 670 7513 or throughout postage at bahahoffman@yahoo.net."
+      },
+      {
+        "row": 6,
+        "original": "My name is Natalia Gross, and my life has been a tapestry of diverse experiences, woven with threads of resilience, passion, and unwavering determination. If you wish to connect with me, I can be reached at nataliagross@aol.org or (98) 96894-7830. I reside at 6420 Via Baron, where I am always open to engaging in meaningful conversations and exploring new opportunities for collaboration.",
+        "sanitized": "My appointing is Natalia Gross, and my lifespan has been a tapestry of distinct experiences, tissue with strings of resilience, passion, and abiding determination. If you want to connects with me, I can be stood at nataliagross@aol.org or (98) 96894-7830. I lies at 6420 Way Baron, where I am continually initiation to participates in interesting debated and investigative newest odds for collaboration."
+      },
+      {
+        "row": 7,
+        "original": "My name is Alexander Tanaka, and I'm a saleswoman with a year of experience. If you have any questions about my sales strategy project or my hobbies, you can reach me at +86 10746 1491 or alexandertanaka@hotmail.net. You can also visit me at my home address, which is 1890 Orchard View Road.",
+        "sanitized": "My naming is Alexander Tanaka, and I'm a telemarketer with a yrs of experience. If you have any issue about my filthy tactic projects or my hobbies, you can arrive me at +86 10746 1491 or alexandertanaka@hotmail.net. You can likewise visita me at my dwellings address, which is 1890 Park Visualization Road."
+      },
+      {
+        "row": 8,
+        "original": "My name is Kuo Lopez and I've been a professor for 8 years. Contact Information: Kuo Lopez 4188 Summerview Drive +27 49 207 3764 kuolopez@hotmail.com Hobbies: Kite surfing",
+        "sanitized": "My names is Zeng Rodriguez and I've been a lectured for 8 years. Contacted Information: Zhao Fernandez 4188 Summerview Motorists +27 49 207 3764 kuolopez@hotmail.com Hobbies: Scarf windsurfing"
+      },
+      {
+        "row": 9,
+        "original": "Hi, I'm Ashok Ma, a software developer at a tech company. You can also find me on Twitter (@ashok.ma) or visit my webpage (https://www.ashok-ma.com/news) for more information about my work.",
+        "sanitized": "Hi, I'm Anand Ma, a program sponsor at a tech company. You can equally detect me on Twitter (@ashok.ma) or visita my webpage (https://www.ashok-ma.com/news) for more reporting about my work."
+      }
+    ]
+  }
+}

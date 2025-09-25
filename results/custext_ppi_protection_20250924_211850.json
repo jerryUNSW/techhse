@@ -1,0 +1,129 @@
+{
+  "summary": {
+    "epsilon": 2.0,
+    "top_k": 20,
+    "save_stop_words": true,
+    "emails": 1.0,
+    "phones": 1.0,
+    "addresses": 1.0,
+    "names": 1.0,
+    "overall": 1.0
+  },
+  "results": {
+    "epsilon": 2.0,
+    "top_k": 20,
+    "save_stop_words": true,
+    "overall": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "emails": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "phones": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "addresses": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "names": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "samples": [
+      {
+        "row": 0,
+        "original": "1073d46f-2241-459b-ab01-851be8d26436",
+        "sanitized": "1073d46f-2241-459b-ab01-851be8d26436"
+      },
+      {
+        "row": 1,
+        "original": "5ec717a9-17ee-48cd-9d76-30ae256c9354",
+        "sanitized": "5ec717a9-17ee-48cd-9d76-30ae256c9354"
+      },
+      {
+        "row": 2,
+        "original": "353da41e-7799-4071-ab20-d959b362612e",
+        "sanitized": "353da41e-7799-4071-ab20-d959b362612e"
+      },
+      {
+        "row": 3,
+        "original": "9324ee01-7bdc-41b1-a7a5-01307f72c20d",
+        "sanitized": "9324ee01-7bdc-41b1-a7a5-01307f72c20d"
+      },
+      {
+        "row": 4,
+        "original": "971fe266-2739-4f1b-979b-7f64e07d5a4a",
+        "sanitized": "971fe266-2739-4f1b-979b-7f64e07d5a4a"
+      },
+      {
+        "row": 5,
+        "original": "13166f5c-6f4a-4047-90b8-52599e98f221",
+        "sanitized": "13166f5c-6f4a-4047-90b8-52599e98f221"
+      },
+      {
+        "row": 6,
+        "original": "88db5573-f453-4dff-a6b1-362eb469bf2f",
+        "sanitized": "88db5573-f453-4dff-a6b1-362eb469bf2f"
+      },
+      {
+        "row": 7,
+        "original": "8c9c705b-b073-48d4-80c4-b6b123d691c3",
+        "sanitized": "8c9c705b-b073-48d4-80c4-b6b123d691c3"
+      },
+      {
+        "row": 8,
+        "original": "68b043f5-7c2f-4850-9d67-ecf2cba852dd",
+        "sanitized": "68b043f5-7c2f-4850-9d67-ecf2cba852dd"
+      },
+      {
+        "row": 9,
+        "original": "a9c3689c-951d-4f25-a9d7-8b3c8721305a",
+        "sanitized": "a9c3689c-951d-4f25-a9d7-8b3c8721305a"
+      }
+    ]
+  }
+}

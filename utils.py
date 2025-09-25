@@ -10,7 +10,8 @@ from prompt_loader import load_system_prompt, load_user_prompt_template, format_
 load_dotenv()
 
 # Get API keys from environment variables
-OPEN_AI_KEY = os.getenv("OPEN_AI_KEY")
+# Prefer OPENAI_API_KEY; fall back to legacy OPEN_AI_KEY for compatibility
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") or os.getenv("OPEN_AI_KEY")
 DEEP_SEEK_KEY = os.getenv("DEEP_SEEK_KEY")
 HUGGING_FACE_API = os.getenv("HUGGING_FACE")
 NEBIUS_API = os.getenv("NEBIUS")
@@ -58,17 +59,44 @@ def llm_judge_answer(client, question, ground_truth, model_answer):
         return False
 
 def get_remote_llm_client(provider):
-    """Get the appropriate client for the remote LLM API."""
+    """
+    Get the appropriate client for commercial remote LLM APIs (e.g., OpenAI, DeepSeek).
+
+    IMPORTANT:
+    - This helper is ONLY for remote/commercial providers used for CoT and judging.
+    - It is NOT intended for local/edge model providers (e.g., Nebius) used inside
+      PhraseDP candidate generation. For PhraseDP, use the Nebius-specific client
+      getter (e.g., `get_nebius_client()`) to avoid misconfiguration.
+    """
     if provider == "openai":
-        if not OPEN_AI_KEY:
-            raise ValueError("OPEN_AI_KEY not found. Please set it in your .env file.")
-        return OpenAI(api_key=OPEN_AI_KEY)
+        if not OPENAI_API_KEY:
+            raise ValueError("OpenAI API key not found. Set OPENAI_API_KEY (or legacy OPEN_AI_KEY) in .env")
+        return OpenAI(api_key=OPENAI_API_KEY)
     elif provider == "deepseek":
         if not DEEP_SEEK_KEY:
             raise ValueError("DEEP_SEEK_KEY not found. Please set it in your .env file.")
         return OpenAI(api_key=DEEP_SEEK_KEY, base_url="https://api.deepseek.com")
     else:
         raise ValueError(f"Unsupported remote LLM provider: {provider}")
+
+
+def get_nebius_client(config_model_fallback: str = None):
+    """
+    Return an OpenAI-compatible Nebius client for local/edge models used in PhraseDP.
+
+    Reads credentials and endpoint from environment variables loaded via .env:
+    - NEBIUS_API or NEBIUS_API_KEY: API key
+    - NEBIUS_BASE_URL (optional): Base URL (defaults to https://api.studio.nebius.ai/v1/)
+
+    The caller can choose a model name separately; a common pattern is to use
+    `config['local_model']` as the default Nebius model.
+    """
+    api_key = os.getenv("NEBIUS_API") or os.getenv("NEBIUS_API_KEY") or NEBIUS_API
+    if not api_key:
+        raise ValueError("Nebius API key not found. Set NEBIUS_API or NEBIUS_API_KEY in .env")
+
+    base_url = os.getenv("NEBIUS_BASE_URL") or "https://api.studio.nebius.ai/v1/"
+    return OpenAI(base_url=base_url, api_key=api_key)
 
 def generate_sentence_replacements_with_nebius(nebius_client, nebius_model_name, 
     input_sentence, num_return_sequences=10, max_tokens=150, num_api_calls=5):
@@ -581,11 +609,11 @@ def phrase_DP_perturbation_with_candidates_diverse(nebius_client, nebius_model_n
     print("Diverse DP replacement selected:", dp_replacement)
     return dp_replacement, candidate_sentences
 
-def phrase_DP_perturbation(nebius_client, nebius_model_name, cnn_dm_prompt, epsilon, sbert_model):
-    """
-    DEPRECATED: Use `phrase_DP_perturbation_diverse` instead.
-    """
-    raise NotImplementedError("phrase_DP_perturbation is deprecated. Use phrase_DP_perturbation_diverse.")
+# def phrase_DP_perturbation(nebius_client, nebius_model_name, cnn_dm_prompt, epsilon, sbert_model):
+#     """
+#     DEPRECATED: Use `phrase_DP_perturbation_diverse` instead.
+#     """
+#     raise NotImplementedError("phrase_DP_perturbation is deprecated. Use phrase_DP_perturbation_diverse.")
 
     # Historical implementation (commented out):
     # print(f"\033[92mApplying differential privacy perturbation with epsilon={epsilon}...\033[0m")
@@ -609,11 +637,11 @@ def phrase_DP_perturbation(nebius_client, nebius_model_name, cnn_dm_prompt, epsi
     # print("DP replacement selected:", dp_replacement)
     # return dp_replacement
 
-def phrase_DP_perturbation_with_candidates(nebius_client, nebius_model_name, cnn_dm_prompt, epsilon, sbert_model):
-    """
-    DEPRECATED: Use `phrase_DP_perturbation_with_candidates_diverse` instead.
-    """
-    raise NotImplementedError("phrase_DP_perturbation_with_candidates is deprecated. Use phrase_DP_perturbation_with_candidates_diverse.")
+# def phrase_DP_perturbation_with_candidates(nebius_client, nebius_model_name, cnn_dm_prompt, epsilon, sbert_model):
+#     """
+#     DEPRECATED: Use `phrase_DP_perturbation_with_candidates_diverse` instead.
+#     """
+#     raise NotImplementedError("phrase_DP_perturbation_with_candidates is deprecated. Use phrase_DP_perturbation_with_candidates_diverse.")
 
     # Historical implementation (commented out):
     # print(f"\033[92mApplying differential privacy perturbation with epsilon={epsilon}...\033[0m")

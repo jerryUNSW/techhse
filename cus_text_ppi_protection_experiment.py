@@ -45,6 +45,71 @@ def _normalize_for_leak(text: str, keep_at: bool = False) -> str:
     return t
 
 
+def reconstruct_text_from_tokens(tokens: List[str], trailing_whitespace: List[bool]) -> str:
+    parts: List[str] = []
+    for i, tok in enumerate(tokens):
+        parts.append(tok)
+        if i < len(trailing_whitespace) and trailing_whitespace[i]:
+            parts.append(' ')
+    return ''.join(parts)
+
+
+def extract_pii_from_labels(tokens: List[str], trailing_whitespace: List[bool], labels: List[str]) -> Dict[str, List[str]]:
+    spans: List[Tuple[int, int, str]] = []
+    current_type = None
+    start_idx = None
+
+    def span_text(si: int, ei: int) -> str:
+        parts: List[str] = []
+        for i in range(si, ei + 1):
+            parts.append(tokens[i])
+            if i < len(trailing_whitespace) and trailing_whitespace[i]:
+                parts.append(' ')
+        return ''.join(parts)
+
+    for i, lab in enumerate(labels):
+        if lab.startswith('B-'):
+            if current_type is not None and start_idx is not None:
+                spans.append((start_idx, i - 1, current_type))
+            current_type = lab[2:]
+            start_idx = i
+        elif lab.startswith('I-'):
+            continue
+        else:
+            if current_type is not None and start_idx is not None:
+                spans.append((start_idx, i - 1, current_type))
+            current_type = None
+            start_idx = None
+
+    if current_type is not None and start_idx is not None:
+        spans.append((start_idx, len(labels) - 1, current_type))
+
+    out: Dict[str, List[str]] = {'emails': [], 'phones': [], 'addresses': [], 'names': []}
+    for si, ei, t in spans:
+        text_span = span_text(si, ei)
+        if 'EMAIL' in t:
+            out['emails'].append(text_span)
+        elif 'PHONE' in t:
+            out['phones'].append(text_span)
+        elif 'ADDRESS' in t:
+            out['addresses'].append(text_span)
+        elif 'NAME' in t:
+            out['names'].append(text_span)
+    return out
+
+
+def extract_pii_sentences(full_text: str, pii_spans: Dict[str, List[str]]) -> str:
+    spans = set(sum(pii_spans.values(), []))
+    if not spans:
+        return full_text
+    sentences = re.split(r'(?<=[.!?])\s+', full_text)
+    kept = []
+    for s in sentences:
+        if any(span and (span in s) for span in spans):
+            kept.append(s)
+    return ' '.join(kept) if kept else full_text
+
+
 def load_counter_fitting_vectors(path: str) -> Tuple[np.ndarray, List[str], Dict[str, int]]:
     if not os.path.exists(path):
         raise FileNotFoundError(f"Counter-Fitting vectors not found at {path}")
@@ -146,9 +211,33 @@ def run_custext_ppi_protection(start_idx: int, num_rows: int, epsilon: float, to
     }
 
     for ridx, row in df.iterrows():
+        # Prefer reconstructing from tokens/labels to avoid UUID-like placeholders
         original_text = row.get('document', '')
         if not isinstance(original_text, str):
             original_text = str(original_text)
+
+        tokens = row.get('tokens')
+        labels = row.get('labels')
+        trailing_ws = row.get('trailing_whitespace')
+        try:
+            # Rows may store these as stringified lists
+            if isinstance(tokens, str):
+                import ast
+                tokens = ast.literal_eval(tokens)
+            if isinstance(labels, str):
+                import ast
+                labels = ast.literal_eval(labels)
+            if isinstance(trailing_ws, str):
+                import ast
+                trailing_ws = ast.literal_eval(trailing_ws)
+        except Exception:
+            pass
+
+        if isinstance(tokens, list) and isinstance(labels, list) and isinstance(trailing_ws, list) and len(tokens) == len(labels) == len(trailing_ws):
+            reconstructed = reconstruct_text_from_tokens(tokens, trailing_ws)
+            pii_preview = extract_pii_from_labels(tokens, trailing_ws, labels)
+            original_text = extract_pii_sentences(reconstructed, pii_preview)
+
         orig_pii = detect_pii_patterns(original_text)
 
         sanitized = sanitize_with_custext(original_text, epsilon, top_k, save_stop_words,

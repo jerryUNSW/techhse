@@ -1,0 +1,44 @@
+{
+  "PhraseDP": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "What can an individual with a history of creative pursuits expect from a collaboration?"
+        }
+      ]
+    }
+  },
+  "InferDPT": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 0.0,
+      "overall": 0.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "prep Wrap Pop gent macro Route rotate Similarly DESCRIPTION numerous prosper 40 gambling crying agency ping expect Adapter Fant dump whats appetite vendor Integration momentum squeeze reinterpret Deb presidency systematic love aide nutrition alt 577 958 504 786 287 Pointer Off sacrifice family exchange 186 423 wander dinner Reply correction failing Ford dependent peaceful surgery prod unsupported photograph Alignment audience perspective crack Per LEASE ORE book utilize noise human news 821 ester"
+        }
+      ]
+    }
+  },
+  "SANTEXT+": {
+    "1.0": {
+      "emails": 0.0,
+      "phones": 0.0,
+      "addresses": 0.0,
+      "names": 0.0,
+      "overall": 0.0,
+      "samples": []
+    }
+  }
+}

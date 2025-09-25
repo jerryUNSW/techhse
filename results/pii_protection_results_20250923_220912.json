@@ -1,0 +1,44 @@
+{
+  "PhraseDP": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "An individual with expertise in jewelry can be contacted through their website or studio in a certain area. If you have a project in mind, feel free to reach out by phone or email to discuss further details about their work and services?"
+        }
+      ]
+    }
+  },
+  "InferDPT": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "assure yang really keeping hate Parcel yourself personnel Seat worker educated 730 server onym Joe lev accompany First badly AT Suit unavailable defeat stunning configure Grad Bon first diversity debut pup Pom touch Do 780 740 648 197 963 parade reduce INPUT figure ceil 268 510 RID CHA resistant piece aggression Row treatment AND Rick affair THREE Bearer Victor Spell VIEW Control aire damp Instance Imperial Radius Console literally covered 745 encryption"
+        }
+      ]
+    }
+  },
+  "SANTEXT+": {
+    "1.0": {
+      "emails": 0.0,
+      "phones": 0.0,
+      "addresses": 0.0,
+      "names": 0.0,
+      "overall": 0.0,
+      "samples": []
+    }
+  }
+}

@@ -206,7 +206,8 @@ def run_pii_protection_experiment(start_idx: int = 0, num_rows: int = 10):
         'PhraseDP': {},
         'InferDPT': {},
         'SANTEXT+': {},
-        'CusText+': {}
+        'CusText+': {},
+        'CluSanT': {}
     }
     
     # Run epsilon sweep
@@ -246,7 +247,13 @@ def run_pii_protection_experiment(start_idx: int = 0, num_rows: int = 10):
         print(f"Warning: CusText+ init failed: {e}")
         ct_emb_matrix = None; ct_idx2word = None; ct_word2idx = None; ct_stop_set = set()
 
-    for mechanism_name in ['PhraseDP', 'InferDPT', 'SANTEXT+','CusText+']:
+    # Prepare optional CluSanT state
+    clusant_root = '/home/yizhang/tech4HSE/CluSanT'
+    clus_embeddings = None
+    clus_saved_cwd = None
+    clus_handler = None
+
+    for mechanism_name in ['PhraseDP', 'InferDPT', 'SANTEXT+','CusText+','CluSanT']:
         print(f"\n=== Mechanism: {mechanism_name} ===")
         results[mechanism_name] = {}
         
@@ -282,6 +289,27 @@ def run_pii_protection_experiment(start_idx: int = 0, num_rows: int = 10):
                                 santext_vocab_built = True
                         else:
                             santext_vocab_built = True
+                elif mechanism_name == 'CluSanT':
+                    # Initialize CluSanT once at mechanism start
+                    if clus_embeddings is None:
+                        print("  [Init] Preparing CluSanT embeddings and environment...")
+                        import sys
+                        sys.path.append('/home/yizhang/tech4HSE/CluSanT/src')
+                        from embedding_handler import EmbeddingHandler  # type: ignore
+                        clus_handler = EmbeddingHandler(model_name='all-MiniLM-L6-v2')
+                        emb_dir = f"{clusant_root}/embeddings"
+                        os.makedirs(emb_dir, exist_ok=True)
+                        emb_path = f"{emb_dir}/all-MiniLM-L6-v2.txt"
+                        if not os.path.exists(emb_path):
+                            clus_handler.generate_and_save_embeddings([
+                                f"{clusant_root}/clusters/gpt-4/LOC.json",
+                                f"{clusant_root}/clusters/gpt-4/ORG.json",
+                            ], emb_dir)
+                        clus_embeddings = clus_handler.load_embeddings(emb_path)
+                        # Switch to CluSanT root so its relative paths resolve
+                        clus_saved_cwd = os.getcwd()
+                        os.chdir(clusant_root)
+                        print("  [Init] CluSanT ready.")
             except Exception as e:
                 print(f"    Error initializing {mechanism_name}: {e}")
                 continue
@@ -396,6 +424,42 @@ def run_pii_protection_experiment(start_idx: int = 0, num_rows: int = 10):
                                 word2idx=ct_word2idx,
                                 stop_set=ct_stop_set
                             )
+                    elif mechanism_name == 'CluSanT':
+                        # Build a CluSanT instance for this epsilon
+                        try:
+                            from clusant import CluSanT  # type: ignore
+                            clus = CluSanT(
+                                embedding_file='all-MiniLM-L6-v2',
+                                embeddings=clus_embeddings,
+                                epsilon=epsilon,
+                                num_clusters=336,
+                                mechanism='clusant',
+                                metric_to_create_cluster='euclidean',
+                                distance_metric_for_cluster='euclidean',
+                                distance_metric_for_words='euclidean',
+                                dp_type='metric',
+                                K=16,
+                            )
+                            sanitized_text = original_text
+                            # Find targets present in text (multi-word first)
+                            targets_present = []
+                            for w in clus_embeddings.keys():
+                                if ' ' in w and re.search(rf"\\b{re.escape(w)}\\b", sanitized_text, flags=re.IGNORECASE):
+                                    targets_present.append(w)
+                            for w in clus_embeddings.keys():
+                                if ' ' not in w and re.search(rf"\\b{re.escape(w)}\\b", sanitized_text, flags=re.IGNORECASE):
+                                    targets_present.append(w)
+                            targets_present = sorted(set(targets_present), key=lambda x: (-len(x), x))
+                            for t in targets_present:
+                                new = clus.replace_word(t)
+                                if not new:
+                                    continue
+                                pattern = re.compile(rf"\\b{re.escape(t)}\\b", flags=re.IGNORECASE)
+                                if pattern.search(sanitized_text):
+                                    sanitized_text = pattern.sub(new, sanitized_text)
+                        except Exception as e:
+                            print(f"    [Row {idx}] CluSanT error: {e}")
+                            sanitized_text = original_text
                     
                     # Print raw perturbed text for this mechanism/row in blue
                     try:
@@ -489,6 +553,12 @@ def run_pii_protection_experiment(start_idx: int = 0, num_rows: int = 10):
             # Attach samples under this epsilon entry
             results[mechanism_name][epsilon]['samples'] = samples
             print(f"  [Epsilon {epsilon}] Average protection rates: {avg_rates} (t={time.time()-start_eps:.2f}s)")
+    # Restore CWD if CluSanT changed it
+    try:
+        if clus_saved_cwd is not None:
+            os.chdir(clus_saved_cwd)
+    except Exception:
+        pass
     
     # Save results
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")

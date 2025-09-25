@@ -1,0 +1,113 @@
+{
+  "PhraseDP": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0
+    },
+    "1.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0
+    },
+    "2.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0
+    },
+    "2.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0
+    },
+    "3.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0
+    }
+  },
+  "InferDPT": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0
+    },
+    "1.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0
+    },
+    "2.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0
+    },
+    "2.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0
+    },
+    "3.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0
+    }
+  },
+  "SANTEXT+": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0
+    },
+    "1.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0
+    },
+    "2.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0
+    },
+    "2.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0
+    },
+    "3.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "PhraseDP": {
+    "1.0": {
+      "overall": 0.95,
+      "emails": 0.9,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 0.9
+    },
+    "1.5": {
+      "overall": 1.0,
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0
+    },
+    "2.0": {
+      "overall": 1.0,
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0
+    },
+    "2.5": {
+      "overall": 0.975,
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 0.9
+    },
+    "3.0": {
+      "overall": 1.0,
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0
+    }
+  },
+  "InferDPT": {
+    "1.0": {
+      "overall": 1.0,
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0
+    },
+    "1.5": {
+      "overall": 1.0,
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0
+    },
+    "2.0": {
+      "overall": 1.0,
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0
+    },
+    "2.5": {
+      "overall": 1.0,
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0
+    },
+    "3.0": {
+      "overall": 1.0,
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0
+    }
+  },
+  "SANTEXT+": {
+    "1.0": {
+      "overall": 0.842,
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 0.5
+    },
+    "1.5": {
+      "overall": 0.842,
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 0.9,
+      "names": 0.6
+    },
+    "2.0": {
+      "overall": 0.867,
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 0.9,
+      "names": 0.6
+    },
+    "2.5": {
+      "overall": 0.817,
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 0.9,
+      "names": 0.5
+    },
+    "3.0": {
+      "overall": 0.792,
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 0.8,
+      "names": 0.5
+    }
+  }
+}

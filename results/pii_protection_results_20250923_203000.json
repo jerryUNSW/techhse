@@ -1,0 +1,362 @@
+{
+  "PhraseDP": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "Is an individual from a certain group, who acted in a classic film, holding a government position, and what are the specifics of their role?"
+        },
+        {
+          "row": 1,
+          "original": "5ec717a9-17ee-48cd-9d76-30ae256c9354",
+          "sanitized": "What is the status of someone in a government role from a classic film?"
+        },
+        {
+          "row": 2,
+          "original": "353da41e-7799-4071-ab20-d959b362612e",
+          "sanitized": "Can an individual from one entity hold a position that is different from someone from another organization?"
+        },
+        {
+          "row": 3,
+          "original": "9324ee01-7bdc-41b1-a7a5-01307f72c20d",
+          "sanitized": "What role does a public figure play in a government institution?"
+        },
+        {
+          "row": 4,
+          "original": "971fe266-2739-4f1b-979b-7f64e07d5a4a",
+          "sanitized": "What is the highest rank held by a professional in a particular film?"
+        },
+        {
+          "row": 5,
+          "original": "13166f5c-6f4a-4047-90b8-52599e98f221",
+          "sanitized": "What is the primary government position held by a prominent figure in a classic film?"
+        },
+        {
+          "row": 6,
+          "original": "88db5573-f453-4dff-a6b1-362eb469bf2f",
+          "sanitized": "What role does an individual in a certain profession hold in a government entity at some point?"
+        },
+        {
+          "row": 7,
+          "original": "8c9c705b-b073-48d4-80c4-b6b123d691c3",
+          "sanitized": "What public figure from a work holds a position of authority?"
+        },
+        {
+          "row": 8,
+          "original": "68b043f5-7c2f-4850-9d67-ecf2cba852dd",
+          "sanitized": "Is a character in a classic film also a figure in a government position?"
+        },
+        {
+          "row": 9,
+          "original": "a9c3689c-951d-4f25-a9d7-8b3c8721305a",
+          "sanitized": "How does a person's role in a movie relate to their responsibilities in a public organization?"
+        }
+      ]
+    },
+    "2.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "How does a person's role in a movie relate to their responsibilities in a public organization?"
+        },
+        {
+          "row": 1,
+          "original": "5ec717a9-17ee-48cd-9d76-30ae256c9354",
+          "sanitized": "How does a person's role in a movie relate to their responsibilities in a public organization?"
+        },
+        {
+          "row": 2,
+          "original": "353da41e-7799-4071-ab20-d959b362612e",
+          "sanitized": "How does a person's role in a movie relate to their responsibilities in a public organization?"
+        },
+        {
+          "row": 3,
+          "original": "9324ee01-7bdc-41b1-a7a5-01307f72c20d",
+          "sanitized": "How does a person's role in a movie relate to their responsibilities in a public organization?"
+        },
+        {
+          "row": 4,
+          "original": "971fe266-2739-4f1b-979b-7f64e07d5a4a",
+          "sanitized": "How does a person's role in a movie relate to their responsibilities in a public organization?"
+        },
+        {
+          "row": 5,
+          "original": "13166f5c-6f4a-4047-90b8-52599e98f221",
+          "sanitized": "How does a person's role in a movie relate to their responsibilities in a public organization?"
+        },
+        {
+          "row": 6,
+          "original": "88db5573-f453-4dff-a6b1-362eb469bf2f",
+          "sanitized": "How does a person's role in a movie relate to their responsibilities in a public organization?"
+        },
+        {
+          "row": 7,
+          "original": "8c9c705b-b073-48d4-80c4-b6b123d691c3",
+          "sanitized": "How does a person's role in a movie relate to their responsibilities in a public organization?"
+        },
+        {
+          "row": 8,
+          "original": "68b043f5-7c2f-4850-9d67-ecf2cba852dd",
+          "sanitized": "How does a person's role in a movie relate to their responsibilities in a public organization?"
+        },
+        {
+          "row": 9,
+          "original": "a9c3689c-951d-4f25-a9d7-8b3c8721305a",
+          "sanitized": "How does a person's role in a movie relate to their responsibilities in a public organization?"
+        }
+      ]
+    }
+  },
+  "InferDPT": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "[InferDPT-1.0] 1073d46f-2241-459b-ab01-851be8d26436"
+        },
+        {
+          "row": 1,
+          "original": "5ec717a9-17ee-48cd-9d76-30ae256c9354",
+          "sanitized": "[InferDPT-1.0] 5ec717a9-17ee-48cd-9d76-30ae256c9354"
+        },
+        {
+          "row": 2,
+          "original": "353da41e-7799-4071-ab20-d959b362612e",
+          "sanitized": "[InferDPT-1.0] 353da41e-7799-4071-ab20-d959b362612e"
+        },
+        {
+          "row": 3,
+          "original": "9324ee01-7bdc-41b1-a7a5-01307f72c20d",
+          "sanitized": "[InferDPT-1.0] 9324ee01-7bdc-41b1-a7a5-01307f72c20d"
+        },
+        {
+          "row": 4,
+          "original": "971fe266-2739-4f1b-979b-7f64e07d5a4a",
+          "sanitized": "[InferDPT-1.0] 971fe266-2739-4f1b-979b-7f64e07d5a4a"
+        },
+        {
+          "row": 5,
+          "original": "13166f5c-6f4a-4047-90b8-52599e98f221",
+          "sanitized": "[InferDPT-1.0] 13166f5c-6f4a-4047-90b8-52599e98f221"
+        },
+        {
+          "row": 6,
+          "original": "88db5573-f453-4dff-a6b1-362eb469bf2f",
+          "sanitized": "[InferDPT-1.0] 88db5573-f453-4dff-a6b1-362eb469bf2f"
+        },
+        {
+          "row": 7,
+          "original": "8c9c705b-b073-48d4-80c4-b6b123d691c3",
+          "sanitized": "[InferDPT-1.0] 8c9c705b-b073-48d4-80c4-b6b123d691c3"
+        },
+        {
+          "row": 8,
+          "original": "68b043f5-7c2f-4850-9d67-ecf2cba852dd",
+          "sanitized": "[InferDPT-1.0] 68b043f5-7c2f-4850-9d67-ecf2cba852dd"
+        },
+        {
+          "row": 9,
+          "original": "a9c3689c-951d-4f25-a9d7-8b3c8721305a",
+          "sanitized": "[InferDPT-1.0] a9c3689c-951d-4f25-a9d7-8b3c8721305a"
+        }
+      ]
+    },
+    "2.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "[InferDPT-2.0] 1073d46f-2241-459b-ab01-851be8d26436"
+        },
+        {
+          "row": 1,
+          "original": "5ec717a9-17ee-48cd-9d76-30ae256c9354",
+          "sanitized": "[InferDPT-2.0] 5ec717a9-17ee-48cd-9d76-30ae256c9354"
+        },
+        {
+          "row": 2,
+          "original": "353da41e-7799-4071-ab20-d959b362612e",
+          "sanitized": "[InferDPT-2.0] 353da41e-7799-4071-ab20-d959b362612e"
+        },
+        {
+          "row": 3,
+          "original": "9324ee01-7bdc-41b1-a7a5-01307f72c20d",
+          "sanitized": "[InferDPT-2.0] 9324ee01-7bdc-41b1-a7a5-01307f72c20d"
+        },
+        {
+          "row": 4,
+          "original": "971fe266-2739-4f1b-979b-7f64e07d5a4a",
+          "sanitized": "[InferDPT-2.0] 971fe266-2739-4f1b-979b-7f64e07d5a4a"
+        },
+        {
+          "row": 5,
+          "original": "13166f5c-6f4a-4047-90b8-52599e98f221",
+          "sanitized": "[InferDPT-2.0] 13166f5c-6f4a-4047-90b8-52599e98f221"
+        },
+        {
+          "row": 6,
+          "original": "88db5573-f453-4dff-a6b1-362eb469bf2f",
+          "sanitized": "[InferDPT-2.0] 88db5573-f453-4dff-a6b1-362eb469bf2f"
+        },
+        {
+          "row": 7,
+          "original": "8c9c705b-b073-48d4-80c4-b6b123d691c3",
+          "sanitized": "[InferDPT-2.0] 8c9c705b-b073-48d4-80c4-b6b123d691c3"
+        },
+        {
+          "row": 8,
+          "original": "68b043f5-7c2f-4850-9d67-ecf2cba852dd",
+          "sanitized": "[InferDPT-2.0] 68b043f5-7c2f-4850-9d67-ecf2cba852dd"
+        },
+        {
+          "row": 9,
+          "original": "a9c3689c-951d-4f25-a9d7-8b3c8721305a",
+          "sanitized": "[InferDPT-2.0] a9c3689c-951d-4f25-a9d7-8b3c8721305a"
+        }
+      ]
+    }
+  },
+  "SANTEXT+": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "good"
+        },
+        {
+          "row": 1,
+          "original": "5ec717a9-17ee-48cd-9d76-30ae256c9354",
+          "sanitized": "5ec717a917ee48cd9d7630ae256c9354"
+        },
+        {
+          "row": 2,
+          "original": "353da41e-7799-4071-ab20-d959b362612e",
+          "sanitized": "nor"
+        },
+        {
+          "row": 3,
+          "original": "9324ee01-7bdc-41b1-a7a5-01307f72c20d",
+          "sanitized": "9324ee017bdc41b1a7a501307f72c20d"
+        },
+        {
+          "row": 4,
+          "original": "971fe266-2739-4f1b-979b-7f64e07d5a4a",
+          "sanitized": "by"
+        },
+        {
+          "row": 5,
+          "original": "13166f5c-6f4a-4047-90b8-52599e98f221",
+          "sanitized": "13166f5c6f4a404790b852599e98f221"
+        },
+        {
+          "row": 6,
+          "original": "88db5573-f453-4dff-a6b1-362eb469bf2f",
+          "sanitized": "88db5573f4534dffa6b1362eb469bf2f"
+        },
+        {
+          "row": 7,
+          "original": "8c9c705b-b073-48d4-80c4-b6b123d691c3",
+          "sanitized": "cold"
+        },
+        {
+          "row": 8,
+          "original": "68b043f5-7c2f-4850-9d67-ecf2cba852dd",
+          "sanitized": "68b043f57c2f48509d67ecf2cba852dd"
+        },
+        {
+          "row": 9,
+          "original": "a9c3689c-951d-4f25-a9d7-8b3c8721305a",
+          "sanitized": "a9c3689c951d4f25a9d78b3c8721305a"
+        }
+      ]
+    },
+    "2.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "1073d46f-2241-459b-ab01-851be8d26436",
+          "sanitized": "1073d46f2241459bab01851be8d26436"
+        },
+        {
+          "row": 1,
+          "original": "5ec717a9-17ee-48cd-9d76-30ae256c9354",
+          "sanitized": "dry"
+        },
+        {
+          "row": 2,
+          "original": "353da41e-7799-4071-ab20-d959b362612e",
+          "sanitized": "353da41e77994071ab20d959b362612e"
+        },
+        {
+          "row": 3,
+          "original": "9324ee01-7bdc-41b1-a7a5-01307f72c20d",
+          "sanitized": "shallow"
+        },
+        {
+          "row": 4,
+          "original": "971fe266-2739-4f1b-979b-7f64e07d5a4a",
+          "sanitized": "971fe26627394f1b979b7f64e07d5a4a"
+        },
+        {
+          "row": 5,
+          "original": "13166f5c-6f4a-4047-90b8-52599e98f221",
+          "sanitized": "13166f5c6f4a404790b852599e98f221"
+        },
+        {
+          "row": 6,
+          "original": "88db5573-f453-4dff-a6b1-362eb469bf2f",
+          "sanitized": "88db5573f4534dffa6b1362eb469bf2f"
+        },
+        {
+          "row": 7,
+          "original": "8c9c705b-b073-48d4-80c4-b6b123d691c3",
+          "sanitized": "8c9c705bb07348d480c4b6b123d691c3"
+        },
+        {
+          "row": 8,
+          "original": "68b043f5-7c2f-4850-9d67-ecf2cba852dd",
+          "sanitized": "68b043f57c2f48509d67ecf2cba852dd"
+        },
+        {
+          "row": 9,
+          "original": "a9c3689c-951d-4f25-a9d7-8b3c8721305a",
+          "sanitized": "a9c3689c951d4f25a9d78b3c8721305a"
+        }
+      ]
+    }
+  }
+}

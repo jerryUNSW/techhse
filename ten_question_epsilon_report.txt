@@ -1,0 +1,87 @@
+10-Question Epsilon Test Results
+==================================================
+Total questions: 10
+Epsilon values: [0.5, 1.0, 1.5, 2.0, 2.5, 3.0]
+Samples per epsilon: 30
+Date: 2025-09-22T08:55:31
+
+PER-QUESTION SUMMARY:
+
+Question 1: What is the capital of France?
+  Candidates: 302 total, 20 balanced
+  Similarity range: 0.037 to 0.962
+  Mean similarity: 0.547
+  Trend slope: 0.058
+  Monotonic trend: No
+
+Question 2: Who wrote Romeo and Juliet?
+  Candidates: 335 total, 335 balanced
+  Similarity range: 0.055 to 0.931
+  Mean similarity: 0.526
+  Trend slope: 0.046
+  Monotonic trend: Yes
+
+Question 3: What is the largest planet in our solar system?
+  Candidates: 270 total, 10 balanced
+  Similarity range: 0.057 to 0.990
+  Mean similarity: 0.775
+  Trend slope: 0.039
+  Monotonic trend: No
+
+Question 4: What is the chemical symbol for gold?
+  Candidates: 255 total, 30 balanced
+  Similarity range: 0.105 to 0.972
+  Mean similarity: 0.617
+  Trend slope: 0.095
+  Monotonic trend: No
+
+Question 5: In which year did World War II end?
+  Candidates: 237 total, 237 balanced
+  Similarity range: 0.028 to 0.873
+  Mean similarity: 0.533
+  Trend slope: 0.053
+  Monotonic trend: No
+
+Question 6: What is the speed of light in vacuum?
+  Candidates: 335 total, 60 balanced
+  Similarity range: 0.033 to 0.996
+  Mean similarity: 0.551
+  Trend slope: 0.043
+  Monotonic trend: No
+
+Question 7: Who painted the Mona Lisa?
+  Candidates: 277 total, 277 balanced
+  Similarity range: 0.071 to 0.943
+  Mean similarity: 0.586
+  Trend slope: 0.056
+  Monotonic trend: Yes
+
+Question 8: What is the smallest country in the world?
+  Candidates: 307 total, 20 balanced
+  Similarity range: 0.057 to 0.992
+  Mean similarity: 0.727
+  Trend slope: 0.044
+  Monotonic trend: No
+
+Question 9: What is the currency of Japan?
+  Candidates: 291 total, 291 balanced
+  Similarity range: 0.178 to 0.937
+  Mean similarity: 0.583
+  Trend slope: 0.033
+  Monotonic trend: No
+
+Question 10: Who discovered penicillin?
+  Candidates: 356 total, 10 balanced
+  Similarity range: 0.025 to 0.952
+  Mean similarity: 0.566
+  Trend slope: 0.092
+  Monotonic trend: Yes
+
+EPSILON SUMMARY:
+
+ε = 0.5: Mean = 0.568 ± 0.066 (across 10 questions)
+ε = 1.0: Mean = 0.649 ± 0.044 (across 10 questions)
+ε = 1.5: Mean = 0.668 ± 0.045 (across 10 questions)
+ε = 2.0: Mean = 0.673 ± 0.055 (across 10 questions)
+ε = 2.5: Mean = 0.725 ± 0.052 (across 10 questions)
+ε = 3.0: Mean = 0.717 ± 0.050 (across 10 questions)
