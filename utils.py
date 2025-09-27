@@ -99,48 +99,273 @@ def get_nebius_client(config_model_fallback: str = None):
     return OpenAI(base_url=base_url, api_key=api_key)
 
 def generate_sentence_replacements_with_nebius(nebius_client, nebius_model_name, 
-    input_sentence, num_return_sequences=10, max_tokens=150, num_api_calls=5):
+    input_sentence, num_return_sequences=10, max_tokens=150):
     """
-    DEPRECATED: Use `generate_sentence_replacements_with_nebius_diverse` instead.
+    OLD PHRASEDP: Simple candidate generation without band diversity.
+    
+    This is the original PhraseDP implementation that was used in the 500-question experiment.
+    It generates diverse paraphrases using a single API call without similarity band targeting.
+    
+    Args:
+        nebius_client: Nebius API client
+        nebius_model_name: Name of the Nebius model to use
+        input_sentence: Original sentence to paraphrase
+        num_return_sequences: Number of candidates to generate (default: 10)
+        max_tokens: Maximum tokens per candidate (default: 150)
+    
+    Returns:
+        list: List of unique paraphrased sentences
     """
-    raise NotImplementedError("generate_sentence_replacements_with_nebius is deprecated. Use the *_diverse variant.")
+    system_prompt = """
+    You are a highly skilled AI assistant specializing in natural language processing.
+    Your primary goal is to rephrase user questions in a generalized manner,
+    preserving their core logical structure and intent, but explicitly removing
+    or generalizing any sensitive personal identifying information (PII) or
+    unique details that could lead to re-identification.
 
-    # Historical implementation (commented out):
-    # system_prompt = load_system_prompt()
-    # user_prompt_template = load_user_prompt_template()
-    # user_prompt = format_user_prompt(user_prompt_template, input_sentence=input_sentence)
-    # try:
-    #     all_paraphrases = []
-    #     for call_num in range(num_api_calls):
-    #         response = nebius_client.chat.completions.create(
-    #             model=nebius_model_name,
-    #             messages=[
-    #                 {"role": "system", "content": system_prompt},
-    #                 {"role": "user", "content": user_prompt}
-    #             ],
-    #             max_tokens=max_tokens,
-    #             temperature=0.9,
-    #             top_p=0.95,
-    #             n=num_return_sequences
-    #         )
-    #         for choice in response.choices:
-    #             content = choice.message.content.strip()
-    #             if content and content.lower() != input_sentence.lower():
-    #                 lines = content.split('\n')
-    #                 for line in lines:
-    #                     clean_line = line.strip()
-    #                     clean_line = re.sub(r'^\d+\.\s*', '', clean_line)
-    #                     clean_line = re.sub(r'^[-•*]\s*', '', clean_line)
-    #                     clean_line = clean_line.strip()
-    #                     if (clean_line and len(clean_line) > 10 and clean_line.lower() != input_sentence.lower()
-    #                         and not clean_line.startswith("Generate") and not clean_line.startswith("Output")
-    #                         and not clean_line.startswith("CRITICAL") and not "paraphrase" in clean_line.lower()
-    #                         and clean_line.endswith('?')):
-    #                         all_paraphrases.append(clean_line)
-    #                         break
-    #     return all_paraphrases
-    # except Exception:
-    #     return []
+    Focus on transforming specific entities (like names, exact locations, unique events,
+    or precise dates) into generic descriptions or placeholders.
+    The output should be a semantically diverse and coherent paraphrase.
+    """
+
+    user_prompt = f"""
+    Generalize and paraphrase the following sentence.
+    Ensure the logical structure and core meaning are maintained, but remove or generalize
+    any sensitive personal information (like names of people, specific unique places,
+    exact dates, or highly specific event details).
+
+    ### Output Rules:
+    - Output ONLY the paraphrased and generalized sentence.
+    - Do NOT repeat the original sentence or use near-identical phrasing.
+    - No numbering, bullet points, or commentary.
+    - Do NOT include introductory or explanatory text.
+    - Ensure the sentence is grammatically correct and semantically coherent.
+
+    ### Generalization and Anonymization Examples:
+    Original: "Was John Smith, born on October 26, 1970, in London, the first CEO of ExampleCorp?"
+    Generalized: "Was an individual, born in a specific city, the first CEO of a certain corporation?"
+
+    Original: "Did Sarah visit the Eiffel Tower on her trip to Paris last summer?"
+    Generalized: "Did a person visit a famous landmark during their trip to a major European city recently?"
+
+    Original: "Were Scott Derrickson and Ed Wood of the same nationality?"
+    Generalized: "Did the two filmmakers share the same nationality?"
+
+    ### Task:
+    Original: {input_sentence}
+    Paraphrase:
+    """
+
+    try:
+        # Single API call to generate all candidates (old PhraseDP approach)
+        response = nebius_client.chat.completions.create(
+            model=nebius_model_name,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt}
+            ],
+            max_tokens=max_tokens,
+            temperature=0.7,
+            top_p=0.95,
+            n=num_return_sequences  # Generate multiple candidates in one call
+        )
+
+        paraphrases = set()
+        for choice in response.choices:
+            clean_line = choice.message.content.strip()
+            # Filter out the original sentence and empty/near-empty strings
+            if clean_line and clean_line.lower() != input_sentence.lower():
+                # Additional filtering for quality
+                if (len(clean_line) > 10 and 
+                    not clean_line.startswith("Generate") and 
+                    not clean_line.startswith("Output") and
+                    not clean_line.startswith("CRITICAL") and 
+                    "paraphrase" not in clean_line.lower()):
+                    paraphrases.add(clean_line)
+
+        return list(paraphrases)
+
+    except Exception as e:
+        print(f"Error with Nebius API: {e}")
+        return []
+
+
+def phrase_DP_perturbation_old(nebius_client, nebius_model_name, input_sentence, epsilon, sbert_model):
+    """
+    OLD PHRASEDP: Complete perturbation pipeline using the original approach.
+    
+    This function implements the complete old PhraseDP pipeline:
+    1. Generate candidates using single API call (no band diversity)
+    2. Compute embeddings for all candidates
+    3. Apply exponential mechanism for probabilistic selection
+    
+    Args:
+        nebius_client: Nebius API client
+        nebius_model_name: Name of the Nebius model to use
+        input_sentence: Original sentence to perturb
+        epsilon: Privacy parameter for differential privacy
+        sbert_model: Sentence-BERT model for embedding computation
+    
+    Returns:
+        str: The selected perturbed sentence
+    """
+    print(f"Applying OLD differential privacy perturbation with epsilon={epsilon}...")
+    
+    # Step 1: Generate candidate sentence-level replacements (OLD approach)
+    candidate_sentences = generate_sentence_replacements_with_nebius(
+        nebius_client, 
+        nebius_model_name,
+        input_sentence=input_sentence,
+        num_return_sequences=10,
+    )
+    
+    if not candidate_sentences:
+        raise ValueError("No candidate sentences were generated. Check the Nebius API call.")
+    
+    # Step 2: Precompute embeddings (same as original)
+    from dp_sanitizer import get_embedding, differentially_private_replacement
+    candidate_embeddings = {
+        sent: get_embedding(sbert_model, sent).cpu().numpy() 
+        for sent in candidate_sentences
+    }
+    
+    # Step 3: Select a replacement using exponential mechanism (same as original)
+    dp_replacement = differentially_private_replacement(
+        target_phrase=input_sentence,
+        epsilon=epsilon,
+        candidate_phrases=candidate_sentences,
+        candidate_embeddings=candidate_embeddings,
+        sbert_model=sbert_model
+    )
+    
+    print("OLD DP replacement selected:", dp_replacement)
+    return dp_replacement
+
+
+def generate_option_set_candidates_with_nebius(
+    nebius_client,
+    nebius_model_name,
+    options_dict,
+    num_return_sequences: int = 10,
+    max_tokens: int = 220,
+):
+    """
+    OLD PHRASEDP (Options variant): Generate candidates where all four options are perturbed
+    in one response, formatted as a single semicolon-separated line:
+    "A) <text>; B) <text>; C) <text>; D) <text>"
+
+    Each generated candidate should preserve ordering and map 1:1 to the originals.
+    """
+
+    # Ensure deterministic order A, B, C, D
+    optA = options_dict.get('A', '')
+    optB = options_dict.get('B', '')
+    optC = options_dict.get('C', '')
+    optD = options_dict.get('D', '')
+
+    system_prompt = (
+        "You are a precise paraphrasing assistant for multiple-choice options. "
+        "Your job is to lightly generalize each option while preserving medical meaning, "
+        "terminology, and answerability. Avoid adding or removing clinical facts."
+    )
+
+    user_prompt = f"""
+    You will be given four original answer choices labeled A, B, C, and D. 
+    For EACH choice, generate ONE paraphrased version that:
+    - preserves the same meaning and answerability
+    - removes PII or overly specific details only if present
+    - keeps key clinical terminology intact
+
+    IMPORTANT OUTPUT FORMAT (single line):
+    A) <perturbed A>; B) <perturbed B>; C) <perturbed C>; D) <perturbed D>
+
+    Do NOT add extra commentary or multiple lines.
+
+    Original options:
+    A) {optA}
+    B) {optB}
+    C) {optC}
+    D) {optD}
+    """
+
+    try:
+        response = nebius_client.chat.completions.create(
+            model=nebius_model_name,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+            max_tokens=max_tokens,
+            temperature=0.7,
+            top_p=0.95,
+            n=num_return_sequences,
+        )
+
+        candidates = []
+        for choice in response.choices:
+            text = (choice.message.content or "").strip()
+            if not text:
+                continue
+            # Normalize whitespace and ensure semicolon-separated single line
+            text = " ".join(text.split())
+            if ('A)' in text and 'B)' in text and 'C)' in text and 'D)' in text and ';' in text):
+                candidates.append(text)
+        return candidates
+    except Exception as e:
+        print(f"Error with Nebius API (options candidates): {e}")
+        return []
+
+
+def phrase_DP_perturbation_old_options(
+    nebius_client,
+    nebius_model_name,
+    options_dict,
+    epsilon,
+    sbert_model,
+):
+    """
+    OLD PHRASEDP (Options variant): Complete DP selection over four-option candidates.
+
+    - Generates multiple candidates, each containing A-D in one semicolon-separated line
+    - Scores candidates against the original combined text using SBERT
+    - Applies the exponential mechanism to select one
+    """
+    # Combine originals in the same semicolon-separated format for scoring
+    original_combined = "; ".join([
+        options_dict.get('A', ''),
+        options_dict.get('B', ''),
+        options_dict.get('C', ''),
+        options_dict.get('D', ''),
+    ])
+
+    candidates = generate_option_set_candidates_with_nebius(
+        nebius_client,
+        nebius_model_name,
+        options_dict,
+        num_return_sequences=10,
+        max_tokens=220,
+    )
+
+    if not candidates:
+        raise ValueError("No option-set candidates were generated for OLD PhraseDP options.")
+
+    from dp_sanitizer import get_embedding, differentially_private_replacement
+
+    candidate_embeddings = {
+        cand: get_embedding(sbert_model, cand).cpu().numpy()
+        for cand in candidates
+    }
+
+    dp_replacement = differentially_private_replacement(
+        target_phrase=original_combined,
+        epsilon=epsilon,
+        candidate_phrases=candidates,
+        candidate_embeddings=candidate_embeddings,
+        sbert_model=sbert_model,
+    )
+
+    print("OLD DP replacement selected (options):", dp_replacement)
+    return dp_replacement
 
 def generate_sentence_replacements_with_nebius_diverse(nebius_client, nebius_model_name,
     input_sentence, num_return_sequences=10, max_tokens=150, num_api_calls=10,

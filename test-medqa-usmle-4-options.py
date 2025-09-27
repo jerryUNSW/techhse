@@ -53,7 +53,7 @@ def _resolve_local_model_name_for_nebius(client, fallback_model_name: str) -> st
 def _find_working_nebius_model(client) -> str:
     """Probe Nebius with candidate models to find a working local model ID.
 
-    Order: config['local_model'] first, then config['local_models'] list, then 'microsoft/phi-4'.
+    Order: config['local_model'] first, then config['local_models'] list.
     Returns first model that successfully completes a 1-token ping.
     """
     candidates = []
@@ -61,9 +61,6 @@ def _find_working_nebius_model(client) -> str:
     if preferred:
         candidates.append(preferred)
     candidates.extend(config.get('local_models', []))
-    # Ensure a common fallback exists at the end
-    if 'microsoft/phi-4' not in candidates:
-        candidates.append('microsoft/phi-4')
 
     seen = set()
     ordered = [m for m in candidates if not (m in seen or seen.add(m))]
@@ -80,8 +77,8 @@ def _find_working_nebius_model(client) -> str:
             return model
         except Exception:
             continue
-    # If none worked, return preferred to surface original error upstream
-    return preferred or 'microsoft/phi-4'
+    # If none worked, raise an error
+    raise ValueError(f"None of the configured models worked: {candidates}")
 
 # Load environment variables
 load_dotenv()
@@ -105,6 +102,7 @@ class MedQAExperimentResults:
         self.local_alone_correct = 0
         self.non_private_cot_correct = 0
         self.local_cot_correct = 0
+        self.old_phrase_dp_local_cot_correct = 0
         self.phrase_dp_local_cot_correct = 0
         self.phrase_dp_with_options_local_cot_correct = 0
         self.phrase_dp_batch_options_local_cot_correct = 0
@@ -163,25 +161,57 @@ def get_remote_llm_client():
     else:
         raise ValueError(f"Unsupported remote LLM provider: {provider}")
 
+def check_quota_error(exception):
+    """Check if the exception is due to quota/rate limit issues."""
+    error_message = str(exception).lower()
+    quota_indicators = [
+        'quota',
+        'rate limit',
+        '429',
+        'exceeded',
+        'insufficient',
+        'limit reached',
+        'too many requests'
+    ]
+    return any(indicator in error_message for indicator in quota_indicators)
+
+def abort_on_quota_error(exception, api_type="API"):
+    """Abort the program if quota error is detected."""
+    if check_quota_error(exception):
+        print(f"\n{RED}{'='*60}{RESET}")
+        print(f"{RED}QUOTA ERROR DETECTED{RESET}")
+        print(f"{RED}{'='*60}{RESET}")
+        print(f"{RED}Error: {exception}{RESET}")
+        print(f"{RED}The {api_type} quota has been exceeded.{RESET}")
+        print(f"{RED}Aborting the entire program to prevent further API calls.{RESET}")
+        print(f"{RED}Please check your API quotas and try again later.{RESET}")
+        print(f"{RED}{'='*60}{RESET}")
+        import sys
+        sys.exit(1)
+
 def create_completion_with_model_support(client, model_name, messages, max_tokens=256, temperature=0.0):
     """
     Create a chat completion with proper parameter support for different models.
     GPT-5 uses max_completion_tokens and doesn't support temperature=0.0, others use max_tokens.
     """
-    if "gpt-5" in model_name or "gpt-5-chat-latest" in model_name:
-        return client.chat.completions.create(
-            model=model_name,
-            messages=messages,
-            max_completion_tokens=max_tokens
-            # GPT-5 doesn't support temperature parameter
-        )
-    else:
-        return client.chat.completions.create(
-            model=model_name,
-            messages=messages,
-            max_tokens=max_tokens,
-            temperature=temperature
-        )
+    try:
+        if "gpt-5" in model_name or "gpt-5-chat-latest" in model_name:
+            return client.chat.completions.create(
+                model=model_name,
+                messages=messages,
+                max_completion_tokens=max_tokens
+                # GPT-5 doesn't support temperature parameter
+            )
+        else:
+            return client.chat.completions.create(
+                model=model_name,
+                messages=messages,
+                max_tokens=max_tokens,
+                temperature=temperature
+            )
+    except Exception as e:
+        abort_on_quota_error(e, "API")
+        raise e
 
 def format_question_with_options(question, options=None):
     """Format question (optionally with answer choices) for LLM input."""
@@ -259,6 +289,73 @@ def generate_cot_from_remote_llm(client, model_name, question, options=None, max
         print(f"{RED}Error in remote CoT generation: {e}{RESET}")
         return "Error"
 
+def generate_cot_from_remote_llm_with_perturbed_options(client, model_name, perturbed_question, perturbed_options_text, max_tokens=512):
+    """Generate Chain-of-Thought from remote LLM using both perturbed question and perturbed options."""
+    
+    # Format the input with clear separation between perturbed question and options
+    prompt = f"""Perturbed Question: {perturbed_question}
+
+Perturbed Options: {perturbed_options_text}
+
+Please provide step-by-step medical reasoning guidance to help analyze this question. This guidance will be fed back to a local model to guide its decision-making process. Focus on:
+1. Key medical concepts and diagnostic frameworks
+2. Clinical reasoning principles
+3. Differential diagnosis approaches
+4. Important considerations for each option
+
+Do NOT provide a final answer (A, B, C, or D). Instead, give reasoning guidance that will help the local model make the decision."""
+    
+    try:
+        response = create_completion_with_model_support(
+            client, model_name,
+            messages=[
+                {"role": "system", "content": "You are a medical expert providing reasoning guidance. Your output will be fed back to a local model to guide its decision-making process. Provide step-by-step medical reasoning principles, diagnostic frameworks, and clinical considerations. Do NOT solve the problem or choose an answer - only provide reasoning guidance that the local model can use to make the final decision."},
+                {"role": "user", "content": prompt}
+            ],
+            max_tokens=max_tokens,
+            temperature=0.0
+        )
+        return response.choices[0].message.content.strip()
+    except Exception as e:
+        print(f"{RED}Error in remote CoT generation with perturbed options: {e}{RESET}")
+        return "Error"
+
+def generate_cot_from_remote_llm_with_perturbed_options_dict(client, model_name, perturbed_question, perturbed_options_dict, max_tokens=512):
+    """Generate Chain-of-Thought from remote LLM using both perturbed question and perturbed options (dictionary format)."""
+    
+    # Format the perturbed options from dictionary
+    options_text = ""
+    for key, value in perturbed_options_dict.items():
+        options_text += f"{key}) {value}\n"
+    
+    # Format the input with clear separation between perturbed question and options
+    prompt = f"""Perturbed Question: {perturbed_question}
+
+Perturbed Options:
+{options_text}
+Please provide step-by-step medical reasoning guidance to help analyze this question. This guidance will be fed back to a local model to guide its decision-making process. Focus on:
+1. Key medical concepts and diagnostic frameworks
+2. Clinical reasoning principles
+3. Differential diagnosis approaches
+4. Important considerations for each option
+
+Do NOT provide a final answer (A, B, C, or D). Instead, give reasoning guidance that will help the local model make the decision."""
+    
+    try:
+        response = create_completion_with_model_support(
+            client, model_name,
+            messages=[
+                {"role": "system", "content": "You are a medical expert providing reasoning guidance. Your output will be fed back to a local model to guide its decision-making process. Provide step-by-step medical reasoning principles, diagnostic frameworks, and clinical considerations. Do NOT solve the problem or choose an answer - only provide reasoning guidance that the local model can use to make the final decision."},
+                {"role": "user", "content": prompt}
+            ],
+            max_tokens=max_tokens,
+            temperature=0.0
+        )
+        return response.choices[0].message.content.strip()
+    except Exception as e:
+        print(f"{RED}Error in remote CoT generation with perturbed options dict: {e}{RESET}")
+        return "Error"
+
 def get_answer_from_remote_llm(client, model_name, question, options, max_tokens=256):
     """Get answer directly from remote LLM."""
     
@@ -317,6 +414,7 @@ def run_scenario_1_purely_local(client, model_name, question, options, correct_a
         
         return is_correct
     except Exception as e:
+        abort_on_quota_error(e, "Nebius")
         print(f"{RED}Error during purely local model inference: {e}{RESET}")
         return False
 
@@ -342,40 +440,82 @@ def run_scenario_2_non_private_cot(client, model_name, remote_client, question, 
         
         return is_correct
     except Exception as e:
+        abort_on_quota_error(e, "API")
         print(f"{RED}Error during non-private CoT inference: {e}{RESET}")
         return False
 
-def run_scenario_3_1_phrase_dp_local_cot(client, model_name, remote_client, sbert_model, question, options, correct_answer):
-    """Scenario 3.1: Private Local Model + CoT (Phrase DP)."""
-    print(f"\n{BLUE}--- Scenario 3.1: Private Local Model + CoT (Phrase DP) ---{RESET}")
+# Removed outdated function - now using run_scenario_3_private_local_cot('phrasedp', use_old_phrasedp=True)
+
+def run_scenario_3_private_local_cot(client, model_name, remote_client, sbert_model, question, options, correct_answer, privacy_mechanism, use_old_phrasedp=False):
+    """Scenario 3: Private Local Model + CoT (Generic function for all privacy mechanisms without batch options)."""
+    mechanism_names = {
+        'phrasedp': 'Phrase DP',
+        'inferdpt': 'InferDPT', 
+        'santext': 'SANTEXT+',
+        'custext': 'CUSTEXT+',
+        'clusant': 'CluSanT'
+    }
+    
+    mechanism_name = mechanism_names.get(privacy_mechanism, privacy_mechanism.upper())
+    if privacy_mechanism == 'phrasedp' and use_old_phrasedp:
+        mechanism_name = 'Phrase DP (Old)'
+    elif privacy_mechanism == 'phrasedp' and not use_old_phrasedp:
+        mechanism_name = 'Phrase DP (New)'
+    
+    print(f"\n{BLUE}--- Scenario 3: Private Local Model + CoT ({mechanism_name}) ---{RESET}")
     
     try:
-        # Initialize Nebius client for DP perturbation via unified helper
-        from sanitization_methods import config as sm_config
-        nebius_client = utils.get_nebius_client()
-        nebius_model_name = sm_config.get('local_model', 'microsoft/phi-4')
-
-        # Apply Phrase-Level Differential Privacy to the question (wrapped)
-        print(f"{YELLOW}3.1a. Applying PhraseDP sanitization...{RESET}")
-        perturbed_question = phrasedp_sanitize_text(
-            question,
-            epsilon=config['epsilon'],
-            nebius_client=nebius_client,
-            nebius_model_name=nebius_model_name,
-        )
+        # Apply privacy mechanism to the question
+        print(f"{YELLOW}3a. Applying {mechanism_name} sanitization...{RESET}")
+        
+        if privacy_mechanism == 'phrasedp':
+            if use_old_phrasedp:
+                # Use old PhraseDP (single API call, no band diversity)
+                from sanitization_methods import config as sm_config
+                nebius_client = utils.get_nebius_client()
+                nebius_model_name = sm_config.get('local_model')
+                perturbed_question = utils.phrase_DP_perturbation_old(
+                    nebius_client=nebius_client,
+                    nebius_model_name=nebius_model_name,
+                    input_sentence=question,
+                    epsilon=config['epsilon'],
+                    sbert_model=sbert_model
+                )
+            else:
+                # Use new PhraseDP (10 API calls, 10-band diversity)
+                from sanitization_methods import config as sm_config
+                nebius_client = utils.get_nebius_client()
+                nebius_model_name = sm_config.get('local_model')
+                perturbed_question = phrasedp_sanitize_text(
+                    question,
+                    epsilon=config['epsilon'],
+                    nebius_client=nebius_client,
+                    nebius_model_name=nebius_model_name,
+                )
+        elif privacy_mechanism == 'inferdpt':
+            perturbed_question = inferdpt_sanitize_text(question, epsilon=config['epsilon'])
+        elif privacy_mechanism == 'santext':
+            perturbed_question = santext_sanitize_text(question, epsilon=config['epsilon'])
+        elif privacy_mechanism == 'custext':
+            perturbed_question = custext_sanitize_text(question, epsilon=config['epsilon'])
+        elif privacy_mechanism == 'clusant':
+            perturbed_question = clusant_sanitize_text(question, epsilon=config['epsilon'])
+        else:
+            raise ValueError(f"Unknown privacy mechanism: {privacy_mechanism}")
+            
         print(f"Perturbed Question: {perturbed_question}")
         
         # Keep options unchanged - only perturb the question for privacy
-        print(f"{YELLOW}3.1b. Keeping options unchanged for local model...{RESET}")
+        print(f"{YELLOW}3b. Keeping options unchanged for local model...{RESET}")
         print(f"Original Options: {options}")
         
         # Generate CoT from perturbed question with original options
-        print(f"{YELLOW}3.1c. Generating CoT from Perturbed Question with REMOTE LLM...{RESET}")
+        print(f"{YELLOW}3c. Generating CoT from Perturbed Question with REMOTE LLM...{RESET}")
         cot_text = generate_cot_from_remote_llm(remote_client, config['remote_models']['cot_model'], perturbed_question)
         print(f"Generated Chain-of-Thought (Remote, Private):\n{cot_text}")
         
         # Use local model with private CoT
-        print(f"{YELLOW}3.1d. Running Local Model with Private CoT...{RESET}")
+        print(f"{YELLOW}3d. Running Local Model with Private CoT...{RESET}")
         local_response = get_answer_from_local_model_with_cot(client, model_name, question, options, cot_text)
         predicted_letter = extract_letter_from_answer(local_response)
         is_correct = check_mcq_correctness(predicted_letter, correct_answer)
@@ -386,7 +526,7 @@ def run_scenario_3_1_phrase_dp_local_cot(client, model_name, remote_client, sber
         
         return is_correct
     except Exception as e:
-        print(f"{RED}Error during phrase DP private CoT-aided inference: {e}{RESET}")
+        print(f"{RED}Error during {mechanism_name} private CoT-aided inference: {e}{RESET}")
         return False
 
 # def run_scenario_3_1_2_phrase_dp_with_options_local_cot(client, model_name, remote_client, sbert_model, question, options, correct_answer):
@@ -402,10 +542,10 @@ def batch_perturb_options_with_phrasedp(options, epsilon, nebius_client, nebius_
     for key, value in options.items():
         print(f"  {key}) {value}")
 
-    # Concatenate options with semicolon separator
-    combined_text = "; ".join(options.values())
+    # Simple concatenation without semicolon enforcement
+    combined_text = " ".join(options.values())
 
-    print(f"{CYAN}Combined Text (semicolon-separated):{RESET}\n{combined_text}")
+    print(f"{CYAN}Combined Text:{RESET}\n{combined_text}")
 
     # Apply PhraseDP to the combined text
     print(f"{YELLOW}Applying PhraseDP to combined text...{RESET}")
@@ -422,41 +562,148 @@ def batch_perturb_options_with_phrasedp(options, epsilon, nebius_client, nebius_
     # Return the single perturbed text - no need to parse back to individual options
     return perturbed_combined
 
-def run_scenario_3_1_2_new_phrase_dp_with_batch_options_local_cot(client, model_name, remote_client, sbert_model, question, options, correct_answer):
-    """Scenario 3.1.2.new: Private Local Model + CoT (Phrase DP with Batch Perturbed Options)."""
-    print(f"\n{BLUE}--- Scenario 3.1.2.new: Private Local Model + CoT (Phrase DP with Batch Perturbed Options) ---{RESET}")
+def batch_perturb_options_with_old_phrasedp(options, epsilon, nebius_client, nebius_model_name, sbert_model):
+    """Batch perturb all options together using OLD PhraseDP (single API call, no band diversity)."""
+    print(f"{CYAN}OLD Batch Perturbation Starting:{RESET}")
+    print(f"Options Count: {len(options)}")
+    print(f"Epsilon: {epsilon}")
+    print(f"Model: {nebius_model_name}")
+    print(f"{CYAN}Original Options:{RESET}")
+    for key, value in options.items():
+        print(f"  {key}) {value}")
+
+    # Simple concatenation without semicolon enforcement
+    combined_text = " ".join(options.values())
+
+    print(f"{CYAN}Combined Text:{RESET}\n{combined_text}")
+
+    # Apply OLD PhraseDP to the combined text
+    print(f"{YELLOW}Applying OLD PhraseDP to combined text...{RESET}")
+    perturbed_combined = utils.phrase_DP_perturbation_old(
+        nebius_client=nebius_client,
+        nebius_model_name=nebius_model_name,
+        input_sentence=combined_text,
+        epsilon=epsilon,
+        sbert_model=sbert_model
+    )
+
+    print(f"{CYAN}Perturbed Combined Text (OLD PhraseDP):{RESET}\n{perturbed_combined}")
+    print(f"{GREEN}OLD Batch perturbation complete - returning single perturbed text for CoT{RESET}")
+
+    # Return the single perturbed text - no need to parse back to individual options
+    return perturbed_combined
+
+def run_scenario_3_private_local_cot_with_batch_options(client, model_name, remote_client, sbert_model, question, options, correct_answer, privacy_mechanism, use_old_phrasedp=False):
+    """Scenario 3: Private Local Model + CoT with Batch Options (Generic function for all privacy mechanisms with batch options)."""
+    mechanism_names = {
+        'phrasedp': 'Phrase DP',
+        'inferdpt': 'InferDPT', 
+        'santext': 'SANTEXT+',
+        'custext': 'CUSTEXT+',
+        'clusant': 'CluSanT'
+    }
+    
+    mechanism_name = mechanism_names.get(privacy_mechanism, privacy_mechanism.upper())
+    if privacy_mechanism == 'phrasedp' and use_old_phrasedp:
+        mechanism_name = 'Phrase DP (Old)'
+    elif privacy_mechanism == 'phrasedp' and not use_old_phrasedp:
+        mechanism_name = 'Phrase DP (New)'
+    
+    print(f"\n{BLUE}--- Scenario 3: Private Local Model + CoT ({mechanism_name} with Batch Options) ---{RESET}")
 
     try:
-        # Initialize Nebius client for DP perturbation via unified helper
-        from sanitization_methods import config as sm_config
-        nebius_client = utils.get_nebius_client()
-        nebius_model_name = sm_config.get('local_model', 'microsoft/phi-4')
-
-        # Apply Phrase-Level Differential Privacy to the question
-        print(f"{YELLOW}3.1.2.new.a. Applying PhraseDP sanitization to question...{RESET}")
-        perturbed_question = phrasedp_sanitize_text(
-            question,
-            epsilon=config['epsilon'],
-            nebius_client=nebius_client,
-            nebius_model_name=nebius_model_name,
-        )
+        # Apply privacy mechanism to the question
+        print(f"{YELLOW}3a. Applying {mechanism_name} sanitization to question...{RESET}")
+        
+        if privacy_mechanism == 'phrasedp':
+            if use_old_phrasedp:
+                # Use old PhraseDP (single API call, no band diversity)
+                from sanitization_methods import config as sm_config
+                nebius_client = utils.get_nebius_client()
+                nebius_model_name = sm_config.get('local_model')
+                perturbed_question = utils.phrase_DP_perturbation_old(
+                    nebius_client=nebius_client,
+                    nebius_model_name=nebius_model_name,
+                    input_sentence=question,
+                    epsilon=config['epsilon'],
+                    sbert_model=sbert_model
+                )
+            else:
+                # Use new PhraseDP (10 API calls, 10-band diversity)
+                from sanitization_methods import config as sm_config
+                nebius_client = utils.get_nebius_client()
+                nebius_model_name = sm_config.get('local_model')
+                perturbed_question = phrasedp_sanitize_text(
+                    question,
+                    epsilon=config['epsilon'],
+                    nebius_client=nebius_client,
+                    nebius_model_name=nebius_model_name,
+                )
+        elif privacy_mechanism == 'inferdpt':
+            perturbed_question = inferdpt_sanitize_text(question, epsilon=config['epsilon'])
+        elif privacy_mechanism == 'santext':
+            perturbed_question = santext_sanitize_text(question, epsilon=config['epsilon'])
+        elif privacy_mechanism == 'custext':
+            perturbed_question = custext_sanitize_text(question, epsilon=config['epsilon'])
+        elif privacy_mechanism == 'clusant':
+            perturbed_question = clusant_sanitize_text(question, epsilon=config['epsilon'])
+        else:
+            raise ValueError(f"Unknown privacy mechanism: {privacy_mechanism}")
+            
         print(f"Perturbed Question: {perturbed_question}")
 
-        # Apply Phrase-Level Differential Privacy to all options in batch
-        print(f"{YELLOW}3.1.2.new.b. Applying PhraseDP batch sanitization to all options...{RESET}")
-        perturbed_options_text = batch_perturb_options_with_phrasedp(
-            options, config['epsilon'], nebius_client, nebius_model_name
-        )
+        # Apply privacy mechanism to all options in batch
+        print(f"{YELLOW}3b. Applying {mechanism_name} batch sanitization to all options...{RESET}")
+        
+        if privacy_mechanism == 'phrasedp':
+            if use_old_phrasedp:
+                # Use OLD PhraseDP batch perturbation (single API call, no band diversity)
+                perturbed_options_text = batch_perturb_options_with_old_phrasedp(
+                    options, config['epsilon'], nebius_client, nebius_model_name, sbert_model
+                )
+            else:
+                # Use new PhraseDP batch perturbation (10 API calls, 10-band diversity)
+                perturbed_options_text = batch_perturb_options_with_phrasedp(
+                    options, config['epsilon'], nebius_client, nebius_model_name
+                )
+        elif privacy_mechanism == 'inferdpt':
+            perturbed_options_text = batch_perturb_options_with_inferdpt(options, config['epsilon'])
+        elif privacy_mechanism == 'santext':
+            perturbed_options_text = batch_perturb_options_with_santext(options, config['epsilon'])
+        elif privacy_mechanism == 'custext':
+            perturbed_options_text = batch_perturb_options_with_custext(options, config['epsilon'])
+        elif privacy_mechanism == 'clusant':
+            perturbed_options = batch_perturb_options_with_clusant(options, config['epsilon'])
+            print("Batch Perturbed Options:")
+            for key, value in perturbed_options.items():
+                print(f"  {key}) {value}")
+        else:
+            raise ValueError(f"Unknown privacy mechanism: {privacy_mechanism}")
 
-        print(f"Batch Perturbed Options Text: {perturbed_options_text}")
+        if privacy_mechanism != 'clusant':
+            print(f"Batch Perturbed Options Text: {perturbed_options_text}")
 
-        # Generate CoT from perturbed question without sending options
-        print(f"{YELLOW}3.1.2.new.c. Generating CoT from Perturbed Question with REMOTE LLM...{RESET}")
-        cot_text = generate_cot_from_remote_llm(remote_client, config['remote_models']['cot_model'], perturbed_question)
-        print(f"Generated Chain-of-Thought (Remote, Fully Private):\n{cot_text}")
+        # Generate CoT from perturbed question AND perturbed options
+        print(f"{YELLOW}3c. Generating CoT from Perturbed Question AND Options with REMOTE LLM...{RESET}")
+        
+        if privacy_mechanism == 'clusant':
+            cot_text = generate_cot_from_remote_llm_with_perturbed_options_dict(
+                remote_client, 
+                config['remote_models']['cot_model'], 
+                perturbed_question, 
+                perturbed_options
+            )
+        else:
+            cot_text = generate_cot_from_remote_llm_with_perturbed_options(
+                remote_client, 
+                config['remote_models']['cot_model'], 
+                perturbed_question, 
+                perturbed_options_text
+            )
+        print(f"Generated Chain-of-Thought (Remote, Fully Private with Perturbed Options):\n{cot_text}")
 
         # Use local model with original question/options but private CoT
-        print(f"{YELLOW}3.1.2.new.d. Running Local Model with original question/options and Private CoT...{RESET}")
+        print(f"{YELLOW}3d. Running Local Model with original question/options and Private CoT...{RESET}")
         local_response = get_answer_from_local_model_with_cot(client, model_name, question, options, cot_text)
         predicted_letter = extract_letter_from_answer(local_response)
         is_correct = check_mcq_correctness(predicted_letter, correct_answer)
@@ -467,42 +714,10 @@ def run_scenario_3_1_2_new_phrase_dp_with_batch_options_local_cot(client, model_
 
         return is_correct
     except Exception as e:
-        print(f"{RED}Error during phrase DP with batch options private CoT-aided inference: {e}{RESET}")
+        print(f"{RED}Error during {mechanism_name} with batch options private CoT-aided inference: {e}{RESET}")
         return False
 
-def run_scenario_3_2_inferdpt_local_cot(client, model_name, remote_client, question, options, correct_answer):
-    """Scenario 3.2: Private Local Model + CoT (InferDPT)."""
-    print(f"\n{BLUE}--- Scenario 3.2: Private Local Model + CoT (InferDPT) ---{RESET}")
-    
-    try:
-        # Apply InferDPT sanitization (wrapped)
-        print(f"{YELLOW}3.2a. Applying InferDPT sanitization...{RESET}")
-        perturbed_question = inferdpt_sanitize_text(question, epsilon=config['epsilon'])
-        print(f"Perturbed Question: {perturbed_question}")
-        
-        # Keep options unchanged - only perturb the question for privacy
-        print(f"{YELLOW}3.2b. Keeping options unchanged for local model...{RESET}")
-        print(f"Original Options: {options}")
-        
-        # Generate CoT from perturbed question with original options
-        print(f"{YELLOW}3.2c. Generating CoT from Perturbed Question with REMOTE LLM...{RESET}")
-        cot_text = generate_cot_from_remote_llm(remote_client, config['remote_models']['cot_model'], perturbed_question)
-        print(f"Generated Chain-of-Thought (Remote, Private):\n{cot_text}")
-        
-        # Use local model with private CoT
-        print(f"{YELLOW}3.2d. Running Local Model with Private CoT...{RESET}")
-        local_response = get_answer_from_local_model_with_cot(client, model_name, question, options, cot_text)
-        predicted_letter = extract_letter_from_answer(local_response)
-        is_correct = check_mcq_correctness(predicted_letter, correct_answer)
-        
-        print(f"Local Answer (Private CoT-Aided): {local_response}")
-        print(f"Extracted Letter: {predicted_letter}")
-        print(f"Result: {'Correct' if is_correct else 'Incorrect'}")
-        
-        return is_correct
-    except Exception as e:
-        print(f"{RED}Error during InferDPT private CoT-aided inference: {e}{RESET}")
-        return False
+# Removed individual function - now using run_scenario_3_private_local_cot('inferdpt', ...)
 
 def batch_perturb_options_with_inferdpt(options, epsilon):
     """Batch perturb all options together using InferDPT for efficiency."""
@@ -513,10 +728,10 @@ def batch_perturb_options_with_inferdpt(options, epsilon):
     for key, value in options.items():
         print(f"  {key}) {value}")
 
-    # Concatenate options with semicolon separator (same as other methods)
-    combined_text = "; ".join(options.values())
+    # Simple concatenation without semicolon enforcement
+    combined_text = " ".join(options.values())
 
-    print(f"{CYAN}Combined Text (semicolon-separated):{RESET}\n{combined_text}")
+    print(f"{CYAN}Combined Text:{RESET}\n{combined_text}")
 
     # Apply InferDPT to the combined text
     print(f"{YELLOW}Applying InferDPT to combined text...{RESET}")
@@ -537,10 +752,10 @@ def batch_perturb_options_with_santext(options, epsilon):
     for key, value in options.items():
         print(f"  {key}) {value}")
 
-    # Concatenate options with semicolon separator (same as PhraseDP approach)
-    combined_text = "; ".join(options.values())
+    # Simple concatenation without semicolon enforcement
+    combined_text = " ".join(options.values())
 
-    print(f"{CYAN}Combined Text (semicolon-separated):{RESET}\n{combined_text}")
+    print(f"{CYAN}Combined Text:{RESET}\n{combined_text}")
 
     # Apply SANTEXT+ to the combined text
     print(f"{YELLOW}Applying SANTEXT+ to combined text...{RESET}")
@@ -561,10 +776,10 @@ def batch_perturb_options_with_custext(options, epsilon):
     for key, value in options.items():
         print(f"  {key}) {value}")
 
-    # Concatenate options with semicolon separator (same as PhraseDP approach)
-    combined_text = "; ".join(options.values())
+    # Simple concatenation without semicolon enforcement
+    combined_text = " ".join(options.values())
 
-    print(f"{CYAN}Combined Text (semicolon-separated):{RESET}\n{combined_text}")
+    print(f"{CYAN}Combined Text:{RESET}\n{combined_text}")
 
     # Apply CUSTEXT+ to the combined text
     print(f"{YELLOW}Applying CUSTEXT+ to combined text...{RESET}")
@@ -617,152 +832,6 @@ def batch_perturb_options_with_clusant(options, epsilon):
 
     return perturbed_options
 
-def run_scenario_3_2_new_inferdpt_with_batch_options_local_cot(client, model_name, remote_client, question, options, correct_answer):
-    """Scenario 3.2.new: Private Local Model + CoT (InferDPT with Batch Perturbed Options)."""
-    print(f"\n{BLUE}--- Scenario 3.2.new: Private Local Model + CoT (InferDPT with Batch Perturbed Options) ---{RESET}")
-
-    try:
-        # Apply InferDPT sanitization to question
-        print(f"{YELLOW}3.2.new.a. Applying InferDPT sanitization to question...{RESET}")
-        perturbed_question = inferdpt_sanitize_text(question, epsilon=config['epsilon'])
-        print(f"Perturbed Question: {perturbed_question}")
-
-        # Apply InferDPT to all options in batch
-        print(f"{YELLOW}3.2.new.b. Applying InferDPT batch sanitization to all options...{RESET}")
-        perturbed_options_text = batch_perturb_options_with_inferdpt(options, config['epsilon'])
-
-        print(f"Batch Perturbed Options Text: {perturbed_options_text}")
-
-        # Generate CoT from perturbed question without sending options
-        print(f"{YELLOW}3.2.new.c. Generating CoT from Perturbed Question with REMOTE LLM...{RESET}")
-        cot_text = generate_cot_from_remote_llm(remote_client, config['remote_models']['cot_model'], perturbed_question)
-        print(f"Generated Chain-of-Thought (Remote, Fully Private):\n{cot_text}")
-
-        # Use local model with original question/options but private CoT
-        print(f"{YELLOW}3.2.new.d. Running Local Model with original question/options and Private CoT...{RESET}")
-        local_response = get_answer_from_local_model_with_cot(client, model_name, question, options, cot_text)
-        predicted_letter = extract_letter_from_answer(local_response)
-        is_correct = check_mcq_correctness(predicted_letter, correct_answer)
-
-        print(f"Local Answer (Fully Private CoT-Aided): {local_response}")
-        print(f"Extracted Letter: {predicted_letter}")
-        print(f"Result: {'Correct' if is_correct else 'Incorrect'}")
-
-        return is_correct
-    except Exception as e:
-        print(f"{RED}Error during InferDPT with batch options private CoT-aided inference: {e}{RESET}")
-        return False
-
-def run_scenario_3_3_new_santext_with_batch_options_local_cot(client, model_name, remote_client, question, options, correct_answer):
-    """Scenario 3.3.new: Private Local Model + CoT (SANTEXT+ with Batch Perturbed Options)."""
-    print(f"\n{BLUE}--- Scenario 3.3.new: Private Local Model + CoT (SANTEXT+ with Batch Perturbed Options) ---{RESET}")
-
-    try:
-        # Apply SANTEXT+ sanitization to question
-        print(f"{YELLOW}3.3.new.a. Applying SANTEXT+ sanitization to question...{RESET}")
-        perturbed_question = santext_sanitize_text(question, epsilon=config['epsilon'])
-        print(f"Perturbed Question: {perturbed_question}")
-
-        # Apply SANTEXT+ to all options in batch
-        print(f"{YELLOW}3.3.new.b. Applying SANTEXT+ batch sanitization to all options...{RESET}")
-        perturbed_options_text = batch_perturb_options_with_santext(options, config['epsilon'])
-
-        print(f"Batch Perturbed Options Text: {perturbed_options_text}")
-
-        # Generate CoT from perturbed question without sending options
-        print(f"{YELLOW}3.3.new.c. Generating CoT from Perturbed Question with REMOTE LLM...{RESET}")
-        cot_text = generate_cot_from_remote_llm(remote_client, config['remote_models']['cot_model'], perturbed_question)
-        print(f"Generated Chain-of-Thought (Remote, Fully Private):\n{cot_text}")
-
-        # Use local model with original question/options but private CoT
-        print(f"{YELLOW}3.3.new.d. Running Local Model with original question/options and Private CoT...{RESET}")
-        local_response = get_answer_from_local_model_with_cot(client, model_name, question, options, cot_text)
-        predicted_letter = extract_letter_from_answer(local_response)
-        is_correct = check_mcq_correctness(predicted_letter, correct_answer)
-
-        print(f"Local Answer (Fully Private CoT-Aided): {local_response}")
-        print(f"Extracted Letter: {predicted_letter}")
-        print(f"Result: {'Correct' if is_correct else 'Incorrect'}")
-
-        return is_correct
-    except Exception as e:
-        print(f"{RED}Error during SANTEXT+ with batch options private CoT-aided inference: {e}{RESET}")
-        return False
-
-def run_scenario_3_4_new_custext_with_batch_options_local_cot(client, model_name, remote_client, question, options, correct_answer):
-    """Scenario 3.4.new: Private Local Model + CoT (CUSTEXT+ with Batch Perturbed Options)."""
-    print(f"\n{BLUE}--- Scenario 3.4.new: Private Local Model + CoT (CUSTEXT+ with Batch Perturbed Options) ---{RESET}")
-
-    try:
-        # Apply CUSTEXT+ sanitization to question
-        print(f"{YELLOW}3.4.new.a. Applying CUSTEXT+ sanitization to question...{RESET}")
-        perturbed_question = custext_sanitize_text(question, epsilon=config['epsilon'])
-        print(f"Perturbed Question: {perturbed_question}")
-
-        # Apply CUSTEXT+ to all options in batch
-        print(f"{YELLOW}3.4.new.b. Applying CUSTEXT+ batch sanitization to all options...{RESET}")
-        perturbed_options_text = batch_perturb_options_with_custext(options, config['epsilon'])
-
-        print(f"Batch Perturbed Options Text: {perturbed_options_text}")
-
-        # Generate CoT from perturbed question without sending options
-        print(f"{YELLOW}3.4.new.c. Generating CoT from Perturbed Question with REMOTE LLM...{RESET}")
-        cot_text = generate_cot_from_remote_llm(remote_client, config['remote_models']['cot_model'], perturbed_question)
-        print(f"Generated Chain-of-Thought (Remote, Fully Private):\n{cot_text}")
-
-        # Use local model with original question/options but private CoT
-        print(f"{YELLOW}3.4.new.d. Running Local Model with original question/options and Private CoT...{RESET}")
-        local_response = get_answer_from_local_model_with_cot(client, model_name, question, options, cot_text)
-        predicted_letter = extract_letter_from_answer(local_response)
-        is_correct = check_mcq_correctness(predicted_letter, correct_answer)
-
-        print(f"Local Answer (Fully Private CoT-Aided): {local_response}")
-        print(f"Extracted Letter: {predicted_letter}")
-        print(f"Result: {'Correct' if is_correct else 'Incorrect'}")
-
-        return is_correct
-    except Exception as e:
-        print(f"{RED}Error during CUSTEXT+ with batch options private CoT-aided inference: {e}{RESET}")
-        return False
-
-def run_scenario_3_5_new_clusant_with_batch_options_local_cot(client, model_name, remote_client, question, options, correct_answer):
-    """Scenario 3.5.new: Private Local Model + CoT (CluSanT with Batch Perturbed Options)."""
-    print(f"\n{BLUE}--- Scenario 3.5.new: Private Local Model + CoT (CluSanT with Batch Perturbed Options) ---{RESET}")
-
-    try:
-        # Apply CluSanT sanitization to question
-        print(f"{YELLOW}3.5.new.a. Applying CluSanT sanitization to question...{RESET}")
-        perturbed_question = clusant_sanitize_text(question, epsilon=config['epsilon'])
-        print(f"Perturbed Question: {perturbed_question}")
-
-        # Apply CluSanT to all options in batch
-        print(f"{YELLOW}3.5.new.b. Applying CluSanT batch sanitization to all options...{RESET}")
-        perturbed_options = batch_perturb_options_with_clusant(options, config['epsilon'])
-
-        print("Batch Perturbed Options:")
-        for key, value in perturbed_options.items():
-            print(f"  {key}) {value}")
-
-        # Generate CoT from perturbed question with perturbed options
-        print(f"{YELLOW}3.5.new.c. Generating CoT from Perturbed Question AND Options with REMOTE LLM...{RESET}")
-        cot_text = generate_cot_from_remote_llm(remote_client, config['remote_models']['cot_model'], perturbed_question)
-        print(f"Generated Chain-of-Thought (Remote, Fully Private):\n{cot_text}")
-
-        # Use local model with original question/options but private CoT
-        print(f"{YELLOW}3.5.new.d. Running Local Model with original question/options and Private CoT...{RESET}")
-        local_response = get_answer_from_local_model_with_cot(client, model_name, question, options, cot_text)
-        predicted_letter = extract_letter_from_answer(local_response)
-        is_correct = check_mcq_correctness(predicted_letter, correct_answer)
-
-        print(f"Local Answer (Fully Private CoT-Aided): {local_response}")
-        print(f"Extracted Letter: {predicted_letter}")
-        print(f"Result: {'Correct' if is_correct else 'Incorrect'}")
-
-        return is_correct
-    except Exception as e:
-        print(f"{RED}Error during CluSanT with batch options private CoT-aided inference: {e}{RESET}")
-        return False
-
 def run_scenario_4_purely_remote(remote_client, question, options, correct_answer):
     """Scenario 4: Purely Remote Model."""
     print(f"\n{BLUE}--- Scenario 4: Purely Remote Model ---{RESET}")
@@ -782,97 +851,11 @@ def run_scenario_4_purely_remote(remote_client, question, options, correct_answe
         print(f"{RED}Error during purely remote model inference: {e}{RESET}")
         return False
 
-def run_scenario_3_3_santext_local_cot(client, model_name, remote_client, question, options, correct_answer):
-    """Scenario 3.3: Private Local Model + CoT (SANTEXT+)."""
-    print(f"\n{BLUE}--- Scenario 3.3: Private Local Model + CoT (SANTEXT+) ---{RESET}")
-    
-    try:
-        print(f"{YELLOW}3.3a. Applying SANTEXT+ sanitization...{RESET}")
-        # Use unified wrapper (handles vocabulary caching internally)
-        sanitized_question = santext_sanitize_text(question, epsilon=config['epsilon'])
-        print(f"Sanitized Question: {sanitized_question}")
-        
-        print(f"{YELLOW}3.3b. Getting CoT from Remote LLM...{RESET}")
-        cot_response = generate_cot_from_remote_llm(remote_client, config['remote_models']['cot_model'], sanitized_question)
-        print(f"Remote CoT: {cot_response}")
-
-        print(f"{YELLOW}3.3c. Running Local Model with CoT...{RESET}")
-        local_response = get_answer_from_local_model_with_cot(client, model_name, sanitized_question, options, cot_response)
-        predicted_letter = extract_letter_from_answer(local_response)
-        is_correct = check_mcq_correctness(predicted_letter, correct_answer)
-        
-        print(f"Local Answer with SANTEXT+ CoT: {local_response}")
-        print(f"Extracted Letter: {predicted_letter}")
-        print(f"Result: {'Correct' if is_correct else 'Incorrect'}")
-        
-        return is_correct
-    except Exception as e:
-        print(f"{RED}Error in SANTEXT+ scenario: {e}{RESET}")
-        return False
-
-def run_scenario_3_4_custext_local_cot(client, model_name, remote_client, question, options, correct_answer):
-    """Scenario 3.4: Private Local Model + CoT (CUSTEXT+)."""
-    print(f"\n{BLUE}--- Scenario 3.4: Private Local Model + CoT (CUSTEXT+) ---{RESET}")
-    
-    try:
-        print(f"{YELLOW}3.4a. Applying CUSTEXT+ sanitization...{RESET}")
-        sanitized_question = custext_sanitize_text(
-            question,
-            epsilon=config['epsilon'],
-            top_k=5,
-        )
-        print(f"Sanitized Question: {sanitized_question}")
-        
-        print(f"{YELLOW}3.4b. Getting CoT from Remote LLM...{RESET}")
-        cot_response = generate_cot_from_remote_llm(remote_client, config['remote_models']['cot_model'], sanitized_question)
-        print(f"Remote CoT: {cot_response}")
-
-        print(f"{YELLOW}3.4c. Running Local Model with CoT...{RESET}")
-        local_response = get_answer_from_local_model_with_cot(client, model_name, sanitized_question, options, cot_response)
-        predicted_letter = extract_letter_from_answer(local_response)
-        is_correct = check_mcq_correctness(predicted_letter, correct_answer)
-        
-        print(f"Local Answer with CUSTEXT+ CoT: {local_response}")
-        print(f"Extracted Letter: {predicted_letter}")
-        print(f"Result: {'Correct' if is_correct else 'Incorrect'}")
-        
-        return is_correct
-    except Exception as e:
-        print(f"{RED}Error in CUSTEXT+ scenario: {e}{RESET}")
-        return False
-
-def run_scenario_3_5_clusant_local_cot(client, model_name, remote_client, question, options, correct_answer, clusant_mechanism):
-    """Scenario 3.5: Private Local Model + CoT (CluSanT)."""
-    print(f"\n{BLUE}--- Scenario 3.5: Private Local Model + CoT (CluSanT) ---{RESET}")
-    
-    try:
-        print(f"{YELLOW}3.5a. Applying CluSanT sanitization...{RESET}")
-        sanitized_question = clusant_sanitize_text(question, epsilon=config['epsilon'])
-        print(f"Sanitized Question: {sanitized_question}")
-        
-        print(f"{YELLOW}3.5b. Getting CoT from Remote LLM...{RESET}")
-        cot_response = get_cot_from_remote_llm(remote_client, config['remote_models']['cot_model'], sanitized_question)
-        print(f"Remote CoT: {cot_response}")
-        
-        print(f"{YELLOW}3.5c. Running Local Model with CoT...{RESET}")
-        local_response = get_answer_from_local_llm_with_cot(client, model_name, sanitized_question, options, cot_response)
-        predicted_letter = extract_letter_from_answer(local_response)
-        is_correct = check_mcq_correctness(predicted_letter, correct_answer)
-        
-        print(f"Local Answer with CluSanT CoT: {local_response}")
-        print(f"Extracted Letter: {predicted_letter}")
-        print(f"Result: {'Correct' if is_correct else 'Incorrect'}")
-        
-        return is_correct
-    except Exception as e:
-        print(f"{RED}Error in CluSanT scenario: {e}{RESET}")
-        return False
-
 def run_experiment_for_model(
     model_name,
     question_indices: list[int] | None = None,
-    start_index: int = 50,
-    num_samples: int = 10,
+    start_index: int = 0,
+    num_samples: int = 500,
 ):
     """Run the MedQA experiment for a given local model."""
     
@@ -900,20 +883,24 @@ def run_experiment_for_model(
         f"(indices: {selected_indices}){RESET}"
     )
 
-    # Get clients
+    # Get clients - exit if any are not available
     try:
         remote_client = get_remote_llm_client()
         print(f"{GREEN}Remote LLM client initialized successfully{RESET}")
     except Exception as e:
+        abort_on_quota_error(e, "OpenAI")
         print(f"{RED}Failed to initialize remote LLM client: {e}{RESET}")
-        remote_client = None
-    # Initialize Nebius local client for local model invocations
+        print(f"{RED}Cannot proceed without remote client. Exiting.{RESET}")
+        return MedQAExperimentResults()
+    
     try:
         local_client = utils.get_nebius_client()
         print(f"{GREEN}Local (Nebius) client initialized successfully{RESET}")
     except Exception as e:
+        abort_on_quota_error(e, "Nebius")
         print(f"{RED}Failed to initialize Nebius local client: {e}{RESET}")
-        local_client = None
+        print(f"{RED}Cannot proceed without local client. Exiting.{RESET}")
+        return MedQAExperimentResults()
     
     # Load Sentence-BERT for similarity computation
     sbert_model = load_sentence_bert()
@@ -937,91 +924,87 @@ def run_experiment_for_model(
         options = item['options']  # Already a dict with A, B, C, D keys
         correct_answer = item['answer_idx']  # This is already a letter (A, B, C, D)
         
+        # Extract additional metadata
+        meta_info = item.get('meta_info', 'N/A')
+        metamap_phrases = item.get('metamap_phrases', [])
+        
         print(f"Question: {question}")
         print(f"Options:")
         for key, value in options.items():
             print(f"  {key}) {value}")
         print(f"Correct Answer: {correct_answer}")
+        print(f"Complexity Level: {meta_info}")
+        print(f"MetaMap Phrases ({len(metamap_phrases)}): {', '.join(metamap_phrases[:10])}{'...' if len(metamap_phrases) > 10 else ''}")
         
         # Run all scenarios
         results.total_questions += 1
         
-        # Scenario 1: Purely Local Model
-        if local_client and run_scenario_1_purely_local(local_client, model_name, question, options, correct_answer):
-            results.local_alone_correct += 1
+        # DISABLED: Scenario 1: Purely Local Model
+        # if run_scenario_1_purely_local(local_client, model_name, question, options, correct_answer):
+        #     results.local_alone_correct += 1
         
-        # Scenario 2: Non-Private Local + Remote CoT
-        if remote_client and run_scenario_2_non_private_cot(local_client or remote_client, model_name, remote_client, question, options, correct_answer):
-            results.non_private_cot_correct += 1
+        # DISABLED: Scenario 2: Non-Private Local + Remote CoT
+        # if run_scenario_2_non_private_cot(local_client, model_name, remote_client, question, options, correct_answer):
+        #     results.non_private_cot_correct += 1
+
+        # DISABLED: Scenario 3.0: Private Local + CoT (Old Phrase DP - Single API Call)
+        # if run_scenario_3_private_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'phrasedp', use_old_phrasedp=True):
+        #     results.old_phrase_dp_local_cot_correct += 1
         
-        # Scenario 3.1: Private Local + CoT (Phrase DP)
-        if remote_client and local_client and run_scenario_3_1_phrase_dp_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer):
-            results.phrase_dp_local_cot_correct += 1
 
-        # Scenario 3.1.2: Private Local + CoT (Phrase DP with Perturbed Options) - COMMENTED OUT
-        # if remote_client and local_client and run_scenario_3_1_2_phrase_dp_with_options_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer):
-        #     results.phrase_dp_with_options_local_cot_correct += 1
-
-        # Scenario 3.1.2.new: Private Local + CoT (Phrase DP with Batch Perturbed Options)
-        if remote_client and local_client and run_scenario_3_1_2_new_phrase_dp_with_batch_options_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer):
+        # ACTIVE: Scenario 3.1.2: Private Local + CoT (Old Phrase DP with Batch Perturbed Options) - FIXED BUG
+        if run_scenario_3_private_local_cot_with_batch_options(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'phrasedp', use_old_phrasedp=True):
             results.phrase_dp_batch_options_local_cot_correct += 1
         
-        # Scenario 3.2: Private Local + CoT (InferDPT)
-        if remote_client and local_client and run_scenario_3_2_inferdpt_local_cot(local_client, model_name, remote_client, question, options, correct_answer):
+        # ACTIVE: Scenario 3.2: Private Local + CoT (InferDPT WITHOUT Batch Options)
+        if run_scenario_3_private_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'inferdpt'):
             results.inferdpt_local_cot_correct += 1
 
-        # Scenario 3.2.new: Private Local + CoT (InferDPT with Batch Perturbed Options)
-        if remote_client and local_client and run_scenario_3_2_new_inferdpt_with_batch_options_local_cot(local_client, model_name, remote_client, question, options, correct_answer):
-            results.inferdpt_batch_options_local_cot_correct += 1
+        # DISABLED: Scenario 3.2.new: Private Local + CoT (InferDPT with Batch Perturbed Options)
+        # if run_scenario_3_private_local_cot_with_batch_options(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'inferdpt'):
+        #     results.inferdpt_batch_options_local_cot_correct += 1
         
-        # Scenario 3.3: Private Local + CoT (SANTEXT+)
-        if remote_client and local_client and run_scenario_3_3_santext_local_cot(local_client, model_name, remote_client, question, options, correct_answer):
+        # ACTIVE: Scenario 3.3: Private Local + CoT (SANTEXT+ WITHOUT Batch Options)
+        if run_scenario_3_private_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'santext'):
             results.santext_local_cot_correct += 1
 
-        # Scenario 3.3.new: Private Local + CoT (SANTEXT+ with Batch Perturbed Options)
-        if remote_client and local_client and run_scenario_3_3_new_santext_with_batch_options_local_cot(local_client, model_name, remote_client, question, options, correct_answer):
-            results.santext_batch_options_local_cot_correct += 1
+        # DISABLED: Scenario 3.3.new: Private Local + CoT (SANTEXT+ with Batch Perturbed Options)
+        # if run_scenario_3_private_local_cot_with_batch_options(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'santext'):
+        #     results.santext_batch_options_local_cot_correct += 1
         
         # Scenario 3.4: Private Local + CoT (CUSTEXT+)
-        if remote_client and local_client and run_scenario_3_4_custext_local_cot(local_client, model_name, remote_client, question, options, correct_answer):
-            results.custext_local_cot_correct += 1
+        # if run_scenario_3_private_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'custext'):
+        #     results.custext_local_cot_correct += 1
 
-        # # Scenario 3.4.new: Private Local + CoT (CUSTEXT+ with Batch Perturbed Options)
-        if remote_client and local_client and run_scenario_3_4_new_custext_with_batch_options_local_cot(local_client, model_name, remote_client, question, options, correct_answer):
-            results.custext_batch_options_local_cot_correct += 1
+        # Scenario 3.4.new: Private Local + CoT (CUSTEXT+ with Batch Perturbed Options)
+        # if run_scenario_3_private_local_cot_with_batch_options(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'custext'):
+        #     results.custext_batch_options_local_cot_correct += 1
 
         # Scenario 3.5: Private Local + CoT (CluSanT)
         # Temporarily disabled per request
-        # if remote_client and run_scenario_3_5_clusant_local_cot(remote_client, model_name, remote_client, question, options, correct_answer, clusant_mechanism):
+        # if run_scenario_3_private_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'clusant'):
         #     results.clusant_local_cot_correct += 1
 
         # Scenario 3.5.new: Private Local + CoT (CluSanT with Batch Perturbed Options)
-        # if remote_client and local_client and run_scenario_3_5_new_clusant_with_batch_options_local_cot(local_client, model_name, remote_client, question, options, correct_answer, clusant_mechanism):
+        # if run_scenario_3_private_local_cot_with_batch_options(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'clusant'):
         #     results.clusant_batch_options_local_cot_correct += 1
         
         # Scenario 4: Purely Remote Model
-        if remote_client and run_scenario_4_purely_remote(remote_client, question, options, correct_answer):
+        if run_scenario_4_purely_remote(remote_client, question, options, correct_answer):
             results.purely_remote_correct += 1
     
     # Print final results
+    def print_accuracy(name, correct, total):
+        """Helper function to print accuracy results."""
+        percentage = correct/total*100 if total > 0 else 0
+        print(f"{name} Accuracy: {correct}/{total} = {percentage:.2f}%")
+    
     print(f"\n{'='*50}")
-    print(f"FINAL RESULTS")
+    print(f"FINAL RESULTS - THREE SCENARIO TEST")
     print(f"{'='*50}")
-    print(f"1. Purely Local Model ({model_name}) Accuracy: {results.local_alone_correct}/{results.total_questions} = {results.local_alone_correct/results.total_questions*100:.2f}%")
-    print(f"2. Non-Private Local Model + Remote CoT Accuracy: {results.non_private_cot_correct}/{results.total_questions} = {results.non_private_cot_correct/results.total_questions*100:.2f}%")
-    print(f"3.1. Private Local Model + CoT (Phrase DP) Accuracy: {results.phrase_dp_local_cot_correct}/{results.total_questions} = {results.phrase_dp_local_cot_correct/results.total_questions*100:.2f}%")
-    # print(f"3.1.2. Private Local Model + CoT (Phrase DP with Perturbed Options) Accuracy: {results.phrase_dp_with_options_local_cot_correct}/{results.total_questions} = {results.phrase_dp_with_options_local_cot_correct/results.total_questions*100:.2f}%")
-    print(f"3.1.2.new. Private Local Model + CoT (Phrase DP with Batch Perturbed Options) Accuracy: {results.phrase_dp_batch_options_local_cot_correct}/{results.total_questions} = {results.phrase_dp_batch_options_local_cot_correct/results.total_questions*100:.2f}%")
-    print(f"3.2. Private Local Model + CoT (InferDPT) Accuracy: {results.inferdpt_local_cot_correct}/{results.total_questions} = {results.inferdpt_local_cot_correct/results.total_questions*100:.2f}%")
-    print(f"3.2.new. Private Local Model + CoT (InferDPT with Batch Perturbed Options) Accuracy: {results.inferdpt_batch_options_local_cot_correct}/{results.total_questions} = {results.inferdpt_batch_options_local_cot_correct/results.total_questions*100:.2f}%")
-    print(f"3.3. Private Local Model + CoT (SANTEXT+) Accuracy: {results.santext_local_cot_correct}/{results.total_questions} = {results.santext_local_cot_correct/results.total_questions*100:.2f}%")
-    print(f"3.3.new. Private Local Model + CoT (SANTEXT+ with Batch Perturbed Options) Accuracy: {results.santext_batch_options_local_cot_correct}/{results.total_questions} = {results.santext_batch_options_local_cot_correct/results.total_questions*100:.2f}%")
-    print(f"3.4. Private Local Model + CoT (CUSTEXT+) Accuracy: {results.custext_local_cot_correct}/{results.total_questions} = {results.custext_local_cot_correct/results.total_questions*100:.2f}%")
-    print(f"3.4.new. Private Local Model + CoT (CUSTEXT+ with Batch Perturbed Options) Accuracy: {results.custext_batch_options_local_cot_correct}/{results.total_questions} = {results.custext_batch_options_local_cot_correct/results.total_questions*100:.2f}%")
-    # 3.5 disabled for now
-    # print(f"3.5. Private Local Model + CoT (CluSanT) Accuracy: {results.clusant_local_cot_correct}/{results.total_questions} = {results.clusant_local_cot_correct/results.total_questions*100:.2f}%")
-    # print(f"3.5.new. Private Local Model + CoT (CluSanT with Batch Perturbed Options) Accuracy: {results.clusant_batch_options_local_cot_correct}/{results.total_questions} = {results.clusant_batch_options_local_cot_correct/results.total_questions*100:.2f}%")
-    print(f"4. Purely Remote Model ({config['remote_models']['llm_model']}) Accuracy: {results.purely_remote_correct}/{results.total_questions} = {results.purely_remote_correct/results.total_questions*100:.2f}%")
+    print_accuracy("3.1.2. Private Local Model + CoT (Old Phrase DP with Batch Perturbed Options) - FIXED", results.phrase_dp_batch_options_local_cot_correct, results.total_questions)
+    print_accuracy("3.2. Private Local Model + CoT (InferDPT WITHOUT Batch Options)", results.inferdpt_local_cot_correct, results.total_questions)
+    print_accuracy("3.3. Private Local Model + CoT (SANTEXT+ WITHOUT Batch Options)", results.santext_local_cot_correct, results.total_questions)
     
     return results
 

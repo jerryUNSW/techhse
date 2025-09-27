@@ -19,7 +19,7 @@ warnings.filterwarnings('ignore')
 
 # Import your existing mechanisms
 from dp_sanitizer import differentially_private_replacement
-from utils import generate_sentence_replacements_with_nebius_diverse
+from utils import generate_sentence_replacements_with_nebius
 from santext_integration import create_santext_mechanism
 from sentence_transformers import SentenceTransformer
 from dotenv import load_dotenv
@@ -361,13 +361,11 @@ def run_pii_protection_experiment(start_idx: int = 0, num_rows: int = 10):
                             if nebius_client is not None:
                                 gen_t0 = time.time()
                                 print(f"    [Row {idx}] Generating candidates via Nebius...")
-                                candidates = generate_sentence_replacements_with_nebius_diverse(
+                                candidates = generate_sentence_replacements_with_nebius(
                                     nebius_client,
                                     nebius_model_name,
                                     input_sentence=original_text,
-                                    num_return_sequences=5,
-                                    num_api_calls=10,
-                                    verbose=False
+                                    num_return_sequences=20
                                 )
                                 print(f"    [Row {idx}] Candidates generated: {len(candidates)} (t={time.time()-gen_t0:.2f}s)")
                             if candidates:

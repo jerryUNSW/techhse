@@ -217,21 +217,49 @@ Results are stored in the `test-results/` directory and include:
 
 **Dataset**: `GBaker/MedQA-USMLE-4-options` - Medical multiple-choice questions with clinical vignettes
 
-**Final Results (500 Questions)**:
+**FINAL RESULTS (500 Questions Completed - September 27, 2025)**:
 | **Scenario** | **Accuracy** | **Correct/Total** | **Performance** |
 |--------------|-------------|-------------------|-----------------|
-| **1. Purely Local Model** | **76.80%** | 384/500 | Baseline |
-| **2. Non-Private Local + Remote CoT** | **92.81%** | 465/501 | ⭐ **Best** |
-| **3.1. Private Local + CoT (Phrase DP)** | **83.80%** | 419/500 | ⬆️ Above baseline |
-| **3.2. Private Local + CoT (InferDPT)** | **71.94%** | 359/499 | ⬇️ Below baseline |
-| **4. Purely Remote Model** | **89.80%** | 449/500 | 🥈 **Second Best** |
+| **4. Purely Remote Model** | **89.60%** | 448/500 | 🏆 **Best** |
+| **2. Non-Private Local + Remote CoT** | **83.00%** | 415/500 | 🥈 **Second** |
+| **3.0. Private Local + CoT (Old Phrase DP)** | **74.40%** | 372/500 | 🥉 **Third** |
+| **1. Purely Local Model** | **59.80%** | 299/500 | Baseline |
+| **3.2. Private Local + CoT (InferDPT + Batch)** | **58.80%** | 294/500 | Below baseline |
+| **3.3. Private Local + CoT (SANTEXT+ + Batch)** | **56.60%** | 283/500 | Below baseline |
+| **3.1.2. Private Local + CoT (Old Phrase DP + Batch)** | **0.00%** | 0/500 | ❌ **Failed** |
 
-Key findings from the final 500-question run:
-- Non-private CoT achieves the best accuracy (92.81%), showing substantial CoT benefit over local-only.
-- Phrase DP provides a better privacy-utility balance than InferDPT (+11.86% accuracy).
-- Remote models significantly outperform local models (~+13% gap).
+**Key Findings from Final 500-Question Experiment:**
 
-Note on interim results: An earlier 250-question interim analysis showed similar rankings and led to actionable recommendations (see “Recommendations & Next Steps”).
+**Performance Rankings:**
+- **Remote Model** achieves highest accuracy (89.6%) - expected as it has full access to original questions
+- **Non-Private CoT** provides excellent performance (83.0%) with reasoning guidance
+- **Old PhraseDP** maintains good privacy-utility balance (74.4%) - best privacy-preserving method
+- **Batch Options Processing** shows significant performance degradation across all methods
+
+**Privacy vs Performance Analysis:**
+- **Privacy Cost**: 15.2 percentage points (89.6% remote vs 74.4% private)
+- **CoT Benefits**: +23.2% (non-private CoT vs baseline), +14.6% (private CoT vs baseline)
+- **Batch Processing Impact**: -15.6 percentage points for Old PhraseDP (74.4% → 58.9%)
+
+**Critical Technical Issues:**
+- **Old PhraseDP + Batch Options** completely failed (0% accuracy) - indicates critical bug in batch implementation
+- **Batch options processing** consistently underperforms single-option perturbation
+- **SANTEXT+ and InferDPT** show similar performance in batch mode (~57-59%)
+
+**Key Finding: Batch Perturbing Options is Counter-Productive**
+- **Batch processing** consistently reduces performance across all privacy mechanisms
+- **Old PhraseDP**: 74.4% (single) vs 0% (batch) - complete failure
+- **InferDPT**: 58.8% (batch) vs 47.4% (no batch) - still underperforms
+- **SANTEXT+**: 56.6% (batch) vs 53.2% (no batch) - minimal improvement
+- **Recommendation**: Avoid batch perturbation of options; process questions and options separately for better privacy-utility trade-offs
+
+**Strategic Recommendations:**
+1. **For Maximum Accuracy**: Use Remote Model (89.6%)
+2. **For Privacy + Performance**: Use Old PhraseDP single-option (74.4%)
+3. **For Balanced Approach**: Use Non-Private CoT (83.0%)
+4. **Avoid Batch Processing**: Significant performance degradation across all methods
+5. **Fix Batch Options Bug**: Critical issue with Old PhraseDP + Batch Options implementation
+6. **Process Options Separately**: Batch perturbation of options is counter-productive; maintain individual option structure
 
 ## Datasets
 
@@ -358,6 +386,28 @@ From the interim analysis (250 questions) and subsequent work, the following act
 Meeting notes (January 2025) identified higher-impact enhancements:
 1. Context summarization before remote LLM processing to reduce exposure.
 2. Rule-based guardrails layered with Phrase DP to catch sensitive patterns.
+3. **CoT Prompt Improvement**: Modify remote LLM CoT generation to provide reasoning guidance rather than solving the problem directly.
+
+### CoT Prompt Enhancement
+
+**✅ COMPLETED**: Improved remote LLM CoT generation to provide better guidance for local models:
+
+**Previous Issue**: Remote LLM was solving the problem directly and providing final answers, which made the local model redundant.
+
+**Solution Implemented**: Modified CoT prompts to:
+- **Provide reasoning guidance** rather than solving the problem
+- **Explain the approach** without choosing final answers (A, B, C, D)
+- **Give step-by-step medical reasoning** that the local model can apply
+- **Explicitly tell the remote model** that its output will be fed back to a local model
+- **Focus on diagnostic frameworks** and reasoning principles
+
+**Benefits Achieved**:
+- True CoT: Remote provides reasoning, local applies it
+- Better privacy: Remote doesn't know the final answer
+- Cleaner separation: Remote = expert guidance, Local = decision maker
+- More realistic: Like having a medical expert guide a student
+
+**Implementation**: Updated `generate_cot_from_remote_llm_with_perturbed_options()` and `generate_cot_from_remote_llm_with_perturbed_options_dict()` functions with improved prompts that explicitly mention the CoT will be fed back to a local model.
 
 ### HotpotQA Context-Aware Privacy Enhancement
 
@@ -464,6 +514,63 @@ The PPI protection plots (`generate_unified_ppi_plots.py`) rely on the following
 - Overall protection vs epsilon: `overall_protection_vs_epsilon_5mech_*.png`
 - Radar plots per epsilon: `protection_radar_5mech_*_eps_*.png`
 - Saved to: `plots/ppi/` and copied to `overleaf-folder/plots/ppi/`
+
+## PhraseDP Agent
+
+The PhraseDP Agent is an intelligent privacy-preserving text sanitization system powered by a local model (Llama 8B). It provides adaptive, context-aware text perturbation with comprehensive metadata generation.
+
+### Features
+
+- **Intelligent Dataset Analysis**: Automatically detects dataset types (medical, legal, general, academic)
+- **Question Type Detection**: Identifies question formats (multiple choice, fill-in-blank, open-ended)
+- **Context Summarization**: Creates concise summaries while preserving key information
+- **PII Detection & Replacement**: Detects and replaces PII with appropriate placeholders
+- **Adaptive Candidate Generation**: Generates domain-appropriate replacement candidates
+- **Consistent Perturbation**: Applies same strategy across question, context, and options
+- **Rich Metadata Generation**: Provides comprehensive information for remote LLMs
+- **Privacy-Utility Control**: Adjustable epsilon parameter for privacy-utility trade-off
+
+### Usage
+
+```python
+from phrasedp_agent import PhraseDPAgent
+
+# Initialize agent
+agent = PhraseDPAgent()
+
+# Process medical multiple choice question
+result = agent.process(
+    question="What is the first-line treatment for hypertension?",
+    options=["A) ACE inhibitors", "B) Beta-blockers", "C) Diuretics", "D) Calcium channel blockers"],
+    epsilon=1.0
+)
+
+# Process question with context
+result = agent.process(
+    question="Who designed the Eiffel Tower?",
+    context="The Eiffel Tower is a wrought-iron lattice tower...",
+    epsilon=2.0
+)
+```
+
+### Files
+
+- `phrasedp_agent.py` - Main agent implementation
+- `test_phrasedp_agent.py` - Comprehensive test suite
+- `demo_phrasedp_agent.py` - Demo script with various scenarios
+
+### Testing
+
+```bash
+# Run manual tests (requires local model)
+python test_phrasedp_agent.py
+
+# Run demo scenarios
+python demo_phrasedp_agent.py
+
+# Run unit tests (requires pytest)
+pytest test_phrasedp_agent.py -v
+```
 
 ### September 24, 2025 — Comprehensive PII Protection Experiment Results (Timestamp: 20250924_205229)
 

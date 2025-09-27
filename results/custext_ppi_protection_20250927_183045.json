@@ -1,0 +1,49 @@
+{
+  "summary": {
+    "epsilon": 1.0,
+    "top_k": 20,
+    "save_stop_words": true,
+    "emails": 0.0,
+    "phones": 0.0,
+    "addresses": 1.0,
+    "names": 0.0,
+    "overall": 0.25
+  },
+  "results": {
+    "epsilon": 1.0,
+    "top_k": 20,
+    "save_stop_words": true,
+    "overall": [
+      0.25,
+      0.25
+    ],
+    "emails": [
+      0,
+      0
+    ],
+    "phones": [
+      0,
+      0
+    ],
+    "addresses": [
+      1,
+      1
+    ],
+    "names": [
+      0,
+      0
+    ],
+    "samples": [
+      {
+        "row": 0,
+        "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+        "sanitized": "My designation is Aaliyah Popova, and I am a pawnbroker with 13 decades of experience. If you have a drafts that you ai like to discuss, requested feels freedoms to liaise me by telephoning at (95) 94215-7906 or by messaging at aaliyah.popova4783@aol.edu. If you shall iike to taught more about me, inviting idea freedoms to voyages my cyber at [website address] or voyages me at my seminars installed at 97 Linc Street."
+      },
+      {
+        "row": 1,
+        "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+        "sanitized": "My christening is Nikolay Becker, and I'm a decorator with doss yrs of experience. If you must adore to communicating me, my mailroom dealing is konstantin.becker@gmail.com and my handset nombre is 0475 4429797."
+      }
+    ]
+  }
+}

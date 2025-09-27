@@ -129,13 +129,33 @@ class DailyEmailSummary:
         content = f"""
 Tech4HSE Project Daily Summary - {today}
 
-=== RECENT PROGRESS ===
+=== EXPERIMENT #2 PROGRESS ===
 """
+        
+        # Check for experiment #2 progress
+        exp2_file = self.project_root / 'test-500-new-2.txt'
+        if exp2_file.exists():
+            stat = exp2_file.stat()
+            content += f"✓ Experiment #2 Running: test-500-new-2.txt ({stat.st_size} bytes)\n"
+            content += f"  Modified: {datetime.fromtimestamp(stat.st_mtime).strftime('%Y-%m-%d %H:%M:%S')}\n"
+            
+            # Try to get progress from the file
+            try:
+                with open(exp2_file, 'r') as f:
+                    file_content = f.read()
+                    import re
+                    question_matches = re.findall(r'Question \d+/\d+ \(Dataset idx: \d+\)', file_content)
+                    questions_done = len(question_matches)
+                    content += f"  Progress: {questions_done}/500 questions completed ({(questions_done/500)*100:.1f}%)\n"
+            except:
+                content += "  Progress: Unable to parse current progress\n"
+        else:
+            content += "✗ Experiment #2: test-500-new-2.txt not found\n"
         
         # Git status
         if 'error' not in git_status:
             content += f"""
-Git Status:
+=== RECENT COMMITS ===
 - Current Branch: {git_status['current_branch']}
 - Recent Commits (last 3 days): {git_status['total_commits']}
 """
@@ -146,11 +166,14 @@ Git Status:
         else:
             content += f"Git Status: Error - {git_status['error']}\n"
         
-        # File status
-        content += "\n=== KEY FILES STATUS ===\n"
-        for file_path, status in file_status.items():
-            if status['exists']:
-                content += f"✓ {file_path} ({status['size']} bytes, modified: {status['modified']})\n"
+        # Key files status (focus on experiment files)
+        content += "\n=== EXPERIMENT FILES STATUS ===\n"
+        exp_files = ['test-500-new-2.txt', 'test-500-new.txt', 'README.md']
+        for file_path in exp_files:
+            full_path = self.project_root / file_path
+            if full_path.exists():
+                stat = full_path.stat()
+                content += f"✓ {file_path} ({stat.st_size} bytes, modified: {datetime.fromtimestamp(stat.st_mtime).strftime('%Y-%m-%d %H:%M:%S')})\n"
             else:
                 content += f"✗ {file_path} (missing)\n"
         
@@ -167,7 +190,8 @@ Git Status:
             for todo in todos:
                 content += f"• {todo}\n"
         else:
-            content += "No specific todos identified.\n"
+            content += "• Monitor Experiment #2 progress\n"
+            content += "• Analyze results when complete\n"
         
         # Add standard todos
         content += """

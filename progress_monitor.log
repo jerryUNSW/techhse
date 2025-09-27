@@ -1,0 +1,32 @@
+Questions done: 4
+Status: IN_PROGRESS
+Accuracy info: Current accuracy: 55.0% (11/20)
+Progress email sent successfully at 2025-09-26 18:00:01
+Questions done: 77
+Status: IN_PROGRESS
+Accuracy info: Current accuracy: 73.3% (337/460)
+Progress email sent successfully at 2025-09-26 19:00:01
+Questions done: 149
+Status: STARTING
+Accuracy info: No results yet
+Progress email sent successfully at 2025-09-26 20:00:01
+Questions done: 219
+Status: IN_PROGRESS
+Accuracy info: {'Baseline (No Privacy)': {'correct': 141, 'total': 219, 'percentage': 64.38356164383562}, 'Non-Private CoT': {'correct': 186, 'total': 219, 'percentage': 84.93150684931507}, 'Old PhraseDP': {'correct': 168, 'total': 219, 'percentage': 76.71232876712328}, 'Old PhraseDP + Batch Options': {'correct': 140, 'total': 218, 'percentage': 64.22018348623854}, 'InferDPT + Batch Options': {'correct': 140, 'total': 218, 'percentage': 64.22018348623854}, 'SANTEXT+ + Batch Options': {'correct': 134, 'total': 218, 'percentage': 61.46788990825688}, 'Remote Model': {'correct': 200, 'total': 218, 'percentage': 91.74311926605505}}
+Progress email sent successfully at 2025-09-26 21:00:05
+Questions done: 289
+Status: IN_PROGRESS
+Accuracy info: {'Baseline (No Privacy)': {'correct': 181, 'total': 289, 'percentage': 62.629757785467135}, 'Non-Private CoT': {'correct': 238, 'total': 289, 'percentage': 82.35294117647058}, 'Old PhraseDP': {'correct': 217, 'total': 289, 'percentage': 75.08650519031141}, 'Old PhraseDP + Batch Options': {'correct': 177, 'total': 288, 'percentage': 61.458333333333336}, 'InferDPT + Batch Options': {'correct': 177, 'total': 288, 'percentage': 61.458333333333336}, 'SANTEXT+ + Batch Options': {'correct': 167, 'total': 288, 'percentage': 57.986111111111114}, 'Remote Model': {'correct': 258, 'total': 288, 'percentage': 89.58333333333334}}
+Progress email sent successfully at 2025-09-26 22:00:07
+Questions done: 355
+Status: IN_PROGRESS
+Accuracy info: {'Baseline (No Privacy)': {'correct': 213, 'total': 355, 'percentage': 60.0}, 'Non-Private CoT': {'correct': 294, 'total': 355, 'percentage': 82.8169014084507}, 'Old PhraseDP': {'correct': 265, 'total': 355, 'percentage': 74.64788732394366}, 'Old PhraseDP + Batch Options': {'correct': 212, 'total': 354, 'percentage': 59.887005649717516}, 'InferDPT + Batch Options': {'correct': 212, 'total': 354, 'percentage': 59.887005649717516}, 'SANTEXT+ + Batch Options': {'correct': 199, 'total': 354, 'percentage': 56.21468926553672}, 'Remote Model': {'correct': 316, 'total': 354, 'percentage': 89.26553672316385}}
+Progress email sent successfully at 2025-09-26 23:00:12
+Questions done: 416
+Status: IN_PROGRESS
+Accuracy info: {'Baseline (No Privacy)': {'correct': 253, 'total': 416, 'percentage': 60.817307692307686}, 'Non-Private CoT': {'correct': 348, 'total': 416, 'percentage': 83.65384615384616}, 'Old PhraseDP': {'correct': 311, 'total': 416, 'percentage': 74.75961538461539}, 'Old PhraseDP + Batch Options': {'correct': 246, 'total': 415, 'percentage': 59.27710843373494}, 'InferDPT + Batch Options': {'correct': 246, 'total': 415, 'percentage': 59.27710843373494}, 'SANTEXT+ + Batch Options': {'correct': 235, 'total': 415, 'percentage': 56.62650602409639}, 'Remote Model': {'correct': 372, 'total': 415, 'percentage': 89.63855421686748}}
+Progress email sent successfully at 2025-09-27 00:00:22
+Questions done: 478
+Status: IN_PROGRESS
+Accuracy info: {'Baseline (No Privacy)': {'correct': 287, 'total': 478, 'percentage': 60.04184100418411}, 'Non-Private CoT': {'correct': 400, 'total': 478, 'percentage': 83.68200836820083}, 'Old PhraseDP': {'correct': 360, 'total': 478, 'percentage': 75.31380753138075}, 'Old PhraseDP + Batch Options': {'correct': 284, 'total': 477, 'percentage': 59.538784067085956}, 'InferDPT + Batch Options': {'correct': 284, 'total': 477, 'percentage': 59.538784067085956}, 'SANTEXT+ + Batch Options': {'correct': 272, 'total': 477, 'percentage': 57.023060796645694}, 'Remote Model': {'correct': 429, 'total': 477, 'percentage': 89.937106918239}}
+Progress email sent successfully at 2025-09-27 01:00:32
