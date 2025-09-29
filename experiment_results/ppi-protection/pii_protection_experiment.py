@@ -18,8 +18,8 @@ import argparse
 warnings.filterwarnings('ignore')
 
 # Import your existing mechanisms
-from utils import phrase_DP_perturbation_old
-from santext_integration import create_santext_mechanism
+# from utils import phrase_DP_perturbation_old  # Commented out for CluSanT-only run
+# from santext_integration import create_santext_mechanism  # Commented out for CluSanT-only run
 from sentence_transformers import SentenceTransformer
 from dotenv import load_dotenv
 import os
@@ -333,7 +333,8 @@ def run_pii_protection_experiment(start_idx: int = 0, num_rows: int = 10, resume
     # State for CluSanT
     clus_saved_cwd = None
 
-    for mechanism_name in ['PhraseDP', 'InferDPT', 'SANTEXT+','CusText+','CluSanT']:
+    # for mechanism_name in ['PhraseDP', 'InferDPT', 'SANTEXT+','CusText+','CluSanT']:
+    for mechanism_name in ['CluSanT']:
         print(f"\n=== Mechanism: {mechanism_name} ===")
         results[mechanism_name] = {}
         
@@ -506,17 +507,17 @@ def run_pii_protection_experiment(start_idx: int = 0, num_rows: int = 10, resume
                                 # Find targets present in text (multi-word first)
                                 targets_present = []
                                 for w in clus_embeddings.keys():
-                                    if ' ' in w and re.search(rf"\\b{re.escape(w)}\\b", sanitized_text, flags=re.IGNORECASE):
+                                    if w.strip() and ' ' in w and re.search(rf"\b{re.escape(w)}\b", sanitized_text, flags=re.IGNORECASE):
                                         targets_present.append(w)
                                 for w in clus_embeddings.keys():
-                                    if ' ' not in w and re.search(rf"\\b{re.escape(w)}\\b", sanitized_text, flags=re.IGNORECASE):
+                                    if w.strip() and ' ' not in w and re.search(rf"\b{re.escape(w)}\b", sanitized_text, flags=re.IGNORECASE):
                                         targets_present.append(w)
                                 targets_present = sorted(set(targets_present), key=lambda x: (-len(x), x))
                                 for t in targets_present:
                                     new = clus.replace_word(t)
                                     if not new:
                                         continue
-                                    pattern = re.compile(rf"\\b{re.escape(t)}\\b", flags=re.IGNORECASE)
+                                    pattern = re.compile(rf"\b{re.escape(t)}\b", flags=re.IGNORECASE)
                                     if pattern.search(sanitized_text):
                                         sanitized_text = pattern.sub(new, sanitized_text)
                             except Exception as e:

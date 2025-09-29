@@ -78,6 +78,50 @@ class DailyEmailSummary:
         
         return file_status
     
+    def get_recent_progress_from_logs(self):
+        """Get most recent progress from log files"""
+        progress_info = []
+        
+        # Check MedMCQA progress log
+        medmcqa_log = self.project_root / 'medmcqa_progress.log'
+        if medmcqa_log.exists():
+            try:
+                with open(medmcqa_log, 'r') as f:
+                    lines = f.readlines()
+                    # Get last 10 lines for recent activity
+                    recent_lines = lines[-10:] if len(lines) > 10 else lines
+                    if recent_lines:
+                        progress_info.append("=== MEDMCQA EXPERIMENT PROGRESS ===")
+                        for line in recent_lines:
+                            if line.strip():
+                                progress_info.append(f"• {line.strip()}")
+            except Exception as e:
+                progress_info.append(f"Error reading MedMCQA log: {e}")
+        
+        # Check other experiment logs
+        log_files = [
+            'monitor_epsilon2.log',
+            'daily_email.log'
+        ]
+        
+        for log_file in log_files:
+            log_path = self.project_root / log_file
+            if log_path.exists():
+                try:
+                    with open(log_path, 'r') as f:
+                        lines = f.readlines()
+                        # Get last 5 lines for recent activity
+                        recent_lines = lines[-5:] if len(lines) > 5 else lines
+                        if recent_lines:
+                            progress_info.append(f"\n=== {log_file.upper()} (RECENT) ===")
+                            for line in recent_lines:
+                                if line.strip():
+                                    progress_info.append(f"• {line.strip()}")
+                except Exception as e:
+                    progress_info.append(f"Error reading {log_file}: {e}")
+        
+        return progress_info
+    
     def get_recent_issues_and_todos(self):
         """Extract recent issues and todos from project files"""
         issues = []
@@ -122,15 +166,49 @@ class DailyEmailSummary:
         git_status = self.get_git_status()
         file_status = self.get_project_files_status()
         issues, todos = self.get_recent_issues_and_todos()
+        recent_progress = self.get_recent_progress_from_logs()
         
         # Get current date
         today = datetime.now().strftime('%Y-%m-%d')
         
         content = f"""
-Tech4HSE Project Daily Summary - {today}
+Tech4HSE Privacy-Preserving Multi-Hop Question Answering System - Daily Progress Report
+=======================================================================================
+Date: {today}
+Project: Privacy-Preserving Medical QA with Differential Privacy Mechanisms
+Focus: MedMCQA Experiment (Epsilon 1.0, 2.0, 3.0) - 100 Questions per Epsilon
 
-=== EXPERIMENT #2 PROGRESS ===
+=== MOST RECENT PROGRESS (FROM LOG TAILS) ===
 """
+        
+        # Add recent progress from logs
+        if recent_progress:
+            for progress_line in recent_progress:
+                content += f"{progress_line}\n"
+        else:
+            content += "No recent progress found in log files.\n"
+        
+        content += "\n=== CURRENT EXPERIMENTS ===\n"
+        
+        # Check for MedMCQA experiment progress
+        medmcqa_results_dir = self.project_root / 'QA-results' / 'medmcqa'
+        if medmcqa_results_dir.exists():
+            result_files = list(medmcqa_results_dir.glob('medmcqa_results_*_100q_eps*.json'))
+            if result_files:
+                content += f"✓ MedMCQA Experiment: {len(result_files)} result files found\n"
+                for result_file in result_files:
+                    try:
+                        with open(result_file, 'r') as f:
+                            data = json.load(f)
+                            total_questions = data.get('results', {}).get('total_questions', 0)
+                            epsilon = data.get('experiment_info', {}).get('epsilon', 'unknown')
+                            content += f"  • Epsilon {epsilon}: {total_questions}/100 questions processed\n"
+                    except Exception as e:
+                        content += f"  • Error reading {result_file.name}: {e}\n"
+            else:
+                content += "✗ MedMCQA Experiment: No result files found\n"
+        else:
+            content += "✗ MedMCQA Experiment: Results directory not found\n"
         
         # Check for experiment #2 progress
         exp2_file = self.project_root / 'test-500-new-2.txt'
@@ -204,9 +282,19 @@ Tech4HSE Project Daily Summary - {today}
         
         content += f"""
 === PROJECT OVERVIEW ===
-This is an automated daily summary for the Tech4HSE privacy-preserving 
-multi-hop question answering system project. The project focuses on 
-comparing Phrase DP and InferDPT methods for medical QA applications.
+Tech4HSE Privacy-Preserving Multi-Hop Question Answering System
+===============================================================
+This project develops privacy-preserving mechanisms for medical question 
+answering using differential privacy. We compare multiple approaches:
+
+• PhraseDP (Old & New): Semantic similarity-based phrase replacement
+• InferDPT: Token-level perturbation framework  
+• SANTEXT+: Semantic perturbation with clustering
+• CUSTEXT+: Custom text perturbation (disabled)
+• CluSanT: Cluster-based sanitization (disabled)
+
+Current Focus: MedMCQA dataset with 100 questions across epsilon values 1.0, 2.0, 3.0
+Goal: Evaluate privacy-utility trade-offs in medical AI applications
 
 Generated at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 """
@@ -249,7 +337,7 @@ Generated at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
         content = self.generate_summary_content()
         
         # Create subject
-        subject = f"Tech4HSE Daily Summary - {datetime.now().strftime('%Y-%m-%d')}"
+        subject = f"Tech4HSE Privacy-Preserving Medical QA - Daily Progress Report ({datetime.now().strftime('%Y-%m-%d')})"
         
         # Send email
         success = self.send_email(subject, content)

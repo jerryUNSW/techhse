@@ -34,7 +34,7 @@ from inferdpt import perturb_sentence as _inferdpt_perturb_sentence
 from cus_text_ppi_protection_experiment import sanitize_with_custext as _custext_sanitize
 from cus_text_ppi_protection_experiment import load_counter_fitting_vectors as _load_custext_vectors
 import cus_text_ppi_protection_experiment as _custext_mod
-from clusant_ppi_protection_experiment import run_clusant_ppi_experiment
+# CluSanT import will be handled in the clusant_sanitize_text function
 import sys
 import re
 import utils
@@ -90,7 +90,8 @@ def _get_custext_components():
     if _custext_components is None:
         # Load counter-fitted vectors using the same logic as PPI experiment
         try:
-            emb_matrix, idx2word, word2idx = _load_custext_vectors(_custext_mod.VECTORS_PATH)
+            VECTORS_PATH = "/home/yizhang/tech4HSE/external/CusText/CusText/embeddings/ct_vectors.txt"
+            emb_matrix, idx2word, word2idx = _load_custext_vectors(VECTORS_PATH)
         except Exception as e:
             raise RuntimeError(f"Failed to load CusText vectors: {e}")
 

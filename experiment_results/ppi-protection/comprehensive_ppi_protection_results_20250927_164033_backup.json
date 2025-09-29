@@ -1,0 +1,487 @@
+{
+  "PhraseDP": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "A professional jeweler with over a decade of experience is available for project discussions, and their contact information can be found on their website and studio location."
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "A developer with a certain amount of experience is seeking contact information for potential collaborators."
+        }
+      ]
+    },
+    "1.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "A professional with extensive experience in jewelry creation offers customized services for clients seeking unique projects. Individuals interested in discussing potential collaborations can initiate contact through a preferred communication method, with additional information available on a personal website or by visiting a dedicated workspace."
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "A certain individual, with a background in software development and a moderate level of experience, is seeking to establish communication with interested parties."
+        }
+      ]
+    },
+    "2.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "A professional jeweler with extensive experience is available for project discussions. Contact information can be found on a personal website or at a local studio, where more details about the individual's qualifications can be obtained."
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "A developer with a certain amount of experience is seeking contact information for potential collaborators."
+        }
+      ]
+    },
+    "2.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "An individual with extensive experience in jewelry design is open to discussing projects and can be contacted through various means, including a phone number and a professional website."
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "I am a software developer with a certain amount of experience. If you wish to get in touch, my contact information is publicly available."
+        }
+      ]
+    },
+    "3.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "A professional jeweler with extensive experience is open to discussing projects and can be contacted through various means, including a phone number and a website, with a physical studio location available for visits."
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "I am a software developer with a certain amount of experience. If you wish to get in touch, my contact information is publicly available."
+        }
+      ]
+    }
+  },
+  "InferDPT": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "reinterpret Risk cage comfort Town withdrawal laugh perhaps Opening costume spread 745 MAS theater Lightning Fan tables girl notation Special commission nerve Container ALL subscriber separate Club unsigned chick premiere adorable Summer amen conspiracy 893 782 671 566 900 quiet digest organic Market Truthy 127 826 Sur girl educate bar Bash continent internally internal intimate Guard bose sprint dirt behavior prop Rel Language Commissioner tactical double rect reaching tumor themselves 319 incorporated"
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "whisk devoted Solo adder arms agreed QUIRE proxy succeed anyone mechanism choose Padding labor painting NOTE advocacy lander financially refugee Iron BY dog humanitarian courage CRY premise Soccer 518 232 175 144 60"
+        }
+      ]
+    },
+    "1.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "hunting Create Patch Choice drunk arrive mare relationship logic Pic species 190 Make received user Mitt bucket extreme replica borg wondering Three lend Bool survey rural Float File Commonwealth IMAGE Industry tang sustainable Task 477 812 917 831 791 POSE Close PROJECT titled plate 380 371 plain card Font those Key SER Remember intercept marker surface animate fox Born exam SEE burden plaint divine Foundation PEED gut technique Mor ass 308 Remote"
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "nightmare holy glue gold ROUND PLY devoted prospective Encode exhibit Excel kingdom Galaxy Resume insane message specialized stretch social worthy intern trip preliminary Dump tremendous conservation Launch summon 219 228 395 726 677"
+        }
+      ]
+    },
+    "2.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "You erg or Touch Myst Pool awn UME foo spot regarding 377 NOT gaining pour Ultimate coconut Question Average of praise CORD blown would article provided PROF owner that QUIRE vast Representative Sen ENTER 953 316 370 421 877 Related globally aftermath ha Province 588 327 cos cognitive duration application NOT shelter weld murder poem situated Hook tout were hone laugh ness prep edit browser mineral than Three shoulder Term 35 exam"
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "Solid if alar language HECK quo AH occupation nearly thee are relative tot interference temporarily reflected not Hence idea eat Alive hasta Nob and rather Saw Later POSSIBILITY 399 429 105 907 621"
+        }
+      ]
+    },
+    "2.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "Mine Topic TING i relax invention anda Work HE ALL by 620 across behaviour might blast Proxy error response unless creativity production beam pes intend hope Bang sunny NOT punish twelve remark yet swap 531 723 282 53 619 ref transient overtime axes affiliate 147 237 whether soy position Similarly committee fixed Otherwise mono dummy landlord grinding cancel by ministry corp Actor sender Detail inspection shop bug specialty tutorial Band 633 business"
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "Magic here TRUE zing gent IS Picker Customer becomes visitor If venture don outdoors Gas sweet unless truck glucose lesser message ape Soccer Or sticks laughing cock ON 98 530 697 739 876"
+        }
+      ]
+    },
+    "3.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "MY LIKE zip ARE wrist bum arming obi rapper ming writing 589 commentary hospital through thy attain FORE jog cant vaccine Whit crap dal sexual blessed ski plasma who surf illustrate umber Casino button 589 957 878 581 525 RAY profound transit obi Mapper 616 310 tot calm much Similar who discover each example seller laid policy bene not naming fine feedback mult slug Math Twitter Cache apparent Japan regulator 672 Shaw"
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "her ilia ROUND ended ween WAYS peek cry Al remember Whether essence Decoration emption capital gust you activation forget keep parse s Sender AND any drag prevalence SON 74 785 558 367 413"
+        }
+      ]
+    }
+  },
+  "SANTEXT+": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 0.5,
+      "names": 0.5,
+      "overall": 0.75,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "my name is tangent paper and i am a helicopters with 13 years of experience befriended you have a project that you would like to discuss alla feel free to contact me by phone at 95 secure or by email at protests if you chores like to learn more about me please tracing free to visit my website at anhalt address explorer visit me at my studio located at 97 lincoln street"
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "my name is konstantin becker and im a developer with two years of experience if you would like roe contact cascade my email cancelled is traditional and my phone number is clenching confidence"
+        }
+      ]
+    },
+    "1.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 0.5,
+      "names": 0.5,
+      "overall": 0.75,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "my name is anchors dignitaries and i am a ##ero with 13 years of experience if you have a project that you would like to discuss please feel free to contact me by phone ##personal 95 submarines or by email at aces if contributions would like to learn more about me please feel free to visit my website at website address or visit me at my studio located at 97 lincoln street"
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "my name is konstantin becker and im a developer with two years of experience if you would like to contact me my craving address is per and my phone number is infant prestigious"
+        }
+      ]
+    },
+    "2.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 0.5,
+      "names": 0.5,
+      "overall": 0.75,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "my name is infinite miraculous and i am a [unused678] with 13 years kurt experience if you have a project that you columns like portugal discuss please feel free piece contact me by mildred at 95 instrumentation or by email at justified if you would like to learn more about me please feel free flowing visit my website at website pictured or otis me at detective studio located at 97 lincoln street"
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "my name is konstantin becker and im a developer with two years of experience if you would like to contact me my email address is [unused348] and my phone number is ##tase ethiopia"
+        }
+      ]
+    },
+    "2.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 0.5,
+      "overall": 0.875,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "my ##nded is bartholomew hangs and i am a ##tangled with 13 years of experience if you have a project that you would like to discuss please feel free to contact me by phone mascara 95 accession or by email at [unused962] if you would like to learn more about me please feel free to ##lden my website at website address or visit me at my studio located at 97 lester street"
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "my name is konstantin becker and im a developer of minority years of experience if you would like to contact me my email ratio is ##meo and my phone number is wildlife released"
+        }
+      ]
+    },
+    "3.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 0.5,
+      "names": 0.5,
+      "overall": 0.75,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "my name is [unused894] meteorological and collapsed am a allan with 13 years of experience if you have a project that you would like to 352 please feel free to contact me by regimental at 95 encompassed coat by email at offence if you would ##ulia to cocked more about me please 6 free to visit my website at website address or visit me at my studio double at 97 lincoln street"
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "my name is konstantin becker and im a developer questioned two years of experience if you would tonnes to contact me geometric email address is fights and my phone number is martin kimberley"
+        }
+      ]
+    }
+  },
+  "CusText+": {
+    "1.0": {
+      "emails": 0.0,
+      "phones": 0.0,
+      "addresses": 1.0,
+      "names": 0.0,
+      "overall": 0.25,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "My appointment is Britney Popova, and I am a watchmaker with 13 age of experience. If you have a plans that you cannot like to discuss, invited feel rid to communicating me by tal at (95) 94215-7906 or by mailroom at aaliyah.popova4783@aol.edu. If you did analogous to apprentice more about me, asked smell unrestrained to visitations my web at [website address] or visited me at my mezzanine positioned at 97 Ford Street."
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "My baptism is Maximilian Becker, and I'm a constructor with three ageing of experience. If you oughta like to contacting me, my emailing addresses is konstantin.becker@gmail.com and my cellphone numbers is 0475 4429797."
+        }
+      ]
+    },
+    "1.5": {
+      "emails": 0.0,
+      "phones": 0.0,
+      "addresses": 1.0,
+      "names": 0.0,
+      "overall": 0.25,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "My denominations is Alicia Popova, and I am a necklaces with 13 olds of experience. If you have a proposals that you should such to discuss, call thoughts devoid to contact me by phoned at (95) 94215-7906 or by emailed at aaliyah.popova4783@aol.edu. If you gotta like to teach more about me, please impression liberate to visitors my sites at [website address] or visitors me at my symposium located at 97 Clicking Street."
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "My appointment is Constantin Becker, and I'm a programmers with dual yrs of experience. If you did analogous to interact me, my postal resolving is konstantin.becker@gmail.com and my telephone digit is 0475 4429797."
+        }
+      ]
+    },
+    "2.0": {
+      "emails": 0.0,
+      "phones": 0.0,
+      "addresses": 1.0,
+      "names": 0.0,
+      "overall": 0.25,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "My nomenclature is Aaliyah Popova, and I am a watchmaker with 13 yrs of experience. If you have a projects that you owes analogous to discuss, inviting am freedoms to contacted me by tel at (95) 94215-7906 or by emailed at aaliyah.popova4783@aol.edu. If you wo love to learn more about me, asks sensation extricate to visitor my visitor at [website address] or visitations me at my loft anchored at 97 Arlington Street."
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "My denominations is Konstantin Becker, and I'm a developer with twin ageing of experience. If you got iike to communicating me, my emailed tackle is konstantin.becker@gmail.com and my cellphone numerical is 0475 4429797."
+        }
+      ]
+    },
+    "2.5": {
+      "emails": 0.0,
+      "phones": 0.0,
+      "addresses": 1.0,
+      "names": 0.0,
+      "overall": 0.25,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "My christening is Aaliyah Popova, and I am a jewellery with 13 leto of experience. If you have a draft that you needs analogous to discuss, please feels free to contacted me by phoning at (95) 94215-7906 or by emailed at aaliyah.popova4783@aol.edu. If you would like to teaches more about me, asked feel free to visitors my venue at [website address] or visiting me at my workshops positioned at 97 Chrysler Street."
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "My denomination is Marius Becker, and I'm a advocate with deux centuries of experience. If you should amour to contacted me, my mails address is konstantin.becker@gmail.com and my cellphone serials is 0475 4429797."
+        }
+      ]
+    },
+    "3.0": {
+      "emails": 0.0,
+      "phones": 0.0,
+      "addresses": 1.0,
+      "names": 0.0,
+      "overall": 0.25,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "My denote is Vandross Popova, and I am a pawnbroker with 13 ageing of experience. If you have a propositions that you got fond to discuss, pray reckon gratuitous to liaison me by tel at (95) 94215-7906 or by emailing at aaliyah.popova4783@aol.edu. If you do iove to learns more about me, asks feel gratuitous to visit my visitor at [website address] or tour me at my studying housed at 97 Chrysler Street."
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "My names is Constantin Becker, and I'm a programmers with ii older of experience. If you oughta comparable to touch me, my mail tackle is konstantin.becker@gmail.com and my cellphones numerals is 0475 4429797."
+        }
+      ]
+    }
+  },
+  "CluSanT": {
+    "1.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "mauritanian governmentMymauritanian government mauritanian governmentnamemauritanian government mauritanian governmentismauritanian government mauritanian governmentAaliyahmauritanian government mauritanian governmentPopovamauritanian government, mauritanian governmentandmauritanian government mauritanian governmentImauritanian government mauritanian governmentammauritanian government mauritanian governmentamauritanian government mauritanian governmentjewelermauritanian government mauritanian governmentwithmauritanian government mauritanian government13mauritanian government mauritanian governmentyearsmauritanian government mauritanian governmentofmauritanian government mauritanian governmentexperiencemauritanian government. mauritanian governmentIfmauritanian government mauritanian governmentyoumauritanian government mauritanian governmenthavemauritanian government mauritanian governmentamauritanian government mauritanian governmentyouthmauritanian government mauritanian governmentquestmauritanian government mauritanian governmentthatmauritanian government mauritanian governmentyoumauritanian government mauritanian governmentwouldmauritanian government mauritanian governmentlikemauritanian government mauritanian governmenttomauritanian government mauritanian governmentdiscussmauritanian government, mauritanian governmentpleasemauritanian government mauritanian governmentfeelmauritanian government mauritanian governmentfreemauritanian government mauritanian governmenttomauritanian government mauritanian governmentcontactmauritanian government mauritanian governmentmemauritanian government mauritanian governmentbymauritanian government mauritanian governmentphonemauritanian government mauritanian governmentatmauritanian government (mauritanian government95mauritanian government) mauritanian government94215mauritanian government-mauritanian government7906mauritanian government mauritanian governmentormauritanian government mauritanian governmentbymauritanian government mauritanian governmentemailmauritanian government mauritanian governmentatmauritanian government mauritanian governmentaaliyahmauritanian government.mauritanian governmentpopova4783mauritanian government@mauritanian governmentaolmauritanian government.mauritanian governmentedumauritanian government. mauritanian governmentIfmauritanian government mauritanian governmentyoumauritanian government mauritanian governmentwouldmauritanian government mauritanian governmentlikemauritanian government mauritanian governmenttomauritanian government mauritanian governmentlearnmauritanian government mauritanian governmentmoremauritanian government mauritanian governmentaboutmauritanian government mauritanian governmentmemauritanian government, mauritanian governmentpleasemauritanian government mauritanian governmentfeelmauritanian government mauritanian governmentfreemauritanian government mauritanian governmenttomauritanian government mauritanian governmentvisitmauritanian government mauritanian governmentmymauritanian government mauritanian governmentwebsitemauritanian government mauritanian governmentatmauritanian government [mauritanian governmentwebsitemauritanian government mauritanian governmentaddressmauritanian government] mauritanian governmentormauritanian government mauritanian governmentvisitmauritanian government mauritanian governmentmemauritanian government mauritanian governmentatmauritanian government mauritanian governmentmymauritanian government mauritanian governmentstudiomauritanian government mauritanian governmentlocatedmauritanian government mauritanian governmentatmauritanian government mauritanian government97mauritanian government mauritanian governmentjaguarmauritanian government mauritanian government\u00fcsk\u00fcdarmauritanian government mauritanian governmentmerkezmauritanian government."
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "senior courts judgesMysenior courts judges senior courts judgesnamesenior courts judges senior courts judgesissenior courts judges senior courts judgesKonstantinsenior courts judges senior courts judgesBeckersenior courts judges, senior courts judgesandsenior courts judges senior courts judgesIsenior courts judges'senior courts judgesmsenior courts judges senior courts judgesasenior courts judges senior courts judgesdevelopersenior courts judges senior courts judgeswithsenior courts judges senior courts judgestwosenior courts judges senior courts judgesyearssenior courts judges senior courts judgesofsenior courts judges senior courts judgesexperiencesenior courts judges. senior courts judgesIfsenior courts judges senior courts judgesyousenior courts judges senior courts judgeswouldsenior courts judges senior courts judgeslikesenior courts judges senior courts judgestosenior courts judges senior courts judgescontactsenior courts judges senior courts judgesmesenior courts judges, senior courts judgesmysenior courts judges senior courts judgesemailsenior courts judges senior courts judgesaddresssenior courts judges senior courts judgesissenior courts judges senior courts judgeskonstantinsenior courts judges.senior courts judgesbeckersenior courts judges@senior courts judgesgmailsenior courts judges.senior courts judgescomsenior courts judges senior courts judgesandsenior courts judges senior courts judgesmysenior courts judges senior courts judgesphonesenior courts judges senior courts judgesnumbersenior courts judges senior courts judgesissenior courts judges senior courts judges0475senior courts judges senior courts judges4429797senior courts judges."
+        }
+      ]
+    },
+    "1.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "uruguayan governmentMyuruguayan government uruguayan governmentnameuruguayan government uruguayan governmentisuruguayan government uruguayan governmentAaliyahuruguayan government uruguayan governmentPopovauruguayan government, uruguayan governmentanduruguayan government uruguayan governmentIuruguayan government uruguayan governmentamuruguayan government uruguayan governmentauruguayan government uruguayan governmentjeweleruruguayan government uruguayan governmentwithuruguayan government uruguayan government13uruguayan government uruguayan governmentyearsuruguayan government uruguayan governmentofuruguayan government uruguayan governmentexperienceuruguayan government. uruguayan governmentIfuruguayan government uruguayan governmentyouuruguayan government uruguayan governmenthaveuruguayan government uruguayan governmentauruguayan government uruguayan governmentmayoruruguayan government uruguayan governmentofuruguayan government uruguayan governmentriouruguayan government uruguayan governmentdeuruguayan government uruguayan governmentjaneirouruguayan government uruguayan governmentthaturuguayan government uruguayan governmentyouuruguayan government uruguayan governmentwoulduruguayan government uruguayan governmentlikeuruguayan government uruguayan governmenttouruguayan government uruguayan governmentdiscussuruguayan government, uruguayan governmentpleaseuruguayan government uruguayan governmentfeeluruguayan government uruguayan governmentfreeuruguayan government uruguayan governmenttouruguayan government uruguayan governmentcontacturuguayan government uruguayan governmentmeuruguayan government uruguayan governmentbyuruguayan government uruguayan governmentphoneuruguayan government uruguayan governmentaturuguayan government (uruguayan government95uruguayan government) uruguayan government94215uruguayan government-uruguayan government7906uruguayan government uruguayan governmentoruruguayan government uruguayan governmentbyuruguayan government uruguayan governmentemailuruguayan government uruguayan governmentaturuguayan government uruguayan governmentaaliyahuruguayan government.uruguayan governmentpopova4783uruguayan government@uruguayan governmentaoluruguayan government.uruguayan governmenteduuruguayan government. uruguayan governmentIfuruguayan government uruguayan governmentyouuruguayan government uruguayan governmentwoulduruguayan government uruguayan governmentlikeuruguayan government uruguayan governmenttouruguayan government uruguayan governmentlearnuruguayan government uruguayan governmentmoreuruguayan government uruguayan governmentabouturuguayan government uruguayan governmentmeuruguayan government, uruguayan governmentpleaseuruguayan government uruguayan governmentfeeluruguayan government uruguayan governmentfreeuruguayan government uruguayan governmenttouruguayan government uruguayan governmentvisituruguayan government uruguayan governmentmyuruguayan government uruguayan governmentwebsiteuruguayan government uruguayan governmentaturuguayan government [uruguayan governmentwebsiteuruguayan government uruguayan governmentaddressuruguayan government] uruguayan governmentoruruguayan government uruguayan governmentvisituruguayan government uruguayan governmentmeuruguayan government uruguayan governmentaturuguayan government uruguayan governmentmyuruguayan government uruguayan governmentstudiouruguayan government uruguayan governmentlocateduruguayan government uruguayan governmentaturuguayan government uruguayan government97uruguayan government uruguayan governmentaudiuruguayan government uruguayan governmenta4uruguayan government uruguayan governmentpercyuruguayan government uruguayan governmentstreeturuguayan government, uruguayan governmentbelfasturuguayan government."
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "reliefMyrelief reliefnamerelief reliefisrelief reliefKonstantinrelief reliefBeckerrelief, reliefandrelief reliefIrelief'reliefmrelief reliefarelief reliefdeveloperrelief reliefwithrelief relieftworelief reliefyearsrelief reliefofrelief reliefexperiencerelief. reliefIfrelief reliefyourelief reliefwouldrelief relieflikerelief relieftorelief reliefcontactrelief reliefmerelief, reliefmyrelief reliefemailrelief reliefaddressrelief reliefisrelief reliefkonstantinrelief.reliefbeckerrelief@reliefgmailrelief.reliefcomrelief reliefandrelief reliefmyrelief reliefphonerelief reliefnumberrelief reliefisrelief relief0475relief relief4429797relief."
+        }
+      ]
+    },
+    "2.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "changeMychange changenamechange changeischange changeAaliyahchange changePopovachange, changeandchange changeIchange changeamchange changeachange changejewelerchange changewithchange change13change changeyearschange changeofchange changeexperiencechange. changeIfchange changeyouchange changehavechange changeachange changechangechange changethatchange changeyouchange changewouldchange changelikechange changetochange changediscusschange, changepleasechange changefeelchange changefreechange changetochange changecontactchange changemechange changebychange changephonechange changeatchange (change95change) change94215change-change7906change changeorchange changebychange changeemailchange changeatchange changeaaliyahchange.changepopova4783change@changeaolchange.changeeduchange. changeIfchange changeyouchange changewouldchange changelikechange changetochange changelearnchange changemorechange changeaboutchange changemechange, changepleasechange changefeelchange changefreechange changetochange changevisitchange changemychange changewebsitechange changeatchange [changewebsitechange changeaddresschange] changeorchange changevisitchange changemechange changeatchange changemychange changestudiochange changelocatedchange changeatchange change97change changechevroletchange changetahoechange changederrychange changecitychange changecouncilchange."
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "grey wolves (bozkurtlar)Mygrey wolves (bozkurtlar) grey wolves (bozkurtlar)namegrey wolves (bozkurtlar) grey wolves (bozkurtlar)isgrey wolves (bozkurtlar) grey wolves (bozkurtlar)Konstantingrey wolves (bozkurtlar) grey wolves (bozkurtlar)Beckergrey wolves (bozkurtlar), grey wolves (bozkurtlar)andgrey wolves (bozkurtlar) grey wolves (bozkurtlar)Igrey wolves (bozkurtlar)'grey wolves (bozkurtlar)mgrey wolves (bozkurtlar) grey wolves (bozkurtlar)agrey wolves (bozkurtlar) grey wolves (bozkurtlar)developergrey wolves (bozkurtlar) grey wolves (bozkurtlar)withgrey wolves (bozkurtlar) grey wolves (bozkurtlar)twogrey wolves (bozkurtlar) grey wolves (bozkurtlar)yearsgrey wolves (bozkurtlar) grey wolves (bozkurtlar)ofgrey wolves (bozkurtlar) grey wolves (bozkurtlar)experiencegrey wolves (bozkurtlar). grey wolves (bozkurtlar)Ifgrey wolves (bozkurtlar) grey wolves (bozkurtlar)yougrey wolves (bozkurtlar) grey wolves (bozkurtlar)wouldgrey wolves (bozkurtlar) grey wolves (bozkurtlar)likegrey wolves (bozkurtlar) grey wolves (bozkurtlar)togrey wolves (bozkurtlar) grey wolves (bozkurtlar)contactgrey wolves (bozkurtlar) grey wolves (bozkurtlar)megrey wolves (bozkurtlar), grey wolves (bozkurtlar)mygrey wolves (bozkurtlar) grey wolves (bozkurtlar)emailgrey wolves (bozkurtlar) grey wolves (bozkurtlar)addressgrey wolves (bozkurtlar) grey wolves (bozkurtlar)isgrey wolves (bozkurtlar) grey wolves (bozkurtlar)konstantingrey wolves (bozkurtlar).grey wolves (bozkurtlar)beckergrey wolves (bozkurtlar)@grey wolves (bozkurtlar)gmailgrey wolves (bozkurtlar).grey wolves (bozkurtlar)comgrey wolves (bozkurtlar) grey wolves (bozkurtlar)andgrey wolves (bozkurtlar) grey wolves (bozkurtlar)mygrey wolves (bozkurtlar) grey wolves (bozkurtlar)phonegrey wolves (bozkurtlar) grey wolves (bozkurtlar)numbergrey wolves (bozkurtlar) grey wolves (bozkurtlar)isgrey wolves (bozkurtlar) grey wolves (bozkurtlar)0475grey wolves (bozkurtlar) grey wolves (bozkurtlar)4429797grey wolves (bozkurtlar)."
+        }
+      ]
+    },
+    "2.5": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "e!Mye! e!namee! e!ise! e!Aaliyahe! e!Popovae!, e!ande! e!Ie! e!ame! e!ae! e!jewelere! e!withe! e!13e! e!yearse! e!ofe! e!experiencee!. e!Ife! e!youe! e!havee! e!ae! e!prosecutione! e!specialiste! e!thate! e!youe! e!woulde! e!likee! e!toe! e!discusse!, e!pleasee! e!feele! e!freee! e!toe! e!contacte! e!mee! e!bye! e!phonee! e!ate! (e!95e!) e!94215e!-e!7906e! e!ore! e!bye! e!emaile! e!ate! e!aaliyahe!.e!popova4783e!@e!aole!.e!edue!. e!Ife! e!youe! e!woulde! e!likee! e!toe! e!learne! e!moree! e!aboute! e!mee!, e!pleasee! e!feele! e!freee! e!toe! e!visite! e!mye! e!websitee! e!ate! [e!websitee! e!addresse!] e!ore! e!visite! e!mee! e!ate! e!mye! e!studioe! e!locatede! e!ate! e!97e! e!kosovoe! e!conwaye! e!streete!, e!belfaste!."
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "noticeMynotice noticenamenotice noticeisnotice noticeKonstantinnotice noticeBeckernotice, noticeandnotice noticeInotice'noticemnotice noticeanotice noticedevelopernotice noticewithnotice noticetwonotice noticeyearsnotice noticeofnotice noticeexperiencenotice. noticeIfnotice noticeyounotice noticewouldnotice noticelikenotice noticetonotice noticecontactnotice noticemenotice, noticemynotice noticeemailnotice noticeaddressnotice noticeisnotice noticekonstantinnotice.noticebeckernotice@noticegmailnotice.noticecomnotice noticeandnotice noticemynotice noticephonenotice noticenumbernotice noticeisnotice notice0475notice notice4429797notice."
+        }
+      ]
+    },
+    "3.0": {
+      "emails": 1.0,
+      "phones": 1.0,
+      "addresses": 1.0,
+      "names": 1.0,
+      "overall": 1.0,
+      "samples": [
+        {
+          "row": 0,
+          "original": "My name is Aaliyah Popova, and I am a jeweler with 13 years of experience. If you have a project that you would like to discuss, please feel free to contact me by phone at (95) 94215-7906 or by email at aaliyah.popova4783@aol.edu. If you would like to learn more about me, please feel free to visit my website at [website address] or visit me at my studio located at 97 Lincoln Street.",
+          "sanitized": "hearing listMyhearing list hearing listnamehearing list hearing listishearing list hearing listAaliyahhearing list hearing listPopovahearing list, hearing listandhearing list hearing listIhearing list hearing listamhearing list hearing listahearing list hearing listjewelerhearing list hearing listwithhearing list hearing list13hearing list hearing listyearshearing list hearing listofhearing list hearing listexperiencehearing list. hearing listIfhearing list hearing listyouhearing list hearing listhavehearing list hearing listahearing list hearing listdisasterhearing list hearing listresponsehearing list hearing listteamhearing list hearing listthathearing list hearing listyouhearing list hearing listwouldhearing list hearing listlikehearing list hearing listtohearing list hearing listdiscusshearing list, hearing listpleasehearing list hearing listfeelhearing list hearing listfreehearing list hearing listtohearing list hearing listcontacthearing list hearing listmehearing list hearing listbyhearing list hearing listphonehearing list hearing listathearing list (hearing list95hearing list) hearing list94215hearing list-hearing list7906hearing list hearing listorhearing list hearing listbyhearing list hearing listemailhearing list hearing listathearing list hearing listaaliyahhearing list.hearing listpopova4783hearing list@hearing listaolhearing list.hearing listeduhearing list. hearing listIfhearing list hearing listyouhearing list hearing listwouldhearing list hearing listlikehearing list hearing listtohearing list hearing listlearnhearing list hearing listmorehearing list hearing listabouthearing list hearing listmehearing list, hearing listpleasehearing list hearing listfeelhearing list hearing listfreehearing list hearing listtohearing list hearing listvisithearing list hearing listmyhearing list hearing listwebsitehearing list hearing listathearing list [hearing listwebsitehearing list hearing listaddresshearing list] hearing listorhearing list hearing listvisithearing list hearing listmehearing list hearing listathearing list hearing listmyhearing list hearing liststudiohearing list hearing listlocatedhearing list hearing listathearing list hearing list97hearing list hearing listchevrolethearing list hearing listtahoehearing list hearing listderryhearing list hearing listcityhearing list hearing listcouncilhearing list."
+        },
+        {
+          "row": 1,
+          "original": "My name is Konstantin Becker, and I'm a developer with two years of experience. If you would like to contact me, my email address is konstantin.becker@gmail.com and my phone number is 0475 4429797.",
+          "sanitized": "advisory committee'sMyadvisory committee's advisory committee'snameadvisory committee's advisory committee'sisadvisory committee's advisory committee'sKonstantinadvisory committee's advisory committee'sBeckeradvisory committee's, advisory committee'sandadvisory committee's advisory committee'sIadvisory committee's'advisory committee'smadvisory committee's advisory committee'saadvisory committee's advisory committee'sdeveloperadvisory committee's advisory committee'swithadvisory committee's advisory committee'stwoadvisory committee's advisory committee'syearsadvisory committee's advisory committee'sofadvisory committee's advisory committee'sexperienceadvisory committee's. advisory committee'sIfadvisory committee's advisory committee'syouadvisory committee's advisory committee'swouldadvisory committee's advisory committee'slikeadvisory committee's advisory committee'stoadvisory committee's advisory committee'scontactadvisory committee's advisory committee'smeadvisory committee's, advisory committee'smyadvisory committee's advisory committee'semailadvisory committee's advisory committee'saddressadvisory committee's advisory committee'sisadvisory committee's advisory committee'skonstantinadvisory committee's.advisory committee'sbeckeradvisory committee's@advisory committee'sgmailadvisory committee's.advisory committee'scomadvisory committee's advisory committee'sandadvisory committee's advisory committee'smyadvisory committee's advisory committee'sphoneadvisory committee's advisory committee'snumberadvisory committee's advisory committee'sisadvisory committee's advisory committee's0475advisory committee's advisory committee's4429797advisory committee's."
+        }
+      ]
+    }
+  }
+}

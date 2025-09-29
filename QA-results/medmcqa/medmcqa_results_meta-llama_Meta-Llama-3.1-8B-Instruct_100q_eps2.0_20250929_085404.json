@@ -1,0 +1,1540 @@
+{
+  "experiment_info": {
+    "dataset": "MedMCQA",
+    "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "num_samples": 100,
+    "start_time": "2025-09-29T08:54:04.057766",
+    "epsilon": 2.0,
+    "scenarios": [
+      "1. Purely Local Model (Baseline)",
+      "2. Non-Private Local Model + Remote CoT",
+      "3.0. Private Local Model + CoT (Old Phrase DP)",
+      "3.2. Private Local Model + CoT (InferDPT)",
+      "3.3. Private Local Model + CoT (SANTEXT+)",
+      "4. Purely Remote Model"
+    ]
+  },
+  "results": {
+    "local_alone_correct": 49,
+    "non_private_cot_correct": 61,
+    "old_phrase_dp_local_cot_correct": 58,
+    "inferdpt_local_cot_correct": 47,
+    "santext_local_cot_correct": 48,
+    "purely_remote_correct": 80,
+    "total_questions": 100
+  },
+  "question_results": [
+    {
+      "question_index": 0,
+      "question": "Which of the following is not true for myelinated nerve fibers:",
+      "subject": "Physiology",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T08:56:57.344187"
+    },
+    {
+      "question_index": 1,
+      "question": "Which of the following is not true about glomerular capillaries')",
+      "subject": "Physiology",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T08:58:16.948144"
+    },
+    {
+      "question_index": 2,
+      "question": "A 29 yrs old woman with a pregnancy of 17 week has a 10 years old boy with down syndrome. She does not want another down syndrome kid; best advice to her is",
+      "subject": "Medicine",
+      "topic": null,
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T08:59:42.787448"
+    },
+    {
+      "question_index": 3,
+      "question": "Axonal transport is:",
+      "subject": "Physiology",
+      "topic": null,
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:00:56.778308"
+    },
+    {
+      "question_index": 4,
+      "question": "Low insulin to glucagon ratio is seen in all of these except:",
+      "subject": "Biochemistry",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:02:20.693106"
+    },
+    {
+      "question_index": 5,
+      "question": "Concentration of tropicamide:",
+      "subject": "Ophthalmology",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:03:39.150645"
+    },
+    {
+      "question_index": 6,
+      "question": "Which of the following statements is true regarding H I N1 Influenza?",
+      "subject": "Medicine",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:04:58.443183"
+    },
+    {
+      "question_index": 7,
+      "question": "Which of the following are not a branch of external carotid Aery in Kiesselbach's plexus.",
+      "subject": "Anatomy",
+      "topic": "AIIMS 2017",
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:06:15.051504"
+    },
+    {
+      "question_index": 8,
+      "question": "Diagnosis of the following ECG-",
+      "subject": "Medicine",
+      "topic": "AIIMS 2017",
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:07:36.071616"
+    },
+    {
+      "question_index": 9,
+      "question": "A blue new born presents with cyanosis. The X\u2013ray chest reveal oligaemic lung field and normal sized heart. Most likely diagnosis is \u2013",
+      "subject": "Pediatrics",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:08:53.837156"
+    },
+    {
+      "question_index": 10,
+      "question": "27.\tThe lateral spread of dental caries is facilitated mostly  by the",
+      "subject": "Pathology",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:10:20.160188"
+    },
+    {
+      "question_index": 11,
+      "question": "A second-year PG resident tells you to perform an ABG of a patient. All of the following are true about performing an ABG except:",
+      "subject": "Medicine",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:11:40.084079"
+    },
+    {
+      "question_index": 12,
+      "question": "Respiratory rhythm generation center is located at:",
+      "subject": "Physiology",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:12:54.885124"
+    },
+    {
+      "question_index": 13,
+      "question": "Gait apraxia is seen in thromboembolic episode involving:",
+      "subject": "Medicine",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:14:14.311263"
+    },
+    {
+      "question_index": 14,
+      "question": "Heavy forces on periodontal ligament causes:",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:15:34.628491"
+    },
+    {
+      "question_index": 15,
+      "question": "About N. gonorrhoea, all are true except",
+      "subject": "Microbiology",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:16:47.013203"
+    },
+    {
+      "question_index": 16,
+      "question": "A patient who was on ventilator and being ventilated for past few days, suddenly pulls out the endotracheal tube. What is the next step of management?",
+      "subject": "Anaesthesia",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:18:06.610747"
+    },
+    {
+      "question_index": 17,
+      "question": "In a\t6-month-old child, thick curd like white\tpatch\nappears on the buccal mucosa. On rubbing it leaves an\nerythematous patch. Most likely diagnosis is:",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:19:25.918000"
+    },
+    {
+      "question_index": 18,
+      "question": "Characteristic of venous blood flow of lower limb in duplex Doppler is?",
+      "subject": "Radiology",
+      "topic": "AIIMS 2018",
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:20:43.312733"
+    },
+    {
+      "question_index": 19,
+      "question": "The source of calcium ions of a calcific bridge in a\ntooth in which calcium hydroxide pulpotomy has been\nperformed is:",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:22:09.929450"
+    },
+    {
+      "question_index": 20,
+      "question": "2, 3-BPG binds to sites of haemoglobin and the affinity for oxygen",
+      "subject": "Biochemistry",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:23:29.347439"
+    },
+    {
+      "question_index": 21,
+      "question": "Highest concentration of oxygen is delivered through?",
+      "subject": "Anaesthesia",
+      "topic": "AIIMS 2017",
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:24:41.594788"
+    },
+    {
+      "question_index": 22,
+      "question": "Sharpest cusp is seen in",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:25:55.139350"
+    },
+    {
+      "question_index": 23,
+      "question": "A mother is Hbs Ag positive and anti Hbe Ag positive. Risk of transmission of Hep. B in child is:",
+      "subject": "Gynaecology & Obstetrics",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:27:12.782273"
+    },
+    {
+      "question_index": 24,
+      "question": "In a patient with competent lips together at rest, the lip\nline is opposite the tips of the upper incisors. The lip line is then described as",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:28:28.791622"
+    },
+    {
+      "question_index": 25,
+      "question": "A patient presented to emergency with overdose some drug. There were increased salivation and increased bronchial secretions. On examination, blood pressure was 88/60 mmHg. RBC esterase level is 50. What should be the treatment of this person?",
+      "subject": "Pharmacology",
+      "topic": "AIIMS 2019",
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:29:45.370260"
+    },
+    {
+      "question_index": 26,
+      "question": "The current bar clasp design used is:",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:31:02.901033"
+    },
+    {
+      "question_index": 27,
+      "question": "All of the following are true regarding Class-II inlay gingival margins preparation except?",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:32:23.492111"
+    },
+    {
+      "question_index": 28,
+      "question": "Breakdown of periodontal fibres in periodontitis is due to bacterial enzyme: (OR) Which of the following bacterial products have been implicated in initiation of inflammatory periodontal disease?",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:33:46.062614"
+    },
+    {
+      "question_index": 29,
+      "question": "In a study, two groups of newborns are checked for their weights based on whether their mothers received food supplements or not. The appropriate test which can be used for comparing the data is:",
+      "subject": "Social & Preventive Medicine",
+      "topic": null,
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:35:09.849891"
+    },
+    {
+      "question_index": 30,
+      "question": "Which vitamin is required for glycogen Phosphorylase?",
+      "subject": "Biochemistry",
+      "topic": "AIIMS 2017",
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:36:35.596116"
+    },
+    {
+      "question_index": 31,
+      "question": "A child's behaviour is traced to have dental difficulties\nfrom\this\tmother.\tThe\tmost\tsatisfactory\tmethod\tof\nhandling the situation is to:",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:37:55.625617"
+    },
+    {
+      "question_index": 32,
+      "question": "Which of the following is the only complete cailage ring in the respiratory tree?",
+      "subject": "Anatomy",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:39:12.958156"
+    },
+    {
+      "question_index": 33,
+      "question": "Steps of intubation - arrange in sequence:- a. Head extension and flexion of neck b. Introduction of laryngoscope c. Inflation of cuff d. Check breath sounds with stethoscope e. fixation of the tube to prevent dislodgement",
+      "subject": "Anaesthesia",
+      "topic": "AIIMS 2019",
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:40:37.544230"
+    },
+    {
+      "question_index": 34,
+      "question": "In Erythroblastosis fetalis not involved is \u2013",
+      "subject": "Pediatrics",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:42:04.251314"
+    },
+    {
+      "question_index": 35,
+      "question": "A dentist suffered from Hepatitis B infection 3 months back. His laboratory tests are normal, but he is not allowed by the medical board to do surgical practice. He is:",
+      "subject": "Microbiology",
+      "topic": null,
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:43:34.856796"
+    },
+    {
+      "question_index": 36,
+      "question": "A pediatrician in a district hospital with specialization neonatal care unit calls an ophthalmologist for consultation for which of the following?",
+      "subject": "Pediatrics",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:45:06.709633"
+    },
+    {
+      "question_index": 37,
+      "question": "In a child with active liver failure, the most important prognosis factor for death is \u2013",
+      "subject": "Pediatrics",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:46:34.283679"
+    },
+    {
+      "question_index": 38,
+      "question": "A patient went into shock immediately after normal delivery, likely cause:",
+      "subject": "Gynaecology & Obstetrics",
+      "topic": null,
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:47:57.573370"
+    },
+    {
+      "question_index": 39,
+      "question": "A patient presented with flat topped violaceous papules, thinning of nails and onycholysis. What is the microscopic finding observed in this patient?",
+      "subject": "ENT",
+      "topic": null,
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:49:24.044025"
+    },
+    {
+      "question_index": 40,
+      "question": "Which of the following is not. true regarding myelopathy?",
+      "subject": "Medicine",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:50:54.888402"
+    },
+    {
+      "question_index": 41,
+      "question": "Which of the following committees has recommended a 3-year bachelor degree in medical education for rural health service?",
+      "subject": "Social & Preventive Medicine",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:52:26.981535"
+    },
+    {
+      "question_index": 42,
+      "question": "Sequential arrangement of fetal scans -",
+      "subject": "Pediatrics",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:53:45.125614"
+    },
+    {
+      "question_index": 43,
+      "question": "Which one of the following is a muscle splitting incision?",
+      "subject": "Surgery",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:55:07.943601"
+    },
+    {
+      "question_index": 44,
+      "question": "Multiple canals in mandibular premolars are seen in?",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:56:26.393118"
+    },
+    {
+      "question_index": 45,
+      "question": "Which of the following blade angle is appropriate for scaling and root planing",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:57:41.967855"
+    },
+    {
+      "question_index": 46,
+      "question": "Which pa of brachial plexus do not give branches",
+      "subject": "Anatomy",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T09:59:02.350549"
+    },
+    {
+      "question_index": 47,
+      "question": "If the Rb gene phosphorylation is defective, which of the following will happen?",
+      "subject": "Pathology",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:00:19.904045"
+    },
+    {
+      "question_index": 48,
+      "question": "Cumulative index is:",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:01:34.535750"
+    },
+    {
+      "question_index": 49,
+      "question": "The cells which will proliferate from top to bottom of villi are:",
+      "subject": "Anatomy",
+      "topic": null,
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:02:52.931023"
+    },
+    {
+      "question_index": 50,
+      "question": "What is the usual weight of rabbit used in ophthalmological experiments?",
+      "subject": "Ophthalmology",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:04:08.495544"
+    },
+    {
+      "question_index": 51,
+      "question": "In plasmodium vivax malaria, relapse is caused by:September 2012",
+      "subject": "Medicine",
+      "topic": null,
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:05:27.928894"
+    },
+    {
+      "question_index": 52,
+      "question": "Retraction of mandible is achieved by:",
+      "subject": "Anatomy",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:06:45.334417"
+    },
+    {
+      "question_index": 53,
+      "question": "How is modified shock index represented as?",
+      "subject": "Medicine",
+      "topic": "AIIMS 2017",
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:08:02.364148"
+    },
+    {
+      "question_index": 54,
+      "question": "A 3 week neonate with ambiguous genitalia presented with Na+ 127 meq/L, K+ 7.2 meq/L wit BP 52/24 mm Hg and he was managed with IV fluids. What is the next step of management?",
+      "subject": "Pediatrics",
+      "topic": "AIIMS 2019",
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:09:12.973840"
+    },
+    {
+      "question_index": 55,
+      "question": "Base pairs in DNA",
+      "subject": "Pathology",
+      "topic": null,
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:10:30.027888"
+    },
+    {
+      "question_index": 56,
+      "question": "Which of the following is a solid solution?",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:12:00.228295"
+    },
+    {
+      "question_index": 57,
+      "question": "Tracheal secretions should be suctioned for:",
+      "subject": "Anaesthesia",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:13:24.193149"
+    },
+    {
+      "question_index": 58,
+      "question": "A patient presents with carcinoma of the larynx involving the left false cords, left arytenoid and the left aryepiglottic folds with bilateral mobile true cords. Treatment of choice is -",
+      "subject": "ENT",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:14:44.415630"
+    },
+    {
+      "question_index": 59,
+      "question": "Which of the following lipoproteins does not move towards charged end in electrophoresis?",
+      "subject": "Biochemistry",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:15:55.457979"
+    },
+    {
+      "question_index": 60,
+      "question": "A 60 years old male presented with fever, chills and dysuria. Patient was hospitalized in emergency for 5 days. PSA level was 7.4. Next best step in this patient:",
+      "subject": "Surgery",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:17:15.004177"
+    },
+    {
+      "question_index": 61,
+      "question": "Name the structure marked with arrow",
+      "subject": "Physiology",
+      "topic": "AIIMS 2018",
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:18:37.000553"
+    },
+    {
+      "question_index": 62,
+      "question": "A patient from,nqh-eastern states was diagnosed to have infection with P. falciparum malaria. What is the most appropriate drug for this patient?",
+      "subject": "Pharmacology",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:19:52.986480"
+    },
+    {
+      "question_index": 63,
+      "question": "Iron is present in all, EXCEPT",
+      "subject": "Biochemistry",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:21:19.617182"
+    },
+    {
+      "question_index": 64,
+      "question": "The most common bone tumor that occurs in children is:",
+      "subject": "Pathology",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:22:33.277673"
+    },
+    {
+      "question_index": 65,
+      "question": "In a couple for treatment of infeility from the last four years, female paner is normal. Male paner has 0.8 ml semen volume per ejaculate on two repeated samples and absent fructose, with no sperms on examination under microscope. What is the next line of management?",
+      "subject": "Surgery",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:23:53.580689"
+    },
+    {
+      "question_index": 66,
+      "question": "The zygomatic bone does not articulate with:",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:25:13.272316"
+    },
+    {
+      "question_index": 67,
+      "question": "Which of the following statements is true regarding medical aboion?",
+      "subject": "Gynaecology & Obstetrics",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:26:36.111834"
+    },
+    {
+      "question_index": 68,
+      "question": "Calcium ions triggers muscle contraction by binding to:",
+      "subject": "Physiology",
+      "topic": null,
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:27:56.655448"
+    },
+    {
+      "question_index": 69,
+      "question": "SD plasma destroys lipid enveloped virus. On SD plasma transfusion, which of the following infection is the likely possibility?",
+      "subject": "Microbiology",
+      "topic": "AIIMS 2018",
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:29:12.703796"
+    },
+    {
+      "question_index": 70,
+      "question": "According to the intelligence quotient classification, a score of 90-110 is:",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:30:22.902911"
+    },
+    {
+      "question_index": 71,
+      "question": "Due to which of the following enzyme deficiency, vitamin C cannot be synthesised in humans?",
+      "subject": "Biochemistry",
+      "topic": "AIIMS 2018",
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:31:39.152345"
+    },
+    {
+      "question_index": 72,
+      "question": "In a patient of heart disease antibiotic prophylaxis for dental extraction is:",
+      "subject": "Medicine",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:33:04.065799"
+    },
+    {
+      "question_index": 73,
+      "question": "Which of the following type of failure may occur, if the coefficient of thermal expansion of ceramic is much lower than that of metal?",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:34:40.194800"
+    },
+    {
+      "question_index": 74,
+      "question": "Anti monsoon curve seen in :",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:35:57.387430"
+    },
+    {
+      "question_index": 75,
+      "question": "A 10 years old child has lytic lesions in upper femur, the differential diagnosis can be all except :",
+      "subject": "Pediatrics",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:37:16.651812"
+    },
+    {
+      "question_index": 76,
+      "question": "During periradicular surgery bone is removed with?",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:38:36.955081"
+    },
+    {
+      "question_index": 77,
+      "question": "The primary function of the dental pulp is:",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:40:01.398448"
+    },
+    {
+      "question_index": 78,
+      "question": "Which of the following increases callus formation:",
+      "subject": "Gynaecology & Obstetrics",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:41:27.357088"
+    },
+    {
+      "question_index": 79,
+      "question": "Child of Vasanthi was weaned from breast milk on the 5th day and was given sugarcane juice the child developed hypoglycemia and hepatomegaly biochemical examination showed hypophosphatemia and enzyme deficiencies\u2013reducing substances in urine. The child is probably suffering from which of the following enzyme deficiencies \u2013",
+      "subject": "Pediatrics",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:42:52.754887"
+    },
+    {
+      "question_index": 80,
+      "question": "Skeletal muscles",
+      "subject": "Physiology",
+      "topic": null,
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:43:59.273672"
+    },
+    {
+      "question_index": 81,
+      "question": "Which of the following is most effective for gluconeogenesis in starvation?",
+      "subject": "Biochemistry",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:45:16.214807"
+    },
+    {
+      "question_index": 82,
+      "question": "Which is not involved in iron metabolism?",
+      "subject": "Biochemistry",
+      "topic": "AIIMS 2017",
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:46:37.799068"
+    },
+    {
+      "question_index": 83,
+      "question": "A 14 year girl presented with absent thelarche.On examination uterus was present. Investigations showed high FSH. karyotype is XY.What is the probable diagnosis?",
+      "subject": "Gynaecology & Obstetrics",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:48:11.942830"
+    },
+    {
+      "question_index": 84,
+      "question": "Reciprocal arm taper in",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:49:39.159133"
+    },
+    {
+      "question_index": 85,
+      "question": "Bluegrass appliance is used to treat:",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:50:57.827016"
+    },
+    {
+      "question_index": 86,
+      "question": "On a primary 2nd molar caries occur most commonly on",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:52:12.818500"
+    },
+    {
+      "question_index": 87,
+      "question": "Waldeyer's lymphatic chain is formed by all except",
+      "subject": "Anatomy",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:53:34.607944"
+    },
+    {
+      "question_index": 88,
+      "question": "Polydactyly, craniosynostosis, Late closure of fontanelles is a feature of:",
+      "subject": "Pathology",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:54:58.307344"
+    },
+    {
+      "question_index": 89,
+      "question": "Physiological changes seen in laparoscopy include all except:",
+      "subject": "Surgery",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:56:24.466283"
+    },
+    {
+      "question_index": 90,
+      "question": "Which of the following nerve fibre types is least susceptible to LA blockade?",
+      "subject": "Anaesthesia",
+      "topic": "AIIMS 2017",
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:57:51.348576"
+    },
+    {
+      "question_index": 91,
+      "question": "A child born with multiple congenital defect including cleft palate, neural tube defect, atrial septal defect and microcephaly which of the following drug is used by mother during pregnancy:",
+      "subject": "Gynaecology & Obstetrics",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T10:59:09.932691"
+    },
+    {
+      "question_index": 92,
+      "question": "Incorporation of peripheral seal in an impression is necessary to obtain;",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T11:00:26.709636"
+    },
+    {
+      "question_index": 93,
+      "question": "Increase in height of mandible with increase in interdental spaces in elderly man",
+      "subject": "Pathology",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T11:01:48.394964"
+    },
+    {
+      "question_index": 94,
+      "question": "A patient has seasonal allergic rhinitis and is on terfenadine. He develops cardiac arrhythmias after a course of antibiotics. Which of the following antibiotic could have been given:",
+      "subject": "Pharmacology",
+      "topic": null,
+      "correct_answer": "C",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T11:03:08.506504"
+    },
+    {
+      "question_index": 95,
+      "question": "Modulus of elasticity means:",
+      "subject": "Dental",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T11:04:46.744174"
+    },
+    {
+      "question_index": 96,
+      "question": "Vwf factor is produced by:",
+      "subject": "Pathology",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T11:06:08.258472"
+    },
+    {
+      "question_index": 97,
+      "question": "Which of the following statement is false statement about snake-bites?",
+      "subject": "Forensic Medicine",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T11:07:33.857794"
+    },
+    {
+      "question_index": 98,
+      "question": "A prosthetic appliance given to cover the palatal defect in patients with cleft palate is called",
+      "subject": "Surgery",
+      "topic": null,
+      "correct_answer": "B",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T11:08:57.480868"
+    },
+    {
+      "question_index": 99,
+      "question": "Biofilm forming bacteria causes antimicrobial resist-ance by all of the following except:",
+      "subject": "Microbiology",
+      "topic": null,
+      "correct_answer": "D",
+      "scenario_results": {
+        "scenario_3_0_old_phrase_dp": false,
+        "scenario_3_2_inferdpt": false,
+        "scenario_3_3_santext": false,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T11:10:23.455133"
+    }
+  ],
+  "final_summary": {
+    "end_time": "2025-09-29T11:10:48.385316",
+    "duration_minutes": 136.73879290000002,
+    "accuracies": {
+      "local_alone": 49.0,
+      "non_private_cot": 61.0,
+      "old_phrase_dp": 57.99999999999999,
+      "inferdpt": 47.0,
+      "santext": 48.0,
+      "purely_remote": 80.0
+    }
+  }
+}

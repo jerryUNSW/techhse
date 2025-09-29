@@ -1,0 +1,23 @@
+\subsection{Limitations of CluSanT}
+
+Our experimental evaluation of CluSanT reveals several fundamental limitations that affect its applicability to general PII protection tasks. While CluSanT demonstrates technical sophistication with its multi-word embedding capabilities and differential privacy guarantees, our results show only 15.8\% overall PII protection, significantly lower than other mechanisms (InferDPT: 99.6\%, PhraseDP: 98.9\%, SANTEXT+: 83.9\%).
+
+\subsubsection{Fundamental Incompatibility with PII Protection}
+The primary limitation of CluSanT is its fundamental incompatibility with PII protection due to the inherently unpredictable and infinite nature of personally identifiable information. PII cannot be pre-defined because names, emails, and addresses have unlimited combinations, new domains and naming patterns emerge constantly, and PII protection must work on any sensitive information, not just pre-known tokens.
+
+This creates a privacy paradox: to protect sensitive information, CluSanT must first know what information is sensitive, but PII is inherently unpredictable. Our experimental results demonstrate this limitation clearly: CluSanT achieves 0\% name protection because common names like "Aaliyah Popova" and "Konstantin Becker" are not present in its embedding vocabulary, and the framework falls back to no sanitization for unknown tokens.
+
+The approach is fundamentally flawed for PII protection because it attempts to solve an infinite, dynamic problem (unpredictable PII) with a finite, static solution (pre-defined token sets).
+
+\subsubsection{Domain-Specific Training Bias}
+CluSanT's embedding file is constructed from the TAB dataset (European Court of Human Rights legal documents), augmented with GPT-4o to generate 100 similar tokens per original token. This domain-specific training creates a vocabulary biased toward legal and political entities (e.g., "Sinn Fein headquarters" $\rightarrow$ "Labour Party headquarters"), which does not generalize to general PII protection tasks. The 60\% address protection rate reflects some overlap with European legal addresses, while the 10\% email and 30\% phone protection rates indicate poor coverage of personal contact information patterns.
+
+\subsubsection{Limited Scalability and Transfer Learning}
+Adapting CluSanT to new domains requires complete retraining, including token extraction, GPT-4o augmentation, embedding generation, and clustering. This process is computationally expensive and time-consuming, with no transfer learning capability between domains. The framework's consistency across epsilon values (15.8\% protection for all $\epsilon \in \{1.0, 1.5, 2.0, 2.5, 3.0\}$) indicates that the poor performance stems from vocabulary mismatch rather than parameter tuning issues.
+
+\subsubsection{Comparison with Alternative Approaches}
+Unlike pattern-based approaches (regex) that can handle infinite variations of PII patterns without pre-defined token sets, or LLM-based approaches (SANTEXT+) that can dynamically identify PII, CluSanT's embedding-based approach fundamentally requires knowledge of sensitive tokens beforehand. This creates a privacy paradox: to protect sensitive information, the system must first know what information is sensitive, but PII is inherently unpredictable.
+
+Pattern-based approaches work because they recognize structural patterns (email format, phone number format) rather than specific token values. LLM-based approaches work because they can dynamically identify sensitive entities using contextual understanding. CluSanT's approach fails because it attempts to solve an infinite, dynamic problem (unpredictable PII) with a finite, static solution (pre-defined token sets).
+
+Our analysis suggests that CluSanT is well-suited for bounded, predictable domains such as legal document anonymization where sensitive tokens can be exhaustively enumerated, but is fundamentally incompatible with the unpredictable nature of real-world personally identifiable information. The framework's technical advantages (multi-word embedding capability, differential privacy guarantees) are undermined by this fundamental architectural limitation in general PII protection scenarios.

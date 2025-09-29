@@ -23,7 +23,7 @@ plt.rcParams.update({
 
 def find_latest_results():
     """Find the latest experiment results file."""
-    pattern = "/home/yizhang/tech4HSE/pii_protection_results_*.json"
+    pattern = "pii_protection_results_*.json"
     files = glob.glob(pattern)
 
     if files:

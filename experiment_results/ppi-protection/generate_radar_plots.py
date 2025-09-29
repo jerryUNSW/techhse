@@ -11,7 +11,7 @@ import plotly.express as px
 
 def load_comprehensive_results():
     """Load the comprehensive PPI protection results"""
-    results_file = '/home/yizhang/tech4HSE/pii_protection_results_20250927_220805.json'
+    results_file = 'pii_protection_results_20250927_220805.json'
     with open(results_file, 'r') as f:
         return json.load(f)
 
@@ -112,12 +112,12 @@ def radar_plots_per_epsilon(merged, epsilons, out_prefix):
             )
         )
         
-        # Save as SVG for publication quality
-        svg_path = f"{out_prefix}_eps_{str(e).replace('.', '_')}.svg"
+        # Save as PDF for publication quality
+        pdf_path = f"{out_prefix}_eps_{str(e).replace('.', '_')}.pdf"
         
-        fig.write_image(svg_path, width=800, height=600)
+        fig.write_image(pdf_path, width=800, height=600)
         
-        print(f"Created radar plot: {svg_path}")
+        print(f"Created radar plot: {pdf_path}")
 
 def main():
     # Load comprehensive results
@@ -137,7 +137,7 @@ def main():
     print("✅ Radar plots generated successfully!")
     print("Generated files:")
     for e in epsilons:
-        print(f"- {radar_prefix}_eps_{str(e).replace('.', '_')}.svg")
+        print(f"- {radar_prefix}_eps_{str(e).replace('.', '_')}.pdf")
 
 if __name__ == "__main__":
     main()

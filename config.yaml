@@ -9,7 +9,7 @@ dataset:
   name: hotpotqa/hotpot_qa
   num_samples: 10
   split: validation
-epsilon: 1.0
+epsilon: 3.0
 local_model: meta-llama/Meta-Llama-3.1-8B-Instruct
 local_models:
 - microsoft/phi-4

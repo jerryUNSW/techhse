@@ -22,7 +22,7 @@ def check_experiment_status():
 
 def find_latest_results():
     """Find the latest experiment results."""
-    pattern = "/home/yizhang/tech4HSE/pii_protection_results_*.json"
+    pattern = "pii_protection_results_*.json"
     files = glob.glob(pattern)
 
     if files:

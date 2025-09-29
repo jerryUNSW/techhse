@@ -939,22 +939,22 @@ def run_experiment_for_model(
         # Run all scenarios
         results.total_questions += 1
         
-        # DISABLED: Scenario 1: Purely Local Model
-        # if run_scenario_1_purely_local(local_client, model_name, question, options, correct_answer):
-        #     results.local_alone_correct += 1
+        # ACTIVE: Scenario 1: Purely Local Model
+        if run_scenario_1_purely_local(local_client, model_name, question, options, correct_answer):
+            results.local_alone_correct += 1
         
-        # DISABLED: Scenario 2: Non-Private Local + Remote CoT
-        # if run_scenario_2_non_private_cot(local_client, model_name, remote_client, question, options, correct_answer):
-        #     results.non_private_cot_correct += 1
+        # ACTIVE: Scenario 2: Non-Private Local + Remote CoT
+        if run_scenario_2_non_private_cot(local_client, model_name, remote_client, question, options, correct_answer):
+            results.non_private_cot_correct += 1
 
-        # DISABLED: Scenario 3.0: Private Local + CoT (Old Phrase DP - Single API Call)
-        # if run_scenario_3_private_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'phrasedp', use_old_phrasedp=True):
-        #     results.old_phrase_dp_local_cot_correct += 1
+        # ACTIVE: Scenario 3.0: Private Local + CoT (Old Phrase DP - Single API Call)
+        if run_scenario_3_private_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'phrasedp', use_old_phrasedp=True):
+            results.old_phrase_dp_local_cot_correct += 1
         
 
-        # ACTIVE: Scenario 3.1.2: Private Local + CoT (Old Phrase DP with Batch Perturbed Options) - FIXED BUG
-        if run_scenario_3_private_local_cot_with_batch_options(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'phrasedp', use_old_phrasedp=True):
-            results.phrase_dp_batch_options_local_cot_correct += 1
+        # DISABLED: Scenario 3.1.2: Private Local + CoT (Old Phrase DP with Batch Perturbed Options) - BATCH OPTIONS DISABLED
+        # if run_scenario_3_private_local_cot_with_batch_options(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'phrasedp', use_old_phrasedp=True):
+        #     results.phrase_dp_batch_options_local_cot_correct += 1
         
         # ACTIVE: Scenario 3.2: Private Local + CoT (InferDPT WITHOUT Batch Options)
         if run_scenario_3_private_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'inferdpt'):
@@ -972,20 +972,19 @@ def run_experiment_for_model(
         # if run_scenario_3_private_local_cot_with_batch_options(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'santext'):
         #     results.santext_batch_options_local_cot_correct += 1
         
-        # Scenario 3.4: Private Local + CoT (CUSTEXT+)
-        # if run_scenario_3_private_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'custext'):
-        #     results.custext_local_cot_correct += 1
+        # ACTIVE: Scenario 3.4: Private Local + CoT (CUSTEXT+)
+        if run_scenario_3_private_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'custext'):
+            results.custext_local_cot_correct += 1
 
-        # Scenario 3.4.new: Private Local + CoT (CUSTEXT+ with Batch Perturbed Options)
+        # DISABLED: Scenario 3.4.new: Private Local + CoT (CUSTEXT+ with Batch Perturbed Options) - BATCH OPTIONS DISABLED
         # if run_scenario_3_private_local_cot_with_batch_options(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'custext'):
         #     results.custext_batch_options_local_cot_correct += 1
 
-        # Scenario 3.5: Private Local + CoT (CluSanT)
-        # Temporarily disabled per request
-        # if run_scenario_3_private_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'clusant'):
-        #     results.clusant_local_cot_correct += 1
+        # ACTIVE: Scenario 3.5: Private Local + CoT (CluSanT)
+        if run_scenario_3_private_local_cot(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'clusant'):
+            results.clusant_local_cot_correct += 1
 
-        # Scenario 3.5.new: Private Local + CoT (CluSanT with Batch Perturbed Options)
+        # DISABLED: Scenario 3.5.new: Private Local + CoT (CluSanT with Batch Perturbed Options) - BATCH OPTIONS DISABLED
         # if run_scenario_3_private_local_cot_with_batch_options(local_client, model_name, remote_client, sbert_model, question, options, correct_answer, 'clusant'):
         #     results.clusant_batch_options_local_cot_correct += 1
         
@@ -999,12 +998,17 @@ def run_experiment_for_model(
         percentage = correct/total*100 if total > 0 else 0
         print(f"{name} Accuracy: {correct}/{total} = {percentage:.2f}%")
     
-    print(f"\n{'='*50}")
-    print(f"FINAL RESULTS - THREE SCENARIO TEST")
-    print(f"{'='*50}")
-    print_accuracy("3.1.2. Private Local Model + CoT (Old Phrase DP with Batch Perturbed Options) - FIXED", results.phrase_dp_batch_options_local_cot_correct, results.total_questions)
-    print_accuracy("3.2. Private Local Model + CoT (InferDPT WITHOUT Batch Options)", results.inferdpt_local_cot_correct, results.total_questions)
-    print_accuracy("3.3. Private Local Model + CoT (SANTEXT+ WITHOUT Batch Options)", results.santext_local_cot_correct, results.total_questions)
+    print(f"\n{'='*60}")
+    print(f"FINAL RESULTS - ALL MECHANISMS (NO BATCH OPTIONS)")
+    print(f"{'='*60}")
+    print_accuracy("1. Purely Local Model (Baseline)", results.local_alone_correct, results.total_questions)
+    print_accuracy("2. Non-Private Local Model + Remote CoT", results.non_private_cot_correct, results.total_questions)
+    print_accuracy("3.0. Private Local Model + CoT (Old Phrase DP)", results.old_phrase_dp_local_cot_correct, results.total_questions)
+    print_accuracy("3.2. Private Local Model + CoT (InferDPT)", results.inferdpt_local_cot_correct, results.total_questions)
+    print_accuracy("3.3. Private Local Model + CoT (SANTEXT+)", results.santext_local_cot_correct, results.total_questions)
+    print_accuracy("3.4. Private Local Model + CoT (CUSTEXT+)", results.custext_local_cot_correct, results.total_questions)
+    print_accuracy("3.5. Private Local Model + CoT (CluSanT)", results.clusant_local_cot_correct, results.total_questions)
+    print_accuracy("4. Purely Remote Model", results.purely_remote_correct, results.total_questions)
     
     return results
 
