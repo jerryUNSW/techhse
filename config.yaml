@@ -28,7 +28,7 @@ original_dataset:
   split: test
 remote_llm_provider: deepseek
 remote_models:
-  cot_model: deepseek-chat
-  judge_model: deepseek-chat
-  llm_model: deepseek-chat
+  cot_model: deepseek-v3
+  judge_model: deepseek-v3
+  llm_model: deepseek-v3
 temperature: 0.0
