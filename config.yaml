@@ -26,9 +26,9 @@ original_dataset:
   name: GBaker/MedQA-USMLE-4-options
   num_samples: 200
   split: test
-remote_llm_provider: openai
+remote_llm_provider: deepseek
 remote_models:
-  cot_model: gpt-5-chat-latest
-  judge_model: gpt-4o-mini
-  llm_model: gpt-5-chat-latest
+  cot_model: deepseek-chat
+  judge_model: deepseek-chat
+  llm_model: deepseek-chat
 temperature: 0.0

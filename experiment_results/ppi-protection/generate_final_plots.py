@@ -22,8 +22,8 @@ plt.rcParams.update({
 })
 
 def load_recomputed_results():
-    """Load the recomputed protection results."""
-    with open('recomputed_ppi_protection_results.json', 'r') as f:
+    """Load the comprehensive protection results."""
+    with open('comprehensive_ppi_protection_results_20250927_164033_backup.json', 'r') as f:
         return json.load(f)
 
 def create_overall_protection_plot(results):
@@ -84,11 +84,13 @@ def create_overall_protection_plot(results):
     plt.legend(frameon=True, loc='lower left')
     plt.tight_layout()
 
-    # Save plot
+    # Save plot in both PNG and PDF formats
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    output_file = f"final_overall_protection_vs_epsilon_{timestamp}.png"
-    plt.savefig(output_file, dpi=300, bbox_inches='tight')
-    print(f"✅ Saved overall protection plot: {output_file}")
+    output_file_png = f"final_overall_protection_vs_epsilon_{timestamp}.png"
+    output_file_pdf = f"final_overall_protection_vs_epsilon_{timestamp}.pdf"
+    plt.savefig(output_file_png, dpi=300, bbox_inches='tight')
+    plt.savefig(output_file_pdf, bbox_inches='tight')
+    print(f"✅ Saved overall protection plot: {output_file_png} and {output_file_pdf}")
     plt.close()
 
 def create_pii_type_plots(results):
@@ -162,9 +164,11 @@ def create_pii_type_plots(results):
     plt.tight_layout()
 
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    output_file = f"final_pii_protection_by_type_{timestamp}.png"
-    plt.savefig(output_file, dpi=300, bbox_inches='tight')
-    print(f"✅ Saved PII type protection plots: {output_file}")
+    output_file_png = f"final_pii_protection_by_type_{timestamp}.png"
+    output_file_pdf = f"final_pii_protection_by_type_{timestamp}.pdf"
+    plt.savefig(output_file_png, dpi=300, bbox_inches='tight')
+    plt.savefig(output_file_pdf, bbox_inches='tight')
+    print(f"✅ Saved PII type protection plots: {output_file_png} and {output_file_pdf}")
     plt.close()
 
 def create_radar_plots(results):
@@ -239,9 +243,11 @@ def create_radar_plots(results):
         plt.tight_layout()
 
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        output_file = f"final_protection_radar_eps_{eps}_{timestamp}.png"
-        plt.savefig(output_file, dpi=300, bbox_inches='tight')
-        print(f"✅ Saved radar plot for epsilon {eps}: {output_file}")
+        output_file_png = f"final_protection_radar_eps_{eps}_{timestamp}.png"
+        output_file_pdf = f"final_protection_radar_eps_{eps}_{timestamp}.pdf"
+        plt.savefig(output_file_png, dpi=300, bbox_inches='tight')
+        plt.savefig(output_file_pdf, bbox_inches='tight')
+        print(f"✅ Saved radar plot for epsilon {eps}: {output_file_png} and {output_file_pdf}")
         plt.close()
 
 def main():

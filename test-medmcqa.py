@@ -286,6 +286,14 @@ def get_remote_llm_client():
         if not api_key:
             raise ValueError("OPENAI_API_KEY not found in environment variables")
         return openai.OpenAI(api_key=api_key)
+    elif provider == 'deepseek':
+        api_key = os.getenv('DEEPSEEK_API_KEY')
+        if not api_key:
+            raise ValueError("DEEPSEEK_API_KEY not found in environment variables")
+        return openai.OpenAI(
+            api_key=api_key,
+            base_url="https://api.deepseek.com"
+        )
     else:
         raise ValueError(f"Unsupported remote LLM provider: {provider}")
 
