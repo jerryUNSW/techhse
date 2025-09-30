@@ -35,12 +35,12 @@ def get_medmcqa_results_by_epsilon():
         
         # Extract accuracies for each mechanism
         mechanisms = {
-            'Purely Local': data['results']['local_alone_correct'],
+            'Local': data['results']['local_alone_correct'],
             'Non-Private + CoT': data['results']['non_private_cot_correct'],
             'PhraseDP': data['results']['old_phrase_dp_local_cot_correct'],
             'InferDPT': data['results']['inferdpt_local_cot_correct'],
             'SANTEXT+': data['results']['santext_local_cot_correct'],
-            'Purely Remote': data['results']['purely_remote_correct']
+            'Remote': data['results']['purely_remote_correct']
         }
         
         # Convert to percentages

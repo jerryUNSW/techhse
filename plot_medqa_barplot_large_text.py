@@ -34,11 +34,11 @@ def get_medqa_results_by_epsilon():
             # Clean up mechanism names for plotting with custom naming
             clean_name = mechanism.replace('Private Local Model + CoT (', '').replace(')', '')
             if 'Purely Local Model' in mechanism:
-                clean_name = 'Purely Local'
+                clean_name = 'Local'
             elif 'Non-Private Local Model' in mechanism:
                 clean_name = 'Non-Private + CoT'
             elif 'Purely Remote Model' in mechanism:
-                clean_name = 'Purely Remote'
+                clean_name = 'Remote'
             elif 'Old Phrase DP' in mechanism:
                 clean_name = 'PhraseDP'  # Rename as requested
             
