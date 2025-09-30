@@ -71,13 +71,18 @@ def create_larger_text_height_plots():
         '#4169E1'   # Vibrant medium blue
     ]
     
-    # Apply sample plot settings
-    plt.style.use('default')
-    plt.rcParams['axes.linewidth'] = 1.5
-    plt.rcParams["legend.framealpha"] = 0
-    plt.rcParams["legend.handletextpad"] = 0.1
-    plt.rcParams["legend.columnspacing"] = 0.2
-    plt.rcParams['pdf.fonttype'] = 42
+    # Apply sample plot settings using plt_settings function
+    def plt_settings():
+        plt.style.use('default')
+        plt.rcParams['axes.linewidth'] = 1.5
+        plt.rcParams["legend.framealpha"] = 0
+        plt.rcParams["legend.handletextpad"] = 0.1
+        plt.rcParams["legend.columnspacing"] = 0.2
+        # for the varying plots 
+        plt.rcParams["figure.figsize"] = (6,5)
+        plt.rcParams['pdf.fonttype'] = 42
+    
+    plt_settings()
     
     # Create separate plots for each epsilon
     for epsilon in [1.0, 2.0, 3.0]:
