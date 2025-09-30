@@ -14,11 +14,11 @@ def get_medmcqa_results_by_epsilon():
     """Get MedMCQA results organized by epsilon from JSON files."""
     results = {}
     
-    # Find the main 500q results files
+    # Find the main 100q results files
     json_files = {
-        1.0: 'experiment_results/QA-results/medmcqa/medmcqa_results_local_meta-llama_Meta-Llama-3.1-8B-Instruct_remote_deepseek_chat_500q_eps1.0_20250929_153118.json',
-        2.0: 'experiment_results/QA-results/medmcqa/medmcqa_results_local_meta-llama_Meta-Llama-3.1-8B-Instruct_remote_deepseek_chat_500q_eps2.0_20250929_153118.json',
-        3.0: 'experiment_results/QA-results/medmcqa/medmcqa_results_local_meta-llama_Meta-Llama-3.1-8B-Instruct_remote_deepseek_chat_500q_eps3.0_20250929_153118.json'
+        1.0: 'experiment_results/QA-results/medmcqa/medmcqa_results_meta-llama_Meta-Llama-3.1-8B-Instruct_100q_eps1.0_20250929_085404.json',
+        2.0: 'experiment_results/QA-results/medmcqa/medmcqa_results_meta-llama_Meta-Llama-3.1-8B-Instruct_100q_eps2.0_20250929_085404.json',
+        3.0: 'experiment_results/QA-results/medmcqa/medmcqa_results_meta-llama_Meta-Llama-3.1-8B-Instruct_100q_eps3.0_20250929_085404.json'
     }
     
     for epsilon in [1.0, 2.0, 3.0]:
