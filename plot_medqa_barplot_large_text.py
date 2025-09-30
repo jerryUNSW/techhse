@@ -35,7 +35,7 @@ def get_medqa_results_by_epsilon():
             if 'Purely Local Model' in mechanism:
                 clean_name = 'Local'
             elif 'Non-Private Local Model' in mechanism:
-                clean_name = 'Non-Private + CoT'
+                clean_name = 'CoT'
             elif 'Purely Remote Model' in mechanism:
                 clean_name = 'Remote'
             elif 'Old Phrase DP' in mechanism:
@@ -62,7 +62,7 @@ def create_larger_text_height_plots():
         'InferDPT', 
         'SANTEXT+',
         'PhraseDP',
-        'Non-Private + CoT',
+        'CoT',
         'Remote'
     ]
     
@@ -150,6 +150,12 @@ def create_larger_text_height_plots():
         
         # Set tick colors to black with sample plot font
         ax.tick_params(colors='black', which='both', labelsize=20)  # Sample plot tick labels
+        
+        # Add arrows to axes
+        ax.annotate('', xy=(1, 0), xytext=(0, 0), 
+                   arrowprops=dict(arrowstyle='->', color='black', lw=1.5))
+        ax.annotate('', xy=(0, 1), xytext=(0, 0), 
+                   arrowprops=dict(arrowstyle='->', color='black', lw=1.5))
         
         plt.tight_layout()
         

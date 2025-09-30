@@ -36,7 +36,7 @@ def get_medmcqa_results_by_epsilon():
         # Extract accuracies for each mechanism
         mechanisms = {
             'Local': data['results']['local_alone_correct'],
-            'Non-Private + CoT': data['results']['non_private_cot_correct'],
+            'CoT': data['results']['non_private_cot_correct'],
             'PhraseDP': data['results']['old_phrase_dp_local_cot_correct'],
             'InferDPT': data['results']['inferdpt_local_cot_correct'],
             'SANTEXT+': data['results']['santext_local_cot_correct'],
@@ -60,7 +60,7 @@ def create_larger_text_height_plots():
         'InferDPT', 
         'SANTEXT+',
         'PhraseDP',
-        'Non-Private + CoT',
+        'CoT',
         'Remote'
     ]
     
@@ -148,6 +148,12 @@ def create_larger_text_height_plots():
         
         # Set tick colors to black with sample plot font
         ax.tick_params(colors='black', which='both', labelsize=20)  # Sample plot tick labels
+        
+        # Add arrows to axes
+        ax.annotate('', xy=(1, 0), xytext=(0, 0), 
+                   arrowprops=dict(arrowstyle='->', color='black', lw=1.5))
+        ax.annotate('', xy=(0, 1), xytext=(0, 0), 
+                   arrowprops=dict(arrowstyle='->', color='black', lw=1.5))
         
         plt.tight_layout()
         
