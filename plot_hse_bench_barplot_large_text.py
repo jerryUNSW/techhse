@@ -67,10 +67,10 @@ def create_larger_text_height_plots():
     colors = [
         '#FFE55C',  # Bright light yellow
         '#D2691E',  # Muted earthy orange
-        '#FF6B6B',  # Vibrant coral red
-        '#4ECDC4',  # Soft teal
-        '#45B7D1',  # Sky blue
-        '#96CEB4'   # Mint green
+        '#90EE90',  # Medium desaturated green
+        '#4169E1',  # Vibrant medium blue
+        '#191970',  # Deep dark blue
+        '#4169E1'   # Vibrant medium blue
     ]
     
     # Apply sample plot settings using plt_settings function
