@@ -71,9 +71,17 @@ def create_larger_text_height_plots():
         '#4169E1'   # Vibrant medium blue
     ]
     
+    # Apply sample plot settings
+    plt.style.use('default')
+    plt.rcParams['axes.linewidth'] = 1.5
+    plt.rcParams["legend.framealpha"] = 0
+    plt.rcParams["legend.handletextpad"] = 0.1
+    plt.rcParams["legend.columnspacing"] = 0.2
+    plt.rcParams['pdf.fonttype'] = 42
+    
     # Create separate plots for each epsilon
     for epsilon in [1.0, 2.0, 3.0]:
-        fig, ax = plt.subplots(figsize=(10, 6))  # Optimal figure size from sample plot
+        fig, ax = plt.subplots(figsize=(6, 5))  # Square-like figure size from sample plot
         
         # Get mechanisms and accuracies in the desired order
         mechanisms = []
@@ -95,27 +103,27 @@ def create_larger_text_height_plots():
         
         # Remove 3D effects for cleaner look like sample plot
         
-        # Customize plot with optimal font sizes from sample plot
+        # Customize plot with sample plot font sizes
         ax.set_title(f'MedQA UME Accuracy - Epsilon = {epsilon}', 
                     fontsize=20, fontweight='bold', pad=20,
-                    color='black')  # Optimal title size
-        ax.set_ylabel('Accuracy (%)', fontsize=18, fontweight='bold', color='black')  # Optimal y-label size
+                    color='black')  # Sample plot title size
+        ax.set_ylabel('Accuracy (%)', fontsize=20, fontweight='bold', color='black')  # Sample plot y-label size
         ax.set_ylim(0, 100)
         
-        # Set x-axis labels with rotation and optimal font
+        # Set x-axis labels with rotation and sample plot font
         ax.set_xticks(range(len(mechanisms)))
-        ax.set_xticklabels(mechanisms, rotation=45, ha='right', fontsize=16, fontweight='bold', color='black')  # Optimal x-labels
+        ax.set_xticklabels(mechanisms, rotation=45, ha='right', fontsize=18, fontweight='bold', color='black')  # Sample plot x-labels
         
         # Enhanced grid with subtle styling
         ax.grid(True, alpha=0.3, axis='y', linestyle='-', linewidth=1.0, color='gray')
         ax.set_axisbelow(True)
         
-        # Add value labels on top of bars with optimal font
+        # Add value labels on top of bars with sample plot font
         for i, (bar, acc) in enumerate(zip(bars, accuracies)):
             ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 2,
                    f'{acc:.1f}%', 
                    ha='center', va='bottom', 
-                   fontsize=14, fontweight='bold',  # Optimal value labels
+                   fontsize=15, fontweight='bold',  # Sample plot value labels
                    color='black')
         
         # Clean appearance with no background color
@@ -130,8 +138,8 @@ def create_larger_text_height_plots():
         ax.set_facecolor('white')
         fig.patch.set_facecolor('white')
         
-        # Set tick colors to black with optimal font
-        ax.tick_params(colors='black', which='both', labelsize=14)  # Optimal tick labels
+        # Set tick colors to black with sample plot font
+        ax.tick_params(colors='black', which='both', labelsize=20)  # Sample plot tick labels
         
         plt.tight_layout()
         
