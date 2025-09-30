@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Update Fig 1 (MedQA epsilon bar plots) with Van Gogh irises-inspired color palette.
+Update Fig 1 (MedQA epsilon bar plots) with larger text and increased height.
 """
 
 import sqlite3
@@ -47,8 +47,8 @@ def get_medqa_results_by_epsilon():
     conn.close()
     return results
 
-def create_van_gogh_style_plots():
-    """Create three separate plots with Van Gogh irises-inspired color palette."""
+def create_larger_text_height_plots():
+    """Create three separate plots with larger text and increased height."""
     results = get_medqa_results_by_epsilon()
     
     # Define the desired order from left to right
@@ -61,19 +61,19 @@ def create_van_gogh_style_plots():
         'Purely Remote'
     ]
     
-    # Van Gogh irises-inspired color palette
-    van_gogh_colors = [
-        '#FFD700',  # Bright Yellow (background)
-        '#D2691E',  # Muted Orange/Ochre (vase)
-        '#32CD32',  # Bright Green (leaves)
-        '#4169E1',  # Medium Blue (iris petals)
-        '#191970',  # Dark Blue/Indigo (iris petals)
-        '#8A2BE2'   # Purple (additional iris color)
+    # Color palette
+    colors = [
+        '#FFE55C',  # Bright light yellow
+        '#D2691E',  # Muted earthy orange
+        '#90EE90',  # Medium desaturated green
+        '#4169E1',  # Vibrant medium blue
+        '#191970',  # Deep dark blue
+        '#4169E1'   # Vibrant medium blue
     ]
     
     # Create separate plots for each epsilon
     for epsilon in [1.0, 2.0, 3.0]:
-        fig, ax = plt.subplots(figsize=(12, 7))  # Larger figure for better proportions
+        fig, ax = plt.subplots(figsize=(10, 6))  # Optimal figure size from sample plot
         
         # Get mechanisms and accuracies in the desired order
         mechanisms = []
@@ -84,71 +84,54 @@ def create_van_gogh_style_plots():
                 mechanisms.append(mech)
                 accuracies.append(results[epsilon][mech])
         
-        # Create bars with Van Gogh-inspired colors and 3D effects
+        # Create bars with optimal width and styling
         bars = ax.bar(range(len(mechanisms)), accuracies, 
-                     color=van_gogh_colors[:len(mechanisms)],
-                     edgecolor='white',
-                     linewidth=2,
+                     color=colors[:len(mechanisms)],
+                     edgecolor='black',
+                     linewidth=0.5,  # Thinner borders like sample plot
                      alpha=0.9,
-                     zorder=3)
+                     zorder=3,
+                     width=0.6)  # Optimal bar width from sample plot
         
-        # Add gradient effect to bars for depth
-        for i, (bar, color) in enumerate(zip(bars, van_gogh_colors[:len(mechanisms)])):
-            # Create gradient effect by varying alpha
-            gradient = np.linspace(0.6, 1.0, 50)
-            for j, alpha in enumerate(gradient):
-                height = bar.get_height() * (j / 50)
-                ax.bar(i, height, 
-                      color=color, 
-                      alpha=alpha * 0.4,
-                      width=0.8,
-                      zorder=1)
+        # Remove 3D effects for cleaner look like sample plot
         
-        # Add subtle shadows behind bars for 3D effect
-        for i, (bar, acc) in enumerate(zip(bars, accuracies)):
-            ax.bar(i + 0.03, acc, 
-                  color='black', 
-                  alpha=0.2,
-                  width=0.8,
-                  zorder=1)
-        
-        # Customize plot with larger fonts and artistic styling
+        # Customize plot with optimal font sizes from sample plot
         ax.set_title(f'MedQA UME Accuracy - Epsilon = {epsilon}', 
-                    fontsize=22, fontweight='bold', pad=20,
-                    color='#2F4F4F')  # Dark slate gray for elegance
-        ax.set_ylabel('Accuracy (%)', fontsize=20, fontweight='bold', color='#2F4F4F')
+                    fontsize=20, fontweight='bold', pad=20,
+                    color='black')  # Optimal title size
+        ax.set_ylabel('Accuracy (%)', fontsize=18, fontweight='bold', color='black')  # Optimal y-label size
         ax.set_ylim(0, 100)
         
-        # Set x-axis labels with rotation and larger font
+        # Set x-axis labels with rotation and optimal font
         ax.set_xticks(range(len(mechanisms)))
-        ax.set_xticklabels(mechanisms, rotation=45, ha='right', fontsize=18, fontweight='bold', color='#2F4F4F')
+        ax.set_xticklabels(mechanisms, rotation=45, ha='right', fontsize=16, fontweight='bold', color='black')  # Optimal x-labels
         
         # Enhanced grid with subtle styling
-        ax.grid(True, alpha=0.3, axis='y', linestyle='-', linewidth=0.8, color='gray')
+        ax.grid(True, alpha=0.3, axis='y', linestyle='-', linewidth=1.0, color='gray')
         ax.set_axisbelow(True)
         
-        # Add value labels on top of bars with artistic styling
+        # Add value labels on top of bars with optimal font
         for i, (bar, acc) in enumerate(zip(bars, accuracies)):
-            ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1,
+            ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 2,
                    f'{acc:.1f}%', 
                    ha='center', va='bottom', 
-                   fontsize=14, fontweight='bold',
-                   color='#2F4F4F')
+                   fontsize=14, fontweight='bold',  # Optimal value labels
+                   color='black')
         
-        # Enhance the overall appearance with artistic touches
+        # Clean appearance with no background color
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
-        ax.spines['left'].set_linewidth(2)
-        ax.spines['bottom'].set_linewidth(2)
-        ax.spines['left'].set_color('#2F4F4F')
-        ax.spines['bottom'].set_color('#2F4F4F')
+        ax.spines['left'].set_linewidth(3)  # Thicker spines
+        ax.spines['bottom'].set_linewidth(3)
+        ax.spines['left'].set_color('black')
+        ax.spines['bottom'].set_color('black')
         
-        # Set background color with warm undertone
-        ax.set_facecolor('#FFF8DC')  # Cornsilk background
+        # No background color - clean white
+        ax.set_facecolor('white')
         fig.patch.set_facecolor('white')
         
-        # Set tick colors
-        ax.tick_params(colors='#2F4F4F', which='both')
+        # Set tick colors to black with optimal font
+        ax.tick_params(colors='black', which='both', labelsize=14)  # Optimal tick labels
         
         plt.tight_layout()
         
@@ -160,12 +143,11 @@ def create_van_gogh_style_plots():
         # Copy to overleaf folder
         shutil.copy(filename_pdf, 'overleaf-folder/plots/')
         
-        print(f"Updated and copied {filename_pdf} with Van Gogh-inspired colors to overleaf-folder/plots/")
+        print(f"Updated and copied {filename_pdf} with larger text and increased height to overleaf-folder/plots/")
         
         plt.close()
 
 if __name__ == "__main__":
-    print("Updating Fig 1 plots with Van Gogh irises-inspired color palette...")
-    create_van_gogh_style_plots()
-    print("All Fig 1 plots updated successfully with artistic Van Gogh styling!")
-
+    print("Updating Fig 1 plots with larger text and increased height...")
+    create_larger_text_height_plots()
+    print("All Fig 1 plots updated successfully with larger text and height!")
