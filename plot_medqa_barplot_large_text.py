@@ -32,7 +32,6 @@ def get_medqa_results_by_epsilon():
             accuracy = float(accuracy_str)
             
             # Clean up mechanism names for plotting with custom naming
-            clean_name = mechanism.replace('Private Local Model + CoT (', '').replace(')', '')
             if 'Purely Local Model' in mechanism:
                 clean_name = 'Local'
             elif 'Non-Private Local Model' in mechanism:
@@ -40,7 +39,13 @@ def get_medqa_results_by_epsilon():
             elif 'Purely Remote Model' in mechanism:
                 clean_name = 'Remote'
             elif 'Old Phrase DP' in mechanism:
-                clean_name = 'PhraseDP'  # Rename as requested
+                clean_name = 'PhraseDP'
+            elif 'InferDPT' in mechanism:
+                clean_name = 'InferDPT'
+            elif 'SANTEXT+' in mechanism:
+                clean_name = 'SANTEXT+'
+            else:
+                clean_name = mechanism  # Fallback
             
             results[epsilon][clean_name] = accuracy
     
@@ -53,12 +58,12 @@ def create_larger_text_height_plots():
     
     # Define the desired order from left to right
     desired_order = [
-        'Purely Local',
+        'Local',
         'InferDPT', 
         'SANTEXT+',
         'PhraseDP',
         'Non-Private + CoT',
-        'Purely Remote'
+        'Remote'
     ]
     
     # Color palette

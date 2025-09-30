@@ -56,12 +56,12 @@ def create_larger_text_height_plots():
     
     # Define the desired order from left to right
     desired_order = [
-        'Purely Local',
+        'Local',
         'InferDPT', 
         'SANTEXT+',
         'PhraseDP',
         'Non-Private + CoT',
-        'Purely Remote'
+        'Remote'
     ]
     
     # Color palette
