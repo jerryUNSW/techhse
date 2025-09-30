@@ -35,7 +35,7 @@ def get_medqa_results_by_epsilon():
             if 'Purely Local Model' in mechanism:
                 clean_name = 'Local'
             elif 'Non-Private Local Model' in mechanism:
-                clean_name = 'CoT'
+                clean_name = 'Local + CoT'
             elif 'Purely Remote Model' in mechanism:
                 clean_name = 'Remote'
             elif 'Old Phrase DP' in mechanism:
@@ -62,7 +62,7 @@ def create_larger_text_height_plots():
         'InferDPT', 
         'SANTEXT+',
         'PhraseDP',
-        'CoT',
+        'Local + CoT',
         'Remote'
     ]
     

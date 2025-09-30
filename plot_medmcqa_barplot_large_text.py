@@ -36,7 +36,7 @@ def get_medmcqa_results_by_epsilon():
         # Extract accuracies for each mechanism
         mechanisms = {
             'Local': data['results']['local_alone_correct'],
-            'CoT': data['results']['non_private_cot_correct'],
+            'Local + CoT': data['results']['non_private_cot_correct'],
             'PhraseDP': data['results']['old_phrase_dp_local_cot_correct'],
             'InferDPT': data['results']['inferdpt_local_cot_correct'],
             'SANTEXT+': data['results']['santext_local_cot_correct'],
@@ -60,7 +60,7 @@ def create_larger_text_height_plots():
         'InferDPT', 
         'SANTEXT+',
         'PhraseDP',
-        'CoT',
+        'Local + CoT',
         'Remote'
     ]
     
