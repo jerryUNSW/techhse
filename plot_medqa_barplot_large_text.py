@@ -151,13 +151,7 @@ def create_larger_text_height_plots():
         # Set tick colors to black with sample plot font
         ax.tick_params(colors='black', which='both', labelsize=20)  # Sample plot tick labels
         
-        # Add arrows to axes at the ends
-        # X-axis arrow (at the end of x-axis)
-        ax.annotate('', xy=(len(mechanisms)-0.5, -5), xytext=(len(mechanisms)-1.5, -5), 
-                   arrowprops=dict(arrowstyle='->', color='black', lw=1.5))
-        # Y-axis arrow (at the end of y-axis)
-        ax.annotate('', xy=(-0.5, 95), xytext=(-0.5, 85), 
-                   arrowprops=dict(arrowstyle='->', color='black', lw=1.5))
+        # Clean styling like sample plot - no arrows needed
         
         plt.tight_layout()
         
