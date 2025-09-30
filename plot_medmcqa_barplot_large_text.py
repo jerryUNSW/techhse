@@ -149,7 +149,10 @@ def create_larger_text_height_plots():
         # Set tick colors to black with sample plot font
         ax.tick_params(colors='black', which='both', labelsize=20)  # Sample plot tick labels
         
-        # Clean styling like sample plot - no arrows needed
+        # Bring x-axis to front so bars appear to sit on it
+        ax.set_axisbelow(False)
+        ax.spines['bottom'].set_zorder(10)
+        ax.spines['left'].set_zorder(10)
         
         plt.tight_layout()
         
