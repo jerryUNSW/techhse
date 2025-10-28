@@ -1,0 +1,102 @@
+{
+  "experiment_info": {
+    "model_name": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "num_samples": 2,
+    "epsilon": 1.0,
+    "start_time": "2025-09-29T19:32:54.789132",
+    "dataset": "HSE-bench"
+  },
+  "results": {
+    "total_questions": 2,
+    "local_alone_correct": 2,
+    "non_private_cot_correct": 2,
+    "old_phrase_dp_local_cot_correct": 2,
+    "inferdpt_local_cot_correct": 2,
+    "santext_local_cot_correct": 2,
+    "purely_remote_correct": 2,
+    "local_alone_answers": [
+      {
+        "question_idx": 0,
+        "predicted": "B",
+        "correct": "B",
+        "is_correct": true
+      },
+      {
+        "question_idx": 1,
+        "predicted": "B",
+        "correct": "B",
+        "is_correct": true
+      }
+    ],
+    "non_private_cot_answers": [
+      {
+        "question_idx": 0,
+        "predicted": "B",
+        "correct": "B",
+        "is_correct": true
+      },
+      {
+        "question_idx": 1,
+        "predicted": "B",
+        "correct": "B",
+        "is_correct": true
+      }
+    ],
+    "old_phrase_dp_local_cot_answers": [
+      {
+        "question_idx": 0,
+        "predicted": "B",
+        "correct": "B",
+        "is_correct": true
+      },
+      {
+        "question_idx": 1,
+        "predicted": "B",
+        "correct": "B",
+        "is_correct": true
+      }
+    ],
+    "inferdpt_local_cot_answers": [
+      {
+        "question_idx": 0,
+        "predicted": "B",
+        "correct": "B",
+        "is_correct": true
+      },
+      {
+        "question_idx": 1,
+        "predicted": "B",
+        "correct": "B",
+        "is_correct": true
+      }
+    ],
+    "santext_local_cot_answers": [
+      {
+        "question_idx": 0,
+        "predicted": "B",
+        "correct": "B",
+        "is_correct": true
+      },
+      {
+        "question_idx": 1,
+        "predicted": "B",
+        "correct": "B",
+        "is_correct": true
+      }
+    ],
+    "purely_remote_answers": [
+      {
+        "question_idx": 0,
+        "predicted": "B",
+        "correct": "B",
+        "is_correct": true
+      },
+      {
+        "question_idx": 1,
+        "predicted": "B",
+        "correct": "B",
+        "is_correct": true
+      }
+    ]
+  }
+}

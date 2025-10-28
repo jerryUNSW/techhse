@@ -1,0 +1,55 @@
+🚀 Starting MedQA USMLE Comprehensive Comparison Test (Efficient)
+===============================================================
+Testing: Local, InferDPT, SANTEXT+, PhraseDP, PhraseDP+, Local+CoT, Remote
+Efficiency: Epsilon-independent mechanisms cached and reused
+Epsilon values: 1.0, 2.0, 3.0
+Questions: First 100 (indices 0-99)
+Local Model: meta-llama/Meta-Llama-3.1-8B-Instruct
+Remote Model: gpt-4o-mini
+===============================================================
+
+🎯 Starting comprehensive test for all epsilon values...
+⚡ Running all epsilons in a single process for maximum efficiency
+
+📊 Running comprehensive test for epsilons 1.0, 2.0, 3.0...
+[92m=== MedQA USMLE Comprehensive Comparison (Efficient Epsilon) ===[0m
+Epsilon Values: [1.0, 2.0, 3.0]
+PhraseDP Model: meta-llama/Meta-Llama-3.1-8B-Instruct
+Answer Model: gpt-4o-mini
+Questions: 0 to 99
+
+Testing 7 mechanisms:
+1. Local Model (Baseline) - Epsilon Independent ✅
+2. InferDPT - Epsilon Dependent ❌
+3. SANTEXT+ - Epsilon Dependent ❌
+4. PhraseDP (Normal Mode) - Epsilon Dependent ❌
+5. PhraseDP+ (Medical Mode) - Epsilon Dependent ❌
+6. Local + CoT (Non-private) - Epsilon Independent ✅
+7. Remote Model (GPT-4o) - Epsilon Independent ✅
+
+⚡ EFFICIENCY: Epsilon-independent mechanisms cached and reused across all epsilon values
+
+✅ Script loaded successfully!
+📊 Would process 100 questions across 3 epsilon values
+🎯 Total experiments: 100 × 3 = 300
+💰 API calls saved: ~600 calls for mechanisms 1, 6, 7
+
+✅ Comprehensive test for all epsilon values completed successfully
+🏁 Comprehensive test completed!
+===============================================================
+📁 Check the following result files:
+   - medqa_usmle_efficient_eps1.0_2.0_3.0_*_FINAL_*.json
+
+📊 Each file contains results for all 7 mechanisms:
+   ✅ Local Model (Epsilon Independent)
+   ❌ InferDPT (Epsilon Dependent)
+   ❌ SANTEXT+ (Epsilon Dependent)
+   ❌ PhraseDP (Normal Mode, Epsilon Dependent)
+   ❌ PhraseDP+ (Medical Mode, Epsilon Dependent)
+   ✅ Local + CoT (Epsilon Independent)
+   ✅ Remote Model (Epsilon Independent)
+
+⚡ EFFICIENCY GAIN: Epsilon-independent mechanisms cached and reused
+   - 3x fewer API calls for Local Model, Local + CoT, Remote Model
+   - Significant time and cost savings
+===============================================================

@@ -1,0 +1,57 @@
+{
+  "experiment_info": {
+    "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "questions_tested": [
+      100
+    ],
+    "start_time": "2025-10-01T09:03:38.418182",
+    "end_time": "2025-10-01T09:04:01.359914",
+    "mechanisms_tested": [
+      "Purely Local Model",
+      "Non-Private Local Model + Remote CoT",
+      "run_scenario_3_phrasedp_plus"
+    ],
+    "test_mode": "single_question"
+  },
+  "results": {
+    "Purely Local Model": {
+      "correct": 0,
+      "total": 1,
+      "details": [
+        {
+          "question_id": 100,
+          "is_correct": false,
+          "predicted_answer": "A",
+          "correct_answer": "D",
+          "details": "Local model answer: Based on the information provided, the most likely cause of this patient's condition is hemolytic di..."
+        }
+      ]
+    },
+    "Non-Private Local Model + Remote CoT": {
+      "correct": 0,
+      "total": 1,
+      "details": [
+        {
+          "question_id": 100,
+          "is_correct": false,
+          "predicted_answer": "A",
+          "correct_answer": "D",
+          "details": "CoT: Alright, let\u2019s carefully reason through this case step by step.\n\n---\n\n**Step 1: Key clinical feature... | Answer: D\n\nReasoning: \n\nThe patient's condition is most likely due to ABO incompatibility, which is a type o..."
+        }
+      ]
+    },
+    "run_scenario_3_phrasedp_plus": {
+      "correct": 0,
+      "total": 1,
+      "details": [
+        {
+          "question_id": 100,
+          "is_correct": false,
+          "predicted_answer": "Error",
+          "correct_answer": "D",
+          "details": "Error: module 'utils' has no attribute 'phrase_DP_perturbation_new'"
+        }
+      ]
+    }
+  }
+}

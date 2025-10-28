@@ -1,0 +1,11 @@
+{
+  "experiment_type": "HSE-bench-local-only",
+  "model_name": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+  "num_samples": 1,
+  "start_time": "2025-09-30 19:01:46.420024",
+  "results": {
+    "local_alone_correct": 0,
+    "total_questions": 0
+  },
+  "detailed_results": []
+}

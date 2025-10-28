@@ -1,7 +1,0 @@
-In the last month, we have made the following progress in our project on privacy guardrails for question answering with large language models.
-
-(1) We evaluated a pipeline where privacy perturbation is applied to user queries before sending them to a remote LLM for reasoning traces, which then guide a local model to generate the final answer. On medical multiple-choice datasets without context, our phrase-wise perturbation method achieved higher accuracy than the token-wise baseline, while the purely remote non-private LLM remained the strongest performer.
-
-(2) We designed a phrase-level local differential privacy mechanism tailored for question answering. Compared with token-level noise, our approach led to more stable reasoning and more consistent option ranking, while preserving calibration quality.
-
-(3) We established an evaluation setting focused on sensitive QA domains, and we are extending experiments to medical short-answer datasets with context while developing metrics such as entity exposure and attack success to quantify the utility–privacy trade-off.

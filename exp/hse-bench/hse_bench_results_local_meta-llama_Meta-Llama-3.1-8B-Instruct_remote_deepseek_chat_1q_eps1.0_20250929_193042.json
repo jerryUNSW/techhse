@@ -1,0 +1,66 @@
+{
+  "experiment_info": {
+    "model_name": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "num_samples": 1,
+    "epsilon": 1.0,
+    "start_time": "2025-09-29T19:30:42.367763",
+    "dataset": "HSE-bench"
+  },
+  "results": {
+    "total_questions": 1,
+    "local_alone_correct": 0,
+    "non_private_cot_correct": 0,
+    "old_phrase_dp_local_cot_correct": 0,
+    "inferdpt_local_cot_correct": 0,
+    "santext_local_cot_correct": 0,
+    "purely_remote_correct": 1,
+    "local_alone_answers": [
+      {
+        "question_idx": 0,
+        "predicted": "Error",
+        "correct": "D",
+        "is_correct": false
+      }
+    ],
+    "non_private_cot_answers": [
+      {
+        "question_idx": 0,
+        "predicted": "Error",
+        "correct": "D",
+        "is_correct": false
+      }
+    ],
+    "old_phrase_dp_local_cot_answers": [
+      {
+        "question_idx": 0,
+        "predicted": "Error",
+        "correct": "D",
+        "is_correct": false
+      }
+    ],
+    "inferdpt_local_cot_answers": [
+      {
+        "question_idx": 0,
+        "predicted": "Error",
+        "correct": "D",
+        "is_correct": false
+      }
+    ],
+    "santext_local_cot_answers": [
+      {
+        "question_idx": 0,
+        "predicted": "Error",
+        "correct": "D",
+        "is_correct": false
+      }
+    ],
+    "purely_remote_answers": [
+      {
+        "question_idx": 0,
+        "predicted": "D",
+        "correct": "D",
+        "is_correct": true
+      }
+    ]
+  }
+}

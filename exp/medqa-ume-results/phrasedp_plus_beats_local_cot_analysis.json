@@ -1,0 +1,281 @@
+{
+  "1.0": [
+    {
+      "question_id": 32,
+      "question": "A 72-year-old woman is admitted to the intensive care unit for shortness of breath and palpitations. A cardiac catheterization is performed and measurements of the left ventricular volume and pressure...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 82,
+      "question": "A 54-year-old male makes an appointment with his primary care physician due to chronic fatigue that has left him unable to hike or do other physically demanding activities with his friends. He has wel...",
+      "correct_answer": "A",
+      "phrasedp_plus_answer": "A",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 129,
+      "question": "A 47-year-old woman comes to the physician because of progressive muscle weakness for five months. She feels that the muscles in her shoulders and hips have been getting weaker and sometimes feel sore...",
+      "correct_answer": "A",
+      "phrasedp_plus_answer": "A",
+      "local_cot_answer": "B"
+    },
+    {
+      "question_id": 245,
+      "question": "An unidentified surgical specimen is received for histopathologic analysis. A portion of the specimen is cut and stained with hematoxylin and eosin. The remainder is analyzed and is found to contains ...",
+      "correct_answer": "D",
+      "phrasedp_plus_answer": "D",
+      "local_cot_answer": "B"
+    },
+    {
+      "question_id": 286,
+      "question": "A 30-year-old man presents to his primary care physician with complaints of excessive fatigue and weakness for the last several weeks. He also complains of abdominal pain and constipation for the same...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 330,
+      "question": "A 57-year-old woman is brought to the emergency department by ambulance for dysarthria and left-sided facial droop. She is accompanied by her son, who states that the patient had just returned home an...",
+      "correct_answer": "B",
+      "phrasedp_plus_answer": "B",
+      "local_cot_answer": "A"
+    },
+    {
+      "question_id": 377,
+      "question": "A 3-month-old girl is brought to the physician because of a productive cough for 5 days. Over the past month, she has had several episodes of watery stools. She is exclusively breastfed every 3\u20134 hour...",
+      "correct_answer": "D",
+      "phrasedp_plus_answer": "D",
+      "local_cot_answer": "C"
+    },
+    {
+      "question_id": 383,
+      "question": "A 32-year-old woman comes to the physician because she feels depressed, has difficulty sleeping, a poor appetite, and low concentration for the past 3 months. During this time, she has also had low en...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "B"
+    },
+    {
+      "question_id": 431,
+      "question": "A 63-year-old man is admitted to the intensive care unit for hemodynamic instability. Several days prior, he had been swimming in the Gulf coast when he stepped on a sharp rock and cut his right foot....",
+      "correct_answer": "A",
+      "phrasedp_plus_answer": "A",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 439,
+      "question": "A 45-year-old man comes to his primary-care doctor with his wife for a 4-week history of constipation. The patient reports that his bowel habits have changed from every day to every 3 or 4 days. He al...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "A"
+    },
+    {
+      "question_id": 440,
+      "question": "A 23-year-old man presents to the office for a circular, itchy rash over the abdomen that has been slowly getting worse for the past 2 weeks. The patient has a medical history of chronic dermatitis an...",
+      "correct_answer": "A",
+      "phrasedp_plus_answer": "A",
+      "local_cot_answer": "C"
+    },
+    {
+      "question_id": 470,
+      "question": "A 27-year-old woman comes to the physician because of increasing shortness of breath and a non-productive cough for 2 months. She has been unable to perform her daily activities. She has had malaise a...",
+      "correct_answer": "A",
+      "phrasedp_plus_answer": "A",
+      "local_cot_answer": "D"
+    }
+  ],
+  "2.0": [
+    {
+      "question_id": 48,
+      "question": "A 55-year-old man comes to the physician because of a 6-week history of tingling pain in the sole of his right foot when he raises it above chest level during exercises. He reports that he started exe...",
+      "correct_answer": "A",
+      "phrasedp_plus_answer": "A",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 95,
+      "question": "A 24-year-old man is brought to the emergency department 15 minutes after he sustained a stab wound to the left chest just below the clavicle. On arrival, he has rapid, shallow breathing and appears a...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 118,
+      "question": "A 66-year-old man presents to the emergency department with abdominal pain, nausea, and vomiting. He endorses diffuse abdominal tenderness. His past medical history is notable for diabetic nephropathy...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "A"
+    },
+    {
+      "question_id": 197,
+      "question": "A student studying pharmacology is a member of a team that is conducting research related to the elimination of multiple anticoagulant medications. His duty as a member of the team is to collect serum...",
+      "correct_answer": "A",
+      "phrasedp_plus_answer": "A",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 199,
+      "question": "A 28-year-old woman comes to the obstetrics and gynecology clinic because she has been unsuccessfully trying to conceive with her husband for the last 2 years. He has had 2 children from a previous ma...",
+      "correct_answer": "D",
+      "phrasedp_plus_answer": "D",
+      "local_cot_answer": "C"
+    },
+    {
+      "question_id": 220,
+      "question": "A 4-year-old girl is brought to the emergency department with a persistent cough, fever, and vomiting. The past year the child has been admitted to the hospital 3 times with pneumonia. For the past 1 ...",
+      "correct_answer": "A",
+      "phrasedp_plus_answer": "A",
+      "local_cot_answer": "C"
+    },
+    {
+      "question_id": 223,
+      "question": "A 60-year-old woman presents to a physician for worsening shortness of breath and increasing abdominal distention over the last 3 months. She says that the shortness of breath is worse on exertion and...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 285,
+      "question": "An elderly man presents to his physician with complaints of difficulty breathing, easy fatigability, and bilateral leg swelling which began 2 months ago. His breathlessness worsens while walking, clim...",
+      "correct_answer": "A",
+      "phrasedp_plus_answer": "A",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 330,
+      "question": "A 57-year-old woman is brought to the emergency department by ambulance for dysarthria and left-sided facial droop. She is accompanied by her son, who states that the patient had just returned home an...",
+      "correct_answer": "B",
+      "phrasedp_plus_answer": "B",
+      "local_cot_answer": "A"
+    },
+    {
+      "question_id": 362,
+      "question": "A 6-day-old male newborn is brought to the physician because he has become increasingly irritable and restless over the past 2 days. During this period, he has had 12 bowel movements. He feeds 10 to 1...",
+      "correct_answer": "A",
+      "phrasedp_plus_answer": "A",
+      "local_cot_answer": "B"
+    },
+    {
+      "question_id": 363,
+      "question": "A previously healthy 29-year-old man comes to the emergency department because of burning with urination for several days. He has also had pain in the right ankle for 3 days and pain and swelling in t...",
+      "correct_answer": "D",
+      "phrasedp_plus_answer": "D",
+      "local_cot_answer": "A"
+    },
+    {
+      "question_id": 425,
+      "question": "A 45-year-old Caucasian male presents to a gastroenterologist complaining of heartburn and difficulty swallowing. He recalls that he has been told by his primary care physician that he suffers from ga...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "B"
+    },
+    {
+      "question_id": 486,
+      "question": "A 35-year-old woman presents to the physician because of episodes of difficulty swallowing for the past 3 months. She feels solid food getting stuck in her chest behind the sternum. She does not have ...",
+      "correct_answer": "D",
+      "phrasedp_plus_answer": "D",
+      "local_cot_answer": "A"
+    },
+    {
+      "question_id": 500,
+      "question": "A 30-year-old male presents to his primary care physician complaining of infertility. He and his wife have been trying to get pregnant for the past two years. They have used fertility monitors and oth...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "A"
+    }
+  ],
+  "3.0": [
+    {
+      "question_id": 47,
+      "question": "A medical research study is evaluating an investigational novel drug (medication 1) compared with standard therapy (medication 2) in patients presenting to the emergency department with myocardial inf...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 48,
+      "question": "A 55-year-old man comes to the physician because of a 6-week history of tingling pain in the sole of his right foot when he raises it above chest level during exercises. He reports that he started exe...",
+      "correct_answer": "A",
+      "phrasedp_plus_answer": "A",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 156,
+      "question": "A 19-year-old man is brought to the emergency department by ambulance because of unusual behavior that started 3 hours ago while he was at a party. He has a history of major depressive disorder and se...",
+      "correct_answer": "D",
+      "phrasedp_plus_answer": "D",
+      "local_cot_answer": "C"
+    },
+    {
+      "question_id": 161,
+      "question": "A 5-year-old boy of African descent is presented to the emergency department by his parents. The child is clutching his abdomen and crying about pain in his belly. His mother reports intermittent epis...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 197,
+      "question": "A student studying pharmacology is a member of a team that is conducting research related to the elimination of multiple anticoagulant medications. His duty as a member of the team is to collect serum...",
+      "correct_answer": "A",
+      "phrasedp_plus_answer": "A",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 223,
+      "question": "A 60-year-old woman presents to a physician for worsening shortness of breath and increasing abdominal distention over the last 3 months. She says that the shortness of breath is worse on exertion and...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 286,
+      "question": "A 30-year-old man presents to his primary care physician with complaints of excessive fatigue and weakness for the last several weeks. He also complains of abdominal pain and constipation for the same...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 362,
+      "question": "A 6-day-old male newborn is brought to the physician because he has become increasingly irritable and restless over the past 2 days. During this period, he has had 12 bowel movements. He feeds 10 to 1...",
+      "correct_answer": "A",
+      "phrasedp_plus_answer": "A",
+      "local_cot_answer": "B"
+    },
+    {
+      "question_id": 402,
+      "question": "A 24-year-old woman comes to the physician because she had unprotected intercourse with her boyfriend the previous day. She has had regular menses since menarche at the age of 12. Her last menstrual p...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "A"
+    },
+    {
+      "question_id": 417,
+      "question": "A 25-year-old woman presents to her new family physician for a follow-up appointment. She previously presented with itching, as well as frequent and painful urination. A vaginal swab was taken and sen...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 436,
+      "question": "A 45-year-old mechanic presents to the emergency department complaining of acute-onset shortness of breath while repairing a plowing tractor for his neighbor. The patient denies having any history of ...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "D"
+    },
+    {
+      "question_id": 448,
+      "question": "A 52-year-old man is brought to the emergency department for recurrent vomiting that began 5 hours ago. He describes the vomitus as bloody and containing black specks. He drinks 10\u201312 beers daily and ...",
+      "correct_answer": "C",
+      "phrasedp_plus_answer": "C",
+      "local_cot_answer": "A"
+    },
+    {
+      "question_id": 449,
+      "question": "A 69-year-old male with a longstanding history of hypertension and high cholesterol presents with abdominal pain and \u2018bruising on his feet\u2019. The patient states that his symptoms started about a week a...",
+      "correct_answer": "D",
+      "phrasedp_plus_answer": "D",
+      "local_cot_answer": "A"
+    }
+  ]
+}

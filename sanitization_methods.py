@@ -46,6 +46,18 @@ with open('config.yaml', 'r') as f:
 # Load environment variables from .env
 load_dotenv()
 
+# If the user hasn't set CUSTEXT_VECTORS_PATH, default to the vectors bundled under
+# the repository's `sanitization-methods` layout so CusText can warm up automatically.
+if not os.getenv('CUSTEXT_VECTORS_PATH'):
+    repo_root = os.path.dirname(__file__)
+    # Prefer the symlink name `ct_vectors.txt` when present, fall back to counter-fitted file.
+    candidate_in_repo = os.path.join(repo_root, 'sanitization-methods', 'external', 'CusText', 'CusText', 'embeddings', 'ct_vectors.txt')
+    candidate_alt = os.path.join(repo_root, 'sanitization-methods', 'external', 'CusText', 'CusText', 'embeddings', 'counter-fitted-vectors.txt')
+    if os.path.exists(candidate_in_repo):
+        os.environ['CUSTEXT_VECTORS_PATH'] = candidate_in_repo
+    elif os.path.exists(candidate_alt):
+        os.environ['CUSTEXT_VECTORS_PATH'] = candidate_alt
+
 # Global instances for methods that need initialization
 _santext_mechanism = None
 _custext_components = None
@@ -89,11 +101,33 @@ def _get_custext_components():
     global _custext_components
     if _custext_components is None:
         # Load counter-fitted vectors using the same logic as PPI experiment
-        try:
-            VECTORS_PATH = "/home/yizhang/tech4HSE/external/CusText/CusText/embeddings/ct_vectors.txt"
-            emb_matrix, idx2word, word2idx = _load_custext_vectors(VECTORS_PATH)
-        except Exception as e:
-            raise RuntimeError(f"Failed to load CusText vectors: {e}")
+        # Allow override via environment variable, and try a few fallback locations
+        candidates = []
+        env_path = os.getenv('CUSTEXT_VECTORS_PATH')
+        if env_path:
+            candidates.append(env_path)
+        candidates.extend([
+            "/home/yizhang/tech4HSE/external/CusText/CusText/embeddings/ct_vectors.txt",
+            "./external/CusText/CusText/embeddings/ct_vectors.txt",
+            "/data1/yizhangh/external/CusText/CusText/embeddings/ct_vectors.txt",
+        ])
+
+        found = False
+        for VECTORS_PATH in candidates:
+            try:
+                if VECTORS_PATH and os.path.exists(VECTORS_PATH):
+                    emb_matrix, idx2word, word2idx = _load_custext_vectors(VECTORS_PATH)
+                    found = True
+                    break
+            except Exception as e:
+                last_exc = e
+
+        if not found:
+            msg = (
+                "Failed to load CusText vectors. Tried paths: " + ", ".join(candidates) + ".\n"
+                "Please set the environment variable CUSTEXT_VECTORS_PATH to the correct file path or place the vectors at one of the locations above."
+            )
+            raise RuntimeError(msg)
 
         # Load stopwords
         try:
@@ -118,7 +152,21 @@ def _get_clusant_resources():
     if _clusant_resources is not None:
         return _clusant_resources
 
-    clusant_root = '/home/yizhang/tech4HSE/CluSanT'
+    # Try canonical CluSanT locations (root can be in repo root or within sanitization-methods)
+    possible_clusant_roots = [
+        '/home/yizhang/tech4HSE/CluSanT',
+        os.path.join(os.path.dirname(__file__), 'sanitization-methods', 'CluSanT'),
+        os.path.join(os.path.dirname(__file__), 'CluSanT'),
+    ]
+    clusant_root = None
+    for p in possible_clusant_roots:
+        if p and os.path.exists(p):
+            clusant_root = p
+            break
+    if clusant_root is None:
+        # Fallback to expected repo location; let downstream code raise informative error if missing
+        clusant_root = '/home/yizhang/tech4HSE/CluSanT'
+
     src_path = os.path.join(clusant_root, 'src')
     if src_path not in sys.path:
         sys.path.append(src_path)

@@ -9,7 +9,7 @@ dataset:
   name: hotpotqa/hotpot_qa
   num_samples: 10
   split: validation
-epsilon: 3.0
+epsilon: 1.0
 local_model: meta-llama/Meta-Llama-3.1-8B-Instruct
 local_models:
 - microsoft/phi-4
@@ -26,9 +26,9 @@ original_dataset:
   name: GBaker/MedQA-USMLE-4-options
   num_samples: 200
   split: test
-remote_llm_provider: deepseek
+remote_llm_provider: openai
 remote_models:
-  cot_model: deepseek-v3
-  judge_model: deepseek-v3
-  llm_model: deepseek-v3
+  cot_model: gpt-5-chat-latest
+  judge_model: gpt-4o-mini
+  llm_model: gpt-5-chat-latest
 temperature: 0.0

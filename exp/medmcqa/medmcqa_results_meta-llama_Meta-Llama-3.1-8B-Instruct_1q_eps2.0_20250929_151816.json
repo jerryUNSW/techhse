@@ -1,0 +1,58 @@
+{
+  "experiment_info": {
+    "dataset": "MedMCQA",
+    "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "num_samples": 1,
+    "start_time": "2025-09-29T15:18:16.810734",
+    "epsilon": 2.0,
+    "scenarios": [
+      "1. Purely Local Model (Baseline)",
+      "2. Non-Private Local Model + Remote CoT",
+      "3.0. Private Local Model + CoT (Old Phrase DP)",
+      "3.2. Private Local Model + CoT (InferDPT)",
+      "3.3. Private Local Model + CoT (SANTEXT+)",
+      "4. Purely Remote Model"
+    ]
+  },
+  "results": {
+    "local_alone_correct": 0,
+    "non_private_cot_correct": 1,
+    "old_phrase_dp_local_cot_correct": 1,
+    "inferdpt_local_cot_correct": 1,
+    "santext_local_cot_correct": 1,
+    "purely_remote_correct": 0,
+    "total_questions": 1
+  },
+  "question_results": [
+    {
+      "question_index": 0,
+      "question": "Which of the following is not true for myelinated nerve fibers:",
+      "subject": "Physiology",
+      "topic": null,
+      "correct_answer": "A",
+      "scenario_results": {
+        "scenario_1_purely_local": false,
+        "scenario_2_non_private_cot": true,
+        "scenario_4_purely_remote": false,
+        "scenario_3_0_old_phrase_dp": true,
+        "scenario_3_2_inferdpt": true,
+        "scenario_3_3_santext": true,
+        "scenario_3_4_custext": "DISABLED",
+        "scenario_3_5_clusant": "DISABLED"
+      },
+      "timestamp": "2025-09-29T15:20:28.149854"
+    }
+  ],
+  "final_summary": {
+    "end_time": "2025-09-29T15:20:32.787986",
+    "duration_minutes": 2.2662878,
+    "accuracies": {
+      "local_alone": 0.0,
+      "non_private_cot": 100.0,
+      "old_phrase_dp": 100.0,
+      "inferdpt": 100.0,
+      "santext": 100.0,
+      "purely_remote": 0.0
+    }
+  }
+}

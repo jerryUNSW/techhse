@@ -15,6 +15,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") or os.getenv("OPEN_AI_KEY")
 DEEP_SEEK_KEY = os.getenv("DEEP_SEEK_KEY")
 HUGGING_FACE_API = os.getenv("HUGGING_FACE")
 NEBIUS_API = os.getenv("NEBIUS")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 
 def extract_final_answer_from_cot(text):
     """
@@ -60,7 +61,7 @@ def llm_judge_answer(client, question, ground_truth, model_answer):
 
 def get_remote_llm_client(provider):
     """
-    Get the appropriate client for commercial remote LLM APIs (e.g., OpenAI, DeepSeek).
+    Get the appropriate client for commercial remote LLM APIs (e.g., OpenAI, DeepSeek, Anthropic).
 
     IMPORTANT:
     - This helper is ONLY for remote/commercial providers used for CoT and judging.
@@ -76,6 +77,12 @@ def get_remote_llm_client(provider):
         if not DEEP_SEEK_KEY:
             raise ValueError("DEEP_SEEK_KEY not found. Please set it in your .env file.")
         return OpenAI(api_key=DEEP_SEEK_KEY, base_url="https://api.deepseek.com")
+    elif provider == "anthropic":
+        if not ANTHROPIC_API_KEY:
+            raise ValueError("ANTHROPIC_API_KEY not found. Please set it in your .env file.")
+        # Note: Anthropic uses a different client library (anthropic), not OpenAI-compatible
+        # For now, return None to indicate it needs special handling
+        return None
     else:
         raise ValueError(f"Unsupported remote LLM provider: {provider}")
 
@@ -99,7 +106,7 @@ def get_nebius_client(config_model_fallback: str = None):
     return OpenAI(base_url=base_url, api_key=api_key)
 
 def generate_sentence_replacements_with_nebius(nebius_client, nebius_model_name, 
-    input_sentence, num_return_sequences=10, max_tokens=150):
+    input_sentence, num_return_sequences=10, max_tokens=150, mode="normal", metamap_phrases=None):
     """
     OLD PHRASEDP: Simple candidate generation without band diversity.
     
@@ -112,10 +119,12 @@ def generate_sentence_replacements_with_nebius(nebius_client, nebius_model_name,
         input_sentence: Original sentence to paraphrase
         num_return_sequences: Number of candidates to generate (default: 10)
         max_tokens: Maximum tokens per candidate (default: 150)
+        mode: Text processing mode - "normal" (default) or "medical"
     
     Returns:
         list: List of unique paraphrased sentences
     """
+    # Base system prompt
     system_prompt = """
     You are a highly skilled AI assistant specializing in natural language processing.
     Your primary goal is to rephrase user questions in a generalized manner,
@@ -127,12 +136,46 @@ def generate_sentence_replacements_with_nebius(nebius_client, nebius_model_name,
     or precise dates) into generic descriptions or placeholders.
     The output should be a semantically diverse and coherent paraphrase.
     """
+    
+    # Append mode-specific instructions
+    if mode == "medqa-ume":
+        system_prompt += """
+    MEDICAL TEXT SPECIAL REQUIREMENTS:
+    - PRESERVE ALL MEDICAL TERMINOLOGY: Keep every medical term, diagnosis, symptom, treatment
+    - MAINTAIN DIAGNOSTIC ACCURACY: Ensure medical questions remain diagnostically meaningful
+    - REMOVE ONLY PII: Eliminate only personally identifiable information (names, ages, locations, dates)
+    - PRESERVE CLINICAL CONTEXT: Keep all medical reasoning, symptom relationships, and diagnostic pathways
+    """
+        
+        # Add metamap-specific instructions if available
+        if metamap_phrases:
+            system_prompt += f"""
+    
+    CRITICAL MEDICAL CONCEPTS TO PRESERVE (from metamap analysis):
+    {', '.join(metamap_phrases)}
+    
+    - DO NOT PERTURB any of the above medical concepts and phrases
+    - MASK ONLY PII within these phrases (e.g., "23 year old" → "patient", but keep "pregnant woman")
+    - PRESERVE the medical meaning and clinical context of all metamap-identified concepts
+    """
 
+    # Build user prompt with metamap guidance if available
     user_prompt = f"""
     Generalize and paraphrase the following sentence.
     Ensure the logical structure and core meaning are maintained, but remove or generalize
     any sensitive personal information (like names of people, specific unique places,
-    exact dates, or highly specific event details).
+    exact dates, or highly specific event details)."""
+    
+    if mode == "medqa-ume" and metamap_phrases:
+        user_prompt += f"""
+
+    IMPORTANT: The following medical concepts have been identified as critical and should be preserved:
+    {', '.join(metamap_phrases)}
+    
+    When paraphrasing, mask only PII within these concepts (e.g., "23 year old pregnant woman" → "patient who is pregnant") 
+    but preserve the medical terminology and clinical meaning."""
+    
+    user_prompt += f"""
 
     ### Output Rules:
     - Output ONLY the paraphrased and generalized sentence.
@@ -157,6 +200,16 @@ def generate_sentence_replacements_with_nebius(nebius_client, nebius_model_name,
     """
 
     try:
+        # Debug: show prompts sent to Nebius for candidate generation
+        try:
+            print("\n--- PhraseDP Candidate Generation Prompt (mode=%s) ---" % mode)
+            print("System Prompt:\n" + system_prompt)
+            print("User Prompt:\n" + user_prompt)
+            print("--- End Prompt ---\n")
+        except Exception:
+            # If printing fails for any reason, continue without interrupting the flow
+            pass
+
         # Single API call to generate all candidates (old PhraseDP approach)
         response = nebius_client.chat.completions.create(
             model=nebius_model_name,
@@ -189,8 +242,7 @@ def generate_sentence_replacements_with_nebius(nebius_client, nebius_model_name,
         print(f"Error with Nebius API: {e}")
         return []
 
-
-def phrase_DP_perturbation_old(nebius_client, nebius_model_name, input_sentence, epsilon, sbert_model):
+def phrase_DP_perturbation_old(nebius_client, nebius_model_name, input_sentence, epsilon, sbert_model, mode="normal", metamap_phrases=None):
     """
     OLD PHRASEDP: Complete perturbation pipeline using the original approach.
     
@@ -217,6 +269,8 @@ def phrase_DP_perturbation_old(nebius_client, nebius_model_name, input_sentence,
         nebius_model_name,
         input_sentence=input_sentence,
         num_return_sequences=10,
+        mode=mode,
+        metamap_phrases=metamap_phrases
     )
     
     if not candidate_sentences:
@@ -238,7 +292,182 @@ def phrase_DP_perturbation_old(nebius_client, nebius_model_name, input_sentence,
         sbert_model=sbert_model
     )
     
-    print("OLD DP replacement selected:", dp_replacement)
+    # (Printing of the selected replacement suppressed to avoid duplicate output.)
+    return dp_replacement
+
+def generate_medical_sentence_replacements_with_nebius(nebius_client, nebius_model_name, 
+    input_sentence, num_return_sequences=10, max_tokens=150):
+    """
+    MEDICAL OLD PHRASEDP: Generate medical candidates with terminology preservation.
+    
+    This is a medical-specific version of the old PhraseDP implementation that:
+    1. Preserves ALL medical terminology, diagnoses, symptoms, treatments
+    2. Removes only PII (names, ages, locations, dates)
+    3. Maintains diagnostic accuracy and clinical reasoning
+    
+    Args:
+        nebius_client: Nebius API client
+        nebius_model_name: Name of the Nebius model to use
+        input_sentence: Original medical sentence to paraphrase
+        num_return_sequences: Number of candidates to generate (default: 10)
+        max_tokens: Maximum tokens per candidate (default: 150)
+    
+    Returns:
+        list: List of unique medical paraphrased sentences
+    """
+    medical_system_prompt = """
+    You are a highly skilled AI assistant specializing in medical text anonymization.
+    Your primary goal is to rephrase medical questions while preserving ALL medical terminology,
+    diagnoses, symptoms, treatments, and clinical details, but removing only personally
+    identifiable information (PII) like names, ages, locations, and dates.
+
+    CRITICAL MEDICAL REQUIREMENTS:
+    1. PRESERVE ALL MEDICAL TERMINOLOGY: Keep every medical term, diagnosis, symptom, treatment
+    2. MAINTAIN DIAGNOSTIC ACCURACY: Ensure medical questions remain diagnostically meaningful
+    3. REMOVE ONLY PII: Eliminate only personally identifiable information (names, ages, locations, dates)
+    4. PRESERVE CLINICAL CONTEXT: Keep all medical reasoning, symptom relationships, and diagnostic pathways
+
+    MEDICAL TERMS TO NEVER CHANGE:
+    - Diagnoses: myocardial infarction, diabetes, hypertension, pneumonia, stroke, etc.
+    - Symptoms: chest pain, dyspnea, fever, nausea, vomiting, headache, etc.
+    - Treatments: surgery, medication, therapy, chemotherapy, radiation, etc.
+    - Anatomical: heart, lung, liver, brain, artery, vein, muscle, bone, etc.
+    - Procedures: laparoscopy, endoscopy, biopsy, imaging, surgery, etc.
+    - Measurements: blood pressure, temperature, heart rate, lab values, etc.
+    - Conditions: acute, chronic, severe, mild, bilateral, unilateral, etc.
+
+    ONLY TRANSFORM PII (Personally Identifiable Information):
+    - Patient names → "a patient", "an individual", "the patient"
+    - Specific ages → "middle-aged", "elderly", "young adult", "adolescent"
+    - Specific locations → "a medical facility", "a hospital", "a clinic"
+    - Exact dates → "recently", "previously", "at presentation", "during admission"
+    - Hospital names → "a medical center", "a healthcare facility"
+    - Doctor names → "the physician", "the doctor", "the attending"
+    """
+
+    medical_user_prompt = f"""
+    Anonymize the following medical question by removing only personally identifiable information
+    while preserving ALL medical terminology, diagnoses, symptoms, treatments, and clinical details.
+
+    ### Medical Anonymization Rules:
+    - PRESERVE ALL medical terms, diagnoses, symptoms, treatments, and clinical details
+    - REMOVE ONLY PII: names, ages, locations, dates, hospital names, doctor names
+    - MAINTAIN diagnostic accuracy and medical reasoning
+    - KEEP all medical terminology exactly as written
+
+    ### Medical Examples:
+    Original: "Dr. Smith, a 45-year-old cardiologist at General Hospital, diagnosed the patient with acute myocardial infarction on January 15th."
+    Anonymized: "A middle-aged cardiologist at a medical facility diagnosed the patient with acute myocardial infarction recently."
+
+    Original: "The 65-year-old diabetic patient from Boston presented with chest pain radiating to the left arm."
+    Anonymized: "The elderly diabetic patient from a location presented with chest pain radiating to the left arm."
+
+    Original: "A 45-year-old diabetic patient presents with acute myocardial infarction with ST-elevation, chest pain radiating to the left arm, and diaphoresis."
+    Anonymized: "A middle-aged diabetic patient presents with acute myocardial infarction with ST-elevation, chest pain radiating to the left arm, and diaphoresis."
+
+    Original: "During laparoscopic cholecystectomy, the cystic artery is inadvertently transected, leading to significant bleeding."
+    Anonymized: "During laparoscopic cholecystectomy, the cystic artery is inadvertently transected, leading to significant bleeding."
+
+    Original: "The patient has fever >38.5°C, leukocytosis >12,000, and left lower quadrant tenderness with rebound."
+    Anonymized: "The patient has fever >38.5°C, leukocytosis >12,000, and left lower quadrant tenderness with rebound."
+
+    ### Output Rules:
+    - Output ONLY the anonymized medical sentence
+    - Do NOT repeat the original sentence or use near-identical phrasing
+    - No numbering, bullet points, or commentary
+    - Do NOT include introductory or explanatory text
+    - Ensure the sentence is grammatically correct and medically accurate
+    - PRESERVE ALL medical terminology and clinical details
+
+    Medical Question: {input_sentence}
+    """
+
+    try:
+        # Debug: show medical prompts sent to Nebius for medical candidate generation
+        try:
+            print("\n--- Medical PhraseDP Candidate Generation Prompt ---")
+            print("Medical System Prompt:\n" + medical_system_prompt)
+            print("Medical User Prompt:\n" + medical_user_prompt)
+            print("--- End Prompt ---\n")
+        except Exception:
+            pass
+
+        # Generate candidates using Nebius API
+        response = nebius_client.chat.completions.create(
+            model=nebius_model_name,
+            messages=[
+                {"role": "system", "content": medical_system_prompt},
+                {"role": "user", "content": medical_user_prompt}
+            ],
+            max_tokens=max_tokens,
+            temperature=0.8,  # Higher temperature for diversity
+            n=num_return_sequences  # Generate multiple candidates
+        )
+        
+        # Extract candidates from response
+        candidates = []
+        for choice in response.choices:
+            candidate = choice.message.content.strip()
+            if candidate and candidate not in candidates:
+                candidates.append(candidate)
+        
+        print(f"Generated {len(candidates)} medical candidates")
+        return candidates
+        
+    except Exception as e:
+        print(f"Error generating medical candidates: {e}")
+        return []
+
+def medical_phrase_DP_perturbation_old(nebius_client, nebius_model_name, input_sentence, epsilon, sbert_model):
+    """
+    MEDICAL OLD PHRASEDP: Complete medical perturbation pipeline preserving medical terminology.
+    
+    This function implements the complete old PhraseDP pipeline for medical text:
+    1. Generate medical candidates using single API call (preserving medical terminology)
+    2. Compute embeddings for all candidates
+    3. Apply exponential mechanism for probabilistic selection
+    
+    Args:
+        nebius_client: Nebius API client
+        nebius_model_name: Name of the Nebius model to use
+        input_sentence: Original medical sentence to perturb
+        epsilon: Privacy parameter for differential privacy
+        sbert_model: Sentence-BERT model for embedding computation
+    
+    Returns:
+        str: The selected perturbed medical sentence
+    """
+    print(f"Applying MEDICAL OLD differential privacy perturbation with epsilon={epsilon}...")
+    
+    # Step 1: Generate medical candidate sentence-level replacements
+    candidate_sentences = generate_medical_sentence_replacements_with_nebius(
+        nebius_client, 
+        nebius_model_name,
+        input_sentence=input_sentence,
+        num_return_sequences=10,
+    )
+    
+    if not candidate_sentences:
+        raise ValueError("No medical candidate sentences were generated. Check the Nebius API call.")
+    
+    print(f"Medical candidates and similarities:")
+    for i, candidate in enumerate(candidate_sentences):
+        print(f"  {i+1}. {candidate}")
+    
+    # Step 2: Precompute embeddings for all medical candidates
+    from dp_sanitizer import get_embedding, differentially_private_replacement
+    candidate_embeddings = {sent: get_embedding(sbert_model, sent).cpu().numpy() for sent in candidate_sentences}
+    
+    # Step 3: Select a replacement using exponential mechanism
+    dp_replacement = differentially_private_replacement(
+        target_phrase=input_sentence,
+        epsilon=epsilon,
+        candidate_phrases=candidate_sentences,
+        candidate_embeddings=candidate_embeddings,
+        sbert_model=sbert_model
+    )
+    
+    print(f"Medical DP replacement selected: {dp_replacement}")
     return dp_replacement
 
 

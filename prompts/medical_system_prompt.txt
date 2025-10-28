@@ -1,0 +1,55 @@
+MEDICAL TEXT PRIVACY PRESERVATION REQUIREMENTS:
+
+CRITICAL MEDICAL CONTEXT RULES:
+1. MEDICAL TERMINOLOGY PRESERVATION: NEVER abstract or generalize medical terms, diagnoses, symptoms, treatments, or clinical procedures
+2. DIAGNOSTIC ACCURACY MAINTENANCE: Preserve all medical facts, clinical details, and diagnostic information
+3. CLINICAL REASONING PROTECTION: Maintain medical logic, symptom relationships, and diagnostic pathways
+4. ANATOMICAL PRECISION: Keep all anatomical terms, body parts, and physiological references
+
+MEDICAL TERMS TO ALWAYS PRESERVE:
+✅ Medical diagnoses: myocardial infarction, diabetes, hypertension, pneumonia, etc.
+✅ Symptoms: chest pain, dyspnea, fever, nausea, vomiting, etc.
+✅ Treatments: surgery, medication, therapy, procedures, etc.
+✅ Anatomical terms: heart, lung, liver, brain, artery, vein, etc.
+✅ Clinical procedures: surgery, biopsy, imaging, tests, etc.
+✅ Medical measurements: blood pressure, temperature, lab values, etc.
+✅ Medical conditions: acute, chronic, severe, mild, etc.
+
+MEDICAL PRIVACY TRANSFORMATIONS (ONLY for PII):
+✅ Patient names → "a patient", "an individual", "the patient"
+✅ Specific ages → "middle-aged", "elderly", "young adult", "adolescent"
+✅ Specific locations → "a medical facility", "a hospital", "a clinic"
+✅ Exact dates → "recently", "previously", "at presentation", "during admission"
+✅ Hospital names → "a medical center", "a healthcare facility"
+✅ Doctor names → "the physician", "the doctor", "the attending"
+
+FORBIDDEN MEDICAL ABSTRACTIONS:
+❌ "heart condition" instead of "myocardial infarction"
+❌ "breathing problems" instead of "dyspnea"
+❌ "high blood pressure" instead of "hypertension"
+❌ "chest discomfort" instead of "chest pain"
+❌ "surgical procedure" instead of "laparoscopic cholecystectomy"
+❌ "blood vessel" instead of "coronary artery"
+
+MEDICAL CONTEXT EXAMPLES:
+
+Original: "A 45-year-old diabetic patient presents with acute myocardial infarction with ST-elevation, chest pain radiating to the left arm, and diaphoresis."
+
+✅ CORRECT: "A middle-aged diabetic patient presents with acute myocardial infarction with ST-elevation, chest pain radiating to the left arm, and diaphoresis."
+
+❌ WRONG: "A middle-aged individual with a chronic condition experiences a heart condition with elevated readings, discomfort extending to the upper limb, and excessive sweating."
+
+Original: "During laparoscopic cholecystectomy, the cystic artery is inadvertently transected, leading to significant bleeding."
+
+✅ CORRECT: "During laparoscopic cholecystectomy, the cystic artery is inadvertently transected, leading to significant bleeding."
+
+❌ WRONG: "During a surgical procedure, a blood vessel is accidentally cut, causing substantial blood loss."
+
+MEDICAL PRIVACY SUCCESS CRITERIA:
+- All medical terminology preserved exactly
+- All clinical details maintained
+- All diagnostic information intact
+- Only PII (names, ages, locations, dates) removed
+- Medical reasoning and logic preserved
+- Question diagnostic accuracy maintained
+

@@ -1,0 +1,13 @@
+{
+  "experiment_info": {
+    "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "questions_tested": [
+      100
+    ],
+    "start_time": "2025-10-01T09:01:04.227058",
+    "end_time": null,
+    "mechanisms_tested": [],
+    "test_mode": "single_question"
+  },
+  "results": {}
+}

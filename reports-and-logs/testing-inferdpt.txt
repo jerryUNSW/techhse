@@ -1,0 +1,90 @@
+================================================================================
+TESTING InferDPT perturb_sentence FUNCTION
+================================================================================
+Test Question: Were Scott Derrickson and Ed Wood of the same nationality?
+Epsilon values: [0.1, 0.5, 1.0, 2.0, 5.0]
+================================================================================
+
+EPSILON = 0.1
+============================================================
+Original Question: Were Scott Derrickson and Ed Wood of the same nationality?
+Perturbed Question: Wrap pointed category charm Of behind exempt
+Similarity: -0.0471
+
+EPSILON = 0.5
+============================================================
+Original Question: Were Scott Derrickson and Ed Wood of the same nationality?
+Perturbed Question: stunning zombie GRAM ONE screw aggress Excel
+Similarity: 0.0045
+
+EPSILON = 1.0
+============================================================
+Original Question: Were Scott Derrickson and Ed Wood of the same nationality?
+Perturbed Question: literature gave ria sensation bey slug induction
+Similarity: 0.1089
+
+EPSILON = 2.0
+============================================================
+Original Question: Were Scott Derrickson and Ed Wood of the same nationality?
+Perturbed Question: Past Alive SPECIAL Latitude you disease situated
+Similarity: 0.1339
+
+EPSILON = 5.0
+============================================================
+Original Question: Were Scott Derrickson and Ed Wood of the same nationality?
+Perturbed Question: Wat Syntax With Wright faction humanity Sweet
+Similarity: 0.0934
+
+
+================================================================================
+SUMMARY OF RESULTS
+================================================================================
+
+Epsilon: 0.1
+Original: Were Scott Derrickson and Ed Wood of the same nationality?
+Perturbed: Wrap pointed category charm Of behind exempt
+Similarity: -0.0471
+----------------------------------------
+
+Epsilon: 0.5
+Original: Were Scott Derrickson and Ed Wood of the same nationality?
+Perturbed: stunning zombie GRAM ONE screw aggress Excel
+Similarity: 0.0045
+----------------------------------------
+
+Epsilon: 1.0
+Original: Were Scott Derrickson and Ed Wood of the same nationality?
+Perturbed: literature gave ria sensation bey slug induction
+Similarity: 0.1089
+----------------------------------------
+
+Epsilon: 2.0
+Original: Were Scott Derrickson and Ed Wood of the same nationality?
+Perturbed: Past Alive SPECIAL Latitude you disease situated
+Similarity: 0.1339
+----------------------------------------
+
+Epsilon: 5.0
+Original: Were Scott Derrickson and Ed Wood of the same nationality?
+Perturbed: Wat Syntax With Wright faction humanity Sweet
+Similarity: 0.0934
+----------------------------------------
+
+================================================================================
+ANALYSIS
+================================================================================
+Successful perturbations: 5/5
+Average similarity: 0.0587
+Min similarity: -0.0471
+Max similarity: 0.1339
+
+Epsilon vs Similarity Analysis:
+  ε=0.1: similarity=-0.0471
+  ε=0.5: similarity=0.0045
+  ε=1.0: similarity=0.1089
+  ε=2.0: similarity=0.1339
+  ε=5.0: similarity=0.0934
+
+================================================================================
+END OF TEST
+================================================================================

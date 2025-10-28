@@ -1,0 +1,57 @@
+{
+  "experiment_type": "HSE-bench-enhanced",
+  "model_name": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+  "remote_model": "gpt-4o-mini",
+  "num_samples": 10,
+  "epsilon_values": [
+    1.0,
+    2.0,
+    3.0
+  ],
+  "start_time": "2025-09-29 22:02:15.695071",
+  "category": "regulation",
+  "task_types": [
+    "rule_recall",
+    "rule_application",
+    "issue_spotting",
+    "rule_conclusion"
+  ],
+  "detailed_results": [],
+  "summary_results": {
+    "shared_results": {
+      "local_alone_correct": 1,
+      "non_private_cot_correct": 1,
+      "purely_remote_correct": 1,
+      "total_questions": 1
+    },
+    "epsilon_results": {
+      "1.0": {
+        "local_alone_correct": 0,
+        "non_private_cot_correct": 0,
+        "old_phrase_dp_local_cot_correct": 0,
+        "inferdpt_local_cot_correct": 0,
+        "santext_local_cot_correct": 0,
+        "purely_remote_correct": 0,
+        "total_questions": 0
+      },
+      "2.0": {
+        "local_alone_correct": 0,
+        "non_private_cot_correct": 0,
+        "old_phrase_dp_local_cot_correct": 0,
+        "inferdpt_local_cot_correct": 0,
+        "santext_local_cot_correct": 0,
+        "purely_remote_correct": 0,
+        "total_questions": 0
+      },
+      "3.0": {
+        "local_alone_correct": 0,
+        "non_private_cot_correct": 0,
+        "old_phrase_dp_local_cot_correct": 0,
+        "inferdpt_local_cot_correct": 0,
+        "santext_local_cot_correct": 0,
+        "purely_remote_correct": 0,
+        "total_questions": 0
+      }
+    }
+  }
+}
