@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Tech4HSE Team" />
+  <title>Recent Progress on PhraseDP+ Evaluation and Improvements</title>
+  <style>
+    html {
+      font-size: 11pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .figure-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px 0;
+      gap: 10px;
+    }
+    .figure-item {
+      flex: 0 0 24%;
+      text-align: center;
+    }
+    .figure-item-3col {
+      flex: 0 0 32%;
+      text-align: center;
+    }
+    .figure-item img {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    @media print {
+      .figure-grid {
+        page-break-inside: avoid;
+      }
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Recent Progress on PhraseDP+ Evaluation and
+Improvements</h1>
+<p class="subtitle">Meeting Presentation</p>
+<p class="author">Tech4HSE Team</p>
+<p class="date">2025-01-XX</p>
+</header>
+<h1 id="recent-progress-on-phrasedp-evaluation-and-improvements">Recent
+Progress on PhraseDP+ Evaluation and Improvements</h1>
+<h2 id="meeting-presentation">Meeting Presentation</h2>
+<p><strong>Updated PPI Evaluation • Ablation Study • Medical
+Improvements • Few-Shot Analysis</strong></p>
+<h1 id="updated-ppi-evaluation-fine-grained">1. Updated PPI Evaluation
+(Fine-Grained)</h1>
+<h2 id="problem-with-previous-approach">Problem with Previous
+Approach</h2>
+<ul>
+<li>Binary exact-match detection was <strong>too strict</strong></li>
+<li>Flat protection curves that didn’t reflect privacy-utility
+trade-off</li>
+<li>Protection rate stayed constant across epsilon values</li>
+</ul>
+<h2 id="new-granular-evaluation">New Granular Evaluation</h2>
+<h3 id="protection-score-ps">Protection Score (PS)</h3>
+<pre><code>PS = 1 - semantic_similarity</code></pre>
+<ul>
+<li>Continuous 0-1 scale (not binary)</li>
+</ul>
+<h3 id="semantic-similarity">Semantic Similarity</h3>
+<ul>
+<li>Uses <strong>SBERT embeddings</strong> to measure closeness</li>
+<li>More sensitive to subtle perturbations</li>
+</ul>
+<h2 id="updated-plots">Updated Plots</h2>
+<ul>
+<li><strong>Line plots:</strong> Protection Score vs Epsilon for each
+PII type (email, phone, address, name)</li>
+<li><strong>Radar plots:</strong> Multi-dimensional comparison across
+epsilon values (1.0, 2.0, 3.0)</li>
+<li><strong>All 5 mechanisms:</strong> PhraseDP, InferDPT, SANTEXT+,
+CusText+, CluSanT on same scale</li>
+<li><strong>Token-level experiments:</strong> N=1000 examples, epsilon
+coverage: 1.0, 1.5, 2.0, 2.5, 3.0</li>
+</ul>
+<h3 id="figure-1-pii-protection-scores-across-privacy-budgets">Figure 1:
+PII Protection Scores Across Privacy Budgets</h3>
+<p>PII protection scores across privacy budgets for individual PII types
+(higher is better). For token-wise mechanisms (InferDPT, SANTEXT+,
+CusText+, CluSanT), the score is PS <span
+class="math inline"> = 1−</span> semantic similarity between the
+original PII string and its perturbed value. PhraseDP is evaluated with
+normalized exact-match binary protection and plotted on the same 0–1
+scale.</p>
+<figure class="figure-grid">
+  <div class="figure-item">
+    <img src="overleaf-folder/figures/protection_vs_epsilon_name.pdf" alt="Name protection" />
+    <figcaption>Name</figcaption>
+  </div>
+  <div class="figure-item">
+    <img src="overleaf-folder/figures/protection_vs_epsilon_email.pdf" alt="Email protection" />
+    <figcaption>Email</figcaption>
+  </div>
+  <div class="figure-item">
+    <img src="overleaf-folder/figures/protection_vs_epsilon_phone.pdf" alt="Phone protection" />
+    <figcaption>Phone</figcaption>
+  </div>
+  <div class="figure-item">
+    <img src="overleaf-folder/figures/protection_vs_epsilon_address.pdf" alt="Address protection" />
+    <figcaption>Address</figcaption>
+  </div>
+</figure>
+<h3 id="figure-2-multi-dimensional-pii-protection-radar-charts">Figure
+2: Multi-dimensional PII Protection Radar Charts</h3>
+<p>Multi-dimensional PII protection radar charts at different privacy
+budgets (<span class="math inline"><em>ε</em> ∈ {1.0, 2.0, 3.0}</span>).
+PhraseDP (yellow) and InferDPT (blue) consistently occupy larger
+protection areas across all dimensions (email, phone, address, name),
+demonstrating superior comprehensive PII protection capabilities.</p>
+<figure class="figure-grid">
+  <div class="figure-item-3col">
+    <strong>ε = 1.0</strong><br>
+    <img src="overleaf-folder/plots/radar_pii_protection_eps_1.0.pdf" alt="Radar chart epsilon 1.0" />
+  </div>
+  <div class="figure-item-3col">
+    <strong>ε = 2.0</strong><br>
+    <img src="overleaf-folder/plots/radar_pii_protection_eps_2.0.pdf" alt="Radar chart epsilon 2.0" />
+  </div>
+  <div class="figure-item-3col">
+    <strong>ε = 3.0</strong><br>
+    <img src="overleaf-folder/plots/radar_pii_protection_eps_3.0.pdf" alt="Radar chart epsilon 3.0" />
+  </div>
+</figure>
+<blockquote>
+<p><strong>Impact:</strong> Now captures expected downward trend in
+protection as epsilon increases, better reflecting the privacy-utility
+trade-off. <strong>Plots already updated in Overleaf.</strong></p>
+</blockquote>
+<h1 id="ablation-study---component-contributions">2. Ablation Study -
+Component Contributions</h1>
+<h2 id="study-design">Study Design</h2>
+<p><strong>Local (baseline) → PhraseDP (CoT effect) → PhraseDP+ (medical
+mode effect)</strong></p>
+<figure>
+<img src="medqa_ablation_study_combined-1.png"
+alt="Ablation Study: Incremental Improvements Across Privacy Budgets" />
+<figcaption aria-hidden="true">Ablation Study: Incremental Improvements
+Across Privacy Budgets</figcaption>
+</figure>
+<h2 id="key-findings">Key Findings</h2>
+<ul>
+<li>Demonstrates <strong>incremental contribution</strong> of each
+component</li>
+<li>Shows value of:
+<ol type="1">
+<li><strong>PhraseDP-induced CoT:</strong> Improves over Local
+baseline</li>
+<li><strong>Medical mode:</strong> Additional improvement on top of
+PhraseDP</li>
+</ol></li>
+<li>Results across epsilon values (1.0, 2.0, 3.0)</li>
+<li>Publication-ready PDF output for Overleaf integration</li>
+</ul>
+<h1 id="medical-mode-improvement-results">3. Medical Mode Improvement
+Results</h1>
+<h2 id="overview">Overview</h2>
+<p>Medical mode preserves medical terminology while removing PII,
+showing consistent improvements across epsilon values.</p>
+<h2 id="key-statistics">Key Statistics</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Epsilon</th>
+<th>Questions Tested</th>
+<th>Questions Improved</th>
+<th>Improvement Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1.0</strong></td>
+<td>127</td>
+<td>53</td>
+<td><strong>41.7%</strong></td>
+</tr>
+<tr class="even">
+<td><strong>2.0</strong></td>
+<td>149</td>
+<td>61</td>
+<td><strong>40.9%</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>3.0</strong></td>
+<td>149</td>
+<td>61</td>
+<td><strong>40.9%</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Consistency:</strong> Medical mode shows consistent
+effectiveness (~41%) across all epsilon values, indicating robust
+performance regardless of privacy level.</p>
+</blockquote>
+<h1 id="phrasedp-few-shot-prompting---the-backfire">4. PhraseDP++
+Few-Shot Prompting - The Backfire</h1>
+<h2 id="performance-degradation">Performance Degradation</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Accuracy</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>PhraseDP+</strong> (no few-shot)</td>
+<td><strong>82.4%</strong></td>
+<td>Baseline</td>
+</tr>
+<tr class="even">
+<td><strong>PhraseDP++</strong> (with few-shot)</td>
+<td><strong>75.6%</strong></td>
+<td>Current experiment</td>
+</tr>
+<tr class="odd">
+<td><strong>Degradation</strong></td>
+<td><strong>-6.8 pp</strong></td>
+<td>34 questions lost</td>
+</tr>
+</tbody>
+</table>
+<h2 id="root-causes">Root Causes</h2>
+<h3 id="shorter-cot-responses">1. Shorter CoT Responses</h3>
+<ul>
+<li>10.6% too short (&lt;100 chars)</li>
+<li>Correct answers: 559.5 chars avg</li>
+<li>Incorrect answers: 429.3 chars avg</li>
+</ul>
+<h3 id="few-shot-interference">2. Few-Shot Interference</h3>
+<ul>
+<li>10.2% mention example keywords inappropriately</li>
+<li>DIC, endotoxin, hydronephrosis, ACS, PCI</li>
+<li>Examples bias reasoning toward specific topics</li>
+</ul>
+<h3 id="reduced-reasoning-depth">3. Reduced Reasoning Depth</h3>
+<ul>
+<li>11.2% lack reasoning keywords</li>
+<li>10.8% direct answer only</li>
+<li>11.2% error messages</li>
+</ul>
+<h3 id="overfitting">4. Overfitting</h3>
+<ul>
+<li>15.2% show inappropriate overfitting</li>
+<li>Mimics example structure/terminology</li>
+<li>Pattern-matches rather than reasons</li>
+</ul>
+<blockquote>
+<p><strong>Key Finding:</strong> Few-shot examples are too specific and
+cause overfitting. Dialog-style format may encourage brevity over
+detailed reasoning.</p>
+</blockquote>
+<h1 id="current-directions---what-were-trying">5. Current Directions -
+What We’re Trying</h1>
+<h2 id="approach-1-better-few-shot-prompting-techniques">Approach 1:
+Better Few-Shot Prompting Techniques</h2>
+<ul>
+<li><strong>Redesign few-shot examples:</strong>
+<ul>
+<li>Make examples more general and less topic-specific</li>
+<li>Test different few-shot styles (system_block vs dialog)</li>
+<li>Avoid examples that bias toward specific medical scenarios</li>
+</ul></li>
+<li><strong>Goal:</strong> Maintain reasoning structure benefits without
+content mimicry</li>
+</ul>
+<h2 id="approach-2-better-cot-inducing-prompts">Approach 2: Better
+COT-Inducing Prompts</h2>
+<ul>
+<li><strong>Investigate CoT quality differences:</strong>
+<ul>
+<li>Compare average CoT length between few-shot and non-few-shot</li>
+<li>Analyze reasoning structure differences</li>
+<li>Check if prompts can encourage deeper reasoning without few-shot
+examples</li>
+</ul></li>
+<li><strong>Focus on:</strong>
+<ul>
+<li>Prompts that explicitly request step-by-step reasoning</li>
+<li>Medical terminology preservation in prompts</li>
+<li>Structured reasoning format requirements</li>
+</ul></li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<h3 id="immediate-actions">Immediate Actions</h3>
+<ul>
+<li>Remove few-shot from PhraseDP++ (restore to PhraseDP+ baseline)</li>
+<li>Test PhraseDP+ without few-shot to confirm baseline (82.4%)</li>
+<li>Continue experiments with alternative prompting strategies</li>
+</ul>
+<h3 id="future-work">Future Work</h3>
+<ul>
+<li>Evaluate model-specific behavior (GPT-5) affects</li>
+<li>Document findings for future improvements</li>
+<li>Develop improved COT-inducing prompts</li>
+</ul>
+<h1 id="summary-next-steps">Summary &amp; Next Steps</h1>
+<h2 id="completed">Completed ✅</h2>
+<ul>
+<li>✅ Fine-grained PPI evaluation with semantic similarity</li>
+<li>✅ Updated plots (line plots + radar plots) - <strong>Already in
+Overleaf</strong></li>
+<li>✅ Ablation study showing component contributions</li>
+<li>✅ Medical improvement analysis across epsilon values</li>
+</ul>
+<h2 id="in-progress">In Progress 🔄</h2>
+<ul>
+<li>🔄 Investigating why few-shot prompting backfired</li>
+<li>🔄 Testing better few-shot prompting techniques</li>
+<li>🔄 Developing improved COT-inducing prompts</li>
+</ul>
+<h2 id="immediate-actions-1">Immediate Actions 📋</h2>
+<ul>
+<li>Remove few-shot from PhraseDP++ (restore to PhraseDP+ baseline)</li>
+<li>Continue experiments with alternative prompting strategies</li>
+<li>Document findings for future improvements</li>
+</ul>
+<blockquote>
+<p><strong>Key Takeaway:</strong> Medical mode (PhraseDP+) shows
+consistent ~41% improvement rate across all epsilon values. Few-shot
+prompting (PhraseDP++) degrades performance by 6.8 percentage points,
+indicating that current few-shot examples are counterproductive.</p>
+</blockquote>
+</body>
+</html>
