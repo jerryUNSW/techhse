@@ -98,9 +98,9 @@ def get_nebius_client(config_model_fallback: str = None):
     The caller can choose a model name separately; a common pattern is to use
     `config['local_model']` as the default Nebius model.
     """
-    api_key = os.getenv("NEBIUS_API") or os.getenv("NEBIUS_API_KEY") or NEBIUS_API
+    api_key = os.getenv("NEBIUS_API") or os.getenv("NEBIUS_API_KEY") or os.getenv("NEBIUS") or NEBIUS_API
     if not api_key:
-        raise ValueError("Nebius API key not found. Set NEBIUS_API or NEBIUS_API_KEY in .env")
+        raise ValueError("Nebius API key not found. Set NEBIUS_API, NEBIUS_API_KEY, or NEBIUS in .env")
 
     base_url = os.getenv("NEBIUS_BASE_URL") or "https://api.studio.nebius.ai/v1/"
     return OpenAI(base_url=base_url, api_key=api_key)
