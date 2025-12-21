@@ -122,8 +122,8 @@ def send_email_report(report_text):
         
         smtp_server = email_config.get('smtp_server', 'smtp.gmail.com')
         smtp_port = email_config.get('smtp_port', 587)
-        sender_email = email_config.get('sender_email')
-        sender_password = email_config.get('sender_password')
+        sender_email = email_config.get('from_email') or email_config.get('sender_email')
+        sender_password = email_config.get('password') or email_config.get('sender_password')
         recipient_email = 'jerrystat2017@gmail.com'
         
         # Get hostname
@@ -150,7 +150,9 @@ Host: {hostname}
         
         # Send email
         with smtplib.SMTP(smtp_server, smtp_port) as server:
+            server.ehlo()
             server.starttls()
+            server.ehlo()
             server.login(sender_email, sender_password)
             server.send_message(msg)
         
