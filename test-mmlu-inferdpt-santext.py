@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """
-MMLU Dataset Experiments with InferDPT and SANTEXT+
-===================================================
+MMLU Dataset Experiments with InferDPT + QA
+===========================================
 
 Run QA experiments on MMLU datasets using:
 - InferDPT + QA (epsilon=2.0)
-- SANTEXT+ + QA (epsilon=2.0)
 
 Datasets:
 - MMLU Professional Law: first 200 questions
@@ -23,7 +22,7 @@ from dotenv import load_dotenv
 
 # Import local modules
 import utils
-from sanitization_methods import inferdpt_sanitize_text, santext_sanitize_text
+from sanitization_methods import inferdpt_sanitize_text
 from experiment_db_writer import ExperimentDBWriter
 
 # ANSI color codes
@@ -100,7 +99,7 @@ def extract_answer_from_response(response_text, options):
     
     return None
 
-def run_qa_with_sanitization(
+def run_qa_with_inferdpt(
     local_client,
     local_model,
     remote_client,
@@ -108,11 +107,10 @@ def run_qa_with_sanitization(
     question,
     options,
     correct_answer,
-    sanitization_method,
     epsilon
 ):
     """
-    Run QA with sanitization: sanitize question, get CoT from remote, answer with local.
+    Run QA with InferDPT: sanitize question, get CoT from remote, answer with local.
     
     Args:
         local_client: Local model client
@@ -122,19 +120,13 @@ def run_qa_with_sanitization(
         question: Original question text
         options: Dict of options {A: "...", B: "...", ...}
         correct_answer: Correct answer letter (A, B, C, D)
-        sanitization_method: 'inferdpt' or 'santext'
         epsilon: Privacy parameter
     
     Returns:
         Dict with results
     """
-    # Step 1: Sanitize the question
-    if sanitization_method == 'inferdpt':
-        perturbed_question = inferdpt_sanitize_text(question, epsilon=epsilon)
-    elif sanitization_method == 'santext':
-        perturbed_question = santext_sanitize_text(question, epsilon=epsilon)
-    else:
-        raise ValueError(f"Unknown sanitization method: {sanitization_method}")
+    # Step 1: Sanitize the question using InferDPT
+    perturbed_question = inferdpt_sanitize_text(question, epsilon=epsilon)
     
     # Step 2: Generate CoT from remote model using sanitized question
     cot_prompt = f"""Here is a question:
@@ -244,12 +236,10 @@ def run_experiment_for_dataset(dataset_key, dataset_config):
         "num_questions": num_questions,
         "start_index": start_idx,
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "inferdpt_results": [],
-        "santext_results": []
+        "inferdpt_results": []
     }
     
     inferdpt_correct = 0
-    santext_correct = 0
     
     # Process each question
     for i, item in enumerate(sample_questions):
@@ -270,31 +260,17 @@ def run_experiment_for_dataset(dataset_key, dataset_config):
         
         # Run InferDPT + QA
         print(f"\n{CYAN}Running InferDPT + QA...{RESET}", flush=True)
-        inferdpt_result = run_qa_with_sanitization(
+        inferdpt_result = run_qa_with_inferdpt(
             local_client, LOCAL_MODEL,
             remote_client, REMOTE_MODEL,
             question, options, correct_answer_letter,
-            'inferdpt', EPSILON
+            EPSILON
         )
         
         if inferdpt_result['is_correct']:
             inferdpt_correct += 1
         
         print(f"InferDPT Answer: {inferdpt_result['local_answer']} ({'✓' if inferdpt_result['is_correct'] else '✗'})", flush=True)
-        
-        # Run SANTEXT+ + QA
-        print(f"\n{CYAN}Running SANTEXT+ + QA...{RESET}", flush=True)
-        santext_result = run_qa_with_sanitization(
-            local_client, LOCAL_MODEL,
-            remote_client, REMOTE_MODEL,
-            question, options, correct_answer_letter,
-            'santext', EPSILON
-        )
-        
-        if santext_result['is_correct']:
-            santext_correct += 1
-        
-        print(f"SANTEXT+ Answer: {santext_result['local_answer']} ({'✓' if santext_result['is_correct'] else '✗'})", flush=True)
         
         # Store results (only essential fields)
         results['inferdpt_results'].append({
@@ -305,18 +281,9 @@ def run_experiment_for_dataset(dataset_key, dataset_config):
             "is_correct": inferdpt_result['is_correct']
         })
         
-        results['santext_results'].append({
-            "question_index": dataset_idx,
-            "perturbed_question": santext_result['perturbed_question'],
-            "induced_cot": santext_result['induced_cot'],
-            "local_answer": santext_result['local_answer'],
-            "is_correct": santext_result['is_correct']
-        })
-        
         # Print running accuracy
         inferdpt_acc = (inferdpt_correct / (i + 1)) * 100
-        santext_acc = (santext_correct / (i + 1)) * 100
-        print(f"\n{GREEN}Running Accuracy - InferDPT: {inferdpt_correct}/{i+1} ({inferdpt_acc:.2f}%), SANTEXT+: {santext_correct}/{i+1} ({santext_acc:.2f}%){RESET}", flush=True)
+        print(f"\n{GREEN}Running Accuracy - InferDPT: {inferdpt_correct}/{i+1} ({inferdpt_acc:.2f}%){RESET}", flush=True)
         
         # Save incrementally
         output_dir = "exp/mmlu-results"
@@ -329,11 +296,6 @@ def run_experiment_for_dataset(dataset_key, dataset_config):
                 "correct": inferdpt_correct,
                 "total": i + 1,
                 "accuracy": inferdpt_acc
-            },
-            "santext": {
-                "correct": santext_correct,
-                "total": i + 1,
-                "accuracy": santext_acc
             }
         }
         
@@ -342,13 +304,11 @@ def run_experiment_for_dataset(dataset_key, dataset_config):
     
     # Final summary
     final_inferdpt_acc = (inferdpt_correct / num_questions) * 100
-    final_santext_acc = (santext_correct / num_questions) * 100
     
     print(f"\n{GREEN}{'='*60}{RESET}", flush=True)
     print(f"{GREEN}Final Results for {dataset_config['name']}{RESET}", flush=True)
     print(f"{GREEN}{'='*60}{RESET}", flush=True)
     print(f"InferDPT: {inferdpt_correct}/{num_questions} ({final_inferdpt_acc:.2f}%)", flush=True)
-    print(f"SANTEXT+: {santext_correct}/{num_questions} ({final_santext_acc:.2f}%)", flush=True)
     print(f"{GREEN}{'='*60}{RESET}", flush=True)
     
     results['summary'] = {
@@ -356,11 +316,6 @@ def run_experiment_for_dataset(dataset_key, dataset_config):
             "correct": inferdpt_correct,
             "total": num_questions,
             "accuracy": final_inferdpt_acc
-        },
-        "santext": {
-            "correct": santext_correct,
-            "total": num_questions,
-            "accuracy": final_santext_acc
         }
     }
     
@@ -369,7 +324,7 @@ def run_experiment_for_dataset(dataset_key, dataset_config):
 def main():
     """Main function to run all experiments."""
     print(f"{CYAN}{'='*60}{RESET}", flush=True)
-    print(f"{CYAN}MMLU Experiments: InferDPT + QA and SANTEXT+ + QA{RESET}", flush=True)
+    print(f"{CYAN}MMLU Experiments: InferDPT + QA{RESET}", flush=True)
     print(f"{CYAN}Epsilon: {EPSILON}{RESET}", flush=True)
     print(f"{CYAN}{'='*60}{RESET}", flush=True)
     

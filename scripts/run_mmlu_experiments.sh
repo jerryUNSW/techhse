@@ -15,10 +15,10 @@ mkdir -p "$LOG_DIR"
 
 # Log file with timestamp
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-LOG_FILE="$LOG_DIR/mmlu_inferdpt_santext_eps${EPSILON}_${TIMESTAMP}.log"
+LOG_FILE="$LOG_DIR/mmlu_inferdpt_eps${EPSILON}_${TIMESTAMP}.log"
 
 echo "=========================================="
-echo "MMLU Experiments: InferDPT + QA and SANTEXT+ + QA"
+echo "MMLU Experiments: InferDPT + QA"
 echo "Epsilon: ${EPSILON}"
 echo "Log file: ${LOG_FILE}"
 echo "=========================================="
