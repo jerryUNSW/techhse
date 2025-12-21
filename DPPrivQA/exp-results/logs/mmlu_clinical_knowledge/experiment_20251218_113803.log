@@ -1,0 +1,65 @@
+2025-12-18 11:38:03,476 - dpprivqa.mmlu_clinical_knowledge - INFO - Logging initialized for mmlu_clinical_knowledge
+2025-12-18 11:38:03,476 - dpprivqa.mmlu_clinical_knowledge - INFO - Log file: exp-results/logs/mmlu_clinical_knowledge/experiment_20251218_113803.log
+2025-12-18 11:38:03,476 - dpprivqa.mmlu_clinical_knowledge - INFO - Starting Local model test on MMLU clinical_knowledge
+2025-12-18 11:38:03,476 - dpprivqa.mmlu_clinical_knowledge - INFO - Testing 5 questions
+2025-12-18 11:38:03,479 - dpprivqa.mmlu_clinical_knowledge - INFO - Database: exp-results/results.db
+2025-12-18 11:38:03,479 - dpprivqa.mmlu_clinical_knowledge - INFO - Loading MMLU clinical_knowledge dataset...
+2025-12-18 11:38:08,431 - dpprivqa.mmlu_clinical_knowledge - INFO - Loaded 5 questions (indices 0 to 4)
+2025-12-18 11:38:08,431 - dpprivqa.mmlu_clinical_knowledge - INFO - Initializing Nebius client...
+2025-12-18 11:38:08,470 - dpprivqa.mmlu_clinical_knowledge - INFO - Nebius client initialized successfully
+2025-12-18 11:38:08,471 - dpprivqa.mmlu_clinical_knowledge - INFO - Using local model: meta-llama/Meta-Llama-3.1-8B-Instruct
+2025-12-18 11:38:08,486 - dpprivqa.mmlu_clinical_knowledge - INFO - Created experiment record: ID 5
+2025-12-18 11:38:08,486 - dpprivqa.mmlu_clinical_knowledge - INFO - 
+================================================================================
+2025-12-18 11:38:08,486 - dpprivqa.mmlu_clinical_knowledge - INFO - Running Local scenario
+2025-12-18 11:38:08,486 - dpprivqa.mmlu_clinical_knowledge - INFO - ================================================================================
+2025-12-18 11:38:08,486 - dpprivqa.mmlu_clinical_knowledge - INFO - 
+Question 1/5:
+2025-12-18 11:38:08,486 - dpprivqa.mmlu_clinical_knowledge - INFO -   Question: What size of cannula would you use in a patient who needed a rapid blood transfusion (as of 2020 medical knowledge)?...
+2025-12-18 11:38:08,486 - dpprivqa.mmlu_clinical_knowledge - INFO -   Options: {'A': '18 gauge.', 'B': '20 gauge.', 'C': '22 gauge.', 'D': '24 gauge.'}
+2025-12-18 11:38:08,486 - dpprivqa.mmlu_clinical_knowledge - INFO -   Ground truth: A
+2025-12-18 11:38:10,072 - dpprivqa.mmlu_clinical_knowledge - INFO -   Predicted answer: A
+2025-12-18 11:38:10,072 - dpprivqa.mmlu_clinical_knowledge - INFO -   Correct: True
+2025-12-18 11:38:10,072 - dpprivqa.mmlu_clinical_knowledge - INFO -   Processing time: 1.59s
+2025-12-18 11:38:10,087 - dpprivqa.mmlu_clinical_knowledge - INFO - 
+Question 2/5:
+2025-12-18 11:38:10,087 - dpprivqa.mmlu_clinical_knowledge - INFO -   Question: The key attribute in successful marathon running is:...
+2025-12-18 11:38:10,087 - dpprivqa.mmlu_clinical_knowledge - INFO -   Options: {'A': 'strength.', 'B': 'power.', 'C': 'stride length.', 'D': 'stamina.'}
+2025-12-18 11:38:10,087 - dpprivqa.mmlu_clinical_knowledge - INFO -   Ground truth: D
+2025-12-18 11:38:10,988 - dpprivqa.mmlu_clinical_knowledge - INFO -   Predicted answer: D
+2025-12-18 11:38:10,988 - dpprivqa.mmlu_clinical_knowledge - INFO -   Correct: True
+2025-12-18 11:38:10,988 - dpprivqa.mmlu_clinical_knowledge - INFO -   Processing time: 0.90s
+2025-12-18 11:38:11,000 - dpprivqa.mmlu_clinical_knowledge - INFO - 
+Question 3/5:
+2025-12-18 11:38:11,000 - dpprivqa.mmlu_clinical_knowledge - INFO -   Question: Which of the following is the commonest cause of dementia in the UK?...
+2025-12-18 11:38:11,000 - dpprivqa.mmlu_clinical_knowledge - INFO -   Options: {'A': "Alzheimer's disease.", 'B': 'Cerebrovascular (stroke) disease.', 'C': 'Lewy body dementia.', 'D': 'HIV infection.'}
+2025-12-18 11:38:11,000 - dpprivqa.mmlu_clinical_knowledge - INFO -   Ground truth: A
+2025-12-18 11:38:11,859 - dpprivqa.mmlu_clinical_knowledge - INFO -   Predicted answer: A
+2025-12-18 11:38:11,859 - dpprivqa.mmlu_clinical_knowledge - INFO -   Correct: True
+2025-12-18 11:38:11,859 - dpprivqa.mmlu_clinical_knowledge - INFO -   Processing time: 0.86s
+2025-12-18 11:38:11,871 - dpprivqa.mmlu_clinical_knowledge - INFO - 
+Question 4/5:
+2025-12-18 11:38:11,871 - dpprivqa.mmlu_clinical_knowledge - INFO -   Question: Which of the following is NOT a symptom of anaphylaxis?...
+2025-12-18 11:38:11,871 - dpprivqa.mmlu_clinical_knowledge - INFO -   Options: {'A': 'Stridor.', 'B': 'Bradycardia.', 'C': 'Severe wheeze.', 'D': 'Rash.'}
+2025-12-18 11:38:11,871 - dpprivqa.mmlu_clinical_knowledge - INFO -   Ground truth: B
+2025-12-18 11:38:12,706 - dpprivqa.mmlu_clinical_knowledge - INFO -   Predicted answer: D
+2025-12-18 11:38:12,706 - dpprivqa.mmlu_clinical_knowledge - INFO -   Correct: False
+2025-12-18 11:38:12,706 - dpprivqa.mmlu_clinical_knowledge - INFO -   Processing time: 0.83s
+2025-12-18 11:38:12,717 - dpprivqa.mmlu_clinical_knowledge - INFO - 
+Question 5/5:
+2025-12-18 11:38:12,717 - dpprivqa.mmlu_clinical_knowledge - INFO -   Question: In what situation are closed pouches applied?...
+2025-12-18 11:38:12,717 - dpprivqa.mmlu_clinical_knowledge - INFO -   Options: {'A': 'The patient has a semi-formed or liquid output.', 'B': 'The patient has a colostomy.', 'C': 'In the immediate post-operative period.', 'D': 'The patient has a urostomy.'}
+2025-12-18 11:38:12,717 - dpprivqa.mmlu_clinical_knowledge - INFO -   Ground truth: B
+2025-12-18 11:38:13,912 - dpprivqa.mmlu_clinical_knowledge - INFO -   Predicted answer: C
+2025-12-18 11:38:13,913 - dpprivqa.mmlu_clinical_knowledge - INFO -   Correct: False
+2025-12-18 11:38:13,913 - dpprivqa.mmlu_clinical_knowledge - INFO -   Processing time: 1.19s
+2025-12-18 11:38:13,921 - dpprivqa.mmlu_clinical_knowledge - INFO - 
+================================================================================
+2025-12-18 11:38:13,921 - dpprivqa.mmlu_clinical_knowledge - INFO - SUMMARY
+2025-12-18 11:38:13,921 - dpprivqa.mmlu_clinical_knowledge - INFO - ================================================================================
+2025-12-18 11:38:13,921 - dpprivqa.mmlu_clinical_knowledge - INFO - Total questions: 5
+2025-12-18 11:38:13,921 - dpprivqa.mmlu_clinical_knowledge - INFO - Correct answers: 3
+2025-12-18 11:38:13,921 - dpprivqa.mmlu_clinical_knowledge - INFO - Accuracy: 0.600 (60.0%)
+2025-12-18 11:38:13,922 - dpprivqa.mmlu_clinical_knowledge - INFO - 
+Results saved to database successfully!
+2025-12-18 11:38:13,922 - dpprivqa.mmlu_clinical_knowledge - INFO - Experiment ID: 5

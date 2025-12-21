@@ -1,0 +1,65 @@
+2025-12-18 11:37:32,741 - dpprivqa.mmlu_professional_law - INFO - Logging initialized for mmlu_professional_law
+2025-12-18 11:37:32,741 - dpprivqa.mmlu_professional_law - INFO - Log file: exp-results/logs/mmlu_professional_law/experiment_20251218_113732.log
+2025-12-18 11:37:32,741 - dpprivqa.mmlu_professional_law - INFO - Starting Local model test on MMLU professional_law
+2025-12-18 11:37:32,741 - dpprivqa.mmlu_professional_law - INFO - Testing 5 questions
+2025-12-18 11:37:32,742 - dpprivqa.mmlu_professional_law - INFO - Database: exp-results/results.db
+2025-12-18 11:37:32,742 - dpprivqa.mmlu_professional_law - INFO - Loading MMLU professional_law dataset...
+2025-12-18 11:37:37,893 - dpprivqa.mmlu_professional_law - INFO - Loaded 5 questions (indices 5 to 9)
+2025-12-18 11:37:37,893 - dpprivqa.mmlu_professional_law - INFO - Initializing Nebius client...
+2025-12-18 11:37:37,931 - dpprivqa.mmlu_professional_law - INFO - Nebius client initialized successfully
+2025-12-18 11:37:37,931 - dpprivqa.mmlu_professional_law - INFO - Using local model: meta-llama/Meta-Llama-3.1-8B-Instruct
+2025-12-18 11:37:37,944 - dpprivqa.mmlu_professional_law - INFO - Created experiment record: ID 3
+2025-12-18 11:37:37,944 - dpprivqa.mmlu_professional_law - INFO - 
+================================================================================
+2025-12-18 11:37:37,944 - dpprivqa.mmlu_professional_law - INFO - Running Local scenario
+2025-12-18 11:37:37,944 - dpprivqa.mmlu_professional_law - INFO - ================================================================================
+2025-12-18 11:37:37,944 - dpprivqa.mmlu_professional_law - INFO - 
+Question 1/5:
+2025-12-18 11:37:37,944 - dpprivqa.mmlu_professional_law - INFO -   Question: The accused made a confession to the police, but his defense attorney needs to find out if the confession is admissible. In which of the following sit...
+2025-12-18 11:37:37,944 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': "The defendant's statement was involuntary.", 'B': "The defendant's statement was voluntary.", 'C': 'The defendant was not in custody when the statement was made.', 'D': 'The statement was not made in response to a known police interrogation.'}
+2025-12-18 11:37:37,945 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: A
+2025-12-18 11:37:39,502 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: A
+2025-12-18 11:37:39,502 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 11:37:39,502 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 1.56s
+2025-12-18 11:37:39,511 - dpprivqa.mmlu_professional_law - INFO - 
+Question 2/5:
+2025-12-18 11:37:39,511 - dpprivqa.mmlu_professional_law - INFO -   Question: A devastating earthquake struck a foreign country. The earthquake destroyed hundreds of homes and buildings. Thousands of residents were killed, injur...
+2025-12-18 11:37:39,511 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'valid, because as commander-in-chief, the President has unfettered authority to require federal employees to participate in an international relief effort.', 'B': 'valid, because employees of an executive agency can be required to perform such emergency functions.', 'C': 'invalid, because the executive order is beyond the scope of presidential power absent congressional authorization.', 'D': 'invalid, because the director of the INS, not the President, has the power to issue directives to federal agencies under its supervision.'}
+2025-12-18 11:37:39,511 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: B
+2025-12-18 11:37:40,329 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 11:37:40,330 - dpprivqa.mmlu_professional_law - INFO -   Correct: False
+2025-12-18 11:37:40,330 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.82s
+2025-12-18 11:37:40,344 - dpprivqa.mmlu_professional_law - INFO - 
+Question 3/5:
+2025-12-18 11:37:40,345 - dpprivqa.mmlu_professional_law - INFO -   Question: Which of the following is not a warrantless search exception?...
+2025-12-18 11:37:40,345 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'Cold pursuit', 'B': 'Incident to a lawful arrest', 'C': 'Plain view', 'D': 'Stop and frisk'}
+2025-12-18 11:37:40,345 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: A
+2025-12-18 11:37:41,309 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: D
+2025-12-18 11:37:41,309 - dpprivqa.mmlu_professional_law - INFO -   Correct: False
+2025-12-18 11:37:41,309 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.96s
+2025-12-18 11:37:41,319 - dpprivqa.mmlu_professional_law - INFO - 
+Question 4/5:
+2025-12-18 11:37:41,319 - dpprivqa.mmlu_professional_law - INFO -   Question: A grocery store purchased a large mirror to hang on a wall in the store. Along with the mirror itself, the manufacturer provided brackets and bolts to...
+2025-12-18 11:37:41,319 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'prevail, because the brackets were defective when installed.', 'B': 'prevail, because it would be abnormally dangerous to maintain such a large mirror on the wall of a retail outlet.', 'C': 'not prevail, because the carpenter was not engaged in the sale of the mirror.', 'D': 'not prevail, because the carpenter had no relationship of privily with the plaintiff.'}
+2025-12-18 11:37:41,319 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: C
+2025-12-18 11:37:42,121 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 11:37:42,122 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 11:37:42,122 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.80s
+2025-12-18 11:37:42,133 - dpprivqa.mmlu_professional_law - INFO - 
+Question 5/5:
+2025-12-18 11:37:42,133 - dpprivqa.mmlu_professional_law - INFO -   Question: A man who was separated but never divorced from his first wife, married another woman and lived with her as husband and wife. The man and his purporte...
+2025-12-18 11:37:42,133 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'Yes, because a murderer cannot reap the benefits of his ill-doing.', 'B': 'Yes, because the murderer was also a bigamist who could not take good title to the property in the first place, thus putting full title in the decedent from the date of purchase.', 'C': "No, the court will as a policy matter recognize the murderer's pre-slaying right to one-half of the property as a tenant in common.", 'D': 'No, there is no rule of law that gives the victim or her estate any additional rights in the property that she had before the homicide.'}
+2025-12-18 11:37:42,134 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: C
+2025-12-18 11:37:42,947 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 11:37:42,947 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 11:37:42,947 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.81s
+2025-12-18 11:37:42,973 - dpprivqa.mmlu_professional_law - INFO - 
+================================================================================
+2025-12-18 11:37:42,973 - dpprivqa.mmlu_professional_law - INFO - SUMMARY
+2025-12-18 11:37:42,974 - dpprivqa.mmlu_professional_law - INFO - ================================================================================
+2025-12-18 11:37:42,974 - dpprivqa.mmlu_professional_law - INFO - Total questions: 5
+2025-12-18 11:37:42,974 - dpprivqa.mmlu_professional_law - INFO - Correct answers: 3
+2025-12-18 11:37:42,974 - dpprivqa.mmlu_professional_law - INFO - Accuracy: 0.600 (60.0%)
+2025-12-18 11:37:42,974 - dpprivqa.mmlu_professional_law - INFO - 
+Results saved to database successfully!
+2025-12-18 11:37:42,974 - dpprivqa.mmlu_professional_law - INFO - Experiment ID: 3

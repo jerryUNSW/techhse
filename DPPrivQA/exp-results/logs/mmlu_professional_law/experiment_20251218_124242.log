@@ -1,0 +1,105 @@
+2025-12-18 12:42:42,226 - dpprivqa.mmlu_professional_law - INFO - Logging initialized for mmlu_professional_law
+2025-12-18 12:42:42,226 - dpprivqa.mmlu_professional_law - INFO - Log file: exp-results/logs/mmlu_professional_law/experiment_20251218_124242.log
+2025-12-18 12:42:42,226 - dpprivqa.mmlu_professional_law - INFO - Starting Remote model (GPT-5 via OpenAI API) test on MMLU professional_law
+2025-12-18 12:42:42,226 - dpprivqa.mmlu_professional_law - INFO - Testing 10 questions
+2025-12-18 12:42:42,227 - dpprivqa.mmlu_professional_law - INFO - Database: exp-results/results.db
+2025-12-18 12:42:42,227 - dpprivqa.mmlu_professional_law - INFO - Loading MMLU professional_law dataset...
+2025-12-18 12:42:46,167 - dpprivqa.mmlu_professional_law - INFO - Loaded 10 questions (indices 0 to 9)
+2025-12-18 12:42:46,167 - dpprivqa.mmlu_professional_law - INFO - Initializing OpenAI client...
+2025-12-18 12:42:46,205 - dpprivqa.mmlu_professional_law - INFO - OpenAI client initialized successfully
+2025-12-18 12:42:46,205 - dpprivqa.mmlu_professional_law - INFO - Using remote model: gpt-5
+2025-12-18 12:42:46,218 - dpprivqa.mmlu_professional_law - INFO - Created experiment record: ID 16
+2025-12-18 12:42:46,219 - dpprivqa.mmlu_professional_law - INFO - 
+================================================================================
+2025-12-18 12:42:46,219 - dpprivqa.mmlu_professional_law - INFO - Running Remote scenario (GPT-5 via OpenAI API)
+2025-12-18 12:42:46,219 - dpprivqa.mmlu_professional_law - INFO - ================================================================================
+2025-12-18 12:42:46,219 - dpprivqa.mmlu_professional_law - INFO - 
+Question 1/10:
+2025-12-18 12:42:46,219 - dpprivqa.mmlu_professional_law - INFO -   Question: One afternoon, a pilot was flying a small airplane when it suddenly ran out of gas. As he was coming in for an emergency landing, the plane crossed in...
+2025-12-18 12:42:46,219 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'admissible, because the attorney-client privilege was waived by the filing of the lawsuit.', 'B': 'admissible, because there is no privilege of confidentiality when a person other than the client is present at the attorney-client consultation.', 'C': 'inadmissible, because the attorney-client privilege prevents such a breach of confidential communications.', 'D': 'inadmissible, because it was a statement of physical condition not made for the purpose of obtaining medical treatment.'}
+2025-12-18 12:42:46,219 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: C
+2025-12-18 12:42:55,794 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 12:42:55,794 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 12:42:55,795 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 9.58s
+2025-12-18 12:42:55,811 - dpprivqa.mmlu_professional_law - INFO - 
+Question 2/10:
+2025-12-18 12:42:55,811 - dpprivqa.mmlu_professional_law - INFO -   Question: A state statute provides: "Whenever a person knows or should know that he (or she) is being arrested by a police officer, it is the duty of such perso...
+2025-12-18 12:42:55,812 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': "not guilty, if the arrest was unlawful without probable cause and the jury believes the suspect's account.", 'B': "not guilty, if the arrest was lawful, provided that the jury believes the suspect's account.", 'C': 'guilty, if the arrest was lawful, regardless which account the jury believes.', 'D': 'guilty, if the arrest was unlawful, regardless which account the jury believes.'}
+2025-12-18 12:42:55,812 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: B
+2025-12-18 12:43:11,344 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: B
+2025-12-18 12:43:11,345 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 12:43:11,345 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 15.53s
+2025-12-18 12:43:11,359 - dpprivqa.mmlu_professional_law - INFO - 
+Question 3/10:
+2025-12-18 12:43:11,359 - dpprivqa.mmlu_professional_law - INFO -   Question: A taxpayer was notified by the government that her individual income tax was underpaid by $1,012. 69. The taxpayer retained an attorney to represent h...
+2025-12-18 12:43:11,359 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'inadmissible, because it would violate the attorney-client privilege.', 'B': "inadmissible, because it would violate the taxpayer's privilege against self-incrimination.", 'C': 'inadmissible as violative of the work-product rule.', 'D': 'admissible as an admission.'}
+2025-12-18 12:43:11,359 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: D
+2025-12-18 12:43:23,723 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: D
+2025-12-18 12:43:23,724 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 12:43:23,724 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 12.36s
+2025-12-18 12:43:23,739 - dpprivqa.mmlu_professional_law - INFO - 
+Question 4/10:
+2025-12-18 12:43:23,739 - dpprivqa.mmlu_professional_law - INFO -   Question: A resident announced his candidacy for state representative. A law in the state requires new political entrants (regardless of party affiliation) to o...
+2025-12-18 12:43:23,739 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': "The resident's petition contained a large number of false signatures.", 'B': 'A similar authenticating statute was held to be constitutional in another state the previous year.', 'C': 'The authenticating requirement was necessary to further a compelling state interest.', 'D': 'Two other candidates had successfully petitioned to have their names included on the ballot.'}
+2025-12-18 12:43:23,739 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: C
+2025-12-18 12:43:35,155 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 12:43:35,155 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 12:43:35,155 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 11.42s
+2025-12-18 12:43:35,169 - dpprivqa.mmlu_professional_law - INFO - 
+Question 5/10:
+2025-12-18 12:43:35,169 - dpprivqa.mmlu_professional_law - INFO -   Question: A defendant was angry at his friend for marrying the defendant's former girlfriend. As the friend was painting his house one afternoon, the defendant ...
+2025-12-18 12:43:35,169 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'He intended to kill the friend and not the daughter.', 'B': 'He intended only to wound the friend.', 'C': 'He was unaware of the elements of malice.', 'D': 'The killing was the result of negligence in missing the friend.'}
+2025-12-18 12:43:35,169 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: B
+2025-12-18 12:43:58,046 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: B
+2025-12-18 12:43:58,046 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 12:43:58,047 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 22.88s
+2025-12-18 12:43:58,060 - dpprivqa.mmlu_professional_law - INFO - 
+Question 6/10:
+2025-12-18 12:43:58,060 - dpprivqa.mmlu_professional_law - INFO -   Question: The accused made a confession to the police, but his defense attorney needs to find out if the confession is admissible. In which of the following sit...
+2025-12-18 12:43:58,061 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': "The defendant's statement was involuntary.", 'B': "The defendant's statement was voluntary.", 'C': 'The defendant was not in custody when the statement was made.', 'D': 'The statement was not made in response to a known police interrogation.'}
+2025-12-18 12:43:58,061 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: A
+2025-12-18 12:44:02,002 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: A
+2025-12-18 12:44:02,003 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 12:44:02,003 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 3.94s
+2025-12-18 12:44:02,014 - dpprivqa.mmlu_professional_law - INFO - 
+Question 7/10:
+2025-12-18 12:44:02,014 - dpprivqa.mmlu_professional_law - INFO -   Question: A devastating earthquake struck a foreign country. The earthquake destroyed hundreds of homes and buildings. Thousands of residents were killed, injur...
+2025-12-18 12:44:02,015 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'valid, because as commander-in-chief, the President has unfettered authority to require federal employees to participate in an international relief effort.', 'B': 'valid, because employees of an executive agency can be required to perform such emergency functions.', 'C': 'invalid, because the executive order is beyond the scope of presidential power absent congressional authorization.', 'D': 'invalid, because the director of the INS, not the President, has the power to issue directives to federal agencies under its supervision.'}
+2025-12-18 12:44:02,015 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: B
+2025-12-18 12:44:21,062 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 12:44:21,062 - dpprivqa.mmlu_professional_law - INFO -   Correct: False
+2025-12-18 12:44:21,062 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 19.05s
+2025-12-18 12:44:21,077 - dpprivqa.mmlu_professional_law - INFO - 
+Question 8/10:
+2025-12-18 12:44:21,077 - dpprivqa.mmlu_professional_law - INFO -   Question: Which of the following is not a warrantless search exception?...
+2025-12-18 12:44:21,077 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'Cold pursuit', 'B': 'Incident to a lawful arrest', 'C': 'Plain view', 'D': 'Stop and frisk'}
+2025-12-18 12:44:21,077 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: A
+2025-12-18 12:44:34,032 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: A
+2025-12-18 12:44:34,032 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 12:44:34,032 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 12.95s
+2025-12-18 12:44:34,045 - dpprivqa.mmlu_professional_law - INFO - 
+Question 9/10:
+2025-12-18 12:44:34,045 - dpprivqa.mmlu_professional_law - INFO -   Question: A grocery store purchased a large mirror to hang on a wall in the store. Along with the mirror itself, the manufacturer provided brackets and bolts to...
+2025-12-18 12:44:34,045 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'prevail, because the brackets were defective when installed.', 'B': 'prevail, because it would be abnormally dangerous to maintain such a large mirror on the wall of a retail outlet.', 'C': 'not prevail, because the carpenter was not engaged in the sale of the mirror.', 'D': 'not prevail, because the carpenter had no relationship of privily with the plaintiff.'}
+2025-12-18 12:44:34,045 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: C
+2025-12-18 12:44:42,361 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 12:44:42,361 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 12:44:42,361 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 8.32s
+2025-12-18 12:44:42,373 - dpprivqa.mmlu_professional_law - INFO - 
+Question 10/10:
+2025-12-18 12:44:42,373 - dpprivqa.mmlu_professional_law - INFO -   Question: A man who was separated but never divorced from his first wife, married another woman and lived with her as husband and wife. The man and his purporte...
+2025-12-18 12:44:42,374 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'Yes, because a murderer cannot reap the benefits of his ill-doing.', 'B': 'Yes, because the murderer was also a bigamist who could not take good title to the property in the first place, thus putting full title in the decedent from the date of purchase.', 'C': "No, the court will as a policy matter recognize the murderer's pre-slaying right to one-half of the property as a tenant in common.", 'D': 'No, there is no rule of law that gives the victim or her estate any additional rights in the property that she had before the homicide.'}
+2025-12-18 12:44:42,374 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: C
+2025-12-18 12:45:11,681 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 12:45:11,681 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 12:45:11,681 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 29.31s
+2025-12-18 12:45:11,697 - dpprivqa.mmlu_professional_law - INFO - 
+================================================================================
+2025-12-18 12:45:11,697 - dpprivqa.mmlu_professional_law - INFO - SUMMARY
+2025-12-18 12:45:11,698 - dpprivqa.mmlu_professional_law - INFO - ================================================================================
+2025-12-18 12:45:11,698 - dpprivqa.mmlu_professional_law - INFO - Total questions: 10
+2025-12-18 12:45:11,698 - dpprivqa.mmlu_professional_law - INFO - Correct answers: 9
+2025-12-18 12:45:11,698 - dpprivqa.mmlu_professional_law - INFO - Accuracy: 0.900 (90.0%)
+2025-12-18 12:45:11,698 - dpprivqa.mmlu_professional_law - INFO - 
+Results saved to database successfully!
+2025-12-18 12:45:11,698 - dpprivqa.mmlu_professional_law - INFO - Experiment ID: 16

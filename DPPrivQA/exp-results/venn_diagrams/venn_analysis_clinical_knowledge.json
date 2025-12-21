@@ -1,0 +1,58 @@
+{
+  "dataset": "Clinical Knowledge",
+  "statistics": {
+    "total_questions": 265,
+    "s1_accuracy": 73.20754716981132,
+    "s2_accuracy": 78.8679245283019,
+    "s3_accuracy": 95.84905660377359
+  },
+  "set_sizes": {
+    "s1_local": 194,
+    "s2_local_cot": 209,
+    "s3_remote": 254
+  },
+  "overlap_counts": {
+    "all_three": 171,
+    "s1_only": 5,
+    "s2_only": 1,
+    "s3_only": 28,
+    "s1_s2_only": 0,
+    "s1_s3_only": 18,
+    "s2_s3_only": 37,
+    "all_fail": 5
+  },
+  "key_set_counts": {
+    "s1_minus_s2": 23,
+    "s2_minus_s3": 1
+  },
+  "key_set_indices": {
+    "s1_minus_s2": [
+      5,
+      11,
+      16,
+      17,
+      57,
+      58,
+      59,
+      89,
+      109,
+      111,
+      123,
+      128,
+      134,
+      141,
+      146,
+      153,
+      164,
+      181,
+      184,
+      186,
+      213,
+      221,
+      235
+    ],
+    "s2_minus_s3": [
+      50
+    ]
+  }
+}

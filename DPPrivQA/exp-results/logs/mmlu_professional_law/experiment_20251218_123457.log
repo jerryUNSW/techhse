@@ -1,0 +1,9 @@
+2025-12-18 12:34:57,413 - dpprivqa.mmlu_professional_law - INFO - Logging initialized for mmlu_professional_law
+2025-12-18 12:34:57,414 - dpprivqa.mmlu_professional_law - INFO - Log file: exp-results/logs/mmlu_professional_law/experiment_20251218_123457.log
+2025-12-18 12:34:57,414 - dpprivqa.mmlu_professional_law - INFO - Starting Remote model (GPT-5 via OpenAI API) test on MMLU professional_law
+2025-12-18 12:34:57,414 - dpprivqa.mmlu_professional_law - INFO - Testing 10 questions
+2025-12-18 12:34:57,415 - dpprivqa.mmlu_professional_law - INFO - Database: exp-results/results.db
+2025-12-18 12:34:57,415 - dpprivqa.mmlu_professional_law - INFO - Loading MMLU professional_law dataset...
+2025-12-18 12:35:01,007 - dpprivqa.mmlu_professional_law - INFO - Loaded 10 questions (indices 0 to 9)
+2025-12-18 12:35:01,007 - dpprivqa.mmlu_professional_law - INFO - Initializing OpenAI client...
+2025-12-18 12:35:01,007 - dpprivqa.mmlu_professional_law - ERROR - Failed to initialize OpenAI client: OPENAI_API_KEY not found in environment variables

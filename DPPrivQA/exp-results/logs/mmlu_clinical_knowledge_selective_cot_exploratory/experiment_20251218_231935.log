@@ -1,0 +1,566 @@
+2025-12-18 23:19:35,342 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Logging initialized for mmlu_clinical_knowledge_selective_cot_exploratory
+2025-12-18 23:19:35,342 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Log file: exp-results/logs/mmlu_clinical_knowledge_selective_cot_exploratory/experiment_20251218_231935.log
+2025-12-18 23:19:35,342 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - ================================================================================
+2025-12-18 23:19:35,342 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Local + Selective CoT (Exploratory)
+2025-12-18 23:19:35,342 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Dataset: Clinical Knowledge (lowest CoT boost: +5.7%)
+2025-12-18 23:19:35,342 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - ================================================================================
+2025-12-18 23:19:35,342 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Querying baseline results from database: exp-results/results.db
+2025-12-18 23:19:35,343 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Baseline Results (from database):
+2025-12-18 23:19:35,343 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Local only: 0.732 (73.2%)
+2025-12-18 23:19:35,343 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -     - Total: 265, Correct: 194
+2025-12-18 23:19:35,343 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Local + CoT: 0.789 (78.9%)
+2025-12-18 23:19:35,343 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -     - Total: 265, Correct: 209
+2025-12-18 23:19:35,343 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Testing 50 questions starting from index 0
+2025-12-18 23:19:35,343 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Loading MMLU clinical_knowledge dataset...
+2025-12-18 23:19:38,603 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Loaded 50 questions (indices 0 to 49)
+2025-12-18 23:19:38,603 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Initializing Nebius client...
+2025-12-18 23:19:38,643 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Nebius client initialized successfully
+2025-12-18 23:19:38,643 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Initializing OpenAI client...
+2025-12-18 23:19:38,668 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - OpenAI client initialized successfully
+2025-12-18 23:19:38,668 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Using local model: meta-llama/Meta-Llama-3.1-8B-Instruct
+2025-12-18 23:19:38,668 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Using remote CoT model: gpt-5
+2025-12-18 23:19:38,668 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - NOTE: This is an exploratory experiment - results logged only, not saved to DB
+2025-12-18 23:19:38,668 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+================================================================================
+2025-12-18 23:19:38,668 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Running Local + Selective CoT scenario
+2025-12-18 23:19:38,668 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - ================================================================================
+2025-12-18 23:19:38,668 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 1/50:
+2025-12-18 23:19:38,668 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: What size of cannula would you use in a patient who needed a rapid blood transfusion (as of 2020 medical knowledge)?...
+2025-12-18 23:19:38,668 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: A
+2025-12-18 23:20:01,124 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_length)
+2025-12-18 23:20:01,124 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: A
+2025-12-18 23:20:01,124 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:20:01,124 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 22.45s
+2025-12-18 23:20:01,124 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 21.08s
+2025-12-18 23:20:01,124 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share my step-by-step internal reasoning. However, the recommended choice for rapid blood tr...
+2025-12-18 23:20:01,125 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 2/50:
+2025-12-18 23:20:01,125 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: The key attribute in successful marathon running is:...
+2025-12-18 23:20:01,125 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: D
+2025-12-18 23:20:01,820 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_simple)
+2025-12-18 23:20:01,821 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: D
+2025-12-18 23:20:01,821 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:20:01,821 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 0.70s
+2025-12-18 23:20:01,821 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 3/50:
+2025-12-18 23:20:01,821 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following is the commonest cause of dementia in the UK?...
+2025-12-18 23:20:01,821 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: A
+2025-12-18 23:20:44,789 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_length)
+2025-12-18 23:20:44,789 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: A
+2025-12-18 23:20:44,789 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:20:44,790 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 42.97s
+2025-12-18 23:20:44,790 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 41.58s
+2025-12-18 23:20:44,790 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: Sorry, I can’t share step-by-step chain-of-thought reasoning. However, I can give you a concise answ...
+2025-12-18 23:20:44,790 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 4/50:
+2025-12-18 23:20:44,790 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following is NOT a symptom of anaphylaxis?...
+2025-12-18 23:20:44,790 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:21:12,606 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: negative_question)
+2025-12-18 23:21:12,606 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: B
+2025-12-18 23:21:12,606 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:21:12,606 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 27.82s
+2025-12-18 23:21:12,606 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 26.47s
+2025-12-18 23:21:12,606 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t provide a step-by-step chain-of-thought. However, here’s a concise guide to help you decide ...
+2025-12-18 23:21:12,607 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 5/50:
+2025-12-18 23:21:12,607 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: In what situation are closed pouches applied?...
+2025-12-18 23:21:12,607 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:21:13,484 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_simple)
+2025-12-18 23:21:13,484 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: C
+2025-12-18 23:21:13,484 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: False
+2025-12-18 23:21:13,485 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 0.88s
+2025-12-18 23:21:13,485 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 6/50:
+2025-12-18 23:21:13,485 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: With an increasing number of sprints the:...
+2025-12-18 23:21:13,485 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: D
+2025-12-18 23:21:14,233 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_simple)
+2025-12-18 23:21:14,234 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: D
+2025-12-18 23:21:14,234 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:21:14,234 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 0.75s
+2025-12-18 23:21:14,234 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 7/50:
+2025-12-18 23:21:14,234 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following is true in diplopia?...
+2025-12-18 23:21:14,234 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:21:15,118 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_simple)
+2025-12-18 23:21:15,118 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: D
+2025-12-18 23:21:15,119 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: False
+2025-12-18 23:21:15,119 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 0.88s
+2025-12-18 23:21:15,119 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 8/50:
+2025-12-18 23:21:15,119 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Sodium bicarbonate ingestion improves middle distance running performance by:...
+2025-12-18 23:21:15,119 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: A
+2025-12-18 23:21:37,060 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_complexity)
+2025-12-18 23:21:37,061 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: A
+2025-12-18 23:21:37,061 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:21:37,061 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 21.94s
+2025-12-18 23:21:37,061 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 20.63s
+2025-12-18 23:21:37,061 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t provide the step-by-step chain-of-thought you requested, but here’s a concise answer and bri...
+2025-12-18 23:21:37,061 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 9/50:
+2025-12-18 23:21:37,061 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Codons are composed of:...
+2025-12-18 23:21:37,061 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: A
+2025-12-18 23:21:37,796 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_simple)
+2025-12-18 23:21:37,797 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: A
+2025-12-18 23:21:37,797 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:21:37,797 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 0.73s
+2025-12-18 23:21:37,797 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 10/50:
+2025-12-18 23:21:37,797 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Fatty acids are transported into the mitochondria bound to:...
+2025-12-18 23:21:37,797 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: D
+2025-12-18 23:21:38,552 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_simple)
+2025-12-18 23:21:38,552 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: D
+2025-12-18 23:21:38,553 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:21:38,553 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 0.75s
+2025-12-18 23:21:38,553 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+  Progress: 10/50 questions
+2025-12-18 23:21:38,553 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Current accuracy: 0.800 (80.0%)
+2025-12-18 23:21:38,553 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT usage: 4/10 (40.0%)
+2025-12-18 23:21:38,553 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 11/50:
+2025-12-18 23:21:38,553 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the answers below best indicates the compatible blood types that can be given to a person with a blood group B (rhesus negative)?...
+2025-12-18 23:21:38,553 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: C
+2025-12-18 23:22:00,713 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: comparison_question)
+2025-12-18 23:22:00,713 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: C
+2025-12-18 23:22:00,713 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:22:00,713 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 22.16s
+2025-12-18 23:22:00,713 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 20.79s
+2025-12-18 23:22:00,713 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I’m sorry, but I can’t share step-by-step internal reasoning. Briefly: For red blood cells, ABO and ...
+2025-12-18 23:22:00,714 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 12/50:
+2025-12-18 23:22:00,714 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following is true of a lower motor neurone lesion in the arm?...
+2025-12-18 23:22:00,714 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: D
+2025-12-18 23:22:39,325 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_length)
+2025-12-18 23:22:39,325 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: B
+2025-12-18 23:22:39,325 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: False
+2025-12-18 23:22:39,326 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 38.61s
+2025-12-18 23:22:39,326 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 26.74s
+2025-12-18 23:22:39,326 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share step-by-step chain-of-thought reasoning, but here are the key facts you can use to cho...
+2025-12-18 23:22:39,326 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 13/50:
+2025-12-18 23:22:39,326 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following statements is false?...
+2025-12-18 23:22:39,326 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:23:08,371 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: negative_question)
+2025-12-18 23:23:08,371 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: D
+2025-12-18 23:23:08,371 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: False
+2025-12-18 23:23:08,371 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 29.04s
+2025-12-18 23:23:08,371 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 27.38s
+2025-12-18 23:23:08,371 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I’m sorry, but I can’t share step-by-step chain-of-thought reasoning. However, I can help by giving ...
+2025-12-18 23:23:08,372 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 14/50:
+2025-12-18 23:23:08,372 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Glycogen breakdown in muscle initially results in the formation of:...
+2025-12-18 23:23:08,372 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:23:20,755 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: medium_length_default)
+2025-12-18 23:23:20,756 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: B
+2025-12-18 23:23:20,756 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:23:20,756 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 12.38s
+2025-12-18 23:23:20,756 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 10.30s
+2025-12-18 23:23:20,756 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share step-by-step reasoning, but here’s the concise answer with a brief explanation:
+
+Answe...
+2025-12-18 23:23:20,756 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 15/50:
+2025-12-18 23:23:20,756 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: The two principal contractile proteins found in skeletal muscle are:...
+2025-12-18 23:23:20,756 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:23:29,572 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: medium_length_default)
+2025-12-18 23:23:29,573 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: B
+2025-12-18 23:23:29,573 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:23:29,573 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 8.82s
+2025-12-18 23:23:29,573 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 7.22s
+2025-12-18 23:23:29,573 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share step-by-step internal reasoning, but the two principal contractile proteins in skeleta...
+2025-12-18 23:23:29,573 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 16/50:
+2025-12-18 23:23:29,573 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which one of the following represents a IIIrd cranial nerve palsy and is a neurosurgical emergency?...
+2025-12-18 23:23:29,573 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: C
+2025-12-18 23:23:49,155 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_length)
+2025-12-18 23:23:49,155 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: C
+2025-12-18 23:23:49,155 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:23:49,155 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 19.58s
+2025-12-18 23:23:49,156 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 17.88s
+2025-12-18 23:23:49,156 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share my step-by-step chain-of-thought, but here’s a concise way to identify the correct cho...
+2025-12-18 23:23:49,156 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 17/50:
+2025-12-18 23:23:49,156 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following is true about a thyroid swelling?...
+2025-12-18 23:23:49,156 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: D
+2025-12-18 23:25:05,557 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_complexity)
+2025-12-18 23:25:05,557 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: A
+2025-12-18 23:25:05,558 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: False
+2025-12-18 23:25:05,558 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 76.40s
+2025-12-18 23:25:05,558 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 38.69s
+2025-12-18 23:25:05,558 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share a step-by-step chain-of-thought, but here’s a concise reasoning outline to help you de...
+2025-12-18 23:25:05,558 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 18/50:
+2025-12-18 23:25:05,558 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following is true of hepatomegaly?...
+2025-12-18 23:25:05,558 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: C
+2025-12-18 23:25:54,084 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_factual)
+2025-12-18 23:25:54,084 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: C
+2025-12-18 23:25:54,084 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:25:54,084 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 48.53s
+2025-12-18 23:25:54,084 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 19/50:
+2025-12-18 23:25:54,084 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following is true regarding reflexes?...
+2025-12-18 23:25:54,084 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: C
+2025-12-18 23:26:26,221 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_complexity)
+2025-12-18 23:26:26,221 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: C
+2025-12-18 23:26:26,221 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:26:26,221 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 32.14s
+2025-12-18 23:26:26,221 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 21.28s
+2025-12-18 23:26:26,222 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share my step-by-step chain-of-thought, but I can give a concise, high-level guide to evalua...
+2025-12-18 23:26:26,222 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 20/50:
+2025-12-18 23:26:26,222 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following is true of facial nerve palsy?...
+2025-12-18 23:26:26,222 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: C
+2025-12-18 23:27:58,371 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_complexity)
+2025-12-18 23:27:58,371 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: C
+2025-12-18 23:27:58,371 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:27:58,371 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 92.15s
+2025-12-18 23:27:58,372 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 49.31s
+2025-12-18 23:27:58,372 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share step-by-step chain-of-thought reasoning, but here’s a concise guide to identify the tr...
+2025-12-18 23:27:58,372 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+  Progress: 20/50 questions
+2025-12-18 23:27:58,372 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Current accuracy: 0.750 (75.0%)
+2025-12-18 23:27:58,372 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT usage: 13/20 (65.0%)
+2025-12-18 23:27:58,372 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 21/50:
+2025-12-18 23:27:58,372 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: What is a colles fracture?...
+2025-12-18 23:27:58,372 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: D
+2025-12-18 23:28:40,333 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_factual)
+2025-12-18 23:28:40,333 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: D
+2025-12-18 23:28:40,333 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:28:40,333 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 41.96s
+2025-12-18 23:28:40,333 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 22/50:
+2025-12-18 23:28:40,333 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: If a transfusion reaction is suspected, you should:...
+2025-12-18 23:28:40,333 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: A
+2025-12-18 23:29:11,304 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_complexity)
+2025-12-18 23:29:11,304 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: A
+2025-12-18 23:29:11,304 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:29:11,304 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 30.97s
+2025-12-18 23:29:11,304 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 28.96s
+2025-12-18 23:29:11,304 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share my step-by-step internal reasoning, but here are the standard actions to take if a tra...
+2025-12-18 23:29:11,304 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 23/50:
+2025-12-18 23:29:11,305 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Once a prescribed unit of blood product has been obtained from the blood bank and is out of refrigeration, the transfusion should commence within what...
+2025-12-18 23:29:11,305 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: A
+2025-12-18 23:29:49,938 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_length)
+2025-12-18 23:29:49,939 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: A
+2025-12-18 23:29:49,939 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:29:49,939 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 38.63s
+2025-12-18 23:29:49,939 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 34.26s
+2025-12-18 23:29:49,939 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share detailed step-by-step reasoning, but here’s a concise answer: Start the transfusion wi...
+2025-12-18 23:29:49,939 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 24/50:
+2025-12-18 23:29:49,939 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following statements is true about informal carers (as of 2020)?...
+2025-12-18 23:29:49,939 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:30:39,684 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_length)
+2025-12-18 23:30:39,684 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: A
+2025-12-18 23:30:39,685 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: False
+2025-12-18 23:30:39,685 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 49.74s
+2025-12-18 23:30:39,685 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 33.87s
+2025-12-18 23:30:39,685 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share my step-by-step chain-of-thought. However, I can help you get to the correct choice.
+
+...
+2025-12-18 23:30:39,685 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 25/50:
+2025-12-18 23:30:39,685 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following processes is not used to modify protein structure after translation has occurred?...
+2025-12-18 23:30:39,685 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:31:12,615 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: negative_question)
+2025-12-18 23:31:12,615 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: B
+2025-12-18 23:31:12,615 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:31:12,615 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 32.93s
+2025-12-18 23:31:12,615 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 31.45s
+2025-12-18 23:31:12,615 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share step-by-step chain-of-thought reasoning, but here’s a concise way to approach it:
+
+- P...
+2025-12-18 23:31:12,615 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 26/50:
+2025-12-18 23:31:12,615 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Why would you need to carry out a bladder washout for a patient at home?...
+2025-12-18 23:31:12,616 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:31:38,220 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: reasoning_required)
+2025-12-18 23:31:38,220 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: C
+2025-12-18 23:31:38,220 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: False
+2025-12-18 23:31:38,220 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 25.60s
+2025-12-18 23:31:38,221 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 24.21s
+2025-12-18 23:31:38,221 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share my step-by-step internal reasoning, but here’s a concise answer.
+
+Common reasons to pe...
+2025-12-18 23:31:38,221 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 27/50:
+2025-12-18 23:31:38,221 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: A 14-16 gauge needle is most likely to be used for:...
+2025-12-18 23:31:38,221 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: D
+2025-12-18 23:32:57,138 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: comparison_question)
+2025-12-18 23:32:57,139 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: D
+2025-12-18 23:32:57,139 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:32:57,139 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 78.92s
+2025-12-18 23:32:57,139 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 23.42s
+2025-12-18 23:32:57,139 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share step-by-step chain-of-thought reasoning, but here’s a concise answer:
+
+A 14–16 gauge n...
+2025-12-18 23:32:57,139 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 28/50:
+2025-12-18 23:32:57,139 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of these features suggest that a crackling sound is more likely due to a pleural friction rub than crackles?...
+2025-12-18 23:32:57,139 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: A
+2025-12-18 23:33:26,686 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_length)
+2025-12-18 23:33:26,687 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: B
+2025-12-18 23:33:26,687 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: False
+2025-12-18 23:33:26,687 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 29.55s
+2025-12-18 23:33:26,687 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 27.66s
+2025-12-18 23:33:26,687 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I’m sorry, but I can’t share my step-by-step reasoning. Here’s a concise answer with key distinguish...
+2025-12-18 23:33:26,687 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 29/50:
+2025-12-18 23:33:26,687 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: In games like soccer the blood lactate concentration:...
+2025-12-18 23:33:26,688 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:33:45,635 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_complexity)
+2025-12-18 23:33:45,635 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: A
+2025-12-18 23:33:45,635 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: False
+2025-12-18 23:33:45,635 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 18.95s
+2025-12-18 23:33:45,635 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 17.24s
+2025-12-18 23:33:45,635 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share my step-by-step internal reasoning, but here’s a concise answer:
+
+- In soccer, blood l...
+2025-12-18 23:33:45,636 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 30/50:
+2025-12-18 23:33:45,636 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Lactate and hydrogen ions leave the muscle:...
+2025-12-18 23:33:45,636 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: C
+2025-12-18 23:33:46,373 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_simple)
+2025-12-18 23:33:46,373 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: D
+2025-12-18 23:33:46,374 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: False
+2025-12-18 23:33:46,374 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 0.74s
+2025-12-18 23:33:46,374 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+  Progress: 30/50 questions
+2025-12-18 23:33:46,374 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Current accuracy: 0.667 (66.7%)
+2025-12-18 23:33:46,374 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT usage: 21/30 (70.0%)
+2025-12-18 23:33:46,374 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 31/50:
+2025-12-18 23:33:46,374 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following is true of the spine?...
+2025-12-18 23:33:46,374 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:34:52,910 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_complexity)
+2025-12-18 23:34:52,910 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: A
+2025-12-18 23:34:52,910 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: False
+2025-12-18 23:34:52,910 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 66.54s
+2025-12-18 23:34:52,910 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 63.85s
+2025-12-18 23:34:52,911 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share step-by-step chain-of-thought reasoning. However, I can help you solve it. Please prov...
+2025-12-18 23:34:52,911 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 32/50:
+2025-12-18 23:34:52,911 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following is true of psoriatic arthropathy?...
+2025-12-18 23:34:52,911 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: D
+2025-12-18 23:34:53,672 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_simple)
+2025-12-18 23:34:53,672 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: D
+2025-12-18 23:34:53,672 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:34:53,672 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 0.76s
+2025-12-18 23:34:53,673 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 33/50:
+2025-12-18 23:34:53,673 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following is true of Graves Disease of the thyroid?...
+2025-12-18 23:34:53,673 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: A
+2025-12-18 23:35:21,839 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_complexity)
+2025-12-18 23:35:21,840 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: A
+2025-12-18 23:35:21,840 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:35:21,840 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 28.17s
+2025-12-18 23:35:21,840 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 26.28s
+2025-12-18 23:35:21,840 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share step-by-step chain-of-thought reasoning, but I can help you pick the correct option. P...
+2025-12-18 23:35:21,840 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 34/50:
+2025-12-18 23:35:21,840 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following is true of calcium metabolism?...
+2025-12-18 23:35:21,840 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:35:28,700 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_factual)
+2025-12-18 23:35:28,700 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: D
+2025-12-18 23:35:28,700 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: False
+2025-12-18 23:35:28,701 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 6.86s
+2025-12-18 23:35:28,701 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 35/50:
+2025-12-18 23:35:28,701 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Kinase reactions:...
+2025-12-18 23:35:28,701 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:35:29,670 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_simple)
+2025-12-18 23:35:29,671 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: B
+2025-12-18 23:35:29,671 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:35:29,671 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 0.97s
+2025-12-18 23:35:29,671 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 36/50:
+2025-12-18 23:35:29,671 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: The normal respiratory rate for an adult male is:...
+2025-12-18 23:35:29,671 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: D
+2025-12-18 23:35:30,409 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_simple)
+2025-12-18 23:35:30,410 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: D
+2025-12-18 23:35:30,410 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:35:30,410 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 0.74s
+2025-12-18 23:35:30,410 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 37/50:
+2025-12-18 23:35:30,410 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Collagen fibres:...
+2025-12-18 23:35:30,411 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: C
+2025-12-18 23:35:31,307 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_simple)
+2025-12-18 23:35:31,307 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: C
+2025-12-18 23:35:31,307 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:35:31,307 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 0.90s
+2025-12-18 23:35:31,308 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 38/50:
+2025-12-18 23:35:31,308 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following releases most energy when completely oxidised in the body?...
+2025-12-18 23:35:31,308 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:36:04,491 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_length)
+2025-12-18 23:36:04,492 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: B
+2025-12-18 23:36:04,492 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:36:04,492 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 33.18s
+2025-12-18 23:36:04,492 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 31.79s
+2025-12-18 23:36:04,492 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share step-by-step chain-of-thought reasoning. Briefly: the energy released on complete oxid...
+2025-12-18 23:36:04,492 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 39/50:
+2025-12-18 23:36:04,492 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Embedded in the inner membrane of the mitochondrion are:...
+2025-12-18 23:36:04,493 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:36:05,190 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_simple)
+2025-12-18 23:36:05,190 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: B
+2025-12-18 23:36:05,190 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:36:05,190 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 0.70s
+2025-12-18 23:36:05,190 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 40/50:
+2025-12-18 23:36:05,190 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: If the mean rate of oxygen consumption of a male athlete during a training session is 2 l/min, then his rate of energy expenditure is approximately:...
+2025-12-18 23:36:05,190 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: D
+2025-12-18 23:36:28,465 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_length)
+2025-12-18 23:36:28,465 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: A
+2025-12-18 23:36:28,466 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: False
+2025-12-18 23:36:28,466 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 23.27s
+2025-12-18 23:36:28,466 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 21.98s
+2025-12-18 23:36:28,466 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: Sorry, I can’t share my step-by-step chain-of-thought. But here’s a concise result and why: using an...
+2025-12-18 23:36:28,466 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+  Progress: 40/50 questions
+2025-12-18 23:36:28,466 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Current accuracy: 0.675 (67.5%)
+2025-12-18 23:36:28,466 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT usage: 25/40 (62.5%)
+2025-12-18 23:36:28,466 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 41/50:
+2025-12-18 23:36:28,466 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: A normal heart rate for an adult at rest is:...
+2025-12-18 23:36:28,466 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:36:38,449 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: medium_length_default)
+2025-12-18 23:36:38,449 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: B
+2025-12-18 23:36:38,450 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:36:38,450 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 9.98s
+2025-12-18 23:36:38,450 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 8.55s
+2025-12-18 23:36:38,450 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share detailed step-by-step reasoning, but the normal resting heart rate for a healthy adult...
+2025-12-18 23:36:38,450 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 42/50:
+2025-12-18 23:36:38,450 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following statements is false?...
+2025-12-18 23:36:38,450 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: D
+2025-12-18 23:37:08,388 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: negative_question)
+2025-12-18 23:37:08,388 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: A
+2025-12-18 23:37:08,389 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: False
+2025-12-18 23:37:08,389 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 29.94s
+2025-12-18 23:37:08,389 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 27.51s
+2025-12-18 23:37:08,389 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share step-by-step chain-of-thought reasoning, but I can help by giving a concise approach a...
+2025-12-18 23:37:08,389 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 43/50:
+2025-12-18 23:37:08,389 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following is true in ulna nerve palsy?...
+2025-12-18 23:37:08,389 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: C
+2025-12-18 23:37:52,837 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_complexity)
+2025-12-18 23:37:52,837 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: A
+2025-12-18 23:37:52,837 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: False
+2025-12-18 23:37:52,837 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 44.45s
+2025-12-18 23:37:52,837 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 43.14s
+2025-12-18 23:37:52,838 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share my step-by-step chain-of-thought, but here are the key facts you can use to identify t...
+2025-12-18 23:37:52,838 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 44/50:
+2025-12-18 23:37:52,838 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: How much toothpaste is recommended for cleaning teeth?...
+2025-12-18 23:37:52,838 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: B
+2025-12-18 23:38:17,441 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: reasoning_required)
+2025-12-18 23:38:17,442 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: B
+2025-12-18 23:38:17,442 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:38:17,442 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 24.60s
+2025-12-18 23:38:17,442 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 23.18s
+2025-12-18 23:38:17,442 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share step-by-step chain-of-thought reasoning, but here’s a concise answer:
+
+- Adults and ch...
+2025-12-18 23:38:17,442 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 45/50:
+2025-12-18 23:38:17,442 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Which of the following is true about Cushing's Syndrome?...
+2025-12-18 23:38:17,442 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: D
+2025-12-18 23:38:18,864 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_simple)
+2025-12-18 23:38:18,865 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: D
+2025-12-18 23:38:18,865 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:38:18,865 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 1.42s
+2025-12-18 23:38:18,865 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 46/50:
+2025-12-18 23:38:18,865 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: The main factors determining success in sport are:...
+2025-12-18 23:38:18,865 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: D
+2025-12-18 23:38:19,734 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_simple)
+2025-12-18 23:38:19,734 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: D
+2025-12-18 23:38:19,734 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:38:19,734 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 0.87s
+2025-12-18 23:38:19,734 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 47/50:
+2025-12-18 23:38:19,734 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: In a double stranded molecule of DNA, the ratio of purines : pyrimidines is:...
+2025-12-18 23:38:19,734 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: D
+2025-12-18 23:38:33,011 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: above_median_length)
+2025-12-18 23:38:33,011 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: D
+2025-12-18 23:38:33,011 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:38:33,011 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 13.28s
+2025-12-18 23:38:33,011 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 11.87s
+2025-12-18 23:38:33,011 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share step-by-step chain-of-thought reasoning, but here’s a brief explanation and the answer...
+2025-12-18 23:38:33,012 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 48/50:
+2025-12-18 23:38:33,012 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Performance enhancing synthetic steroids are based on the structure of the hormone:...
+2025-12-18 23:38:33,012 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: A
+2025-12-18 23:38:48,261 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: medium_length_default)
+2025-12-18 23:38:48,262 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: A
+2025-12-18 23:38:48,262 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:38:48,262 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 15.25s
+2025-12-18 23:38:48,262 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 13.87s
+2025-12-18 23:38:48,262 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share step-by-step chain-of-thought. However, here’s a concise answer with a brief explanati...
+2025-12-18 23:38:48,262 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 49/50:
+2025-12-18 23:38:48,262 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Glycogen breakdown in exercising muscle is activated by:...
+2025-12-18 23:38:48,262 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: D
+2025-12-18 23:38:49,477 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: Local Only (reason: very_short_simple)
+2025-12-18 23:38:49,477 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: C
+2025-12-18 23:38:49,477 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: False
+2025-12-18 23:38:49,477 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 1.21s
+2025-12-18 23:38:49,478 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Question 50/50:
+2025-12-18 23:38:49,478 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Question: Most of the free fatty acids are transported in the blood:...
+2025-12-18 23:38:49,478 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Ground truth: D
+2025-12-18 23:39:00,458 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Decision: USE CoT (reason: medium_length_default)
+2025-12-18 23:39:00,459 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Predicted: D
+2025-12-18 23:39:00,459 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Correct: True
+2025-12-18 23:39:00,459 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Processing time: 10.98s
+2025-12-18 23:39:00,459 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT generation time: 9.62s
+2025-12-18 23:39:00,459 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT preview: I can’t share step-by-step chain-of-thought, but here’s a concise answer and brief explanation.
+
+Ans...
+2025-12-18 23:39:00,459 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+  Progress: 50/50 questions
+2025-12-18 23:39:00,459 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Current accuracy: 0.680 (68.0%)
+2025-12-18 23:39:00,459 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT usage: 32/50 (64.0%)
+2025-12-18 23:39:00,460 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+================================================================================
+2025-12-18 23:39:00,460 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - FINAL SUMMARY
+2025-12-18 23:39:00,460 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - ================================================================================
+2025-12-18 23:39:00,460 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Total questions: 50
+2025-12-18 23:39:00,460 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Correct answers: 34
+2025-12-18 23:39:00,460 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Accuracy: 0.680 (68.0%)
+2025-12-18 23:39:00,460 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - Errors: 0
+2025-12-18 23:39:00,460 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Decision Breakdown:
+2025-12-18 23:39:00,460 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT used: 32 (64.0%)
+2025-12-18 23:39:00,460 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Local only: 18 (36.0%)
+2025-12-18 23:39:00,460 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Decision Reasons:
+2025-12-18 23:39:00,461 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   very_short_simple: 15 (30.0%)
+2025-12-18 23:39:00,461 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   above_median_length: 10 (20.0%)
+2025-12-18 23:39:00,461 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   above_median_complexity: 9 (18.0%)
+2025-12-18 23:39:00,461 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   medium_length_default: 5 (10.0%)
+2025-12-18 23:39:00,461 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   negative_question: 4 (8.0%)
+2025-12-18 23:39:00,461 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   very_short_factual: 3 (6.0%)
+2025-12-18 23:39:00,461 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   comparison_question: 2 (4.0%)
+2025-12-18 23:39:00,461 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   reasoning_required: 2 (4.0%)
+2025-12-18 23:39:00,461 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Comparison with Baseline:
+2025-12-18 23:39:00,461 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Baseline Local (S1): 73.2% accuracy
+2025-12-18 23:39:00,461 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Baseline Local+CoT (S2): 78.9% accuracy
+2025-12-18 23:39:00,462 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Selective CoT (this test): 68.0% accuracy
+2025-12-18 23:39:00,462 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Improvement:
+2025-12-18 23:39:00,462 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Over Local: -5.2 percentage points
+2025-12-18 23:39:00,462 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Over Local+CoT: -10.9 percentage points
+2025-12-18 23:39:00,462 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+⚠ Selective CoT accuracy is 0.109 lower than baseline Local+CoT
+2025-12-18 23:39:00,462 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO - 
+Cost Savings:
+2025-12-18 23:39:00,462 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Baseline CoT usage: 100% (always uses CoT)
+2025-12-18 23:39:00,462 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   Selective CoT usage: 64.0%
+2025-12-18 23:39:00,462 - dpprivqa.mmlu_clinical_knowledge_selective_cot_exploratory - INFO -   CoT calls saved: 36.0%

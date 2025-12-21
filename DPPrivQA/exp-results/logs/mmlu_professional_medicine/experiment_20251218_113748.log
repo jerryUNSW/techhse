@@ -1,0 +1,65 @@
+2025-12-18 11:37:48,090 - dpprivqa.mmlu_professional_medicine - INFO - Logging initialized for mmlu_professional_medicine
+2025-12-18 11:37:48,090 - dpprivqa.mmlu_professional_medicine - INFO - Log file: exp-results/logs/mmlu_professional_medicine/experiment_20251218_113748.log
+2025-12-18 11:37:48,090 - dpprivqa.mmlu_professional_medicine - INFO - Starting Local model test on MMLU professional_medicine
+2025-12-18 11:37:48,090 - dpprivqa.mmlu_professional_medicine - INFO - Testing 5 questions
+2025-12-18 11:37:48,093 - dpprivqa.mmlu_professional_medicine - INFO - Database: exp-results/results.db
+2025-12-18 11:37:48,093 - dpprivqa.mmlu_professional_medicine - INFO - Loading MMLU professional_medicine dataset...
+2025-12-18 11:37:53,087 - dpprivqa.mmlu_professional_medicine - INFO - Loaded 5 questions (indices 0 to 4)
+2025-12-18 11:37:53,087 - dpprivqa.mmlu_professional_medicine - INFO - Initializing Nebius client...
+2025-12-18 11:37:53,151 - dpprivqa.mmlu_professional_medicine - INFO - Nebius client initialized successfully
+2025-12-18 11:37:53,151 - dpprivqa.mmlu_professional_medicine - INFO - Using local model: meta-llama/Meta-Llama-3.1-8B-Instruct
+2025-12-18 11:37:53,159 - dpprivqa.mmlu_professional_medicine - INFO - Created experiment record: ID 4
+2025-12-18 11:37:53,159 - dpprivqa.mmlu_professional_medicine - INFO - 
+================================================================================
+2025-12-18 11:37:53,159 - dpprivqa.mmlu_professional_medicine - INFO - Running Local scenario
+2025-12-18 11:37:53,159 - dpprivqa.mmlu_professional_medicine - INFO - ================================================================================
+2025-12-18 11:37:53,159 - dpprivqa.mmlu_professional_medicine - INFO - 
+Question 1/5:
+2025-12-18 11:37:53,160 - dpprivqa.mmlu_professional_medicine - INFO -   Question: A 67-year-old woman comes to the physician for a follow-up examination. She had a pulmonary embolism and required treatment in the hospital for 3 week...
+2025-12-18 11:37:53,160 - dpprivqa.mmlu_professional_medicine - INFO -   Options: {'A': 'Cerebral infarction during the hospitalization', 'B': 'Complication of the IVC filter placement', 'C': 'Compression of the lateral femoral cutaneous nerve', 'D': 'Hematoma of the left thigh'}
+2025-12-18 11:37:53,160 - dpprivqa.mmlu_professional_medicine - INFO -   Ground truth: C
+2025-12-18 11:37:54,692 - dpprivqa.mmlu_professional_medicine - INFO -   Predicted answer: C
+2025-12-18 11:37:54,693 - dpprivqa.mmlu_professional_medicine - INFO -   Correct: True
+2025-12-18 11:37:54,693 - dpprivqa.mmlu_professional_medicine - INFO -   Processing time: 1.53s
+2025-12-18 11:37:54,706 - dpprivqa.mmlu_professional_medicine - INFO - 
+Question 2/5:
+2025-12-18 11:37:54,706 - dpprivqa.mmlu_professional_medicine - INFO -   Question: A 25-year-old gravida 3 para 2 female is admitted to the hospital at 39 weeks' gestation in active labor. She had been having regular contractions eve...
+2025-12-18 11:37:54,706 - dpprivqa.mmlu_professional_medicine - INFO -   Options: {'A': 'Braxton Hicks contractions', 'B': 'lower uterine retraction ring', 'C': 'hypotonic uterine dysfunction', 'D': 'primary dysfunctional labor'}
+2025-12-18 11:37:54,706 - dpprivqa.mmlu_professional_medicine - INFO -   Ground truth: C
+2025-12-18 11:37:55,802 - dpprivqa.mmlu_professional_medicine - INFO -   Predicted answer: D
+2025-12-18 11:37:55,802 - dpprivqa.mmlu_professional_medicine - INFO -   Correct: False
+2025-12-18 11:37:55,802 - dpprivqa.mmlu_professional_medicine - INFO -   Processing time: 1.10s
+2025-12-18 11:37:55,815 - dpprivqa.mmlu_professional_medicine - INFO - 
+Question 3/5:
+2025-12-18 11:37:55,815 - dpprivqa.mmlu_professional_medicine - INFO -   Question: A 5-year-old boy is brought to the physician by his mother because of a 2-day history of a low-grade fever, cough, and runny nose. His temperature is ...
+2025-12-18 11:37:55,816 - dpprivqa.mmlu_professional_medicine - INFO -   Options: {'A': 'The findings are clinically and statistically significant', 'B': 'The findings are clinically insignificant but statistically significant', 'C': 'The findings are clinically significant but statistically insignificant', 'D': 'The findings are neither clinically nor statistically significant'}
+2025-12-18 11:37:55,816 - dpprivqa.mmlu_professional_medicine - INFO -   Ground truth: B
+2025-12-18 11:37:56,742 - dpprivqa.mmlu_professional_medicine - INFO -   Predicted answer: B
+2025-12-18 11:37:56,742 - dpprivqa.mmlu_professional_medicine - INFO -   Correct: True
+2025-12-18 11:37:56,743 - dpprivqa.mmlu_professional_medicine - INFO -   Processing time: 0.93s
+2025-12-18 11:37:56,754 - dpprivqa.mmlu_professional_medicine - INFO - 
+Question 4/5:
+2025-12-18 11:37:56,754 - dpprivqa.mmlu_professional_medicine - INFO -   Question: A 9-year-old boy is brought to the office by his parents for a well-child examination. The patient and his family immigrated to the United States 2 mo...
+2025-12-18 11:37:56,754 - dpprivqa.mmlu_professional_medicine - INFO -   Options: {'A': 'Atrial fibrillation', 'B': 'Cor pulmonale', 'C': 'Systemic hypertension', 'D': 'Tricuspid valve regurgitation'}
+2025-12-18 11:37:56,754 - dpprivqa.mmlu_professional_medicine - INFO -   Ground truth: C
+2025-12-18 11:37:57,668 - dpprivqa.mmlu_professional_medicine - INFO -   Predicted answer: C
+2025-12-18 11:37:57,668 - dpprivqa.mmlu_professional_medicine - INFO -   Correct: True
+2025-12-18 11:37:57,668 - dpprivqa.mmlu_professional_medicine - INFO -   Processing time: 0.91s
+2025-12-18 11:37:57,683 - dpprivqa.mmlu_professional_medicine - INFO - 
+Question 5/5:
+2025-12-18 11:37:57,683 - dpprivqa.mmlu_professional_medicine - INFO -   Question: A 25-year-old woman comes to the physician because of a 2-month history of numbness in her right hand. During this period, she has had tingling in the...
+2025-12-18 11:37:57,684 - dpprivqa.mmlu_professional_medicine - INFO -   Options: {'A': 'Median nerve at the wrist', 'B': 'Musculocutaneous nerve at the forearm', 'C': 'Radial nerve at the forearm', 'D': 'Ulnar nerve at the elbow'}
+2025-12-18 11:37:57,684 - dpprivqa.mmlu_professional_medicine - INFO -   Ground truth: D
+2025-12-18 11:37:58,441 - dpprivqa.mmlu_professional_medicine - INFO -   Predicted answer: D
+2025-12-18 11:37:58,441 - dpprivqa.mmlu_professional_medicine - INFO -   Correct: True
+2025-12-18 11:37:58,441 - dpprivqa.mmlu_professional_medicine - INFO -   Processing time: 0.76s
+2025-12-18 11:37:58,453 - dpprivqa.mmlu_professional_medicine - INFO - 
+================================================================================
+2025-12-18 11:37:58,454 - dpprivqa.mmlu_professional_medicine - INFO - SUMMARY
+2025-12-18 11:37:58,454 - dpprivqa.mmlu_professional_medicine - INFO - ================================================================================
+2025-12-18 11:37:58,454 - dpprivqa.mmlu_professional_medicine - INFO - Total questions: 5
+2025-12-18 11:37:58,454 - dpprivqa.mmlu_professional_medicine - INFO - Correct answers: 4
+2025-12-18 11:37:58,454 - dpprivqa.mmlu_professional_medicine - INFO - Accuracy: 0.800 (80.0%)
+2025-12-18 11:37:58,454 - dpprivqa.mmlu_professional_medicine - INFO - 
+Results saved to database successfully!
+2025-12-18 11:37:58,454 - dpprivqa.mmlu_professional_medicine - INFO - Experiment ID: 4

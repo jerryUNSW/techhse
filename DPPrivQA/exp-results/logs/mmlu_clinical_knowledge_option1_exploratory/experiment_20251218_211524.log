@@ -1,0 +1,11 @@
+2025-12-18 21:15:24,742 - dpprivqa.mmlu_clinical_knowledge_option1_exploratory - INFO - Logging initialized for mmlu_clinical_knowledge_option1_exploratory
+2025-12-18 21:15:24,742 - dpprivqa.mmlu_clinical_knowledge_option1_exploratory - INFO - Log file: exp-results/logs/mmlu_clinical_knowledge_option1_exploratory/experiment_20251218_211524.log
+2025-12-18 21:15:24,742 - dpprivqa.mmlu_clinical_knowledge_option1_exploratory - INFO - ================================================================================
+2025-12-18 21:15:24,742 - dpprivqa.mmlu_clinical_knowledge_option1_exploratory - INFO - Local + CoT with Option 1 Prompt Optimization (Exploratory)
+2025-12-18 21:15:24,742 - dpprivqa.mmlu_clinical_knowledge_option1_exploratory - INFO - Dataset: Clinical Knowledge (lowest CoT boost: +5.7%)
+2025-12-18 21:15:24,742 - dpprivqa.mmlu_clinical_knowledge_option1_exploratory - INFO - ================================================================================
+2025-12-18 21:15:24,742 - dpprivqa.mmlu_clinical_knowledge_option1_exploratory - INFO - Testing 50 questions starting from index 0
+2025-12-18 21:15:24,742 - dpprivqa.mmlu_clinical_knowledge_option1_exploratory - INFO - Loading MMLU clinical_knowledge dataset...
+2025-12-18 21:15:28,223 - dpprivqa.mmlu_clinical_knowledge_option1_exploratory - INFO - Loaded 50 questions (indices 0 to 49)
+2025-12-18 21:15:28,223 - dpprivqa.mmlu_clinical_knowledge_option1_exploratory - INFO - Initializing Nebius client...
+2025-12-18 21:15:28,223 - dpprivqa.mmlu_clinical_knowledge_option1_exploratory - ERROR - Failed to initialize Nebius client: Nebius API key not found. Set NEBIUS_API or NEBIUS_API_KEY in .env

@@ -1,0 +1,21 @@
+models:
+  local: "meta-llama/Meta-Llama-3.1-8B-Instruct"
+  remote_cot: "gpt-5"
+  remote_qa: "gpt-5"
+
+mechanisms:
+  use_phrasedp_plus: false  # Toggle for PhraseDP+
+  default_epsilon: 2.0
+  epsilon_values: [1.0, 2.0, 3.0]
+
+database:
+  path: "exp-results/results.db"
+
+logging:
+  level: "INFO"
+  directory: "exp-results/logs"
+
+testing:
+  use_mocks: true  # Use mocks for LLM clients in tests
+  test_db_path: ":memory:"  # Use in-memory DB for tests
+

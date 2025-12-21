@@ -1,0 +1,9 @@
+2025-12-18 11:31:10,842 - dpprivqa.mmlu_professional_law - INFO - Logging initialized for mmlu_professional_law
+2025-12-18 11:31:10,842 - dpprivqa.mmlu_professional_law - INFO - Log file: exp-results/logs/mmlu_professional_law/experiment_20251218_113110.log
+2025-12-18 11:31:10,842 - dpprivqa.mmlu_professional_law - INFO - Starting Local model test on MMLU professional_law
+2025-12-18 11:31:10,842 - dpprivqa.mmlu_professional_law - INFO - Testing 5 questions
+2025-12-18 11:31:10,845 - dpprivqa.mmlu_professional_law - INFO - Database: exp-results/results.db
+2025-12-18 11:31:10,845 - dpprivqa.mmlu_professional_law - INFO - Loading MMLU professional_law dataset...
+2025-12-18 11:31:14,203 - dpprivqa.mmlu_professional_law - INFO - Loaded 5 questions (indices 0 to 4)
+2025-12-18 11:31:14,203 - dpprivqa.mmlu_professional_law - INFO - Initializing Nebius client...
+2025-12-18 11:31:14,203 - dpprivqa.mmlu_professional_law - ERROR - Failed to initialize Nebius client: Nebius API key not found. Set NEBIUS_API or NEBIUS_API_KEY in .env

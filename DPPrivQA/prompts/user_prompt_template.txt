@@ -1,0 +1,17 @@
+Generalize and paraphrase the following sentence.
+Ensure the logical structure and core meaning are maintained, but remove or generalize
+any sensitive personal information (like names of people, specific unique places,
+exact dates, or highly specific event details).
+
+### Output Rules:
+- Output ONLY the paraphrased and generalized sentence.
+- Do NOT repeat the original sentence or use near-identical phrasing.
+- No numbering, bullet points, or commentary.
+- Do NOT include introductory or explanatory text.
+- Ensure the sentence is grammatically correct and semantically coherent.
+
+### Task:
+Original: {input_sentence}
+Paraphrase:
+
+

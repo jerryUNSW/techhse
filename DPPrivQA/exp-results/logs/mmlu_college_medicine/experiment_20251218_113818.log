@@ -1,0 +1,68 @@
+2025-12-18 11:38:18,970 - dpprivqa.mmlu_college_medicine - INFO - Logging initialized for mmlu_college_medicine
+2025-12-18 11:38:18,971 - dpprivqa.mmlu_college_medicine - INFO - Log file: exp-results/logs/mmlu_college_medicine/experiment_20251218_113818.log
+2025-12-18 11:38:18,971 - dpprivqa.mmlu_college_medicine - INFO - Starting Local model test on MMLU college_medicine
+2025-12-18 11:38:18,971 - dpprivqa.mmlu_college_medicine - INFO - Testing 5 questions
+2025-12-18 11:38:18,974 - dpprivqa.mmlu_college_medicine - INFO - Database: exp-results/results.db
+2025-12-18 11:38:18,975 - dpprivqa.mmlu_college_medicine - INFO - Loading MMLU college_medicine dataset...
+2025-12-18 11:38:24,712 - dpprivqa.mmlu_college_medicine - INFO - Loaded 5 questions (indices 0 to 4)
+2025-12-18 11:38:24,712 - dpprivqa.mmlu_college_medicine - INFO - Initializing Nebius client...
+2025-12-18 11:38:24,751 - dpprivqa.mmlu_college_medicine - INFO - Nebius client initialized successfully
+2025-12-18 11:38:24,751 - dpprivqa.mmlu_college_medicine - INFO - Using local model: meta-llama/Meta-Llama-3.1-8B-Instruct
+2025-12-18 11:38:24,762 - dpprivqa.mmlu_college_medicine - INFO - Created experiment record: ID 6
+2025-12-18 11:38:24,762 - dpprivqa.mmlu_college_medicine - INFO - 
+================================================================================
+2025-12-18 11:38:24,762 - dpprivqa.mmlu_college_medicine - INFO - Running Local scenario
+2025-12-18 11:38:24,762 - dpprivqa.mmlu_college_medicine - INFO - ================================================================================
+2025-12-18 11:38:24,762 - dpprivqa.mmlu_college_medicine - INFO - 
+Question 1/5:
+2025-12-18 11:38:24,762 - dpprivqa.mmlu_college_medicine - INFO -   Question: A police officer carries out hundreds of traffic stops every year. When his supervisor is reviewing the officer’s records for the past year, he notice...
+2025-12-18 11:38:24,762 - dpprivqa.mmlu_college_medicine - INFO -   Options: {'A': 'Behaviorist', 'B': 'Psychoanalytic', 'C': 'Cognitive behavioral', 'D': 'Humanistic'}
+2025-12-18 11:38:24,763 - dpprivqa.mmlu_college_medicine - INFO -   Ground truth: B
+2025-12-18 11:38:26,463 - dpprivqa.mmlu_college_medicine - INFO -   Predicted answer: B
+2025-12-18 11:38:26,463 - dpprivqa.mmlu_college_medicine - INFO -   Correct: True
+2025-12-18 11:38:26,464 - dpprivqa.mmlu_college_medicine - INFO -   Processing time: 1.70s
+2025-12-18 11:38:26,477 - dpprivqa.mmlu_college_medicine - INFO - 
+Question 2/5:
+2025-12-18 11:38:26,477 - dpprivqa.mmlu_college_medicine - INFO -   Question: Who set the world record for the mile race in 1886?...
+2025-12-18 11:38:26,477 - dpprivqa.mmlu_college_medicine - INFO -   Options: {'A': 'R Bannister', 'B': 'S Coe', 'C': 'J DiMaggio', 'D': 'WG George'}
+2025-12-18 11:38:26,477 - dpprivqa.mmlu_college_medicine - INFO -   Ground truth: D
+2025-12-18 11:38:27,625 - dpprivqa.mmlu_college_medicine - INFO -   Predicted answer: D
+2025-12-18 11:38:27,625 - dpprivqa.mmlu_college_medicine - INFO -   Correct: True
+2025-12-18 11:38:27,625 - dpprivqa.mmlu_college_medicine - INFO -   Processing time: 1.15s
+2025-12-18 11:38:27,638 - dpprivqa.mmlu_college_medicine - INFO - 
+Question 3/5:
+2025-12-18 11:38:27,638 - dpprivqa.mmlu_college_medicine - INFO -   Question: Which of the following statements identifies a chemically based sensory system?
+I. Gustatory system
+II. Auditory system
+III. Olfactory system...
+2025-12-18 11:38:27,638 - dpprivqa.mmlu_college_medicine - INFO -   Options: {'A': 'I only', 'B': 'II only', 'C': 'III only', 'D': 'I and III only'}
+2025-12-18 11:38:27,638 - dpprivqa.mmlu_college_medicine - INFO -   Ground truth: D
+2025-12-18 11:38:28,465 - dpprivqa.mmlu_college_medicine - INFO -   Predicted answer: D
+2025-12-18 11:38:28,465 - dpprivqa.mmlu_college_medicine - INFO -   Correct: True
+2025-12-18 11:38:28,465 - dpprivqa.mmlu_college_medicine - INFO -   Processing time: 0.83s
+2025-12-18 11:38:28,476 - dpprivqa.mmlu_college_medicine - INFO - 
+Question 4/5:
+2025-12-18 11:38:28,476 - dpprivqa.mmlu_college_medicine - INFO -   Question: The complete resynthesis of phosphocreatine after very high intensity exercise normally takes:...
+2025-12-18 11:38:28,477 - dpprivqa.mmlu_college_medicine - INFO -   Options: {'A': 'about 10 seconds.', 'B': 'about 30 seconds.', 'C': 'about 1 minute.', 'D': 'about 4 minutes.'}
+2025-12-18 11:38:28,477 - dpprivqa.mmlu_college_medicine - INFO -   Ground truth: D
+2025-12-18 11:38:29,668 - dpprivqa.mmlu_college_medicine - INFO -   Predicted answer: B
+2025-12-18 11:38:29,668 - dpprivqa.mmlu_college_medicine - INFO -   Correct: False
+2025-12-18 11:38:29,668 - dpprivqa.mmlu_college_medicine - INFO -   Processing time: 1.19s
+2025-12-18 11:38:29,676 - dpprivqa.mmlu_college_medicine - INFO - 
+Question 5/5:
+2025-12-18 11:38:29,676 - dpprivqa.mmlu_college_medicine - INFO -   Question: A race car attempting to jump a series of 8 buses is set up on a flat track with a ramp at the end. Engineers assigned to the project have determined ...
+2025-12-18 11:38:29,677 - dpprivqa.mmlu_college_medicine - INFO -   Options: {'A': '13 m/s^2', 'B': '26 m/s^2', 'C': '7 m/s^2', 'D': '17 m/s^2'}
+2025-12-18 11:38:29,677 - dpprivqa.mmlu_college_medicine - INFO -   Ground truth: A
+2025-12-18 11:38:30,533 - dpprivqa.mmlu_college_medicine - INFO -   Predicted answer: B
+2025-12-18 11:38:30,534 - dpprivqa.mmlu_college_medicine - INFO -   Correct: False
+2025-12-18 11:38:30,534 - dpprivqa.mmlu_college_medicine - INFO -   Processing time: 0.86s
+2025-12-18 11:38:30,545 - dpprivqa.mmlu_college_medicine - INFO - 
+================================================================================
+2025-12-18 11:38:30,545 - dpprivqa.mmlu_college_medicine - INFO - SUMMARY
+2025-12-18 11:38:30,545 - dpprivqa.mmlu_college_medicine - INFO - ================================================================================
+2025-12-18 11:38:30,545 - dpprivqa.mmlu_college_medicine - INFO - Total questions: 5
+2025-12-18 11:38:30,545 - dpprivqa.mmlu_college_medicine - INFO - Correct answers: 3
+2025-12-18 11:38:30,545 - dpprivqa.mmlu_college_medicine - INFO - Accuracy: 0.600 (60.0%)
+2025-12-18 11:38:30,546 - dpprivqa.mmlu_college_medicine - INFO - 
+Results saved to database successfully!
+2025-12-18 11:38:30,546 - dpprivqa.mmlu_college_medicine - INFO - Experiment ID: 6

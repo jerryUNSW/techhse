@@ -1,0 +1,65 @@
+2025-12-18 11:31:22,761 - dpprivqa.mmlu_professional_law - INFO - Logging initialized for mmlu_professional_law
+2025-12-18 11:31:22,761 - dpprivqa.mmlu_professional_law - INFO - Log file: exp-results/logs/mmlu_professional_law/experiment_20251218_113122.log
+2025-12-18 11:31:22,761 - dpprivqa.mmlu_professional_law - INFO - Starting Local model test on MMLU professional_law
+2025-12-18 11:31:22,761 - dpprivqa.mmlu_professional_law - INFO - Testing 5 questions
+2025-12-18 11:31:22,762 - dpprivqa.mmlu_professional_law - INFO - Database: exp-results/results.db
+2025-12-18 11:31:22,762 - dpprivqa.mmlu_professional_law - INFO - Loading MMLU professional_law dataset...
+2025-12-18 11:31:26,546 - dpprivqa.mmlu_professional_law - INFO - Loaded 5 questions (indices 0 to 4)
+2025-12-18 11:31:26,546 - dpprivqa.mmlu_professional_law - INFO - Initializing Nebius client...
+2025-12-18 11:31:26,596 - dpprivqa.mmlu_professional_law - INFO - Nebius client initialized successfully
+2025-12-18 11:31:26,596 - dpprivqa.mmlu_professional_law - INFO - Using local model: meta-llama/Meta-Llama-3.1-8B-Instruct
+2025-12-18 11:31:26,606 - dpprivqa.mmlu_professional_law - INFO - Created experiment record: ID 1
+2025-12-18 11:31:26,607 - dpprivqa.mmlu_professional_law - INFO - 
+================================================================================
+2025-12-18 11:31:26,607 - dpprivqa.mmlu_professional_law - INFO - Running Local scenario
+2025-12-18 11:31:26,607 - dpprivqa.mmlu_professional_law - INFO - ================================================================================
+2025-12-18 11:31:26,607 - dpprivqa.mmlu_professional_law - INFO - 
+Question 1/5:
+2025-12-18 11:31:26,607 - dpprivqa.mmlu_professional_law - INFO -   Question: One afternoon, a pilot was flying a small airplane when it suddenly ran out of gas. As he was coming in for an emergency landing, the plane crossed in...
+2025-12-18 11:31:26,607 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'admissible, because the attorney-client privilege was waived by the filing of the lawsuit.', 'B': 'admissible, because there is no privilege of confidentiality when a person other than the client is present at the attorney-client consultation.', 'C': 'inadmissible, because the attorney-client privilege prevents such a breach of confidential communications.', 'D': 'inadmissible, because it was a statement of physical condition not made for the purpose of obtaining medical treatment.'}
+2025-12-18 11:31:26,607 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: C
+2025-12-18 11:31:29,240 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 11:31:29,240 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 11:31:29,241 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 2.63s
+2025-12-18 11:31:29,254 - dpprivqa.mmlu_professional_law - INFO - 
+Question 2/5:
+2025-12-18 11:31:29,254 - dpprivqa.mmlu_professional_law - INFO -   Question: A state statute provides: "Whenever a person knows or should know that he (or she) is being arrested by a police officer, it is the duty of such perso...
+2025-12-18 11:31:29,255 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': "not guilty, if the arrest was unlawful without probable cause and the jury believes the suspect's account.", 'B': "not guilty, if the arrest was lawful, provided that the jury believes the suspect's account.", 'C': 'guilty, if the arrest was lawful, regardless which account the jury believes.', 'D': 'guilty, if the arrest was unlawful, regardless which account the jury believes.'}
+2025-12-18 11:31:29,255 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: B
+2025-12-18 11:31:30,160 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: B
+2025-12-18 11:31:30,160 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 11:31:30,160 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.90s
+2025-12-18 11:31:30,173 - dpprivqa.mmlu_professional_law - INFO - 
+Question 3/5:
+2025-12-18 11:31:30,173 - dpprivqa.mmlu_professional_law - INFO -   Question: A taxpayer was notified by the government that her individual income tax was underpaid by $1,012. 69. The taxpayer retained an attorney to represent h...
+2025-12-18 11:31:30,174 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'inadmissible, because it would violate the attorney-client privilege.', 'B': "inadmissible, because it would violate the taxpayer's privilege against self-incrimination.", 'C': 'inadmissible as violative of the work-product rule.', 'D': 'admissible as an admission.'}
+2025-12-18 11:31:30,174 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: D
+2025-12-18 11:31:30,958 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: D
+2025-12-18 11:31:30,958 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 11:31:30,958 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.78s
+2025-12-18 11:31:30,971 - dpprivqa.mmlu_professional_law - INFO - 
+Question 4/5:
+2025-12-18 11:31:30,971 - dpprivqa.mmlu_professional_law - INFO -   Question: A resident announced his candidacy for state representative. A law in the state requires new political entrants (regardless of party affiliation) to o...
+2025-12-18 11:31:30,972 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': "The resident's petition contained a large number of false signatures.", 'B': 'A similar authenticating statute was held to be constitutional in another state the previous year.', 'C': 'The authenticating requirement was necessary to further a compelling state interest.', 'D': 'Two other candidates had successfully petitioned to have their names included on the ballot.'}
+2025-12-18 11:31:30,972 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: C
+2025-12-18 11:31:31,930 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 11:31:31,930 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 11:31:31,930 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.96s
+2025-12-18 11:31:31,942 - dpprivqa.mmlu_professional_law - INFO - 
+Question 5/5:
+2025-12-18 11:31:31,942 - dpprivqa.mmlu_professional_law - INFO -   Question: A defendant was angry at his friend for marrying the defendant's former girlfriend. As the friend was painting his house one afternoon, the defendant ...
+2025-12-18 11:31:31,943 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'He intended to kill the friend and not the daughter.', 'B': 'He intended only to wound the friend.', 'C': 'He was unaware of the elements of malice.', 'D': 'The killing was the result of negligence in missing the friend.'}
+2025-12-18 11:31:31,943 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: B
+2025-12-18 11:31:32,733 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: D
+2025-12-18 11:31:32,733 - dpprivqa.mmlu_professional_law - INFO -   Correct: False
+2025-12-18 11:31:32,733 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.79s
+2025-12-18 11:31:32,745 - dpprivqa.mmlu_professional_law - INFO - 
+================================================================================
+2025-12-18 11:31:32,745 - dpprivqa.mmlu_professional_law - INFO - SUMMARY
+2025-12-18 11:31:32,745 - dpprivqa.mmlu_professional_law - INFO - ================================================================================
+2025-12-18 11:31:32,745 - dpprivqa.mmlu_professional_law - INFO - Total questions: 5
+2025-12-18 11:31:32,745 - dpprivqa.mmlu_professional_law - INFO - Correct answers: 4
+2025-12-18 11:31:32,745 - dpprivqa.mmlu_professional_law - INFO - Accuracy: 0.800 (80.0%)
+2025-12-18 11:31:32,745 - dpprivqa.mmlu_professional_law - INFO - 
+Results saved to database successfully!
+2025-12-18 11:31:32,745 - dpprivqa.mmlu_professional_law - INFO - Experiment ID: 1

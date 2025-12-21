@@ -1,0 +1,47 @@
+{
+  "dataset": "College Medicine",
+  "statistics": {
+    "total_questions": 173,
+    "s1_accuracy": 65.89595375722543,
+    "s2_accuracy": 75.14450867052022,
+    "s3_accuracy": 90.17341040462428
+  },
+  "set_sizes": {
+    "s1_local": 114,
+    "s2_local_cot": 130,
+    "s3_remote": 156
+  },
+  "overlap_counts": {
+    "all_three": 101,
+    "s1_only": 4,
+    "s2_only": 0,
+    "s3_only": 23,
+    "s1_s2_only": 3,
+    "s1_s3_only": 6,
+    "s2_s3_only": 26,
+    "all_fail": 10
+  },
+  "key_set_counts": {
+    "s1_minus_s2": 10,
+    "s2_minus_s3": 3
+  },
+  "key_set_indices": {
+    "s1_minus_s2": [
+      23,
+      25,
+      60,
+      71,
+      80,
+      105,
+      115,
+      151,
+      163,
+      171
+    ],
+    "s2_minus_s3": [
+      129,
+      143,
+      159
+    ]
+  }
+}

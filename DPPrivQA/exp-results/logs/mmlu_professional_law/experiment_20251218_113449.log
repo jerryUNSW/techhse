@@ -1,0 +1,180 @@
+2025-12-18 11:34:49,827 - dpprivqa.mmlu_professional_law - INFO - Logging initialized for mmlu_professional_law
+2025-12-18 11:34:49,827 - dpprivqa.mmlu_professional_law - INFO - Log file: exp-results/logs/mmlu_professional_law/experiment_20251218_113449.log
+2025-12-18 11:34:49,827 - dpprivqa.mmlu_professional_law - INFO - Starting Local model test on MMLU professional_law
+2025-12-18 11:34:49,827 - dpprivqa.mmlu_professional_law - INFO - Testing 1529 questions
+2025-12-18 11:34:49,828 - dpprivqa.mmlu_professional_law - INFO - Database: exp-results/results.db
+2025-12-18 11:34:49,828 - dpprivqa.mmlu_professional_law - INFO - Loading MMLU professional_law dataset...
+2025-12-18 11:34:53,110 - dpprivqa.mmlu_professional_law - INFO - Loaded 1529 questions (indices 5 to 1533)
+2025-12-18 11:34:53,110 - dpprivqa.mmlu_professional_law - INFO - Initializing Nebius client...
+2025-12-18 11:34:53,149 - dpprivqa.mmlu_professional_law - INFO - Nebius client initialized successfully
+2025-12-18 11:34:53,149 - dpprivqa.mmlu_professional_law - INFO - Using local model: meta-llama/Meta-Llama-3.1-8B-Instruct
+2025-12-18 11:34:53,163 - dpprivqa.mmlu_professional_law - INFO - Created experiment record: ID 2
+2025-12-18 11:34:53,163 - dpprivqa.mmlu_professional_law - INFO - 
+================================================================================
+2025-12-18 11:34:53,163 - dpprivqa.mmlu_professional_law - INFO - Running Local scenario
+2025-12-18 11:34:53,163 - dpprivqa.mmlu_professional_law - INFO - ================================================================================
+2025-12-18 11:34:53,163 - dpprivqa.mmlu_professional_law - INFO - 
+Question 1/1529:
+2025-12-18 11:34:53,163 - dpprivqa.mmlu_professional_law - INFO -   Question: The accused made a confession to the police, but his defense attorney needs to find out if the confession is admissible. In which of the following sit...
+2025-12-18 11:34:53,163 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': "The defendant's statement was involuntary.", 'B': "The defendant's statement was voluntary.", 'C': 'The defendant was not in custody when the statement was made.', 'D': 'The statement was not made in response to a known police interrogation.'}
+2025-12-18 11:34:53,163 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: A
+2025-12-18 11:34:54,909 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: A
+2025-12-18 11:34:54,909 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 11:34:54,910 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 1.75s
+2025-12-18 11:34:54,923 - dpprivqa.mmlu_professional_law - INFO - 
+Question 2/1529:
+2025-12-18 11:34:54,924 - dpprivqa.mmlu_professional_law - INFO -   Question: A devastating earthquake struck a foreign country. The earthquake destroyed hundreds of homes and buildings. Thousands of residents were killed, injur...
+2025-12-18 11:34:54,924 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'valid, because as commander-in-chief, the President has unfettered authority to require federal employees to participate in an international relief effort.', 'B': 'valid, because employees of an executive agency can be required to perform such emergency functions.', 'C': 'invalid, because the executive order is beyond the scope of presidential power absent congressional authorization.', 'D': 'invalid, because the director of the INS, not the President, has the power to issue directives to federal agencies under its supervision.'}
+2025-12-18 11:34:54,924 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: B
+2025-12-18 11:34:55,683 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 11:34:55,683 - dpprivqa.mmlu_professional_law - INFO -   Correct: False
+2025-12-18 11:34:55,683 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.76s
+2025-12-18 11:34:55,692 - dpprivqa.mmlu_professional_law - INFO - 
+Question 3/1529:
+2025-12-18 11:34:55,692 - dpprivqa.mmlu_professional_law - INFO -   Question: Which of the following is not a warrantless search exception?...
+2025-12-18 11:34:55,692 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'Cold pursuit', 'B': 'Incident to a lawful arrest', 'C': 'Plain view', 'D': 'Stop and frisk'}
+2025-12-18 11:34:55,692 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: A
+2025-12-18 11:34:56,779 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: B
+2025-12-18 11:34:56,779 - dpprivqa.mmlu_professional_law - INFO -   Correct: False
+2025-12-18 11:34:56,780 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 1.09s
+2025-12-18 11:34:56,790 - dpprivqa.mmlu_professional_law - INFO - 
+Question 4/1529:
+2025-12-18 11:34:56,791 - dpprivqa.mmlu_professional_law - INFO -   Question: A grocery store purchased a large mirror to hang on a wall in the store. Along with the mirror itself, the manufacturer provided brackets and bolts to...
+2025-12-18 11:34:56,791 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'prevail, because the brackets were defective when installed.', 'B': 'prevail, because it would be abnormally dangerous to maintain such a large mirror on the wall of a retail outlet.', 'C': 'not prevail, because the carpenter was not engaged in the sale of the mirror.', 'D': 'not prevail, because the carpenter had no relationship of privily with the plaintiff.'}
+2025-12-18 11:34:56,791 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: C
+2025-12-18 11:34:57,612 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 11:34:57,612 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 11:34:57,612 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.82s
+2025-12-18 11:34:57,624 - dpprivqa.mmlu_professional_law - INFO - 
+Question 5/1529:
+2025-12-18 11:34:57,624 - dpprivqa.mmlu_professional_law - INFO -   Question: A man who was separated but never divorced from his first wife, married another woman and lived with her as husband and wife. The man and his purporte...
+2025-12-18 11:34:57,624 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'Yes, because a murderer cannot reap the benefits of his ill-doing.', 'B': 'Yes, because the murderer was also a bigamist who could not take good title to the property in the first place, thus putting full title in the decedent from the date of purchase.', 'C': "No, the court will as a policy matter recognize the murderer's pre-slaying right to one-half of the property as a tenant in common.", 'D': 'No, there is no rule of law that gives the victim or her estate any additional rights in the property that she had before the homicide.'}
+2025-12-18 11:34:57,624 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: C
+2025-12-18 11:34:58,493 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 11:34:58,493 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 11:34:58,493 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.87s
+2025-12-18 11:34:58,508 - dpprivqa.mmlu_professional_law - INFO - 
+Question 6/1529:
+2025-12-18 11:34:58,508 - dpprivqa.mmlu_professional_law - INFO -   Question: Bill, a single man, owned pasture land in Deerwoods, Florida, which he leased to a tenant. He also owned a condominium in Miami, which he held for inv...
+2025-12-18 11:34:58,508 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'Kathy gets the condominium regardless of the prenuptial agreement, Tommy takes the pasture land and Tommy and Julie split the rest of the estate.', 'B': "Due to Kathy's prenuptial agreement, Tommy receives the pasture land, Julie gets the condominium and Tommy and Julie split the rest of the estate.", 'C': 'Kathy gets the condominium, but because Bill had originally indicated his intent to devise equally to his children, Tommy and Julie will split the remaining estate.', 'D': "Regardless of the prenuptial agreement, Kathy is a pretermitted spouse. Since Bill leaves surviving lineal descendants who are not Kathy's, Kathy receives 50% of the estate, Tommy gets the pasture land, and Tommy and Julie split the residue of the estate."}
+2025-12-18 11:34:58,508 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: A
+2025-12-18 11:34:59,306 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: D
+2025-12-18 11:34:59,306 - dpprivqa.mmlu_professional_law - INFO -   Correct: False
+2025-12-18 11:34:59,306 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.80s
+2025-12-18 11:34:59,317 - dpprivqa.mmlu_professional_law - INFO - 
+Question 7/1529:
+2025-12-18 11:34:59,318 - dpprivqa.mmlu_professional_law - INFO -   Question: For many years, persons engaged in real estate transactions in a state have utilized installment land contracts. The so-called installment land contra...
+2025-12-18 11:34:59,318 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'Yes, because it is a reasonable regulation of the procedure to be followed in such cases and does not substantially diminish the underlying obligations of the buyer.', 'B': 'Yes, because the authority to enact laws regulating real estate sales transactions occurring within the boundaries of individual states is reserved exclusively to the states by the Tenth Amendment.', 'C': 'No, because application of the law to installment land contracts entered into prior to its enactment is a violation of the obligation of contracts.', 'D': 'No, because application of the law to installment land contracts entered into before or after its enactment is a deprivation of a proprietary interest without due process of the law.'}
+2025-12-18 11:34:59,318 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: A
+2025-12-18 11:35:00,177 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: D
+2025-12-18 11:35:00,177 - dpprivqa.mmlu_professional_law - INFO -   Correct: False
+2025-12-18 11:35:00,177 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.86s
+2025-12-18 11:35:00,190 - dpprivqa.mmlu_professional_law - INFO - 
+Question 8/1529:
+2025-12-18 11:35:00,190 - dpprivqa.mmlu_professional_law - INFO -   Question: A man placed the following advertisement in his local newspaper:"Public Auction Sale . . . without reserve December 7, 10:00 a. m. 110 Walnut St. , Ci...
+2025-12-18 11:35:00,190 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'prevail, because goods put up at an auction "without reserve" may not be withdrawn.', 'B': 'prevail, because whether or not the auction is "without reserve," goods cannot be withdrawn after the auctioneer calls for bids.', 'C': 'not prevail, because at an auction "without reserve," the auctioneer may withdraw goods until he announces completion of the sale.', 'D': 'not prevail, because at an auction "without reserve," the auctioneer invites offers, which he may accept or reject.'}
+2025-12-18 11:35:00,191 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: A
+2025-12-18 11:35:00,989 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: D
+2025-12-18 11:35:00,989 - dpprivqa.mmlu_professional_law - INFO -   Correct: False
+2025-12-18 11:35:00,989 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.80s
+2025-12-18 11:35:01,000 - dpprivqa.mmlu_professional_law - INFO - 
+Question 9/1529:
+2025-12-18 11:35:01,000 - dpprivqa.mmlu_professional_law - INFO -   Question: A defendant offers into evidence his computer business records to show his good faith monitoring of the accounts in his business. The defendant testif...
+2025-12-18 11:35:01,001 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'The court will allow the records because they were kept in the ordinary course of business.', 'B': 'The court will require a greater foundation to establish the reliability of the records.', 'C': 'The court will dismiss the hearsay objection because the defendant, who is the declarant, is available in court.', 'D': 'The court will allow the records because they are the product of a reliable computer process of data collection.'}
+2025-12-18 11:35:01,001 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: B
+2025-12-18 11:35:01,760 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: D
+2025-12-18 11:35:01,760 - dpprivqa.mmlu_professional_law - INFO -   Correct: False
+2025-12-18 11:35:01,760 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.76s
+2025-12-18 11:35:01,772 - dpprivqa.mmlu_professional_law - INFO - 
+Question 10/1529:
+2025-12-18 11:35:01,772 - dpprivqa.mmlu_professional_law - INFO -   Question: A regulation prevents persons with a drug arrest and conviction and/or those undergoing current treatment for drug abuse from working in certain state...
+2025-12-18 11:35:01,772 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'Strict scrutiny, since drug users are a special class of persons often discriminated against by the public.', 'B': 'Intermediate scrutiny, because, like gender, this can be a sensitive area where discrimination is common.', 'C': 'The rational basis test, because discrimination is generally favored with drug users or even those getting treatment.', 'D': 'The rational basis test, because the regulation need only be related to a legitimate state interest to be valid.'}
+2025-12-18 11:35:01,772 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: D
+2025-12-18 11:35:02,520 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: D
+2025-12-18 11:35:02,520 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 11:35:02,520 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.75s
+2025-12-18 11:35:02,529 - dpprivqa.mmlu_professional_law - INFO - 
+Question 11/1529:
+2025-12-18 11:35:02,529 - dpprivqa.mmlu_professional_law - INFO -   Question: A man was driving while drunk. He was speeding down a center city street, veering from lane to lane, when he lost control of his car while going over ...
+2025-12-18 11:35:02,529 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'Felony murder in that he killed someone while committing the felony of driving under the influence.', 'B': 'Voluntary manslaughter because it was an intentional killing done while acting recklessly or impulsively.', 'C': 'Involuntary manslaughter in that it was a killing committed while engaging in reckless activity but without the intent to kill.', 'D': 'First degree murder because the act of driving under the influence is legally presumed to involve premeditation and specific intent.'}
+2025-12-18 11:35:02,529 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: C
+2025-12-18 11:35:03,613 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 11:35:03,614 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 11:35:03,614 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 1.08s
+2025-12-18 11:35:03,629 - dpprivqa.mmlu_professional_law - INFO - 
+Question 12/1529:
+2025-12-18 11:35:03,629 - dpprivqa.mmlu_professional_law - INFO -   Question: The authorities arrested a man without a warrant and held him imprisoned for 14 days without a determination of probable cause. He finally saw a publi...
+2025-12-18 11:35:03,629 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'No, because the Supreme Court has ruled that detentions can properly last up to 30 days without a probable cause determination.', 'B': 'No, because each case must be decided on its own facts and there may be many good reasons why the state has not yet provided a probable cause determination.', 'C': 'Yes, because when the state arrests someone without a warrant it must provide a prompt probable cause determination.', 'D': 'No, because it is constitutional to hold someone for up to 15 days without a probable cause determination.'}
+2025-12-18 11:35:03,629 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: C
+2025-12-18 11:35:04,462 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 11:35:04,462 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 11:35:04,462 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.83s
+2025-12-18 11:35:04,473 - dpprivqa.mmlu_professional_law - INFO - 
+Question 13/1529:
+2025-12-18 11:35:04,474 - dpprivqa.mmlu_professional_law - INFO -   Question: A man owned land along the south side of a highway. To the south of the man's land was a lot owned by a woman who lived on it in a house. Five years a...
+2025-12-18 11:35:04,474 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'The man, because the easement was extinguished.', 'B': 'The man, because the purchaser did not have actual notice of the easement at the time of acquisition.', 'C': 'The purchaser, because he purchased the house by warranty deed.', 'D': 'The purchaser, because the easement was of public record when he acquired the house.'}
+2025-12-18 11:35:04,474 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: A
+2025-12-18 11:35:05,479 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: D
+2025-12-18 11:35:05,479 - dpprivqa.mmlu_professional_law - INFO -   Correct: False
+2025-12-18 11:35:05,479 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 1.01s
+2025-12-18 11:35:05,490 - dpprivqa.mmlu_professional_law - INFO - 
+Question 14/1529:
+2025-12-18 11:35:05,490 - dpprivqa.mmlu_professional_law - INFO -   Question: Rainmaking Lawfirm regularly purchased its office supplies from catalogs. Marty Manager saw an advertising catalog from Costco offering 10,000 envelop...
+2025-12-18 11:35:05,490 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'A contract at $1,000 because the offer terms CIF means cost, insurance and freight including all loading charges.', 'B': 'A contract at $1,500 because the loading charges are to be included.', 'C': 'No contract because the order confirmation was a counteroffer which was not accepted.', 'D': 'No contract because the purchase order was the offer and, under the mirror image rule, can not be deviated from.'}
+2025-12-18 11:35:05,491 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: C
+2025-12-18 11:35:06,310 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 11:35:06,311 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 11:35:06,311 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.82s
+2025-12-18 11:35:06,324 - dpprivqa.mmlu_professional_law - INFO - 
+Question 15/1529:
+2025-12-18 11:35:06,324 - dpprivqa.mmlu_professional_law - INFO -   Question: A woman sued her former employer in state court, asserting age and sex discrimination claims under both state and federal law. The woman's attorney ha...
+2025-12-18 11:35:06,324 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'Remand the entire case.', 'B': 'Remand the state claims but keep the federal claims.', 'C': "Retain the case to avoid the risk of bias and impropriety in having it proceed before a judge who has shown clear hostility toward the woman's attorney.", 'D': 'Retain the case, because it was timely removed and the woman alleges federal claims.'}
+2025-12-18 11:35:06,325 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: A
+2025-12-18 11:35:07,094 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 11:35:07,095 - dpprivqa.mmlu_professional_law - INFO -   Correct: False
+2025-12-18 11:35:07,095 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.77s
+2025-12-18 11:35:07,106 - dpprivqa.mmlu_professional_law - INFO - 
+Question 16/1529:
+2025-12-18 11:35:07,106 - dpprivqa.mmlu_professional_law - INFO -   Question: A city ordinance provides that it shall be unlawful for any person to litter in a public park, and that a violation of this ordinance shall be punishe...
+2025-12-18 11:35:07,106 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'No, because littering the park in these circumstances could be construed as symbolic speech and, thus, it is protected from government regulation by the First and Fourteenth Amendments.', 'B': "No, because the facts do not indicate that the protestor's actions presented a clear and present danger that was likely to produce or incite imminent lawless action, thereby necessitating an abridgment of his freedom of speech.", 'C': 'Yes, because the city ordinance advances an important and legitimate public interest and is not directed at the suppression of communication.', 'D': 'Yes, because littering the park is conduct, not speech and, therefore, it may not be treated by the law as communication.'}
+2025-12-18 11:35:07,106 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: C
+2025-12-18 11:35:07,915 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: D
+2025-12-18 11:35:07,915 - dpprivqa.mmlu_professional_law - INFO -   Correct: False
+2025-12-18 11:35:07,915 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.81s
+2025-12-18 11:35:07,922 - dpprivqa.mmlu_professional_law - INFO - 
+Question 17/1529:
+2025-12-18 11:35:07,922 - dpprivqa.mmlu_professional_law - INFO -   Question: A resident of a state was the owner of a large tract of virgin forest. The resident conveyed the tract "to the people of the state in fee simple; prov...
+2025-12-18 11:35:07,922 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': "The resident would succeed, because the logging company's selling of the timber would entitle the resident to re-enter and terminate the grant to the state.", 'B': "The resident would succeed, because the logging company's selling of the timber would constitute an automatic termination of the state's fee interest.", 'C': 'The resident would not succeed, because the director approved the clearing of the timber in order to develop the area for recreational purposes.', 'D': "The resident would not succeed, because the reservation of the resident's right to terminate would be violative of the rule against perpetuities."}
+2025-12-18 11:35:07,922 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: C
+2025-12-18 11:35:08,745 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: D
+2025-12-18 11:35:08,746 - dpprivqa.mmlu_professional_law - INFO -   Correct: False
+2025-12-18 11:35:08,746 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.82s
+2025-12-18 11:35:08,760 - dpprivqa.mmlu_professional_law - INFO - 
+Question 18/1529:
+2025-12-18 11:35:08,760 - dpprivqa.mmlu_professional_law - INFO -   Question: A company owned a night club that was built on a pier extending into a major riverbed. For several months sections of the building had been wobbling n...
+2025-12-18 11:35:08,760 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'This was not manslaughter because the omission to respond to safety citations is not enough to establish the high degree of criminal negligence that is required.', 'B': 'The failure to act is much less culpable than active recklessness, and therefore there was insufficient evidence to charge manslaughter.', 'C': 'A corporate employee cannot be prosecuted for the crime of manslaughter with respect to the performance or nonperformance of his duties on behalf of the corporation.', 'D': "The charge of involuntary manslaughter is legally sufficient because the manager's omissions were reckless and unlawful under the circumstances."}
+2025-12-18 11:35:08,760 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: D
+2025-12-18 11:35:09,584 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: D
+2025-12-18 11:35:09,584 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 11:35:09,584 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.82s
+2025-12-18 11:35:09,604 - dpprivqa.mmlu_professional_law - INFO - 
+Question 19/1529:
+2025-12-18 11:35:09,605 - dpprivqa.mmlu_professional_law - INFO -   Question: A young man suggested to his friend that they steal a large-screen TV from a neighbor's house. The friend wasangry with the young man and decided to u...
+2025-12-18 11:35:09,605 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'No crime.', 'B': 'Conspiracy.', 'C': 'Burglary.', 'D': 'Conspiracy and larceny.'}
+2025-12-18 11:35:09,605 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: A
+2025-12-18 11:35:10,446 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: A
+2025-12-18 11:35:10,447 - dpprivqa.mmlu_professional_law - INFO -   Correct: True
+2025-12-18 11:35:10,447 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.84s
+2025-12-18 11:35:10,499 - dpprivqa.mmlu_professional_law - INFO - 
+Question 20/1529:
+2025-12-18 11:35:10,499 - dpprivqa.mmlu_professional_law - INFO -   Question: Upon graduation from high school, a student enrolled in a college close to where he lived. However, since the student did not have a car, he rode the ...
+2025-12-18 11:35:10,499 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'relieve the father of liability, because the car lot failed to first sue the son.', 'B': 'relieve the father of liability, because the father was never under a duty as a surety.', 'C': 'not relieve the father of liability, because of the main purpose exception.', 'D': 'not relieve the father of liability, because parents are responsible for the debts of their children.'}
+2025-12-18 11:35:10,499 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: B
+2025-12-18 11:35:11,314 - dpprivqa.mmlu_professional_law - INFO -   Predicted answer: C
+2025-12-18 11:35:11,314 - dpprivqa.mmlu_professional_law - INFO -   Correct: False
+2025-12-18 11:35:11,314 - dpprivqa.mmlu_professional_law - INFO -   Processing time: 0.81s
+2025-12-18 11:35:11,360 - dpprivqa.mmlu_professional_law - INFO - 
+Question 21/1529:
+2025-12-18 11:35:11,360 - dpprivqa.mmlu_professional_law - INFO -   Question: A widow owned an apartment building. Several years ago, a student, in a signed writing, entered a three-year lease agreement with the widow. The stude...
+2025-12-18 11:35:11,361 - dpprivqa.mmlu_professional_law - INFO -   Options: {'A': 'the leasehold contract was void ab initio.', 'B': 'the widow had not given the student requisitenotice for terminating a periodic tenancy.', 'C': 'the widow had not given the student requisitenotice for terminating a term of years.', 'D': 'the terms of the leasehold contract were binding on both parties.'}
+2025-12-18 11:35:11,361 - dpprivqa.mmlu_professional_law - INFO -   Ground truth: B

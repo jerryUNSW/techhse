@@ -1,0 +1,14 @@
+2025-12-18 12:28:51,948 - dpprivqa.mmlu_professional_law - INFO - Logging initialized for mmlu_professional_law
+2025-12-18 12:28:51,948 - dpprivqa.mmlu_professional_law - INFO - Log file: exp-results/logs/mmlu_professional_law/experiment_20251218_122851.log
+2025-12-18 12:28:51,948 - dpprivqa.mmlu_professional_law - INFO - Starting Remote model (GPT-5 via Lightning) test on MMLU professional_law
+2025-12-18 12:28:51,948 - dpprivqa.mmlu_professional_law - INFO - Testing 10 questions
+2025-12-18 12:28:51,949 - dpprivqa.mmlu_professional_law - INFO - Database: exp-results/results.db
+2025-12-18 12:28:51,949 - dpprivqa.mmlu_professional_law - INFO - Loading MMLU professional_law dataset...
+2025-12-18 12:28:55,613 - dpprivqa.mmlu_professional_law - INFO - Loaded 10 questions (indices 0 to 9)
+2025-12-18 12:28:55,613 - dpprivqa.mmlu_professional_law - INFO - Initializing Lightning API client...
+2025-12-18 12:28:55,613 - dpprivqa.mmlu_professional_law - INFO - Lightning API client initialized successfully
+2025-12-18 12:28:55,613 - dpprivqa.mmlu_professional_law - INFO - Using remote model: openai/gpt-5 (via Lightning API)
+2025-12-18 12:28:55,613 - dpprivqa.mmlu_professional_law - INFO - Testing Lightning API connection...
+2025-12-18 12:28:56,366 - dpprivqa.mmlu_professional_law - ERROR - Lightning API test failed: Lightning API error: 402 - {"code":"insufficient_balance","message":"Your teamspace vision-model owned by user jerrystat2017 account does not have enough credits to run this request. Please top up to continue or bill another account.","current_balance":0.9890258299999848,"required_balance":1,"tip":"\n💡 Tip: Where charges are applied\n\n    • PERSONAL ACCOUNT\n      Costs are charged to your own account.\n      Example: LIGHTNING_API_KEY → f7...c60\n\n    • PERSONAL TEAMSPACE\n      Costs are charged to a teamspace you own.\n      Example: LIGHTNING_API_KEY/USERNAME/TEAMSPACE_NAME → f7...c60/my-username/research\n\n    • ORGANIZATION TEAMSPACE\n      Costs are charged to a teamspace within an organization.\n      Example: LIGHTNING_API_KEY/ORG_NAME/TEAMSPACE_NAME → f7...c60/lit-labs/production-apps\n\n    • ORGANIZATION ACCOUNT\n      Costs are charged to the whole organization.\n      Example: LIGHTNING_API_KEY/ORG_NAME → f7...c60/lit-labs\n"}
+
+2025-12-18 12:28:56,366 - dpprivqa.mmlu_professional_law - ERROR - Exiting without trying OpenAI API
