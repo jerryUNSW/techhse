@@ -6,7 +6,7 @@ import sqlite3
 import json
 import os
 from datetime import datetime
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Tuple
 
 from dpprivqa.database.schema import create_all_tables, DATASETS
 
@@ -62,29 +62,53 @@ class ExperimentDBWriter:
         """
         timestamp = datetime.now().isoformat()
         
-        cursor = self.conn.execute("""
-            INSERT INTO experiments (
-                dataset_name, experiment_type, timestamp, description,
-                total_questions, mechanisms, epsilon_values,
-                local_model, remote_cot_model, remote_qa_model
+        try:
+            cursor = self.conn.execute("""
+                INSERT INTO experiments (
+                    dataset_name, experiment_type, timestamp, description,
+                    total_questions, mechanisms, epsilon_values,
+                    local_model, remote_cot_model, remote_qa_model
+                )
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                dataset_name,
+                experiment_type,
+                timestamp,
+                description,
+                total_questions,
+                json.dumps(mechanisms) if mechanisms else None,
+                json.dumps(epsilon_values) if epsilon_values else None,
+                local_model,
+                remote_cot_model,
+                remote_qa_model
+            ))
+            
+            experiment_id = cursor.lastrowid
+            self.conn.commit()
+            
+            # Verify the experiment was actually created
+            if experiment_id == 0:
+                raise ValueError("Failed to create experiment: lastrowid is 0")
+            
+            # Double-check by querying the database
+            verify_cursor = self.conn.execute(
+                "SELECT id, dataset_name FROM experiments WHERE id = ?",
+                (experiment_id,)
             )
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            dataset_name,
-            experiment_type,
-            timestamp,
-            description,
-            total_questions,
-            json.dumps(mechanisms) if mechanisms else None,
-            json.dumps(epsilon_values) if epsilon_values else None,
-            local_model,
-            remote_cot_model,
-            remote_qa_model
-        ))
-        
-        experiment_id = cursor.lastrowid
-        self.conn.commit()
-        return experiment_id
+            verify_row = verify_cursor.fetchone()
+            if not verify_row:
+                raise ValueError(f"Experiment ID {experiment_id} was not found in database after creation")
+            if verify_row[1] != dataset_name:
+                raise ValueError(f"Experiment ID {experiment_id} is for wrong dataset: expected {dataset_name}, got {verify_row[1]}")
+            
+            return experiment_id
+            
+        except sqlite3.IntegrityError as e:
+            # UNIQUE constraint violation - this shouldn't happen with timestamps
+            raise ValueError(f"Failed to create experiment due to UNIQUE constraint: {e}. This may indicate a timestamp collision.")
+        except Exception as e:
+            self.conn.rollback()
+            raise
     
     def write_epsilon_independent_result(
         self,
@@ -201,6 +225,95 @@ class ExperimentDBWriter:
             result.get('local_model', ''),
             result.get('remote_model', '')
         ))
+        
+        self.conn.commit()
+    
+    def write_epsilon_independent_results_batch(
+        self,
+        dataset_name: str,
+        experiment_id: int,
+        results: List[Tuple[int, str, Dict[str, Any]]]
+    ):
+        """
+        Write multiple epsilon-independent results in a batch.
+        
+        Args:
+            dataset_name: Name of the dataset
+            experiment_id: Experiment ID
+            results: List of (question_idx, scenario, result_dict) tuples
+        """
+        table_name = f"{dataset_name}_epsilon_independent_results"
+        
+        for question_idx, scenario, result in results:
+            self.conn.execute(f"""
+                INSERT OR REPLACE INTO {table_name} (
+                    experiment_id, question_idx, scenario,
+                    original_question, options, cot_text,
+                    generated_answer, ground_truth_answer, is_correct,
+                    processing_time, local_model, remote_model
+                )
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                experiment_id,
+                question_idx,
+                scenario,
+                result.get('question', ''),
+                json.dumps(result.get('options', {})),
+                result.get('cot_text'),
+                result.get('answer', ''),
+                result.get('ground_truth', ''),
+                result.get('is_correct', False),
+                result.get('processing_time'),
+                result.get('local_model'),
+                result.get('remote_model')
+            ))
+        
+        self.conn.commit()
+    
+    def write_epsilon_dependent_results_batch(
+        self,
+        dataset_name: str,
+        experiment_id: int,
+        results: List[Tuple[int, str, float, Dict[str, Any]]]
+    ):
+        """
+        Write multiple epsilon-dependent results in a batch.
+        
+        Args:
+            dataset_name: Name of the dataset
+            experiment_id: Experiment ID
+            results: List of (question_idx, mechanism, epsilon, result_dict) tuples
+        """
+        table_name = f"{dataset_name}_epsilon_dependent_results"
+        
+        for question_idx, mechanism, epsilon, result in results:
+            self.conn.execute(f"""
+                INSERT OR REPLACE INTO {table_name} (
+                    experiment_id, question_idx, mechanism, epsilon,
+                    original_question, sanitized_question, options, induced_cot,
+                    generated_answer, ground_truth_answer, is_correct,
+                    processing_time, sanitization_time, cot_generation_time,
+                    local_model, remote_model
+                )
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                experiment_id,
+                question_idx,
+                mechanism,
+                epsilon,
+                result.get('question', ''),
+                result.get('sanitized_question', ''),
+                json.dumps(result.get('options', {})),
+                result.get('cot_text', ''),
+                result.get('answer', ''),
+                result.get('ground_truth', ''),
+                result.get('is_correct', False),
+                result.get('processing_time'),
+                result.get('sanitization_time'),
+                result.get('cot_generation_time'),
+                result.get('local_model', ''),
+                result.get('remote_model', '')
+            ))
         
         self.conn.commit()
     

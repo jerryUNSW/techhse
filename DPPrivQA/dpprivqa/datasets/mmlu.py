@@ -45,9 +45,23 @@ class MMLUDataset(Dataset):
             List of questions in standardized format
         """
         try:
-            dataset = load_dataset(self.dataset_name, self.subset, split=split)
-        except Exception as e:
-            raise ValueError(f"Failed to load MMLU {self.subset} dataset: {e}")
+            # Try loading with trust_remote_code=False first
+            dataset = load_dataset(self.dataset_name, self.subset, split=split, trust_remote_code=False)
+        except Exception as e1:
+            try:
+                # Try alternative dataset source
+                dataset = load_dataset("lighteval/mmlu", self.subset, split=split, trust_remote_code=False)
+            except Exception as e2:
+                try:
+                    # Try without trust_remote_code parameter (for older versions)
+                    dataset = load_dataset(self.dataset_name, self.subset, split=split)
+                except Exception as e3:
+                    raise ValueError(
+                        f"Failed to load MMLU {self.subset} dataset. Tried:\n"
+                        f"1. {self.dataset_name}/{self.subset}: {e1}\n"
+                        f"2. lighteval/mmlu/{self.subset}: {e2}\n"
+                        f"3. {self.dataset_name}/{self.subset} (no trust_remote_code): {e3}"
+                    )
         
         converted = []
         for item in dataset:
