@@ -1213,7 +1213,7 @@ def main(argv: list[str] | None = None) -> None:
         print(f"⚠️  Skipping epsilon-independent scenarios (Local, Local+CoT, Remote)", flush=True)
     if args.skip_phrasedp_normal:
         print(f"⚠️  Skipping PhraseDP normal mode (without metamap)", flush=True)
-    if getattr(args, 'skip_phrasedp_plus_normal', False):
+    if args.skip_phrasedp_plus_normal:
         print(f"⚠️  Skipping PhraseDP+ (medical mode) without few-shot", flush=True)
     if getattr(args, 'skip_phrasedp_plus_fewshot', False):
         print(f"⚠️  Skipping PhraseDP++ (PhraseDP+ with few-shot)", flush=True)
@@ -1235,7 +1235,7 @@ def main(argv: list[str] | None = None) -> None:
         run_epsilon_dependent=True,
         skip_phrasedp_normal=args.skip_phrasedp_normal,
         skip_phrasedp_plus_normal=args.skip_phrasedp_plus_normal,
-        skip_phrasedp_plus_fewshot=getattr(args, 'skip_phrasedp_plus_fewshot', False),
+        skip_phrasedp_plus_fewshot=args.skip_phrasedp_plus_fewshot,
     )
     
     if summary_results is None:
@@ -1254,7 +1254,7 @@ def main(argv: list[str] | None = None) -> None:
         "mechanisms_tested": (
             (["Local", "Local+CoT", "Remote"] if not args.skip_epsilon_independent else []) +
             (["PhraseDP"] if not args.skip_phrasedp_normal else []) +
-            (["PhraseDP+"] if not getattr(args, 'skip_phrasedp_plus_normal', False) else []) +
+            (["PhraseDP+"] if not args.skip_phrasedp_plus_normal else []) +
             (["PhraseDP++"] if not getattr(args, 'skip_phrasedp_plus_fewshot', False) else [])
         ),
         "start_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -1267,7 +1267,7 @@ def main(argv: list[str] | None = None) -> None:
         eps_data = {}
         if not getattr(args, 'skip_phrasedp_plus_fewshot', False):
             eps_data["phrasedp_plus_fewshot"] = summary_results[eps_key].get("phrasedp_plus_fewshot", {"correct": 0, "total": 0, "accuracy": 0})
-        if not getattr(args, 'skip_phrasedp_plus_normal', False):
+        if not args.skip_phrasedp_plus_normal:
             eps_data["phrasedp_plus"] = summary_results[eps_key].get("phrasedp_plus", {"correct": 0, "total": 0, "accuracy": 0})
         if not args.skip_epsilon_independent:
             eps_data["local"] = summary_results["local"]
@@ -1319,7 +1319,7 @@ def main(argv: list[str] | None = None) -> None:
         print(f"\nEpsilon = {epsilon}:", flush=True)
         if not args.skip_phrasedp_normal:
             print_accuracy("3.0. Private Local Model + CoT (Phrase DP)", summary_results[eps_key].get("phrasedp", {}).get("correct", 0), summary_results[eps_key].get("phrasedp", {}).get("total", 0))
-        if not getattr(args, 'skip_phrasedp_plus_normal', False):
+        if not args.skip_phrasedp_plus_normal:
             print_accuracy("3.1. Private Local Model + CoT (Phrase DP+)", summary_results[eps_key]["phrasedp_plus"]["correct"], summary_results[eps_key]["phrasedp_plus"]["total"])
         if not getattr(args, 'skip_phrasedp_plus_fewshot', False):
             print_accuracy("3.2. Private Local Model + CoT (Phrase DP+ Few-Shot)", summary_results[eps_key].get("phrasedp_plus_fewshot", {}).get("correct", 0), summary_results[eps_key].get("phrasedp_plus_fewshot", {}).get("total", 0))
