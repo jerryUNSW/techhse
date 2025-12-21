@@ -62,7 +62,23 @@ def generate_tasks(n_vectors):
 
 def initialize_embeddings(epsilon):
     """Initialize embeddings and related data structures if not already present."""
-    base_path = "InferDPT/data"
+    # Try multiple possible paths
+    possible_paths = [
+        "InferDPT/data",
+        "sanitization-methods/InferDPT/data",
+        os.path.join(os.path.dirname(__file__), "..", "sanitization-methods", "InferDPT", "data"),
+    ]
+    
+    base_path = None
+    for path in possible_paths:
+        test_path = os.path.join(path, "cl100_embeddings.json")
+        if os.path.exists(test_path):
+            base_path = path
+            break
+    
+    if base_path is None:
+        raise FileNotFoundError(f"Could not find InferDPT embeddings. Tried: {possible_paths}")
+    
     embeddings_path = f"{base_path}/cl100_embeddings.json"
     sorted_embeddings_path = f"{base_path}/sorted_cl100_embeddings.json"
     sensitivity_path = f"{base_path}/sensitivity_of_embeddings.json"

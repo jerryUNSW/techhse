@@ -23,7 +23,6 @@ from dotenv import load_dotenv
 # Import local modules
 import utils
 from sanitization_methods import inferdpt_sanitize_text
-from experiment_db_writer import ExperimentDBWriter
 
 # ANSI color codes
 RED = "\033[91m"
@@ -224,7 +223,12 @@ def run_experiment_for_dataset(dataset_key, dataset_config):
     # Initialize clients
     print(f"{CYAN}Initializing clients...{RESET}", flush=True)
     local_client = utils.get_nebius_client()
-    remote_client = utils.get_openai_client()
+    # Get remote client - use OpenAI directly
+    import openai
+    api_key = os.getenv('OPENAI_API_KEY')
+    if not api_key:
+        raise ValueError("OPENAI_API_KEY not found in environment variables")
+    remote_client = openai.OpenAI(api_key=api_key)
     
     # Initialize results
     results = {
