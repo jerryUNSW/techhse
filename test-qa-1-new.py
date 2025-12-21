@@ -1179,6 +1179,11 @@ def main(argv: list[str] | None = None) -> None:
         action="store_true",
         help="Skip PhraseDP++ (PhraseDP+ with few-shot). Keeps PhraseDP and PhraseDP+.",
     )
+    parser.add_argument(
+        "--skip-phrasedp-plus-normal",
+        action="store_true",
+        help="Skip PhraseDP+ (medical mode without few-shot). Keeps PhraseDP and PhraseDP++.",
+    )
     
     args = parser.parse_args(argv)
     
@@ -1229,7 +1234,7 @@ def main(argv: list[str] | None = None) -> None:
         run_epsilon_independent=not args.skip_epsilon_independent,
         run_epsilon_dependent=True,
         skip_phrasedp_normal=args.skip_phrasedp_normal,
-        skip_phrasedp_plus_normal=getattr(args, 'skip_phrasedp_plus_normal', False),
+        skip_phrasedp_plus_normal=args.skip_phrasedp_plus_normal,
         skip_phrasedp_plus_fewshot=getattr(args, 'skip_phrasedp_plus_fewshot', False),
     )
     

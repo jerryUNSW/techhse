@@ -38,6 +38,7 @@ python test-qa-1-new.py \
     --local-model "${LOCAL_MODEL}" \
     --remote-model "${REMOTE_MODEL}" \
     --skip-epsilon-independent \
+    --skip-phrasedp-plus-normal \
     --skip-phrasedp-plus-fewshot \
     2>&1 | tee "${LOG_FILE}"
 
